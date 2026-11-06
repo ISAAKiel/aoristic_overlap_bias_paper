@@ -109,6 +109,18 @@ copy_optional_dir \
   "$ROOT/manuscript_files" \
   "$ASSETS/paper/manuscript_files"
 
+# The manuscript HTML refers to figures/ and supplements/figures/ by relative
+# paths, so copy every image it uses next to it.
+if [[ -f "$ROOT/manuscript.html" ]]; then
+  grep -o '<img src="[^"]*"' "$ROOT/manuscript.html" \
+    | sed -e 's/^<img src="//' -e 's/"$//' \
+    | grep -v -e '^data:' -e '^https\?:' -e '^manuscript_files/' \
+    | sort -u \
+    | while read -r img; do
+        copy_required "$ROOT/$img" "$ASSETS/paper/$img"
+      done
+fi
+
 # -------------------------------------------------------------------------
 # Supplements and their Quarto support directories
 # -------------------------------------------------------------------------
