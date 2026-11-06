@@ -8,7 +8,7 @@
 
 <meta name="description" content="Companion website to a reproducible study of a systematic bias in aoristic reconstructions from overlapping phase catalogues, and of a simple correction for it.">
 
-<title>When archaeological phase systems create artificial temporal signals – Aoristic reconstruction and phase overlap</title>
+<title>When chronological classifications create archaeological signals – Aoristic reconstruction and phase overlap</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -87,13 +87,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<meta property="og:title" content="When archaeological phase systems create artificial temporal signals">
+<meta property="og:title" content="When chronological classifications create archaeological signals">
 <meta property="og:description" content="Companion website to a reproducible study of a systematic bias in aoristic reconstructions from overlapping phase catalogues, and of a simple correction for it.">
 <meta property="og:image" content="https://isaakiel.github.io/aoristic_overlap_bias_paper/assets/figures/schematic_overlap_bias.png">
 <meta property="og:site_name" content="Aoristic reconstruction and phase overlap">
 <meta property="og:image:height" content="2700">
 <meta property="og:image:width" content="4500">
-<meta name="twitter:title" content="When archaeological phase systems create artificial temporal signals">
+<meta name="twitter:title" content="When chronological classifications create archaeological signals">
 <meta name="twitter:description" content="Companion website to a reproducible study of a systematic bias in aoristic reconstructions from overlapping phase catalogues, and of a simple correction for it.">
 <meta name="twitter:image" content="https://isaakiel.github.io/aoristic_overlap_bias_paper/assets/figures/schematic_overlap_bias.png">
 <meta name="twitter:image-height" content="2700">
@@ -198,12 +198,12 @@ Aoristic analysis spreads each phase-dated observation evenly over its interval.
 </div>
 </div>
 <div class="paper-status">
-<p><strong>Working manuscript.</strong> This page summarises the argument and the main results. The manuscript and the supplements are the authoritative sources for methods, numbers and diagnostics.</p>
+<p><strong>Submitted manuscript.</strong> The paper will be submitted to the <em>Journal of Computer Applications in Archaeology</em>. This page summarises the argument and the main results. The manuscript and the supplements are the authoritative sources for methods, numbers and diagnostics.</p>
 </div>
 <section id="overview" class="level2">
 <h2 data-anchor-id="overview">Overview</h2>
 <div class="lead-block">
-<p>A large part of the archaeological record is dated not by radiocarbon but by phases: sites, graves and finds are assigned to typological or cultural periods of very different length, and regional and national databases now make such data available in large quantities. Aoristic analysis is the standard way of turning them into a temporal frequency curve. It treats each interval as a neutral container of chronological uncertainty.</p>
+<p>A large part of the archaeological record is dated not by radiocarbon but by phases. Sites, graves and finds are assigned to typological or cultural periods of very different length, and regional and national databases now make such data available in large quantities. Aoristic analysis is the standard way of turning them into a temporal frequency curve. It treats each interval as a neutral container of chronological uncertainty.</p>
 </div>
 <p>That assumption fails when the phases overlap. Which label an observation receives depends on its date and on how many labels are available for that date, so the observations are <strong>not coarsened at random</strong>. The overlap structure of the catalogue then reappears in the reconstruction, and it does not go away with more data.</p>
 <div class="card-grid card-grid-four">
@@ -274,7 +274,7 @@ Aoristic analysis spreads each phase-dated observation evenly over its interval.
 </div>
 <div class="key-statement">
 <blockquote class="blockquote">
-<p><strong>Representing uncertainty is not the same as correcting it: when the system used to express chronological uncertainty has a structure of its own, that structure ends up in the result.</strong></p>
+<p><strong>Representing uncertainty is not the same as correcting it. When the system used to express chronological uncertainty has a structure of its own, that structure ends up in the result.</strong></p>
 </blockquote>
 </div>
 </section>
@@ -301,7 +301,7 @@ Aoristic analysis spreads each phase-dated observation evenly over its interval.
 </div>
 </div>
 </div>
-<p>Events are drawn from a uniform distribution and each is given one of the labels compatible with its date. The standard aoristic reconstruction of these events is clearly structured, and the structure follows the overlap curve.</p>
+<p>Events are drawn from a uniform distribution and each is given one of the labels compatible with its date. The standard aoristic reconstruction of these events is nevertheless structured, and the structure follows the overlap curve.</p>
 <div class="figure-pair">
 <div>
 <div class="quarto-figure quarto-figure-center">
@@ -323,7 +323,7 @@ Aoristic analysis spreads each phase-dated observation evenly over its interval.
 </section>
 <section id="comparing-reconstruction-methods" class="level3">
 <h3 data-anchor-id="comparing-reconstruction-methods">Comparing reconstruction methods</h3>
-<p>The paper compares standard proportional aoristics, Monte Carlo aoristics, the phase-corrected weighting and the Bayesian reconstruction implemented in baorista. The Monte Carlo mean converges on the standard sum, and the Bayesian posterior concentrates probability where many labels overlap. The phase correction comes close to the uniform truth, and its remaining error is sampling noise; the error of the standard method stays the same whether 1,000 or 10,000 events are simulated.</p>
+<p>The paper compares standard proportional aoristics, Monte Carlo aoristics, the phase-corrected weighting and the Bayesian reconstruction implemented in baorista. The Monte Carlo mean converges on the standard sum, and the Bayesian posterior concentrates probability where many labels overlap. The phase correction comes close to the uniform truth, and its remaining error is sampling noise. The error of the standard method stays the same whether 1,000 or 10,000 events are simulated.</p>
 <div class="figure-wide">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -378,7 +378,7 @@ Aoristic analysis spreads each phase-dated observation evenly over its interval.
 <h2 data-anchor-id="case-studies">Empirical case studies</h2>
 <section id="danish-neolithic-settlement-data" class="level3">
 <h3 data-anchor-id="danish-neolithic-settlement-data">Danish Neolithic settlement data</h3>
-<p>About 3,500 Neolithic settlement records from the Danish national register Fund og Fortidsminder are reconstructed with all methods and compared with a summed probability distribution of radiocarbon dates from XRONOS. The correction largely removes the coupling of the curve to the interval structure and moves it towards the radiocarbon record, with which the standard reconstruction is uncorrelated.</p>
+<p>About 3,500 Neolithic settlement records from the Danish national register Fund og Fortidsminder are reconstructed with all methods and compared with a summed probability distribution of radiocarbon dates from XRONOS. The correction largely removes the coupling of the curve to the interval structure. It also moves the curve towards the radiocarbon record, with which the standard reconstruction is essentially uncorrelated, although no reconstruction agrees with the SPD beyond chance. Baorista is less correlated with the overlap curve than the standard reconstruction, but its dominant peak sits right before a boundary shared by many intervals.</p>
 <div class="figure-wide">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -393,17 +393,17 @@ Aoristic analysis spreads each phase-dated observation evenly over its interval.
 </section>
 <section id="hallstatt-period-burials" class="level3">
 <h3 data-anchor-id="hallstatt-period-burials">Hallstatt-period burials</h3>
-<p>About 2,200 Early Iron Age graves from southwestern and southern Germany, dated with a fine-grained relative chronology of short phases, offer no independent radiocarbon record because of the Hallstatt plateau. Here the standard reconstruction follows the overlap structure of the catalogue almost step by step, and the correction more than halves the overlap-aligned amplitude.</p>
+<p>About 2,200 Early Iron Age graves from southwestern and southern Germany, dated with a fine-grained relative chronology of short phases, offer no independent radiocarbon record because of the Hallstatt plateau. Here the standard reconstruction follows the overlap structure of the catalogue almost step by step, and the correction more than halves the overlap-aligned amplitude. Label use is close to what the correction assumes, so the corrected curve is the better-founded estimate. The Baorista fits all converge here, and Baorista again concentrates probability where most labels overlap.</p>
 <div class="figure-wide">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="assets/figures/s5_hallstatt_methods_vs_overlap.png" class="img-fluid figure-img" alt="Standard, Monte Carlo and phase-corrected reconstructions of Hallstatt-period burial data plotted against the empirical overlap curve."></p>
+<p><img src="assets/figures/s5_hallstatt_methods_vs_overlap.png" class="img-fluid figure-img" alt="Standard, Monte Carlo, phase-corrected and Bayesian reconstructions of Hallstatt-period burial data plotted against the empirical overlap curve."></p>
 <figcaption>Reconstruction methods applied to the Hallstatt-period burials and compared with the overlap structure of their intervals.</figcaption>
 </figure>
 </div>
 </div>
 <div class="case-note">
-<p>One deviation survives the correction. In HaD2 all reconstructions fall below the overlap curve, and in HaD3 they rise above it. Since the catalogue cannot produce this pattern, it more likely reflects the absolute dates assigned to the phases, and would fit a HaD2 that was shorter than commonly assumed.</p>
+<p>One deviation survives the correction. In HaD2 all reconstructions fall below the overlap curve, and in HaD3 they rise above it. The catalogue cannot produce this pattern. It more likely reflects the absolute dates assigned to the phases and would fit a HaD2 that was shorter than commonly assumed.</p>
 </div>
 </section>
 </section>
@@ -458,12 +458,12 @@ Aoristic analysis spreads each phase-dated observation evenly over its interval.
 <h2 data-anchor-id="citation">Citation</h2>
 <section id="suggested-citation" class="level3 citation-box">
 <h3 data-anchor-id="suggested-citation">Suggested citation</h3>
-<p>Hinz, Martin, and Nils Müller-Scheeßel. <em>Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions</em>. Working manuscript, 2026.</p>
+<p>Hinz, Martin, and Nils Müller-Scheeßel. <em>Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions</em>. Manuscript submitted to the <em>Journal of Computer Applications in Archaeology</em>, 2026. Code, data and supplements: Zenodo, doi:… (TODO).</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@unpublished</span>{<span class="ot">hinz_mueller</span>-<span class="ot">scheessel_aoristic_bias</span>,</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span> = {Hinz, Martin and Müller-Scheeßel, Nils},</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>  = {Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions},</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>   = {2026},</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">note</span>   = {Working manuscript},</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">note</span>   = {Manuscript submitted to the Journal of Computer Applications in Archaeology},</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">url</span>    = {https://isaakiel.github.io/aoristic_overlap_bias_paper/}</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
@@ -471,7 +471,8 @@ Aoristic analysis spreads each phase-dated observation evenly over its interval.
 <section id="authors-and-funding" class="level2">
 <h2 data-anchor-id="authors-and-funding">Authors and funding</h2>
 <p><strong>Martin Hinz</strong> and <strong>Nils Müller-Scheeßel</strong></p>
-<p>The contribution of Martin Hinz was funded by the European Research Council (ERC) through the project ESTER (ERC-2024-COG 101171036).</p>
+<p>Kiel University, Institute for Pre- and Protohistoric Archaeology</p>
+<p>The contribution of Martin Hinz was funded by the European Research Council (ERC) through the project ESTER (ERC-2024-COG 101171036). The contribution of Nils Müller-Scheeßel took place within the Cluster of Excellence ROOTS, funded by the Deutsche Forschungsgemeinschaft (DFG) under Germany’s Excellence Strategy (EXC 2150, 390870439).</p>
 <section id="explore-the-complete-analysis" class="level3 footer-cta">
 <h3 data-anchor-id="explore-the-complete-analysis">Explore the complete analysis</h3>
 <p><a href="assets/paper/manuscript.pdf" class="btn btn-primary">Read the manuscript</a> <a href="https://github.com/ISAAKiel/aoristic_overlap_bias_paper" class="btn btn-outline-primary">Browse code and data</a></p>
