@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Martin Hinz">
+<meta name="author" content="Nils Müller-Scheeßel">
+
+<title>Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="manuscript_files/libs/clipboard/clipboard.min.js"></script>
+<script src="manuscript_files/libs/quarto-html/quarto.js"></script>
+<script src="manuscript_files/libs/quarto-html/popper.min.js"></script>
+<script src="manuscript_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="manuscript_files/libs/quarto-html/anchor.min.js"></script>
+<link href="manuscript_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="manuscript_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="manuscript_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="manuscript_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="manuscript_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#keywords" id="toc-keywords" class="nav-link" data-scroll-target="#keywords">Keywords</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#conceptual-background" id="toc-conceptual-background" class="nav-link" data-scroll-target="#conceptual-background">2. Conceptual background</a>
+  <ul class="collapse">
+  <li><a href="#aoristic-analysis-and-temporal-uncertainty" id="toc-aoristic-analysis-and-temporal-uncertainty" class="nav-link" data-scroll-target="#aoristic-analysis-and-temporal-uncertainty">2.1 Aoristic analysis and temporal uncertainty</a></li>
+  <li><a href="#overlapping-phase-catalogues" id="toc-overlapping-phase-catalogues" class="nav-link" data-scroll-target="#overlapping-phase-catalogues">2.2 Overlapping phase catalogues</a></li>
+  <li><a href="#phase-corrected-aoristic-weighting" id="toc-phase-corrected-aoristic-weighting" class="nav-link" data-scroll-target="#phase-corrected-aoristic-weighting">2.3 Phase-corrected aoristic weighting</a></li>
+  </ul></li>
+  <li><a href="#materials-and-methods" id="toc-materials-and-methods" class="nav-link" data-scroll-target="#materials-and-methods">3. Materials and methods</a>
+  <ul class="collapse">
+  <li><a href="#simulation-design" id="toc-simulation-design" class="nav-link" data-scroll-target="#simulation-design">3.1 Simulation design</a></li>
+  <li><a href="#reconstruction-methods" id="toc-reconstruction-methods" class="nav-link" data-scroll-target="#reconstruction-methods">3.2 Reconstruction methods</a></li>
+  <li><a href="#evaluation-criteria" id="toc-evaluation-criteria" class="nav-link" data-scroll-target="#evaluation-criteria">3.3 Evaluation criteria</a></li>
+  <li><a href="#danish-neolithic-settlement-data" id="toc-danish-neolithic-settlement-data" class="nav-link" data-scroll-target="#danish-neolithic-settlement-data">3.4 Danish Neolithic settlement data</a></li>
+  <li><a href="#early-iron-age-burials-in-southwestern-and-southern-germany" id="toc-early-iron-age-burials-in-southwestern-and-southern-germany" class="nav-link" data-scroll-target="#early-iron-age-burials-in-southwestern-and-southern-germany">3.5 Early Iron Age burials in southwestern and southern Germany</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">4. Results</a>
+  <ul class="collapse">
+  <li><a href="#standard-aoristics-under-uniform-ground-truth" id="toc-standard-aoristics-under-uniform-ground-truth" class="nav-link" data-scroll-target="#standard-aoristics-under-uniform-ground-truth">4.1 Standard aoristics under uniform ground truth</a></li>
+  <li><a href="#phase-correction-in-the-uniform-case" id="toc-phase-correction-in-the-uniform-case" class="nav-link" data-scroll-target="#phase-correction-in-the-uniform-case">4.2 Phase correction in the uniform case</a></li>
+  <li><a href="#phase-correction-under-non-uniform-signals" id="toc-phase-correction-under-non-uniform-signals" class="nav-link" data-scroll-target="#phase-correction-under-non-uniform-signals">4.3 Phase correction under non-uniform signals</a></li>
+  <li><a href="#danish-neolithic-settlement-data-1" id="toc-danish-neolithic-settlement-data-1" class="nav-link" data-scroll-target="#danish-neolithic-settlement-data-1">4.4 Danish Neolithic settlement data</a></li>
+  <li><a href="#early-iron-age-burials" id="toc-early-iron-age-burials" class="nav-link" data-scroll-target="#early-iron-age-burials">4.5 Early Iron Age burials</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">5. Discussion</a>
+  <ul class="collapse">
+  <li><a href="#uncertainty-representation-is-not-structural-correction" id="toc-uncertainty-representation-is-not-structural-correction" class="nav-link" data-scroll-target="#uncertainty-representation-is-not-structural-correction">5.1 Uncertainty representation is not structural correction</a></li>
+  <li><a href="#using-the-phase-correction-in-practice" id="toc-using-the-phase-correction-in-practice" class="nav-link" data-scroll-target="#using-the-phase-correction-in-practice">5.2 Using the phase correction in practice</a></li>
+  <li><a href="#outlook" id="toc-outlook" class="nav-link" data-scroll-target="#outlook">5.3 Outlook</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">6. Conclusion</a></li>
+  <li><a href="#data-and-code-availability" id="toc-data-and-code-availability" class="nav-link" data-scroll-target="#data-and-code-availability">Data and code availability</a></li>
+  <li><a href="#software-availability" id="toc-software-availability" class="nav-link" data-scroll-target="#software-availability">Software availability</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  <li><a href="#funding-information" id="toc-funding-information" class="nav-link" data-scroll-target="#funding-information">Funding information</a></li>
+  <li><a href="#competing-interests" id="toc-competing-interests" class="nav-link" data-scroll-target="#competing-interests">Competing interests</a></li>
+  <li><a href="#authors-contributions" id="toc-authors-contributions" class="nav-link" data-scroll-target="#authors-contributions">Authors’ contributions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#declaration-of-ai-use" id="toc-declaration-of-ai-use" class="nav-link" data-scroll-target="#declaration-of-ai-use">Declaration of AI use</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="manuscript.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Martin Hinz <a href="mailto:martin.hinz@ufg.uni-kiel.de" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-9904-6548" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Kiel University
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Nils Müller-Scheeßel <a href="https://orcid.org/0000-0001-7992-8722" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Kiel University
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="abstract" class="level1">
+<h1>Abstract</h1>
+<p>Aoristic analysis is widely used in archaeology to aggregate observations dated to typological phases instead of calendar years. The standard approach and its Monte Carlo variants spread each observation uniformly over its time interval and thus treat time intervals as neutral containers of chronological uncertainty. We show that this assumption fails when observations are assigned to overlapping, hierarchical phase catalogues. In simulations with a uniform event process, the standard aoristic sum reproduces the overlap structure of the catalogue almost exactly, whatever the sample size, and neither Monte Carlo aoristics nor a Bayesian reconstruction removes this bias. The reason is that archaeological dates are not coarsened at random, since the label an observation receives depends on its date. From a simple model in which an event is equally likely to receive any label covering its date, we derive a phase-corrected weighting that needs no further data. It reduces the reconstruction error by about an order of magnitude, remains effective under other assignment models and performs at least as well as the standard approach for most non-uniform signals, although it dampens real peaks where these coincide with the overlap geometry. Applied to Danish Neolithic settlement records and to Early Iron Age burials from southern Germany, it largely removes the coupling to the interval structure. In the Danish data it tends to move the reconstruction towards an independent radiocarbon record, and in the Iron Age data it suggests that one phase was shorter than its conventional dating assumes. As site databases are increasingly used for large-scale demographic inference, the chronological classification has to be treated as part of the data.</p>
+</section>
+<section id="keywords" class="level1">
+<h1>Keywords</h1>
+<p>aoristic analysis; chronological uncertainty; archaeological phases; temporal frequency analysis; coarse data</p>
+</section>
+<section id="introduction" class="level1">
+<h1>1. Introduction</h1>
+<p>Archaeological research increasingly relies on large datasets to address population dynamics, settlement intensity and long-term socio-ecological change <span class="citation" data-cites="kristiansen_towards_2014 kintigh_grand_2014">(<a href="#ref-kintigh_grand_2014" role="doc-biblioref">Kintigh et al. 2014</a>; <a href="#ref-kristiansen_towards_2014" role="doc-biblioref">Kristiansen 2014</a>)</span>. Summed probability distributions of radiocarbon dates <span class="citation" data-cites="birdP3k14cSyntheticGlobal2022 hinz_radon_2012 roeXRONOSOpenData2025">(e.g. <a href="#ref-birdP3k14cSyntheticGlobal2022" role="doc-biblioref">Bird et al. 2022</a>; <a href="#ref-hinz_radon_2012" role="doc-biblioref">Hinz et al. 2012b</a>; <a href="#ref-roeXRONOSOpenData2025" role="doc-biblioref">Roe et al. 2025</a>)</span> are widely used as proxies for past activity and population size <span class="citation" data-cites="hinz_demography_2012 riede_climate_2009 timpson_reconstructing_2014">(e.g. <a href="#ref-hinz_demography_2012" role="doc-biblioref">Hinz et al. 2012a</a>; <a href="#ref-riede_climate_2009" role="doc-biblioref">Riede 2009</a>; <a href="#ref-timpson_reconstructing_2014" role="doc-biblioref">Timpson et al. 2014</a>)</span>, and their sensitivity to calibration effects, sample selection and research history <span class="citation" data-cites="williams_use_2012 contreras_summed_2014 torfing_neolithic_2015">(<a href="#ref-contreras_summed_2014" role="doc-biblioref">Contreras and Meadows 2014</a>; <a href="#ref-torfing_neolithic_2015" role="doc-biblioref">Torfing 2015</a>; <a href="#ref-williams_use_2012" role="doc-biblioref">Williams 2012</a>)</span> has led to simulation-based workflows <span class="citation" data-cites="martin_oxcaar:_2018 bevan_rcarbon:_2018">(<a href="#ref-bevan_rcarbon:_2018" role="doc-biblioref">Bevan, Crema and Silva 2018</a>; <a href="#ref-martin_oxcaar:_2018" role="doc-biblioref">Hinz et al. 2018</a>)</span>.</p>
+<p>A large part of the archaeological record, however, is not directly dated. Sites, finds, graves and features are assigned to typological, cultural or chronological phases, and because radiocarbon and other absolute dates are unevenly available, such phase-dated evidence is often the only basis for large-scale temporal frequency analysis <span class="citation" data-cites="contreras_summed_2014 kolar_spatio-temporal_2016">(<a href="#ref-contreras_summed_2014" role="doc-biblioref">Contreras and Meadows 2014</a>; <a href="#ref-kolar_spatio-temporal_2016" role="doc-biblioref">Kolář et al. 2016</a>)</span>. Regional and national site databases make it available in large quantities <span class="citation" data-cites="palmisano_comparing_2017 lawrence_collapse_2021 cooper_embracing_2016">(<a href="#ref-cooper_embracing_2016" role="doc-biblioref">Cooper and Green 2016</a>; <a href="#ref-lawrence_collapse_2021" role="doc-biblioref">Lawrence, Palmisano and de Gruchy 2021</a>; <a href="#ref-palmisano_comparing_2017" role="doc-biblioref">Palmisano, Bevan and Shennan 2017</a>)</span>. It is usually aggregated by aoristic analysis <span class="citation" data-cites="ratcliffe_aoristic_1998 ratcliffe_aoristic_2000 mischka_aoristische_2004 johnson_aoristic_2004">(<a href="#ref-johnson_aoristic_2004" role="doc-biblioref">Johnson 2004</a>; <a href="#ref-mischka_aoristische_2004" role="doc-biblioref">Mischka 2004</a>; <a href="#ref-ratcliffe_aoristic_2000" role="doc-biblioref">Ratcliffe 2000</a>; <a href="#ref-ratcliffe_aoristic_1998" role="doc-biblioref">Ratcliffe and McCullagh 1998</a>)</span>, which distributes each observation uniformly over its interval and sums these probabilities, or by Monte Carlo variants that draw possible dates from the same intervals <span class="citation" data-cites="crema_probabilistic_2010 crema_modelling_2012 kolar_spatio-temporal_2016">(<a href="#ref-crema_modelling_2012" role="doc-biblioref">Crema 2012</a>; <a href="#ref-crema_probabilistic_2010" role="doc-biblioref">Crema, Bevan and Lake 2010</a>; <a href="#ref-kolar_spatio-temporal_2016" role="doc-biblioref">Kolář et al. 2016</a>)</span>.</p>
+<p>Aoristic analysis can be understood as implicit temporal imputation, which distributes unknown event dates over the years compatible with the chronological information. The same imputation, under other names, has long been used to quantify pottery and other artefacts dated by type <span class="citation" data-cites="fentress_counting_1988 baxter_reinventing_2016">(<a href="#ref-baxter_reinventing_2016" role="doc-biblioref">Baxter and Cool 2016</a>; <a href="#ref-fentress_counting_1988" role="doc-biblioref">Fentress and Perkins 1988</a>)</span>. Such imputations are sensitive to assumptions about the process that produced the coarsening <span class="citation" data-cites="heitjanInferenceCoarseData1990">(<a href="#ref-heitjanInferenceCoarseData1990" role="doc-biblioref">Heitjan and Rubin 1990</a>)</span>. In archaeology this process is a classification. Phase intervals are not rounded measurements but categories of hierarchical and overlapping schemes, and whether an observation receives a narrow or a broad label depends on diagnostic artefacts, preservation, research history and the state of chronological knowledge. Standard aoristic reconstruction can therefore inherit structure from the classification system, and structurally induced peaks may be mistaken for demographic or settlement processes. Effects of periodisation on such time series have been noted before <span class="citation" data-cites="bevan_modifiable_2021">(<a href="#ref-bevan_modifiable_2021" role="doc-biblioref">Bevan and Crema 2021</a>)</span>. Here we isolate one mechanism, the overlap of phase labels, and derive a correction for it.</p>
+<p>The paper makes three contributions. First, we show that overlapping phase catalogues produce systematic and predictable distortions in aoristic reconstructions, because the label an observation receives depends on its true date. The coarsening is thus not random in the statistical sense, which explains why the distortions persist in Monte Carlo and Bayesian variants that treat the intervals as neutral bounds. Second, we derive the phase-corrected weighting implemented in our R package aoristAAR from an explicit model of how overlapping labels are assigned. It gives the posterior distribution of each event date under this model and needs no information beyond the observed intervals. Third, we test the correction under uniform and non-uniform signals, under alternative assignment models and on two empirical datasets, Danish Neolithic settlements and Early Iron Age burials from southern Germany, and we provide diagnostics that show whether a reconstruction is affected and whether the assumptions of the correction hold.</p>
+</section>
+<section id="conceptual-background" class="level1">
+<h1>2. Conceptual background</h1>
+<section id="aoristic-analysis-and-temporal-uncertainty" class="level2">
+<h2 class="anchored" data-anchor-id="aoristic-analysis-and-temporal-uncertainty">2.1 Aoristic analysis and temporal uncertainty</h2>
+<p>Aoristic analysis aggregates observations that can only be assigned to a chronological interval into a temporal frequency distribution <span class="citation" data-cites="ratcliffe_aoristic_1998 ratcliffe_aoristic_2000 johnson_aoristic_2004">(<a href="#ref-johnson_aoristic_2004" role="doc-biblioref">Johnson 2004</a>; <a href="#ref-ratcliffe_aoristic_2000" role="doc-biblioref">Ratcliffe 2000</a>; <a href="#ref-ratcliffe_aoristic_1998" role="doc-biblioref">Ratcliffe and McCullagh 1998</a>)</span>. Let each observation <span class="math inline">\(i\)</span> be assigned to an interval <span class="math inline">\(I_i\)</span>, and let <span class="math inline">\(t\)</span> denote a discrete time unit. In the standard proportional approach, the contribution of observation <span class="math inline">\(i\)</span> to time unit <span class="math inline">\(t\)</span> is</p>
+<p><span class="math display">\[
+p_i(t) =
+\begin{cases}
+\frac{1}{|I_i|}, &amp; \text{if } t \in I_i, \\
+0, &amp; \text{otherwise,}
+\end{cases}
+\]</span></p>
+<p>where <span class="math inline">\(|I_i|\)</span> is the duration of the interval, and the aoristic sum is</p>
+<p><span class="math display">\[
+A(t) = \sum_{i=1}^{n} p_i(t).
+\]</span></p>
+<p>An observation with a long interval contributes a little to many time units, one with a short interval much to few. The underlying assumption, that every time unit within the assigned interval is equally likely, follows the “principle of insufficient reason” and provides a simple and explicit expectation <span class="citation" data-cites="cremaBayesianAlternativeAoristic2025">(<a href="#ref-cremaBayesianAlternativeAoristic2025" role="doc-biblioref">Crema 2025</a>)</span>. Non-uniform alternatives have been proposed <span class="citation" data-cites="baxter_reinventing_2016">(<a href="#ref-baxter_reinventing_2016" role="doc-biblioref">Baxter and Cool 2016</a>)</span> but are rarely used, and the bias discussed below does not depend on this choice.</p>
+<p>Monte Carlo aoristics repeatedly draws event dates uniformly from the assigned intervals and summarises the resulting curves. The mean of these curves converges on the standard aoristic sum, so the simulation represents uncertainty around that expectation but does not correct it where it is biased. A Bayesian alternative that models the latent temporal distribution explicitly has recently been proposed <span class="citation" data-cites="cremaBayesianAlternativeAoristic2025">(<a href="#ref-cremaBayesianAlternativeAoristic2025" role="doc-biblioref">Crema 2025</a>)</span>, and we use it as a model-based benchmark (Section 3.2).</p>
+</section>
+<section id="overlapping-phase-catalogues" class="level2">
+<h2 class="anchored" data-anchor-id="overlapping-phase-catalogues">2.2 Overlapping phase catalogues</h2>
+<p>Archaeological phase systems are often hierarchical and overlapping. A single scheme may contain broad periods, narrower phases, local subphases and cross-cutting typological categories, so that some observations are dated to a narrow interval and others to a broader one that overlaps several more specific phases. In empirical datasets, a few broad intervals often account for a large share of the observations and overlap unevenly across the study period (Section 4.4). In what follows, a <em>label</em> is a category of such a scheme, its <em>interval</em> is the time span it covers, and the <em>catalogue</em> is the set of labels in use.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-schematic-overlap-bias" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Schematic bars of nested intervals and their standard aoristic weights">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-schematic-overlap-bias-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="manuscript_files/figure-html/fig-schematic-overlap-bias-1.png" class="img-fluid figure-img" alt="Schematic bars of nested intervals and their standard aoristic weights" width="720">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-schematic-overlap-bias-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Schematic illustration of how overlapping chronological intervals can generate artificial temporal structure in a standard proportional aoristic reconstruction. Grey bars show observed chronological assignments. Orange bars show the resulting standard aoristic contribution. The three labels A, A–B and A–B–C are used 2, 5 and 11 times, as expected when six events fall into each phase and every event receives one of the labels covering its date with equal probability. Standard proportional allocation produces a decreasing contribution from A to C, although each phase contains six events.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>A minimal example illustrates the mechanism (<a href="#fig-schematic-overlap-bias" class="quarto-xref">Figure&nbsp;1</a>). Consider three successive phases, <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span>, of equal duration, and a catalogue with only three labels, <span class="math inline">\(A\)</span>, <span class="math inline">\(A\)</span>–<span class="math inline">\(B\)</span> and <span class="math inline">\(A\)</span>–<span class="math inline">\(B\)</span>–<span class="math inline">\(C\)</span>. Suppose that six events fall into each phase and that every event receives, with equal probability, one of the labels covering its date. The six events in <span class="math inline">\(A\)</span> are then shared among three labels, those in <span class="math inline">\(B\)</span> among two, and those in <span class="math inline">\(C\)</span> all receive <span class="math inline">\(A\)</span>–<span class="math inline">\(B\)</span>–<span class="math inline">\(C\)</span>, so that the three labels are used 2, 5 and 11 times.</p>
+<p>Under standard proportional aoristics, phase <span class="math inline">\(A\)</span> receives <span class="math inline">\(2 + \frac{5}{2} + \frac{11}{3} \approx 8.2\)</span>, phase <span class="math inline">\(B\)</span> receives <span class="math inline">\(\frac{5}{2} + \frac{11}{3} \approx 6.2\)</span>, and phase <span class="math inline">\(C\)</span> only <span class="math inline">\(\frac{11}{3} \approx 3.7\)</span>, although all three contain the same number of events. A narrow label places all its observations in the phase it covers. A broad label, by contrast, collects its observations mainly from those parts of its interval that few other labels cover, here <span class="math inline">\(A\)</span>–<span class="math inline">\(B\)</span>–<span class="math inline">\(C\)</span> from phase <span class="math inline">\(C\)</span>, but the standard method spreads them evenly over the whole interval. It thus shifts weight towards the parts of the sequence where many labels overlap. The problem is not chronological uncertainty as such but its structuring by the catalogue used to describe it.</p>
+</section>
+<section id="phase-corrected-aoristic-weighting" class="level2">
+<h2 class="anchored" data-anchor-id="phase-corrected-aoristic-weighting">2.3 Phase-corrected aoristic weighting</h2>
+<p>To address this mechanism, we use a phase-corrected weighting, implemented as <code>period_correction</code> in our R package aoristAAR <span class="citation" data-cites="hinz_aoristaar_2026">(<a href="#ref-hinz_aoristaar_2026" role="doc-biblioref">Hinz, Müller-Scheeßel and Schmid 2026</a>)</span>. For each time unit <span class="math inline">\(t\)</span>, we first count the unique observed intervals covering it, the overlap count</p>
+<p><span class="math display">\[
+\lambda(t) = \sum_{j=1}^{m} \mathbf{1}(t \in J_j),
+\]</span></p>
+<p>where <span class="math inline">\(J_1, \ldots, J_m\)</span> are the unique observed intervals and <span class="math inline">\(\mathbf{1}(\cdot)\)</span> is the indicator function. Each observation is then distributed within its interval in proportion to the inverse of this count,</p>
+<p><span class="math display">\[
+p_i^{*}(t) =
+\begin{cases}
+\frac{\lambda(t)^{-1}}{\sum_{u \in I_i} \lambda(u)^{-1}},
+&amp; \text{if } t \in I_i, \\
+0, &amp; \text{otherwise,}
+\end{cases}
+\]</span></p>
+<p>so that its total contribution remains one, and the corrected sum is <span class="math inline">\(A^{*}(t) = \sum_{i} p_i^{*}(t)\)</span>. Years covered by many overlapping labels receive less weight within each interval, years covered by few labels more. In the example, <span class="math inline">\(\lambda\)</span> is 3, 2 and 1 for phases <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span>, and the corrected sum recovers the six events per phase exactly (<a href="#fig-schematic-phase-correction" class="quarto-xref">Figure&nbsp;2</a>).</p>
+<p>The weighting has a simple probabilistic interpretation. Suppose that an event dated to <span class="math inline">\(t\)</span> is attributed to any one of the <span class="math inline">\(\lambda(t)\)</span> labels covering <span class="math inline">\(t\)</span> with equal probability, <span class="math inline">\(P(J_j \mid t) = \lambda(t)^{-1}\)</span>. With a flat prior on <span class="math inline">\(t\)</span>, the posterior distribution of the date of an observation carrying label <span class="math inline">\(J_j\)</span> is then proportional to <span class="math inline">\(\lambda(t)^{-1}\)</span> within <span class="math inline">\(J_j\)</span>, which is the phase-corrected weight <span class="math inline">\(p_i^{*}(t)\)</span>. Standard proportional aoristics, by contrast, implicitly assumes that the observations are coarsened at random, i.e.&nbsp;that the probability of observing a particular interval does not depend on where within it the true value lies. Only under this assumption can the coarsening process be ignored in inference <span class="citation" data-cites="heitjanInferenceCoarseData1990">(<a href="#ref-heitjanInferenceCoarseData1990" role="doc-biblioref">Heitjan and Rubin 1990</a>)</span>. Under the assignment model above it does not hold, because the probability of a label depends on the true date through <span class="math inline">\(\lambda(t)\)</span>. This also affects likelihood-based reconstructions that treat the observed intervals as censoring bounds (Section 5.1). The phase correction follows from the simplest model of label assignment and rests on two assumptions, a flat prior within each interval and label assignment that is indifferent between all compatible labels. In applications, <span class="math inline">\(\lambda(t)\)</span> is counted over the intervals that occur in the data, so that the equivalence with the posterior is exact in expectation and approximate in any finite sample.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-schematic-phase-correction" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Schematic bars of overlap counts and phase-corrected weights">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-schematic-phase-correction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="manuscript_files/figure-html/fig-schematic-phase-correction-1.png" class="img-fluid figure-img" alt="Schematic bars of overlap counts and phase-corrected weights" width="720">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-schematic-phase-correction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Schematic illustration of the phase-corrected weighting procedure for the same three-observation example. Orange bars show the overlap count <span class="math inline">\(\lambda(t)\)</span>, which is the structural source of bias. Green bars show the inverse-overlap weights <span class="math inline">\(\lambda(t)^{-1}\)</span> and the resulting renormalised corrected contribution after each observation has been redistributed within its assigned interval. The corrected contribution recovers the six events per phase.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The correction is not a full model of the archaeological dating process, but it can be applied to any existing aoristic analysis without additional data.</p>
+</section>
+</section>
+<section id="materials-and-methods" class="level1">
+<h1>3. Materials and methods</h1>
+<section id="simulation-design" class="level2">
+<h2 class="anchored" data-anchor-id="simulation-design">3.1 Simulation design</h2>
+<p>The simulations use a synthetic phase catalogue in which broad periods, intermediate phases, short subphases and cross-cutting diagnostic labels refer to partly overlapping sections of the same chronology (<a href="#fig-synthetic-overlap-structure" class="quarto-xref">Figure&nbsp;3</a>). Its time window, 4100 to 1800 BCE, matches the Danish case study, and curves are evaluated in 50-year bins. The catalogue was constructed so that its overlap structure is easy to see, but the overlap-aligned amplitude it produces (Section 3.3) is of the same order as in the Danish data (18.6% and 21.3% of the mean density, Section 4.4). Counting the labels that cover each year yields the overlap curve, which describes the geometry of the catalogue and contains no information on event intensity.</p>
+<div id="fig-synthetic-overlap-structure" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-synthetic-overlap-structure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-synthetic-overlap-structure" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-synthetic-catalogue" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Horizontal bars showing the hierarchical synthetic phase catalogue">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-synthetic-catalogue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/synthetic_phase_catalogue.png" class="img-fluid figure-img" style="width:100.0%" data-ref-parent="fig-synthetic-overlap-structure" alt="Horizontal bars showing the hierarchical synthetic phase catalogue">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-synthetic-catalogue-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Synthetic phase catalogue with umbrella, broad, medium, subphase and cross-cutting labels.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-synthetic-overlap-structure" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-synthetic-overlap-curve" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Curve of the number of overlapping phases over time">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-synthetic-overlap-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="supplements/figures/s1_overlap_structure.png" class="img-fluid figure-img" style="width:100.0%" data-ref-parent="fig-synthetic-overlap-structure" alt="Curve of the number of overlapping phases over time">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-synthetic-overlap-curve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Overlap structure of the catalogue.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-synthetic-overlap-structure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Synthetic phase catalogue (a) and resulting overlap curve (b), the mean number of labels covering the years of each 50-year bin. The overlap curve depends only on the geometry of the classification system.
+</figcaption>
+</figure>
+</div>
+<p>In each simulation, true event dates are drawn first and each event is then assigned to one randomly selected label compatible with its date. The reconstruction methods see only these intervals. This is the simplest observation model and the one under which the phase correction is exact in expectation (Section 2.3). It contains no preservation, recovery or research bias, so any structure in a reconstruction of a uniform process must arise from the interaction of assignment and reconstruction.</p>
+<p>The first scenario uses a uniform event process with 10,000 events (Supplements 1 and 2). Ten non-uniform signals, from monotonic and exponential trends to single, double and multiple peaks and a plateau, are simulated in 100 runs of 1,000 events each (<a href="#fig-nonuniform-signal-shapes" class="quarto-xref">Figure&nbsp;4</a>, Supplement 3). Finally, all eleven signals are simulated under three alternative assignment rules, with a preference for narrow labels, a preference for broad labels and fixed propensities per hierarchical level (Supplement 6).</p>
+<div id="fig-nonuniform-signal-shapes" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Panels of the simulated ground-truth signal shapes">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nonuniform-signal-shapes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="supplements/figures/s3_ground_truth_signal_shapes.png" class="img-fluid figure-img" alt="Panels of the simulated ground-truth signal shapes">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nonuniform-signal-shapes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Ground-truth signal shapes used in the non-uniform simulations.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="reconstruction-methods" class="level2">
+<h2 class="anchored" data-anchor-id="reconstruction-methods">3.2 Reconstruction methods</h2>
+<p>We compare three aoristic reconstructions, all applied to the same intervals and calculated on the same grid: the standard proportional reconstruction (Section 2.1), the Monte Carlo reconstruction, which samples one date per observation from its interval in each of 100 iterations and is summarised by its mean and envelope, and the phase-corrected reconstruction (Section 2.3). All curves are normalised to the same total, so that differences reflect their shape and not their mass.</p>
+<p>As a model-based benchmark we use the Bayesian reconstruction introduced in Section 2.1, as implemented in the R package baorista <span class="citation" data-cites="cremaBayesianAlternativeAoristic2025">(<a href="#ref-cremaBayesianAlternativeAoristic2025" role="doc-biblioref">Crema 2025</a>)</span>. It estimates the probability of events per 50-year block under an intrinsic conditional autoregressive (ICAR) prior, and we use the posterior median per block as its point estimate. Models were fitted with NIMBLE <span class="citation" data-cites="devalpine_programming_2017">(<a href="#ref-devalpine_programming_2017" role="doc-biblioref">de Valpine et al. 2017</a>)</span>, using four chains and an exponential prior with rate 1 on the ICAR scale parameter. Fits with a Gelman–Rubin <span class="math inline">\(\hat R\)</span> above 1.05 <span class="citation" data-cites="gelman_inference_1992">(<a href="#ref-gelman_inference_1992" role="doc-biblioref">Gelman and Rubin 1992</a>)</span> were refitted with more iterations. All fits met this criterion except two example-run fits in Supplement 3 (early and late peak, <span class="math inline">\(\hat R \approx 1.12\)</span>) and the Danish fits with prior rates 1 and 10 (<span class="math inline">\(\hat R\)</span> = 1.08 and 1.05), which are reported but flagged. The peak discussed in Section 5.1 also appears in the converged fits. All settings and convergence diagnostics are given in the supplements.</p>
+</section>
+<section id="evaluation-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-criteria">3.3 Evaluation criteria</h2>
+<p>Where the ground truth is known, accuracy is measured by the root-mean-square deviation (RMSD) between the reconstructed curve <span class="math inline">\(R(t)\)</span> and the true curve <span class="math inline">\(G(t)\)</span>, both normalised to the same total and evaluated over all 50-year bins, and by their correlation, which captures similarity in shape and is undefined for a uniform ground truth.</p>
+<p>In addition to accuracy, we calculate diagnostics of phase-overlap coupling. As in Section 2.3, <span class="math inline">\(\lambda(t)\)</span> denotes the overlap structure of the phase catalogue, the number of intervals covering time unit <span class="math inline">\(t\)</span>, counted over the labels of the synthetic catalogue in the simulations and over the unique observed intervals in the empirical applications. A high correlation between the reconstructed curve and the overlap structure, <span class="math inline">\(\text{cor}(R, \lambda)\)</span>, indicates that the reconstructed temporal pattern may be shaped by the classification system.</p>
+<p>Correlation measures whether a reconstruction has the shape of the overlap curve, but not how strongly it follows it. A nearly flat curve with a small ripple shaped like <span class="math inline">\(\lambda(t)\)</span> can correlate highly with it. We therefore complement the correlation with two magnitude-based measures. Where ground truth is known, the overlap-attributable RMSD,</p>
+<p><span class="math display">\[
+\text{RMSD}_\lambda = |\text{cor}(E, \lambda)| \cdot \text{sd}(E), \qquad E(t) = R(t) - G(t),
+\]</span></p>
+<p>is the root-mean-square size of the part of the reconstruction error <span class="math inline">\(E\)</span> that varies linearly with the overlap curve, on the same scale as the RMSD. For all reconstructions, the overlap-aligned relative amplitude,</p>
+<p><span class="math display">\[
+A_\lambda = \frac{|\beta| \cdot \text{sd}(\lambda(t))}{\bar R},
+\]</span></p>
+<p>with <span class="math inline">\(\beta\)</span> the slope of <span class="math inline">\(R(t)\)</span> on <span class="math inline">\(\lambda(t)\)</span>, gives the change in reconstructed density, as a percentage of the mean density, per standard deviation of overlap. With all curves normalised to the same total over <span class="math inline">\(T\)</span> = 46 bins, the mean bin density is <span class="math inline">\(1/T\)</span>, and we report RMSD and <span class="math inline">\(\text{RMSD}_\lambda\)</span> relative to it as well, i.e.&nbsp;as <span class="math inline">\(100\,T \cdot \text{RMSD}\)</span> in per cent. Under a uniform ground truth, <span class="math inline">\(\text{RMSD}_\lambda\)</span> and <span class="math inline">\(A_\lambda\)</span> take the same value, and <span class="math inline">\(A_\lambda\)</span> is therefore used mainly for the empirical data.</p>
+<p>Without ground truth, the evaluation of the empirical case studies focuses on the coupling between each reconstruction and the empirical overlap structure and, for the Danish data, on the agreement with an independent summed radiocarbon distribution, which serves as an external proxy and not as a target curve.</p>
+</section>
+<section id="danish-neolithic-settlement-data" class="level2">
+<h2 class="anchored" data-anchor-id="danish-neolithic-settlement-data">3.4 Danish Neolithic settlement data</h2>
+<p>The Danish case study is not meant as a demographic history of Neolithic Denmark but as a test of how strongly an empirical reconstruction depends on the structure of its chronological catalogue. It uses 3,493 Neolithic settlement records from the Danish national register Fund og Fortidsminder <span class="citation" data-cites="slks_fund_og_fortidsminder">(<a href="#ref-slks_fund_og_fortidsminder" role="doc-biblioref">Slots- og Kulturstyrelsen 2018</a>)</span>, with dating intervals clipped to the window from 4100 to 1800 BCE. The 43 records dated freely, for example by a radiocarbon range, were assigned to the best-matching period of the register’s list, so that the catalogue comprises 63 unique intervals (Supplement 4). For the Bayesian benchmark, Baorista is fitted to the same records under four exponential priors for the ICAR scale parameter, with rates of 1, 10, 50 and 100 (Supplement 4).</p>
+<p>As an independent comparison, we use a summed probability distribution (SPD) of radiocarbon dates from XRONOS <span class="citation" data-cites="roeXRONOSOpenData2025">(<a href="#ref-roeXRONOSOpenData2025" role="doc-biblioref">Roe et al. 2025</a>)</span>. The Danish extraction contains 9,816 records, reduced to 996 settlement-related determinations after filtering and deduplication, which were calibrated with IntCal20 <span class="citation" data-cites="reimer_intcal20_2020">(<a href="#ref-reimer_intcal20_2020" role="doc-biblioref">Reimer et al. 2020</a>)</span> and summed with rcarbon <span class="citation" data-cites="crema_inference_2021">(<a href="#ref-crema_inference_2021" role="doc-biblioref">Crema and Bevan 2021</a>)</span>, binned by site. The SPD has its own biases, from sampling intensity and research history to calibration effects, and its value as a population proxy for the Danish Neolithic is itself debated <span class="citation" data-cites="torfing_neolithic_2015 torfing_demographic_2016">(<a href="#ref-torfing_neolithic_2015" role="doc-biblioref">Torfing 2015</a>, <a href="#ref-torfing_demographic_2016" role="doc-biblioref">2016</a>)</span>. Its biases are, however, not those of the phase system, so it serves for triangulation and not as ground truth.</p>
+</section>
+<section id="early-iron-age-burials-in-southwestern-and-southern-germany" class="level2">
+<h2 class="anchored" data-anchor-id="early-iron-age-burials-in-southwestern-and-southern-germany">3.5 Early Iron Age burials in southwestern and southern Germany</h2>
+<p>The second application uses Early Iron Age burials from southwestern and southern Germany, the so-called Hallstatt period, which is conventionally dated to about 780–450 BCE. Its absolute chronology rests mainly on dendrochronology and on Mediterranean imports of known date <span class="citation" data-cites="ref_51054 ref_82404">(<a href="#ref-ref_51054" role="doc-biblioref">Müller-Scheeßel 2013: 18–20</a>; for an overview see <a href="#ref-ref_82404" role="doc-biblioref">Rose et al. 2022</a>)</span>. Radiocarbon dates are of little help because of the Hallstatt plateau in the calibration curve <span class="citation" data-cites="ref_82404">(but see <a href="#ref-ref_82404" role="doc-biblioref">Rose et al. 2022</a>)</span>, so that, unlike in the Danish case, no independent record is available.</p>
+<p>The relative chronology, by contrast, is fine-grained. The burials are often richly furnished with pottery and with bronze and iron objects <span class="citation" data-cites="ref_51054">(<a href="#ref-ref_51054" role="doc-biblioref">Müller-Scheeßel 2013</a>)</span>, and the brooches (fibulae) of the later Hallstatt period in particular allow graves to be dated to phases estimated to have lasted only a few decades. The currently accepted scheme divides the earlier Hallstatt period into two phases (HaC1, HaC2) and the later into three (HaD1, HaD2, HaD3). Not every grave can be dated this precisely, however, and many can only be assigned to several adjacent phases or to a period as a whole. The catalogue combines short phases with broader, overlapping intervals.</p>
+<p>The data come from a database of more than 2,000 graves excavated over the past 90 years, originally compiled for a study of changing burial customs in the Hallstatt period <span class="citation" data-cites="ref_51054">(<a href="#ref-ref_51054" role="doc-biblioref">Müller-Scheeßel 2013</a>)</span>. Each grave was assigned to one or more Hallstatt periods or phases on the basis of its grave goods and, where graves intersect, its stratigraphic position. In that study, graves assigned to more than one phase were divided equally among these phases, as the methodological problems involved had not yet been recognised.</p>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>4. Results</h1>
+<section id="standard-aoristics-under-uniform-ground-truth" class="level2">
+<h2 class="anchored" data-anchor-id="standard-aoristics-under-uniform-ground-truth">4.1 Standard aoristics under uniform ground truth</h2>
+<p>Under a uniform ground truth, any systematic temporal structure in the reconstruction must come from the observation and reconstruction procedure. The standard proportional reconstruction is nevertheless clearly structured (<a href="#fig-s1-uniform-bias" class="quarto-xref">Figure&nbsp;5</a>), and this structure closely follows the overlap curve of the synthetic catalogue, with a correlation of 0.987 (Supplement 1). The reconstruction is shifted upwards where many labels overlap and downwards where few are available, with an RMSD of 18.8% of the mean density against the uniform truth. Here the standard aoristic curve reproduces the structure of the classification.</p>
+<div id="fig-s1-uniform-bias" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-s1-uniform-bias-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-s1-uniform-bias" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-s1-uniform-truth" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Flat uniform truth versus a structured standard aoristic curve">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-s1-uniform-truth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="supplements/figures/s1_ground_truth_vs_standard_aoristic.png" class="img-fluid figure-img" style="width:100.0%" data-ref-parent="fig-s1-uniform-bias" alt="Flat uniform truth versus a structured standard aoristic curve">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-s1-uniform-truth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Uniform truth and standard reconstruction.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-s1-uniform-bias" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-s1-uniform-overlap" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Standard aoristic curve closely following the overlap curve">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-s1-uniform-overlap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="supplements/figures/s1_overlap_vs_standard_aoristic.png" class="img-fluid figure-img" style="width:100.0%" data-ref-parent="fig-s1-uniform-bias" alt="Standard aoristic curve closely following the overlap curve">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-s1-uniform-overlap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Standard reconstruction and overlap structure.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-s1-uniform-bias-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Standard proportional aoristics under uniform ground truth, compared with the uniform truth (a) and with the overlap structure of the synthetic catalogue (b). Although the event process is uniform, the reconstruction closely follows the overlap structure.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="phase-correction-in-the-uniform-case" class="level2">
+<h2 class="anchored" data-anchor-id="phase-correction-in-the-uniform-case">4.2 Phase correction in the uniform case</h2>
+<p>The Monte Carlo mean behaves almost identically to the standard reconstruction (<a href="#fig-s2-method-comparison" class="quarto-xref">Figure&nbsp;6</a>, <a href="#tbl-s2-method-metrics" class="quarto-xref">Table&nbsp;1</a>), as expected from their shared within-interval uniformity assumption. The phase-corrected reconstruction, by contrast, is much closer to the uniform truth (Supplement 2), with an RMSD of 1.8% of the mean density, compared with 18.8% for the standard reconstruction. With 10,000 events, the correction reduces the error by about an order of magnitude. Under the assignment rule used here, the correction is in expectation the exact flat-prior posterior (Section 2.3), so the remaining error is sampling noise. The error of the standard reconstruction, by contrast, does not diminish with sample size (17.8%, 18.8% and 17.4% with 1,000 and 10,000 events and in the infinite-sample limit, Supplements 3 and 6), whereas that of the correction falls from 4.4% to 1.8% and vanishes in the limit. The bias is systematic and can only be removed by an explicit correction, whatever the inferential framework. Whether the correction remains accurate under other assignment rules is examined in Section 4.3.</p>
+<div id="fig-s2-method-comparison" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-s2-method-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-s2-method-comparison" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-s2-methods-uncertainty" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Four reconstruction methods with uncertainty bands against uniform truth">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-s2-methods-uncertainty-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="supplements/figures/s2_reconstruction_methods_with_uncertainty.png" class="img-fluid figure-img" style="width:100.0%" data-ref-parent="fig-s2-method-comparison" alt="Four reconstruction methods with uncertainty bands against uniform truth">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-s2-methods-uncertainty-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Methods and uncertainty envelopes against the uniform truth.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-s2-method-comparison" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-s2-methods-overlap" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Reconstruction methods plotted against the overlap curve">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-s2-methods-overlap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="supplements/figures/s2_methods_vs_overlap_structure.png" class="img-fluid figure-img" style="width:100.0%" data-ref-parent="fig-s2-method-comparison" alt="Reconstruction methods plotted against the overlap curve">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-s2-methods-overlap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Methods and overlap structure.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-s2-method-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Standard, Monte Carlo, phase-corrected and Baorista reconstructions under uniform ground truth, compared with the truth (a) and with the overlap structure of the synthetic catalogue (b).
+</figcaption>
+</figure>
+</div>
+<div id="tbl-s2-method-metrics" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-s2-method-metrics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Fit and overlap-coupling diagnostics for the uniform simulation. All methods were applied to the same simulated dataset of 10,000 events, and Baorista is represented by its posterior median. Measures as defined in Section 3.3.
+</figcaption>
+<div aria-describedby="tbl-s2-method-metrics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th style="text-align: right;">RMSD (% of mean density)</th>
+<th style="text-align: right;"><span class="math inline">\(\text{cor}(R, \lambda)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\text{RMSD}_\lambda\)</span> (% of mean density)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Standard proportional aoristic</td>
+<td style="text-align: right;">18.8%</td>
+<td style="text-align: right;">0.987</td>
+<td style="text-align: right;">18.6%</td>
+</tr>
+<tr class="even">
+<td>Monte Carlo mean</td>
+<td style="text-align: right;">18.8%</td>
+<td style="text-align: right;">0.987</td>
+<td style="text-align: right;">18.5%</td>
+</tr>
+<tr class="odd">
+<td>Phase-corrected aoristic</td>
+<td style="text-align: right;">1.8%</td>
+<td style="text-align: right;">0.765</td>
+<td style="text-align: right;">1.4%</td>
+</tr>
+<tr class="even">
+<td>Baorista</td>
+<td style="text-align: right;">71.8%</td>
+<td style="text-align: right;">0.703</td>
+<td style="text-align: right;">50.5%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The overlap diagnostics show why magnitude matters. The correlation with the overlap curve falls only from 0.987 to 0.765, because the shared sampling noise of each interval leaves a faint trace of the overlap shape, but the overlap-attributable RMSD shrinks from 18.6% to 1.4% of the mean density. Baorista shows the opposite case. Its correlation with the overlap curve is lower (0.703), but its overlap-attributable RMSD is larger (50.5%) and its RMSD is 3.8 times that of the standard reconstruction. Its posterior concentrates probability in the centre of the window, where most labels overlap, as expected for likelihood-based inference on interval data (Section 5.1).</p>
+</section>
+<section id="phase-correction-under-non-uniform-signals" class="level2">
+<h2 class="anchored" data-anchor-id="phase-correction-under-non-uniform-signals">4.3 Phase correction under non-uniform signals</h2>
+<p>In the non-uniform simulations (Supplement 3), each of the eleven signals was simulated in 100 runs, and in each run the three aoristic reconstructions were compared by their RMSD against the true curve (<a href="#tbl-s3-best-method-rmsd" class="quarto-xref">Table&nbsp;2</a>). The phase correction comes closest to the truth in every run for the uniform, monotonic, exponential and two-peaked signals, with clear reductions of the median RMSD. For the early, late and multiple peaks it is best in most runs, but only by a few per cent. For the single central peak and the plateau it is best in none, and the standard and Monte Carlo reconstructions share the runs between them. Here the true concentration of events coincides with the region of high overlap, and the correction removes part of the real signal together with the bias. In these two cases, the correction also increases the overlap-attributable RMSD, whereas in all others it reduces it, often by more than the RMSD as a whole.</p>
+<div class="cell">
+<div id="tbl-s3-best-method-rmsd" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-s3-best-method-rmsd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Best-performing methods by RMSD across 100 runs of 1,000 events per signal pattern. The share of runs is the proportion of runs in which a method gave the lowest RMSD of the three aoristic reconstructions. Where two methods are listed, they share the runs, since the standard and Monte Carlo reconstructions differ only by sampling noise. The RMSD ratio is the median RMSD of the phase-corrected divided by that of the standard reconstruction (values below one favour the correction). Because of its run time, Baorista was fitted to one example run per pattern only (Supplement 3).
+</figcaption>
+<div aria-describedby="tbl-s3-best-method-rmsd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 33%">
+<col style="width: 20%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Signal pattern</th>
+<th style="text-align: left;">Best method by RMSD</th>
+<th style="text-align: right;">Share of runs</th>
+<th style="text-align: right;">RMSD ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Uniform</td>
+<td style="text-align: left;">Phase-corrected</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.25</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Linear increase</td>
+<td style="text-align: left;">Phase-corrected</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.65</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Linear decline</td>
+<td style="text-align: left;">Phase-corrected</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.64</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Exponential increase</td>
+<td style="text-align: left;">Phase-corrected</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.69</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Exponential decline</td>
+<td style="text-align: left;">Phase-corrected</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.69</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Early peak</td>
+<td style="text-align: left;">Phase-corrected</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">0.97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Late peak</td>
+<td style="text-align: left;">Phase-corrected</td>
+<td style="text-align: right;">0.93</td>
+<td style="text-align: right;">0.97</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Two peaks</td>
+<td style="text-align: left;">Phase-corrected</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.86</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Multi-peak</td>
+<td style="text-align: left;">Phase-corrected</td>
+<td style="text-align: right;">0.88</td>
+<td style="text-align: right;">0.97</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Single central peak</td>
+<td style="text-align: left;">Standard / Monte Carlo</td>
+<td style="text-align: right;">0.54 / 0.46</td>
+<td style="text-align: right;">1.33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plateau</td>
+<td style="text-align: left;">Standard / Monte Carlo</td>
+<td style="text-align: right;">0.54 / 0.46</td>
+<td style="text-align: right;">1.22</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The same pattern holds when labels are assigned with a preference for narrow labels, broad labels or particular hierarchical levels (Supplement 6). For the uniform signal, the correction then still removes 77–89% of the systematic error of the standard reconstruction, and a reconstruction that knows the true assignment probabilities is only marginally better in most scenarios.</p>
+</section>
+<section id="danish-neolithic-settlement-data-1" class="level2">
+<h2 class="anchored" data-anchor-id="danish-neolithic-settlement-data-1">4.4 Danish Neolithic settlement data</h2>
+<p>The 3,493 Danish settlement records are distributed across 63 unique intervals with a median width of 1,150 years. Their widths range from 100 to 2,150 years, so that dating precision varies by more than a factor of forty. The distribution is also highly concentrated. 3950–1800 BCE and 3950–2800 BCE alone account for 57.4% of all observations, and the three most frequent intervals for 69.0%. Equal choice among the labels covering each date would give the two most frequent periods only about 11.9% (Supplement 6). The key assumption of the correction is thus violated in these data (Section 5.2).</p>
+<p>The standard and Monte Carlo reconstructions are almost identical (correlation 0.999), whereas the phase-corrected reconstruction differs markedly from both (0.786 with the standard curve, <a href="#fig-s4-danish-methods" class="quarto-xref">Figure&nbsp;7</a>). The standard and Monte Carlo reconstructions remain coupled to the empirical overlap structure, with correlations of 0.661 and 0.656 (<a href="#tbl-s4-danish-correlations" class="quarto-xref">Table&nbsp;3</a>). The correction reduces this coupling to 0.158, and the overlap-aligned amplitude falls from 21.3% to 5.8% of the mean density.</p>
+<div id="fig-s4-danish-methods" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Danish Neolithic reconstructions plotted against the empirical overlap curve">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-s4-danish-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="supplements/figures/s4_danish_neolithic_methods_vs_overlap.png" class="img-fluid figure-img" style="width:100.0%" alt="Danish Neolithic reconstructions plotted against the empirical overlap curve">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-s4-danish-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Reconstruction methods applied to the Danish Neolithic settlement data, compared with the overlap structure of the observed intervals. The shaded band is the 95% credible interval of the Baorista reconstruction. The vertical axis is cut at 0.045. The peak of the Baorista reconstruction in 2900–2801 BCE lies above it, and its value is given in the plot.
+</figcaption>
+</figure>
+</div>
+<div id="tbl-s4-danish-correlations" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-s4-danish-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Empirical overlap coupling and comparison with the XRONOS summed radiocarbon curve for the Danish Neolithic settlement data. Measures as defined in Section 3.3. Correlations with the SPD refer to the common Neolithic window (3950–1800 BCE).
+</figcaption>
+<div aria-describedby="tbl-s4-danish-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th style="text-align: right;"><span class="math inline">\(\text{cor}(R, \lambda)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(A_\lambda\)</span> (% of mean density)</th>
+<th style="text-align: right;">Correlation with XRONOS SPD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Standard proportional aoristic</td>
+<td style="text-align: right;">0.661</td>
+<td style="text-align: right;">21.3%</td>
+<td style="text-align: right;">−0.050</td>
+</tr>
+<tr class="even">
+<td>Monte Carlo mean</td>
+<td style="text-align: right;">0.656</td>
+<td style="text-align: right;">21.1%</td>
+<td style="text-align: right;">−0.046</td>
+</tr>
+<tr class="odd">
+<td>Phase-corrected aoristic</td>
+<td style="text-align: right;">0.158</td>
+<td style="text-align: right;">5.8%</td>
+<td style="text-align: right;">0.645</td>
+</tr>
+<tr class="even">
+<td>Baorista (posterior median)</td>
+<td style="text-align: right;">0.319</td>
+<td style="text-align: right;">47.7%</td>
+<td style="text-align: right;">−0.132</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Within the common Neolithic window, which excludes the late Mesolithic part of the SPD, the standard and Monte Carlo reconstructions are essentially uncorrelated with the SPD of the 996 XRONOS settlement dates (Section 3.4, <em>r</em> = −0.050 and −0.046), whereas the phase-corrected reconstruction correlates positively (<em>r</em> = 0.645, <a href="#fig-s4-danish-xronos" class="quarto-xref">Figure&nbsp;8</a>). Tested against surrogate SPDs with the same autocorrelation as the observed one (Supplement 4), no reconstruction agrees with the SPD beyond chance, but the difference between the corrected and the standard reconstruction is less easily explained by chance (<em>p</em> = 0.084 in the common window and 0.027 over the full analytical window). The correction thus moves the reconstruction towards the radiocarbon evidence, but the support for this is moderate rather than conclusive. The comparison also shows local offsets between the curves, which point to the absolute length and placement of individual phases as a separate source of error that the overlap diagnostic does not capture.</p>
+<div id="fig-s4-danish-xronos" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Danish Neolithic reconstructions compared with the radiocarbon SPD">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-s4-danish-xronos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="supplements/figures/s4_danish_neolithic_methods_vs_xronos_sumcal.png" class="img-fluid figure-img" style="width:100.0%" alt="Danish Neolithic reconstructions compared with the radiocarbon SPD">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-s4-danish-xronos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Danish Neolithic reconstructions compared with the XRONOS summed radiocarbon curve, used as an external proxy rather than as ground truth. The vertical axis is cut at 0.045. The peak of the Baorista reconstruction in 2900–2801 BCE lies above it, and its value is given in the plot.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="early-iron-age-burials" class="level2">
+<h2 class="anchored" data-anchor-id="early-iron-age-burials">4.5 Early Iron Age burials</h2>
+<p>Without an independent record (Section 3.5), the Hallstatt data show how strongly the phase structure of a compact chronology with short phases shapes the reconstruction.</p>
+<p>The 2,242 graves (Supplement 5) are distributed across 13 unique intervals with a median width of 120 years. Their widths range from 40 to 330 years, so that dating precision varies only by a factor of about eight. Label use also deviates far less from the key assumption of the correction than in the Danish data. The most frequent label is the phase HaD1 (660–540 BCE) with 21.8% of all graves, followed by the Hallstatt period as a whole with 16.6%. Together they account for 38.4%, and the three most frequent labels for 51.8%. Equal choice among the labels covering each date would give the two most frequent labels about 32.8% (Supplement 6).</p>
+<p>The standard and Monte Carlo reconstructions are again almost identical (correlation 0.998), and the phase-corrected reconstruction differs from both (0.894 with the standard curve, <a href="#fig-s5-hallstatt-methods" class="quarto-xref">Figure&nbsp;9</a>). Over most of the sequence the standard reconstruction follows the overlap curve almost step by step, with a correlation of 0.887 (Monte Carlo mean 0.885, <a href="#tbl-s5-hallstatt-correlations" class="quarto-xref">Table&nbsp;4</a>). The correction reduces this coupling to 0.610 and the overlap-aligned amplitude from 16.3% to 7.3% of the mean density, mainly by levelling the differences between the earlier Hallstatt phases. Fitted to the Hallstatt data with the same settings as in Section 4.4, Baorista correlates less closely with the overlap curve than the standard reconstruction (0.650) but has the largest overlap-aligned amplitude (27.8%), with a maximum at the beginning of HaD1, where most labels overlap (Supplement 5).</p>
+<p>The exception is the late Hallstatt period. Between 540 and 501 BCE, the span of HaD2, all three reconstructions lie well below the overlap curve, and between 500 and 451 BCE, the span of HaD3, above it. Since this deviation is not produced by the overlap structure and persists after the correction, it reflects the number of graves assigned to these phases. HaD2 receives fewer graves than the catalogue alone would lead one to expect, and HaD3 more (Section 5.2).</p>
+<div id="fig-s5-hallstatt-methods" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Hallstatt reconstructions plotted against the empirical overlap curve">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-s5-hallstatt-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="supplements/figures/s5_hallstatt_methods_vs_overlap.png" class="img-fluid figure-img" style="width:100.0%" alt="Hallstatt reconstructions plotted against the empirical overlap curve">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-s5-hallstatt-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Reconstruction methods applied to the Hallstatt burial data, compared with the overlap structure of the observed intervals. The shaded band is the 95% credible interval of the Baorista reconstruction. Outside HaD2 and HaD3, the standard proportional and Monte Carlo reconstructions follow the overlap structure closely, while the phase-corrected reconstruction levels the differences between phases.
+</figcaption>
+</figure>
+</div>
+<div id="tbl-s5-hallstatt-correlations" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-s5-hallstatt-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Empirical overlap coupling for the Hallstatt burial data. Measures as defined in Section 3.3.
+</figcaption>
+<div aria-describedby="tbl-s5-hallstatt-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Method</th>
+<th style="text-align: right;"><span class="math inline">\(\text{cor}(R, \lambda)\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(A_\lambda\)</span> (% of mean density)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Standard proportional aoristic</td>
+<td style="text-align: right;">0.887</td>
+<td style="text-align: right;">16.3%</td>
+</tr>
+<tr class="even">
+<td>Monte Carlo mean</td>
+<td style="text-align: right;">0.885</td>
+<td style="text-align: right;">16.3%</td>
+</tr>
+<tr class="odd">
+<td>Phase-corrected aoristic</td>
+<td style="text-align: right;">0.610</td>
+<td style="text-align: right;">7.3%</td>
+</tr>
+<tr class="even">
+<td>Baorista (posterior median)</td>
+<td style="text-align: right;">0.650</td>
+<td style="text-align: right;">27.8%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+</section>
+<section id="discussion" class="level1">
+<h1>5. Discussion</h1>
+<section id="uncertainty-representation-is-not-structural-correction" class="level2">
+<h2 class="anchored" data-anchor-id="uncertainty-representation-is-not-structural-correction">5.1 Uncertainty representation is not structural correction</h2>
+<p>The curve produced by aoristic reconstruction depends on the structure of the assigned intervals as much as on the observations. Where intervals derive from overlapping hierarchical phase catalogues, observations are assigned to different levels of the classification depending on diagnostic visibility, preservation, research history or recording practice, and the geometry of this classification propagates into the reconstructed curve.</p>
+<p>Monte Carlo aoristics does not change this. It shows how much the curve can vary when event dates are sampled under the within-interval uniformity assumption, which is useful for visualising uncertainty, but its mean retains the expectation of the standard reconstruction, as the simulations and both empirical datasets show.</p>
+<p>A model-based reconstruction such as Baorista poses temporal reconstruction explicitly as a probabilistic problem. In the uniform simulation, however, its posterior concentrates probability where many labels overlap, and its overlap-aligned component is larger than that of the standard reconstruction. The prior-sensitivity analysis of the Danish data shows that this is more than a less accurate estimator. Across exponential priors with rates from 1 to 100, the posterior retains a pronounced peak in the century before 2800 BCE (2900–2801 BCE), immediately before the end point of many of the most frequently repeated intervals (Supplement 4). In the Hallstatt data, where all fits converged, it likewise concentrates probability where most labels overlap (Section 4.5). This is the behaviour expected for interval-censored data, in which likelihood-based estimates concentrate probability mass on the intersections of the observed intervals <span class="citation" data-cites="turnbull_empirical_1976">(<a href="#ref-turnbull_empirical_1976" role="doc-biblioref">Turnbull 1976</a>)</span>, and a smoothing prior attenuates this tendency but does not remove it. Robustness to the prior and robustness to the chronological observations are therefore two different properties, and a sensitivity analysis over priors tests only the first. We do not regard this as a limitation of Bayesian inference as such, but as an indication that the overlap mechanism arises in the chronological observations, before any statistical reconstruction. The most direct remedy would be to replace the implicit coarsening-at-random likelihood with the assignment model of Section 2.3. With <span class="math inline">\(\theta_t\)</span> the event probability in block <span class="math inline">\(t\)</span>, the likelihood of a label <span class="math inline">\(J\)</span> then becomes <span class="math inline">\(\sum_{t \in J} \theta_t \lambda(t)^{-1}\)</span> instead of <span class="math inline">\(\sum_{t \in J} \theta_t\)</span>, which would combine the phase correction with the smoothing prior and the posterior uncertainty of the Bayesian approach.</p>
+</section>
+<section id="using-the-phase-correction-in-practice" class="level2">
+<h2 class="anchored" data-anchor-id="using-the-phase-correction-in-practice">5.2 Using the phase correction in practice</h2>
+<p>The phase correction targets the overlap mechanism itself, but two limitations cannot be removed by careful use. Where the true signal itself resembles the overlap structure, as in the single-peak and plateau scenarios, the flat prior within each interval pulls genuine concentrations towards the parts covered by fewer labels (Section 2.3). And the correction cannot detect bias from an observation process that changes through time, for instance if chronological resolution differs systematically between periods. Since median phase lengths shorten markedly only from the Iron Age onwards <span class="citation" data-cites="siegmund_schnelle_2012">(<a href="#ref-siegmund_schnelle_2012" role="doc-biblioref">Siegmund 2012: 260</a>)</span>, this should matter mainly in analyses spanning several epochs. The other assumptions can be checked in the data, and the correction is best used together with such checks rather than as a mechanical replacement of the standard method.</p>
+<p>The first check concerns the catalogue. Because <span class="math inline">\(\lambda(t)\)</span> counts distinct intervals and not how often they are used, splitting a phase into subphases, adding a rarely used label or keeping technical duplicates changes the weights of all observations covering the affected years. Labels with identical extent should therefore be merged, and ad hoc intervals such as radiocarbon ranges assigned to the best-matching period (Supplement 4).</p>
+<p>The second concerns label use. Comparing the observed frequency of each label with that expected under equal choice shows whether the key assumption holds. If it does and the standard reconstruction is clearly coupled to the overlap curve, the corrected curve is the better founded estimate. This is largely the case in the Hallstatt data, where the correction kept most of its advantage in simulations on the observed catalogue (Supplement 6). If label use is strongly concentrated, as in the Danish data (Section 4.4), the effect of the correction depends on the signal. Declining trends still improved, but increasing trends, peaks and plateaus came out worse than with the standard method. Where the two reconstructions differ in a part of the sequence in which the true signal may plausibly be concentrated, neither can then be preferred on internal grounds.</p>
+<p>Conspicuous features can also be tested against an envelope of what the catalogue alone would produce, obtained by assigning uniformly simulated events to the observed intervals. This follows the logic of null-model tests for summed radiocarbon distributions <span class="citation" data-cites="timpson_reconstructing_2014 crema_inference_2021">(<a href="#ref-crema_inference_2021" role="doc-biblioref">Crema and Bevan 2021</a>; <a href="#ref-timpson_reconstructing_2014" role="doc-biblioref">Timpson et al. 2014</a>)</span>, and <span class="citation" data-cites="fentress_counting_1988">Fentress and Perkins (<a href="#ref-fentress_counting_1988" role="doc-biblioref">1988: 207</a>, n.&nbsp;12)</span> already used such a check for their pottery curves. Like the correction, however, it presupposes equal choice among labels.</p>
+<p>Where the internal checks leave the question open, independent evidence has to decide. For the Danish data, the corrected curve moves towards the radiocarbon record, although no reconstruction agrees with it beyond chance. Local offsets between the curves call for a check of the absolute anchoring of individual phases, to which chronological schemes for the Danish Neolithic assign noticeably different lengths <span class="citation" data-cites="torfing_demographic_2016">(<a href="#ref-torfing_demographic_2016" role="doc-biblioref">Torfing 2016</a>)</span>. The Hallstatt data point to the same problem. Between 540 and 501 BCE all reconstructions fall below the overlap curve, and in the following decades they rise above it (Section 4.5). Since this deviation persists after the correction, it is not produced by the overlap of the labels but would be expected if the absolute dates of the phases were wrong. The boundaries of the Hallstatt phases are informed estimates at best, and the pattern would fit a HaD2 that was considerably shorter, and a HaD3 correspondingly longer, than commonly assumed.</p>
+<p>Studies using aoristic reconstructions from phase-dated data should report these checks, at least the distribution of interval widths and of label use, the overlap curve, both reconstructions and their coupling to the overlap structure. The same checks can be applied to published reconstructions. Wherever site databases combine broad and narrow overlapping labels, standard aoristic curves can rise where many labels overlap and change level at frequently used period boundaries, so that some published peaks and transitions may partly reflect the catalogue. Such re-examinations need nothing but the intervals already in use, and we regard them as the most immediate application of our approach.</p>
+</section>
+<section id="outlook" class="level2">
+<h2 class="anchored" data-anchor-id="outlook">5.3 Outlook</h2>
+<p>The phase correction addresses one identifiable source of structural bias with a minimum of assumptions. A fuller probabilistic model would represent the latent event distribution together with the observation process, including the probability of coarse or fine assignment, preservation, recovery and research intensity, as well as hierarchical phase relationships and shared boundaries. Replacing the flat prior by the current estimate of the temporal distribution and iterating the weighting turns the procedure into an expectation–maximisation estimator of the Richardson–Lucy type <span class="citation" data-cites="richardson_bayesian_1972 lucy_iterative_1974">(<a href="#ref-lucy_iterative_1974" role="doc-biblioref">Lucy 1974</a>; <a href="#ref-richardson_bayesian_1972" role="doc-biblioref">Richardson 1972</a>)</span>, of which the phase correction is the first step. In an exploratory test (Supplement 6), such iterations largely remove the dampening of central peaks and plateaus but amplify sampling noise for flat signals, so that a regularised version remains to be developed. Estimating the label propensities from the data, together with the temporal distribution, is another natural next step, since the simulations on the Danish catalogue show how much could be gained if they were known (Supplement 6). Until such models are available, the phase correction offers a simple and well-founded way to remove the most obvious structural component from aoristic reconstructions.</p>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>6. Conclusion</h1>
+<p>Aoristic reconstruction inherits the structure of the chronological classification, because archaeological dates are not coarsened at random. Which label an observation receives depends on its date and on the labels available for that date. Under a uniform ground truth, the standard aoristic sum closely followed the overlap structure of a synthetic phase catalogue, and neither Monte Carlo aoristics nor a Bayesian reconstruction removed this bias, which does not diminish with more data.</p>
+<p>The phase-corrected weighting follows from a simple model of label assignment. In the simulations it brought the reconstruction close to the uniform ground truth and held up under other assignment models and for most non-uniform signals. Where real structure coincides with the overlap geometry, however, it can dampen it. In both empirical datasets it reduced the coupling to the interval structure. In the Danish data it tended to move the reconstruction towards an independent radiocarbon record, and in the Hallstatt data a deviation that persisted after the correction pointed to the absolute length of one phase.</p>
+<p>Aoristic studies based on phase-dated data should therefore report the overlap structure of their intervals and the phase-corrected reconstruction alongside the standard one. Because the correction requires only the intervals that are already recorded, it can be added to any such analysis at no extra cost.</p>
+</section>
+<section id="data-and-code-availability" class="level1">
+<h1>Data and code availability</h1>
+<p>All data, code and supplementary analyses are available at https://github.com/ISAAKiel/aoristic_overlap_bias_paper and archived at Zenodo (DOI: …). The Danish settlement data derive from the national register Fund og Fortidsminder <span class="citation" data-cites="slks_fund_og_fortidsminder">(<a href="#ref-slks_fund_og_fortidsminder" role="doc-biblioref">Slots- og Kulturstyrelsen 2018</a>, data downloaded 5 April 2018)</span>, the radiocarbon dates from XRONOS <span class="citation" data-cites="roeXRONOSOpenData2025">(<a href="#ref-roeXRONOSOpenData2025" role="doc-biblioref">Roe et al. 2025</a>)</span>. The supplementary materials are executable Quarto documents from which every number and figure can be regenerated, as described in the repository README.</p>
+</section>
+<section id="software-availability" class="level1">
+<h1>Software availability</h1>
+<p>All analyses were run in R 4.5.3 <span class="citation" data-cites="r_core_team_2026">(<a href="#ref-r_core_team_2026" role="doc-biblioref">R Core Team 2026</a>)</span>. The standard proportional and the phase-corrected aoristic reconstructions were computed with the R package aoristAAR <span class="citation" data-cites="hinz_aoristaar_2026">(version 0.1.1, <a href="#ref-hinz_aoristaar_2026" role="doc-biblioref">Hinz, Müller-Scheeßel and Schmid 2026</a>)</span>, functions <code>aorist(method = "weight")</code> and <code>aorist(method = "period_correction")</code>. The Bayesian benchmark uses the R package baorista <span class="citation" data-cites="cremaBayesianAlternativeAoristic2025">(<a href="#ref-cremaBayesianAlternativeAoristic2025" role="doc-biblioref">Crema 2025</a>)</span>, fitted with NIMBLE <span class="citation" data-cites="devalpine_programming_2017">(<a href="#ref-devalpine_programming_2017" role="doc-biblioref">de Valpine et al. 2017</a>)</span>. Radiocarbon dates were retrieved with the R package xronos <span class="citation" data-cites="roeXRONOSOpenData2025">(<a href="#ref-roeXRONOSOpenData2025" role="doc-biblioref">Roe et al. 2025</a>)</span> and calibrated and summed with rcarbon <span class="citation" data-cites="crema_inference_2021">(<a href="#ref-crema_inference_2021" role="doc-biblioref">Crema and Bevan 2021</a>)</span> using IntCal20 <span class="citation" data-cites="reimer_intcal20_2020">(<a href="#ref-reimer_intcal20_2020" role="doc-biblioref">Reimer et al. 2020</a>)</span>. All other analyses use the R code in the supplementary materials.</p>
+</section>
+<section id="acknowledgements" class="level1">
+<h1>Acknowledgements</h1>
+<p>We thank Caroline Bach for reading the manuscript and for her comments on its clarity.</p>
+</section>
+<section id="funding-information" class="level1">
+<h1>Funding information</h1>
+<p>The contribution of Martin Hinz to this research was funded by the European Research Council (ERC) through the project ESTER (ERC-2024-COG 101171036). The contribution of Nils Müller-Scheeßel took place within the scope of the Cluster of Excellence ROOTS, funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) under Germany’s Excellence Strategy – EXC 2150 – 390870439.</p>
+</section>
+<section id="competing-interests" class="level1">
+<h1>Competing interests</h1>
+<p>The authors are the developers of the open-source R package aoristAAR, which implements the phase-corrected weighting evaluated in this article. They have no other competing interests to declare.</p>
+</section>
+<section id="authors-contributions" class="level1">
+<h1>Authors’ contributions</h1>
+<p>Martin Hinz: conceptualisation, methodology, software, formal analysis of the simulations and the Danish case study, writing (original draft). Nils Müller-Scheeßel: conceptualisation, data curation and analysis of the Hallstatt case study, writing (review and editing). Both authors approved the final manuscript.</p>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-baxter_reinventing_2016" class="csl-entry" role="listitem">
+Baxter, MJ and Cool, HEM. 2016 Reinventing the wheel? <span>Modelling</span> temporal uncertainty with applications to brooch distributions in <span>Roman</span> <span>Britain</span>. <em>Journal of Archaeological Science</em> 66: 120–127. DOI: https://doi.org/<a href="https://doi.org/10.1016/j.jas.2015.12.007">10.1016/j.jas.2015.12.007</a>.
+</div>
+<div id="ref-bevan_modifiable_2021" class="csl-entry" role="listitem">
+Bevan, A and Crema, ER. 2021 Modifiable reporting unit problems and time series of long-term human activity. <em>Philosophical Transactions of the Royal Society B: Biological Sciences</em> 376(1816): 20190726. DOI: https://doi.org/<a href="https://doi.org/10.1098/rstb.2019.0726">10.1098/rstb.2019.0726</a>.
+</div>
+<div id="ref-bevan_rcarbon:_2018" class="csl-entry" role="listitem">
+Bevan, A, Crema, E and Silva, F. 2018. <em><span class="nocase">rcarbon</span>: Calibration and analysis of radiocarbon dates</em>. October 2018. Available at <a href="https://CRAN.R-project.org/package=rcarbon">https://CRAN.R-project.org/package=rcarbon</a> [Last accessed 1 December 2018].
+</div>
+<div id="ref-birdP3k14cSyntheticGlobal2022" class="csl-entry" role="listitem">
+Bird, D, Miranda, L, Vander Linden, M, Robinson, E, Bocinsky, RK, Nicholson, C, Capriles, JM, Finley, JB, Gayo, EM, Gil, A, d’Alpoim Guedes, J, Hoggarth, JA, Kay, A, Loftus, E, Lombardo, U, Mackie, M, Palmisano, A, Solheim, S, Kelly, RL and Freeman, J. 2022 P3k14c, a synthetic global database of archaeological radiocarbon dates. <em>Scientific Data</em> 9(1): 27. DOI: https://doi.org/<a href="https://doi.org/10.1038/s41597-022-01118-7">10.1038/s41597-022-01118-7</a>.
+</div>
+<div id="ref-contreras_summed_2014" class="csl-entry" role="listitem">
+Contreras, DA and Meadows, J. 2014 Summed radiocarbon calibrations as a population proxy: A critical evaluation using a realistic simulation approach. <em>Journal of Archaeological Science</em> 52: 591–608. DOI: https://doi.org/<a href="https://doi.org/10.1016/j.jas.2014.05.030">10.1016/j.jas.2014.05.030</a>.
+</div>
+<div id="ref-cooper_embracing_2016" class="csl-entry" role="listitem">
+Cooper, A and Green, C. 2016 Embracing the complexities of <span>‘<span>Big</span> <span>Data</span>’</span> in archaeology: <span>The</span> case of the <span>English</span> <span>Landscape</span> and <span>Identities</span> project. <em>Journal of Archaeological Method and Theory</em> 23(1): 271–304. DOI: https://doi.org/<a href="https://doi.org/10.1007/s10816-015-9240-4">10.1007/s10816-015-9240-4</a>.
+</div>
+<div id="ref-crema_modelling_2012" class="csl-entry" role="listitem">
+Crema, ER. 2012 Modelling temporal uncertainty in archaeological analysis. <em>Journal of Archaeological Method and Theory</em> 19: 440–461. DOI: https://doi.org/<a href="https://doi.org/10.1007/s10816-011-9122-3">10.1007/s10816-011-9122-3</a>.
+</div>
+<div id="ref-cremaBayesianAlternativeAoristic2025" class="csl-entry" role="listitem">
+Crema, ER. 2025 A <span>Bayesian</span> alternative for aoristic analyses in archaeology. <em>Archaeometry</em> 67(S1): 7–30. DOI: https://doi.org/<a href="https://doi.org/10.1111/arcm.12984">10.1111/arcm.12984</a>.
+</div>
+<div id="ref-crema_inference_2021" class="csl-entry" role="listitem">
+Crema, ER and Bevan, A. 2021 Inference from large sets of radiocarbon dates: Software and methods. <em>Radiocarbon</em> 63(1): 23–39. DOI: https://doi.org/<a href="https://doi.org/10.1017/RDC.2020.95">10.1017/RDC.2020.95</a>.
+</div>
+<div id="ref-crema_probabilistic_2010" class="csl-entry" role="listitem">
+Crema, ER, Bevan, A and Lake, MW. 2010 A probabilistic framework for assessing spatio-temporal point patterns in the archaeological record. <em>Journal of Archaeological Science</em> 37(5): 1118–1130. DOI: https://doi.org/<a href="https://doi.org/10.1016/j.jas.2009.12.012">10.1016/j.jas.2009.12.012</a>.
+</div>
+<div id="ref-devalpine_programming_2017" class="csl-entry" role="listitem">
+de Valpine, P, Turek, D, Paciorek, CJ, Anderson-Bergman, C, Temple Lang, D and Bodik, R. 2017 Programming with models: Writing statistical algorithms for general model structures with <span>NIMBLE</span>. <em>Journal of Computational and Graphical Statistics</em> 26(2): 403–413. DOI: https://doi.org/<a href="https://doi.org/10.1080/10618600.2016.1172487">10.1080/10618600.2016.1172487</a>.
+</div>
+<div id="ref-fentress_counting_1988" class="csl-entry" role="listitem">
+Fentress, E and Perkins, P. 1988 Counting <span>African</span> <span>Red</span> <span>Slip</span> <span>Ware</span>. In: Mastino, A (ed.). <em><span class="nocase">L’Africa romana. Atti del V convegno di studio, Sassari, 11–13 dicembre 1987</span></em>. Sassari: Università degli Studi di Sassari, Dipartimento di Storia. pp. 205–214.
+</div>
+<div id="ref-gelman_inference_1992" class="csl-entry" role="listitem">
+Gelman, A and Rubin, DB. 1992 Inference from iterative simulation using multiple sequences. <em>Statistical Science</em> 7(4): 457–472. DOI: https://doi.org/<a href="https://doi.org/10.1214/ss/1177011136">10.1214/ss/1177011136</a>.
+</div>
+<div id="ref-heitjanInferenceCoarseData1990" class="csl-entry" role="listitem">
+Heitjan, DF and Rubin, DB. 1990 Inference from coarse data via multiple imputation with application to age heaping. <em>Journal of the American Statistical Association</em> 85(410): 304–314. DOI: https://doi.org/<a href="https://doi.org/10.1080/01621459.1990.10476202">10.1080/01621459.1990.10476202</a>.
+</div>
+<div id="ref-hinz_demography_2012" class="csl-entry" role="listitem">
+Hinz, M, Feeser, I, Sjögren, K-G and Müller, J. 2012a Demography and the intensity of cultural activities: <span>An</span> evaluation of <span>Funnel</span> <span>Beaker</span> <span>Societies</span> (4200–2800 cal <span>BC</span>). <em>Journal of Archaeological Science</em> 39(10): 3331–3340. DOI: https://doi.org/<a href="https://doi.org/10.1016/j.jas.2012.05.028">10.1016/j.jas.2012.05.028</a>.
+</div>
+<div id="ref-hinz_radon_2012" class="csl-entry" role="listitem">
+Hinz, M, Furholt, M, Müller, J, Rinne, C, Raetzel-Fabian, D, Sjögren, K-G and Wotzka, H-P. 2012b <span>RADON</span> – radiocarbon dates online 2012. <span>Central European</span> database of <span><sup>14</sup>C</span> dates for the <span>Neolithic</span> and the <span>Early Bronze Age</span>. <em>Journal of Neolithic Archaeology</em> 14: DOI: https://doi.org/<a href="https://doi.org/10.12766/jna.2012.65">10.12766/jna.2012.65</a>.
+</div>
+<div id="ref-hinz_aoristaar_2026" class="csl-entry" role="listitem">
+Hinz, M, Müller-Scheeßel, N and Schmid, C. 2026 <em><span class="nocase">aoristAAR</span>: Aoristic analysis of archaeological data (version 0.1.1)</em>. DOI: https://doi.org/<a href="https://doi.org/10.5281/zenodo.23239193">10.5281/zenodo.23239193</a>.
+</div>
+<div id="ref-martin_oxcaar:_2018" class="csl-entry" role="listitem">
+Hinz, M, Schmid, C, Knitter, D and Tietze, C. 2018. <em><span class="nocase">oxcAAR</span>: Interface to <span>OxCal</span> radiocarbon calibration</em>. February 2018. Available at <a href="https://CRAN.R-project.org/package=oxcAAR">https://CRAN.R-project.org/package=oxcAAR</a> [Last accessed 1 December 2018].
+</div>
+<div id="ref-johnson_aoristic_2004" class="csl-entry" role="listitem">
+Johnson, I. 2004 Aoristic analysis: Seeds of a new approach to mapping archaeological distributions through time. In: Ausserer, KF, Börner, W, Goriany, M, and Karlhuber-Vöckl, L (eds.). <em><span class="nocase">Enter the Past – The E-way into the Four Dimensions of Cultural Heritage. CAA 2003. Computer Applications and Quantitative Methods in Archaeology</span></em>. <span>BAR International Series 1227</span>. Oxford: Archaeopress. pp. 448–452.
+</div>
+<div id="ref-kintigh_grand_2014" class="csl-entry" role="listitem">
+Kintigh, KW, Altschul, JH, Beaudry, MC, Drennan, RD, Kinzig, AP, Kohler, TA, Limp, WF, Maschner, HDG, Michener, WK, Pauketat, TR, Peregrine, P, Sabloff, JA, Wilkinson, TJ, Wright, HT and Zeder, MA. 2014 Grand challenges for archaeology. <em>Proceedings of the National Academy of Sciences of the United States of America</em> 111(3): 879–880. DOI: https://doi.org/<a href="https://doi.org/10.1073/pnas.1324000111">10.1073/pnas.1324000111</a>.
+</div>
+<div id="ref-kolar_spatio-temporal_2016" class="csl-entry" role="listitem">
+Kolář, J, Macek, M, Tkáč, P and Szabó, P. 2016 Spatio-temporal modelling as a way to reconstruct patterns of past human activities. <em>Archaeometry</em> 58(3): 513–528. DOI: https://doi.org/<a href="https://doi.org/10.1111/arcm.12182">10.1111/arcm.12182</a>.
+</div>
+<div id="ref-kristiansen_towards_2014" class="csl-entry" role="listitem">
+Kristiansen, K. 2014 Towards a new paradigm? <span>The</span> third science revolution and its possible consequences in archaeology. <em>Current Swedish Archaeology</em> 22: 11–34. DOI: https://doi.org/<a href="https://doi.org/10.37718/CSA.2014.01">10.37718/CSA.2014.01</a>.
+</div>
+<div id="ref-lawrence_collapse_2021" class="csl-entry" role="listitem">
+Lawrence, D, Palmisano, A and de Gruchy, MW. 2021 Collapse and continuity: <span>A</span> multi-proxy reconstruction of settlement organization and population trajectories in the <span>Northern</span> <span>Fertile</span> <span>Crescent</span> during the 4.2kya <span>Rapid</span> <span>Climate</span> <span>Change</span> event. <em>PLOS ONE</em> 16(1): e0244871. DOI: https://doi.org/<a href="https://doi.org/10.1371/journal.pone.0244871">10.1371/journal.pone.0244871</a>.
+</div>
+<div id="ref-lucy_iterative_1974" class="csl-entry" role="listitem">
+Lucy, LB. 1974 An iterative technique for the rectification of observed distributions. <em>The Astronomical Journal</em> 79: 745–754. DOI: https://doi.org/<a href="https://doi.org/10.1086/111605">10.1086/111605</a>.
+</div>
+<div id="ref-mischka_aoristische_2004" class="csl-entry" role="listitem">
+Mischka, D. 2004 Aoristische <span>Analyse</span> in der <span>Archäologie</span>. <em>Archäologische Informationen</em> 27(2): 233–243. DOI: https://doi.org/<a href="https://doi.org/10.11588/ai.2004.2.12685">10.11588/ai.2004.2.12685</a>.
+</div>
+<div id="ref-ref_51054" class="csl-entry" role="listitem">
+Müller-Scheeßel, N. 2013. <em><span class="nocase">Untersuchungen zum Wandel hallstattzeitlicher Bestattungssitten in Süd- und Südwestdeutschland</span></em>. <span class="nocase">Universitätsforschungen zur Prähistorischen Archäologie</span>. Bonn: R. Habelt.
+</div>
+<div id="ref-palmisano_comparing_2017" class="csl-entry" role="listitem">
+Palmisano, A, Bevan, A and Shennan, S. 2017 Comparing archaeological proxies for long-term population patterns: <span>An</span> example from central <span>Italy</span>. <em>Journal of Archaeological Science</em> 87: 59–72. DOI: https://doi.org/<a href="https://doi.org/10.1016/j.jas.2017.10.001">10.1016/j.jas.2017.10.001</a>.
+</div>
+<div id="ref-r_core_team_2026" class="csl-entry" role="listitem">
+R Core Team. 2026. <em><a href="https://www.R-project.org/">R: A language and environment for statistical computing (version 4.5.3)</a></em>. Vienna, Austria: R Foundation for Statistical Computing.
+</div>
+<div id="ref-ratcliffe_aoristic_2000" class="csl-entry" role="listitem">
+Ratcliffe, JH. 2000 Aoristic analysis: The spatial interpretation of unspecific temporal events. <em>International Journal of Geographical Information Science</em> 14(7): 669–679. DOI: https://doi.org/<a href="https://doi.org/10.1080/136588100424963">10.1080/136588100424963</a>.
+</div>
+<div id="ref-ratcliffe_aoristic_1998" class="csl-entry" role="listitem">
+Ratcliffe, JH and McCullagh, MJ. 1998 Aoristic crime analysis. <em>International Journal of Geographical Information Science</em> 12(7): 751–764. DOI: https://doi.org/<a href="https://doi.org/10.1080/136588198241644">10.1080/136588198241644</a>.
+</div>
+<div id="ref-reimer_intcal20_2020" class="csl-entry" role="listitem">
+Reimer, PJ, Austin, WEN, Bard, E, Bayliss, A, Blackwell, PG, Bronk Ramsey, C, Butzin, M, Cheng, H, Edwards, RL, Friedrich, M, Grootes, PM, Guilderson, TP, Hajdas, I, Heaton, TJ, Hogg, AG, Hughen, KA, Kromer, B, Manning, SW, Muscheler, R, Palmer, JG, Pearson, C, van der Plicht, J, Reimer, RW, Richards, DA, Scott, EM, Southon, JR, Turney, CSM, Wacker, L, Adolphi, F, Büntgen, U, Capano, M, Fahrni, SM, Fogtmann-Schulz, A, Friedrich, R, Köhler, P, Kudsk, S, Miyake, F, Olsen, J, Reinig, F, Sakamoto, M, Sookdeo, A and Talamo, S. 2020 The <span>IntCal20</span> <span>Northern</span> <span>Hemisphere</span> radiocarbon age calibration curve (0–55 cal <span class="nocase">kBP</span>). <em>Radiocarbon</em> 62(4): 725–757. DOI: https://doi.org/<a href="https://doi.org/10.1017/RDC.2020.41">10.1017/RDC.2020.41</a>.
+</div>
+<div id="ref-richardson_bayesian_1972" class="csl-entry" role="listitem">
+Richardson, WH. 1972 Bayesian-based iterative method of image restoration. <em>Journal of the Optical Society of America</em> 62(1): 55–59. DOI: https://doi.org/<a href="https://doi.org/10.1364/JOSA.62.000055">10.1364/JOSA.62.000055</a>.
+</div>
+<div id="ref-riede_climate_2009" class="csl-entry" role="listitem">
+Riede, F. 2009 Climate and demography in early prehistory: Using calibrated <span><sup>14</sup>C</span> dates as population proxies. <em>Human Biology</em> 81(2–3): 309–337. DOI: https://doi.org/<a href="https://doi.org/10.3378/027.081.0311">10.3378/027.081.0311</a>.
+</div>
+<div id="ref-roeXRONOSOpenData2025" class="csl-entry" role="listitem">
+Roe, J, Schmid, C, Ebrahimiabareghi, S, Heitz, C and Hinz, M. 2025 <span>XRONOS</span>: An open data infrastructure for archaeological chronology. <em>Journal of Computer Applications in Archaeology</em> 8(1): 242–263. DOI: https://doi.org/<a href="https://doi.org/10.5334/jcaa.191">10.5334/jcaa.191</a>.
+</div>
+<div id="ref-ref_82404" class="csl-entry" role="listitem">
+Rose, HA, Müller-Scheeßel, N, Meadows, J and Hamann, C. 2022 <span class="nocase">Radiocarbon dating and Hallstatt chronology: a Bayesian chronological model for the burial sequence at Dietfurt an der Altmühl <span>‘Tennisplatz’</span>, Bavaria, Germany</span>. <em><span>Archaeological and Anthropological Sciences</span></em> 14(4): 72. DOI: https://doi.org/<a href="https://doi.org/10.1007/s12520-022-01542-1">10.1007/s12520-022-01542-1</a>.
+</div>
+<div id="ref-siegmund_schnelle_2012" class="csl-entry" role="listitem">
+Siegmund, F. 2012 Schnelle <span>Zeiten</span> – langsame <span>Zeiten</span>: <span>Archäologische</span> <span>Chronologiesysteme</span> als <span>Geschichtsquelle</span>. <em>Archäologische Informationen</em> 35: 259–270. DOI: https://doi.org/<a href="https://doi.org/10.11588/ai.2012.0.10053">10.11588/ai.2012.0.10053</a>.
+</div>
+<div id="ref-slks_fund_og_fortidsminder" class="csl-entry" role="listitem">
+Slots- og Kulturstyrelsen. 2018. <em>Fund og fortidsminder</em>. 2018. Available at <a href="https://www.kulturarv.dk/fundogfortidsminder/">https://www.kulturarv.dk/fundogfortidsminder/</a>.
+</div>
+<div id="ref-timpson_reconstructing_2014" class="csl-entry" role="listitem">
+Timpson, A, Colledge, S, Crema, E, Edinborough, K, Kerig, T, Manning, K, Thomas, MG and Shennan, S. 2014 Reconstructing regional population fluctuations in the <span>European</span> <span>Neolithic</span> using radiocarbon dates: A new case-study using an improved method. <em>Journal of Archaeological Science</em> 52: 549–557. DOI: https://doi.org/<a href="https://doi.org/10.1016/j.jas.2014.08.011">10.1016/j.jas.2014.08.011</a>.
+</div>
+<div id="ref-torfing_neolithic_2015" class="csl-entry" role="listitem">
+Torfing, T. 2015 Neolithic population and summed probability distribution of <span><sup>14</sup>C</span>-dates. <em>Journal of Archaeological Science</em> 63: 193–198. DOI: https://doi.org/<a href="https://doi.org/10.1016/j.jas.2015.06.004">10.1016/j.jas.2015.06.004</a>.
+</div>
+<div id="ref-torfing_demographic_2016" class="csl-entry" role="listitem">
+Torfing, T. 2016 Demographic proxies for the <span>Neolithic</span>: <span>With</span> emphasis on the <span>Langeland</span> region, <span>Denmark</span>. <em>Acta Archaeologica</em> 87(1): 33–48. DOI: https://doi.org/<a href="https://doi.org/10.1111/j.1600-0390.2016.12166.x">10.1111/j.1600-0390.2016.12166.x</a>.
+</div>
+<div id="ref-turnbull_empirical_1976" class="csl-entry" role="listitem">
+Turnbull, BW. 1976 The empirical distribution function with arbitrarily grouped, censored and truncated data. <em>Journal of the Royal Statistical Society. Series B (Methodological)</em> 38(3): 290–295. DOI: https://doi.org/<a href="https://doi.org/10.1111/j.2517-6161.1976.tb01597.x">10.1111/j.2517-6161.1976.tb01597.x</a>.
+</div>
+<div id="ref-williams_use_2012" class="csl-entry" role="listitem">
+Williams, AN. 2012 The use of summed radiocarbon probability distributions in archaeology: A review of methods. <em>Journal of Archaeological Science</em> 39(3): 578–589. DOI: https://doi.org/<a href="https://doi.org/10.1016/j.jas.2011.07.014">10.1016/j.jas.2011.07.014</a>.
+</div>
+</div>
+</section>
+<section id="declaration-of-ai-use" class="level1">
+<h1>Declaration of AI use</h1>
+<p>During the preparation of this work, the authors used Claude (Anthropic) to edit the language of the manuscript and the supplements, to optimise the R code of the supplementary analyses, and as a simulated peer reviewer, i.e.&nbsp;to read the manuscript critically for internal consistency, clarity and likely objections. All suggestions were checked and, where necessary, revised by the authors, who take full responsibility for the content of the publication.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

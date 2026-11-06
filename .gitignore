@@ -3,12 +3,12 @@
 .RData
 .Ruserdata
 .DS_Store
-revisions/
-_obsolete/
+/revisions/
+/_obsolete/
 website/assets/
 
 # rendered output (PDFs are tracked so the current state is readable on GitHub)
-manuscript.html
-manuscript_files/
+/manuscript.html
+/manuscript_files/
 supplements/*.html
 supplements/*_files/
