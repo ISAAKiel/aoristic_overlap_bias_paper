@@ -1,0 +1,10 @@
+method_1,method_2,rmsd,mae
+Standard aoristic,Standard aoristic,0,0
+Standard aoristic,Monte Carlo mean,3.642220725766704e-4,2.966675429033396e-4
+Standard aoristic,Phase-corrected,0.0028356290853567227,0.0025630127952556603
+Monte Carlo mean,Standard aoristic,3.642220725766704e-4,2.966675429033396e-4
+Monte Carlo mean,Monte Carlo mean,0,0
+Monte Carlo mean,Phase-corrected,0.00284946153483055,0.002560242358348968
+Phase-corrected,Standard aoristic,0.0028356290853567227,0.0025630127952556603
+Phase-corrected,Monte Carlo mean,0.00284946153483055,0.002560242358348968
+Phase-corrected,Phase-corrected,0,0

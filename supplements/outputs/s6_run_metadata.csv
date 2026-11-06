@@ -1,0 +1,15 @@
+setting,value
+time_min,-4100
+time_max,-1800
+bin_width,50
+n_events,1000
+n_runs,100
+base_seed,600000
+em_iters,"5,20"
+m3_level_weights,"umbrella=0.05,broad=0.15,cross-cutting=0.15,medium=0.3,subphase=0.35"
+assignment_models,"M0_uniform,M1_prefer_fine,M2_prefer_coarse,M3_level_weights"
+signal_patterns,"uniform,linear_increase,linear_decline,exponential_increase,exponential_decline,early_peak,single_peak,late_peak,two_peaks,multi_peak,plateau"
+phase_file,outputs/s1_synthetic_phase_catalogue.csv
+helper_file,R/aoristic_helpers.R
+r_version,R version 4.5.3 (2026-03-11)
+run_date,2026-10-14 12:02:30 CEST

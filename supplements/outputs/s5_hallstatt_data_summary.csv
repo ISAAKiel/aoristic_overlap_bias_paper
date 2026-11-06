@@ -1,0 +1,11 @@
+metric,value
+Number of records in raw data,2242
+Number of records after filtering,2242
+Share of raw records retained,1
+Earliest retained start,-780
+Latest retained end,-451
+Median interval width,120
+Minimum interval width,40
+Maximum interval width,330
+Number of unique retained intervals,13
+Number of unique retained phase labels,13

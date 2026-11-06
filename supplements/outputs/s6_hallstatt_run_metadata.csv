@@ -1,0 +1,18 @@
+setting,value
+time_min,-780
+time_max,-450
+bin_width,10
+n_events,2242
+n_runs,100
+base_seed,700000
+calibration_iterations,3000
+calibration_max_abs_share_error,2.47e-15
+n_labels,13
+observed_n_labels_used_once,0
+observed_share_top2,0.384
+assignment_models,"D0_uniform,D1_calib_standard,D1_calib_corrected"
+signal_patterns,"uniform,linear_increase,linear_decline,exponential_increase,exponential_decline,early_peak,single_peak,late_peak,two_peaks,multi_peak,plateau"
+interval_file,outputs/s5_hallstatt_interval_counts.csv
+helper_file,R/aoristic_helpers.R
+r_version,R version 4.5.3 (2026-03-11)
+run_date,2026-10-14 16:59:23 CEST

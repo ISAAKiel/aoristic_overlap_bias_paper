@@ -1,0 +1,60 @@
+project:
+  type: website
+  output-dir: ../docs
+  render:
+    - index.qmd
+  resources:
+    - assets/**
+
+website:
+  title: "Aoristic reconstruction and phase overlap"
+  site-url: "https://isaakiel.github.io/aoristic_overlap_bias_paper/"
+  repo-url: "https://github.com/ISAAKiel/aoristic_overlap_bias_paper"
+  open-graph:
+    image: assets/figures/schematic_overlap_bias.png
+  twitter-card:
+    image: assets/figures/schematic_overlap_bias.png
+  favicon: assets/figures/schematic_overlap_bias.png
+  search: false
+  navbar:
+    pinned: true
+    collapse-below: lg
+    left:
+      - text: "Overview"
+        href: index.qmd#overview
+      - text: "The problem"
+        href: index.qmd#the-problem
+      - text: "Evidence"
+        href: index.qmd#evidence
+      - text: "Case studies"
+        href: index.qmd#case-studies
+      - text: "Resources"
+        href: index.qmd#resources
+      - text: "Citation"
+        href: index.qmd#citation
+    right:
+      - text: "Manuscript"
+        href: assets/paper/manuscript.html
+      - icon: github
+        href: "https://github.com/ISAAKiel/aoristic_overlap_bias_paper"
+        aria-label: "GitHub repository"
+  page-footer:
+    border: true
+    left: "Companion website for the paper"
+    right:
+      - icon: github
+        href: "https://github.com/ISAAKiel/aoristic_overlap_bias_paper"
+
+format:
+  html:
+    theme: theme.scss
+    page-layout: full
+    toc: false
+    smooth-scroll: true
+    anchor-sections: false
+    code-copy: true
+    link-external-newwindow: true
+    respect-user-color-scheme: false
+
+execute:
+  freeze: auto

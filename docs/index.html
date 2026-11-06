@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Companion website to a reproducible study of a systematic bias in aoristic reconstructions from overlapping phase catalogues, and of a simple correction for it.">
+
+<title>When archaeological phase systems create artificial temporal signals – Aoristic reconstruction and phase overlap</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="./assets/figures/schematic_overlap_bias.png" rel="icon" type="image/png">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<meta property="og:title" content="When archaeological phase systems create artificial temporal signals">
+<meta property="og:description" content="Companion website to a reproducible study of a systematic bias in aoristic reconstructions from overlapping phase catalogues, and of a simple correction for it.">
+<meta property="og:image" content="https://isaakiel.github.io/aoristic_overlap_bias_paper/assets/figures/schematic_overlap_bias.png">
+<meta property="og:site_name" content="Aoristic reconstruction and phase overlap">
+<meta property="og:image:height" content="2700">
+<meta property="og:image:width" content="4500">
+<meta name="twitter:title" content="When archaeological phase systems create artificial temporal signals">
+<meta name="twitter:description" content="Companion website to a reproducible study of a systematic bias in aoristic reconstructions from overlapping phase catalogues, and of a simple correction for it.">
+<meta name="twitter:image" content="https://isaakiel.github.io/aoristic_overlap_bias_paper/assets/figures/schematic_overlap_bias.png">
+<meta name="twitter:image-height" content="2700">
+<meta name="twitter:image-width" content="4500">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Aoristic reconstruction and phase overlap</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html#overview"> 
+<span class="menu-text">Overview</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html#the-problem"> 
+<span class="menu-text">The problem</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html#evidence"> 
+<span class="menu-text">Evidence</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html#case-studies"> 
+<span class="menu-text">Case studies</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html#resources"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html#citation"> 
+<span class="menu-text">Citation</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./assets/paper/manuscript.html"> 
+<span class="menu-text">Manuscript</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ISAAKiel/aoristic_overlap_bias_paper"> <i class="bi bi-github" role="img" aria-label="GitHub repository">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content page-columns page-full column-body" id="quarto-document-content">
+
+
+
+
+<div class="paper-hero page-columns page-full" aria-labelledby="hero-title">
+<div class="paper-hero-copy">
+<p class="eyebrow">
+Paper companion website
+</p>
+<h1 id="hero-title">
+When chronological classifications create archaeological signals
+</h1>
+<p class="paper-hero-lead">
+Aoristic analysis spreads each phase-dated observation evenly over its interval. Where the intervals come from overlapping, hierarchical phase systems, the resulting curves take on the shape of the classification itself. We show why this happens, why more data and more elaborate methods do not remove it, and how it can be corrected.
+</p>
+<p class="authors">
+</p><p>Martin Hinz · Nils Müller-Scheeßel</p>
+<p></p>
+<div class="paper-hero-actions">
+<p><a href="assets/paper/manuscript.pdf" class="btn btn-primary btn-lg">Read the manuscript</a> <a href="#resources" class="btn btn-outline-primary btn-lg">View the supplements</a> <a href="https://github.com/ISAAKiel/aoristic_overlap_bias_paper" class="btn btn-outline-secondary btn-lg">Browse code and data</a></p>
+</div>
+</div>
+<div class="paper-hero-figure page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><img src="assets/figures/schematic_overlap_bias.png" class="img-fluid figure-img column-screen" alt="Schematic showing how three overlapping labels produce a declining standard aoristic curve from a uniform distribution of events."></p>
+<figcaption>Three equal phases with six events each. Under equal choice among the labels covering each date, the labels A, A–B and A–B–C are used 2, 5 and 11 times, and the standard aoristic sum turns a flat distribution into a declining one.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="paper-status">
+<p><strong>Working manuscript.</strong> This page summarises the argument and the main results. The manuscript and the supplements are the authoritative sources for methods, numbers and diagnostics.</p>
+</div>
+<section id="overview" class="level2">
+<h2 data-anchor-id="overview">Overview</h2>
+<div class="lead-block">
+<p>A large part of the archaeological record is dated not by radiocarbon but by phases: sites, graves and finds are assigned to typological or cultural periods of very different length, and regional and national databases now make such data available in large quantities. Aoristic analysis is the standard way of turning them into a temporal frequency curve. It treats each interval as a neutral container of chronological uncertainty.</p>
+</div>
+<p>That assumption fails when the phases overlap. Which label an observation receives depends on its date and on how many labels are available for that date, so the observations are <strong>not coarsened at random</strong>. The overlap structure of the catalogue then reappears in the reconstruction, and it does not go away with more data.</p>
+<div class="card-grid card-grid-four">
+<section id="the-mechanism" class="level3 paper-card">
+<h3 data-anchor-id="the-mechanism">The mechanism</h3>
+<p>In simulations with a uniform event process, the standard aoristic curve reproduces the overlap structure of the phase catalogue almost exactly.</p>
+</section>
+<section id="why-it-persists" class="level3 paper-card">
+<h3 data-anchor-id="why-it-persists">Why it persists</h3>
+<p>Monte Carlo aoristics and a Bayesian reconstruction treat the intervals in the same way and inherit the bias. Its size does not shrink with the sample.</p>
+</section>
+<section id="the-correction" class="level3 paper-card">
+<h3 data-anchor-id="the-correction">The correction</h3>
+<p>A phase-corrected weighting, derived from a simple model of label assignment, needs nothing but the intervals and reduces the error by about an order of magnitude.</p>
+</section>
+<section id="the-checks" class="level3 paper-card">
+<h3 data-anchor-id="the-checks">The checks</h3>
+<p>Simple diagnostics show whether a reconstruction is affected and whether the assumptions of the correction hold in a given dataset.</p>
+</section>
+</div>
+</section>
+<section id="the-problem" class="level2">
+<h2 data-anchor-id="the-problem">The problem</h2>
+<section id="chronological-uncertainty-is-not-always-neutral" class="level3 section-intro">
+<h3 data-anchor-id="chronological-uncertainty-is-not-always-neutral">Chronological uncertainty is not always neutral</h3>
+<p>Archaeological intervals are categories of a classification, not rounded measurements. Some are narrow phases, others broad periods, and many overlap. A broad label collects its observations mainly from those parts of its range that few other labels cover, but the standard method spreads them evenly over the whole range. Weight is thereby shifted towards the parts of the sequence where many labels overlap.</p>
+</section>
+<div class="figure-pair">
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/figures/schematic_overlap_bias.png" class="img-fluid figure-img" alt="Standard aoristic contributions for the three-phase example."></p>
+<figcaption>The minimal example from the paper: the standard aoristic sum yields 8.2, 6.2 and 3.7 for three phases that each contain six events.</figcaption>
+</figure>
+</div>
+</div>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/figures/schematic_phase_correction.png" class="img-fluid figure-img" alt="Overlap counts, inverse-overlap weights and corrected contributions for the three-phase example."></p>
+<figcaption>The phase correction weights each year by the inverse number of labels covering it and recovers the six events per phase.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="mechanism">
+<div class="mechanism-step">
+<p><span class="mechanism-number">1</span></p>
+<p><strong>Events</strong></p>
+<p>The past process may be uniform or follow any other trajectory.</p>
+</div>
+<div class="mechanism-arrow" aria-hidden="true">
+→
+</div>
+<div class="mechanism-step">
+<p><span class="mechanism-number">2</span></p>
+<p><strong>Classification</strong></p>
+<p>Each event receives one of the narrow or broad labels that cover its date.</p>
+</div>
+<div class="mechanism-arrow" aria-hidden="true">
+→
+</div>
+<div class="mechanism-step">
+<p><span class="mechanism-number">3</span></p>
+<p><strong>Reconstruction</strong></p>
+<p>Uniform weighting within each interval carries the overlap structure of the catalogue into the curve.</p>
+</div>
+</div>
+<div class="key-statement">
+<blockquote class="blockquote">
+<p><strong>Representing uncertainty is not the same as correcting it: when the system used to express chronological uncertainty has a structure of its own, that structure ends up in the result.</strong></p>
+</blockquote>
+</div>
+</section>
+<section id="evidence" class="level2">
+<h2 data-anchor-id="evidence">Evidence</h2>
+<section id="a-controlled-demonstration" class="level3">
+<h3 data-anchor-id="a-controlled-demonstration">A controlled demonstration</h3>
+<p>The simulations use a synthetic catalogue of broad periods, phases, subphases and cross-cutting labels. Its overlap curve counts the labels covering each year and describes nothing but the geometry of the classification.</p>
+<div class="figure-pair">
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/figures/synthetic_phase_catalogue.png" class="img-fluid figure-img" alt="Horizontal bars showing the hierarchical synthetic phase catalogue."></p>
+<figcaption>Synthetic phase catalogue used in the simulations.</figcaption>
+</figure>
+</div>
+</div>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/figures/s1_overlap_structure.png" class="img-fluid figure-img" alt="Number of overlapping labels through time."></p>
+<figcaption>Overlap curve of the synthetic catalogue.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Events are drawn from a uniform distribution and each is given one of the labels compatible with its date. The standard aoristic reconstruction of these events is clearly structured, and the structure follows the overlap curve.</p>
+<div class="figure-pair">
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/figures/s1_uniform_ground_truth.png" class="img-fluid figure-img" alt="Uniform simulated event intensity through time."></p>
+<figcaption>Uniform simulated ground truth.</figcaption>
+</figure>
+</div>
+</div>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/figures/s1_ground_truth_vs_standard_aoristic.png" class="img-fluid figure-img" alt="Comparison showing artificial temporal structure in the standard aoristic reconstruction."></p>
+<figcaption>Ground truth compared with the standard aoristic reconstruction.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="comparing-reconstruction-methods" class="level3">
+<h3 data-anchor-id="comparing-reconstruction-methods">Comparing reconstruction methods</h3>
+<p>The paper compares standard proportional aoristics, Monte Carlo aoristics, the phase-corrected weighting and the Bayesian reconstruction implemented in baorista. The Monte Carlo mean converges on the standard sum, and the Bayesian posterior concentrates probability where many labels overlap. The phase correction comes close to the uniform truth, and its remaining error is sampling noise; the error of the standard method stays the same whether 1,000 or 10,000 events are simulated.</p>
+<div class="figure-wide">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/figures/s2_reconstruction_methods_with_uncertainty.png" class="img-fluid figure-img" alt="Ground truth and several aoristic and Bayesian reconstruction methods with uncertainty."></p>
+<figcaption>Reconstruction methods compared under a uniform ground truth.</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<div class="card-grid card-grid-four">
+<section id="standard-aoristics" class="level3 paper-card">
+<h3 data-anchor-id="standard-aoristics">Standard aoristics</h3>
+<p>Transparent and deterministic, but it takes over the overlap structure of the intervals.</p>
+</section>
+<section id="monte-carlo-aoristics" class="level3 paper-card">
+<h3 data-anchor-id="monte-carlo-aoristics">Monte Carlo aoristics</h3>
+<p>Shows the spread of possible curves, but its mean is the standard sum.</p>
+</section>
+<section id="phase-correction" class="level3 paper-card">
+<h3 data-anchor-id="phase-correction">Phase correction</h3>
+<p>Weights each year within an interval by the inverse number of labels covering it.</p>
+</section>
+<section id="bayesian-reconstruction" class="level3 paper-card">
+<h3 data-anchor-id="bayesian-reconstruction">Bayesian reconstruction</h3>
+<p>Models the curve explicitly, but its likelihood treats the intervals as neutral bounds and inherits the bias.</p>
+</section>
+</div>
+<section id="beyond-a-uniform-signal" class="level3">
+<h3 data-anchor-id="beyond-a-uniform-signal">Beyond a uniform signal</h3>
+<p>Ten non-uniform signals, from trends and single or multiple peaks to a plateau, test whether the correction preserves real structure. It performs better than or as well as the standard method for nine of the eleven signals. It dampens a single central peak and a plateau, where the real concentration of events coincides with the region of high overlap. Three further assignment models, with preferences for narrow labels, broad labels or particular levels of the hierarchy, change little about this pattern.</p>
+<div class="figure-pair">
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/figures/s3_ground_truth_signal_shapes.png" class="img-fluid figure-img" alt="Simulated temporal signal shapes including trends, peaks, plateaus and multi-peak trajectories."></p>
+<figcaption>Ground-truth signal shapes used in the sensitivity analysis.</figcaption>
+</figure>
+</div>
+</div>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/figures/s3_rmsd_boxplot.png" class="img-fluid figure-img" alt="Distribution of reconstruction error for the methods across simulation scenarios."></p>
+<figcaption>Reconstruction error of the methods across the non-uniform signals.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="case-studies" class="level2">
+<h2 data-anchor-id="case-studies">Empirical case studies</h2>
+<section id="danish-neolithic-settlement-data" class="level3">
+<h3 data-anchor-id="danish-neolithic-settlement-data">Danish Neolithic settlement data</h3>
+<p>About 3,500 Neolithic settlement records from the Danish national register Fund og Fortidsminder are reconstructed with all methods and compared with a summed probability distribution of radiocarbon dates from XRONOS. The correction largely removes the coupling of the curve to the interval structure and moves it towards the radiocarbon record, with which the standard reconstruction is uncorrelated.</p>
+<div class="figure-wide">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/figures/s4_danish_neolithic_methods_vs_overlap.png" class="img-fluid figure-img" alt="Comparison of standard, Monte Carlo, phase-corrected and Bayesian reconstructions for Danish Neolithic settlement data."></p>
+<figcaption>Reconstruction methods applied to the Danish Neolithic settlement data, compared with the overlap structure of the observed intervals.</figcaption>
+</figure>
+</div>
+</div>
+<div class="case-note">
+<p>The same data also show the limits of the approach. Label use in the Danish register is far more concentrated on a few broad periods than the correction assumes, and the support from the radiocarbon comparison is moderate rather than conclusive. The case therefore illustrates how the key assumption can be checked, and why independent evidence matters where it fails.</p>
+</div>
+</section>
+<section id="hallstatt-period-burials" class="level3">
+<h3 data-anchor-id="hallstatt-period-burials">Hallstatt-period burials</h3>
+<p>About 2,200 Early Iron Age graves from southwestern and southern Germany, dated with a fine-grained relative chronology of short phases, offer no independent radiocarbon record because of the Hallstatt plateau. Here the standard reconstruction follows the overlap structure of the catalogue almost step by step, and the correction more than halves the overlap-aligned amplitude.</p>
+<div class="figure-wide">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/figures/s5_hallstatt_methods_vs_overlap.png" class="img-fluid figure-img" alt="Standard, Monte Carlo and phase-corrected reconstructions of Hallstatt-period burial data plotted against the empirical overlap curve."></p>
+<figcaption>Reconstruction methods applied to the Hallstatt-period burials and compared with the overlap structure of their intervals.</figcaption>
+</figure>
+</div>
+</div>
+<div class="case-note">
+<p>One deviation survives the correction. In HaD2 all reconstructions fall below the overlap curve, and in HaD3 they rise above it. Since the catalogue cannot produce this pattern, it more likely reflects the absolute dates assigned to the phases, and would fit a HaD2 that was shorter than commonly assumed.</p>
+</div>
+</section>
+</section>
+<section id="what-to-do-in-practice" class="level2">
+<h2 data-anchor-id="what-to-do-in-practice">What to do in practice</h2>
+<div class="card-grid card-grid-three">
+<section id="look-at-the-catalogue" class="level3 paper-card">
+<h3 data-anchor-id="look-at-the-catalogue">Look at the catalogue</h3>
+<p>Harmonise the intervals, plot their overlap curve and check how evenly the labels are used before interpreting peaks and troughs.</p>
+</section>
+<section id="compare-both-curves" class="level3 paper-card">
+<h3 data-anchor-id="compare-both-curves">Compare both curves</h3>
+<p>Read the standard and the corrected reconstruction together, along with their coupling to the overlap curve.</p>
+</section>
+<section id="test-and-triangulate" class="level3 paper-card">
+<h3 data-anchor-id="test-and-triangulate">Test and triangulate</h3>
+<p>Test conspicuous features against what the catalogue alone would produce, and use independent evidence where the internal checks leave the question open.</p>
+</section>
+</div>
+<div class="key-statement final-statement">
+<blockquote class="blockquote">
+<p><strong>Where standard and corrected reconstructions agree, the interpretation rests on firmer ground. Where they diverge, the diagnostics show whether the difference is likely to come from the catalogue.</strong></p>
+</blockquote>
+</div>
+</section>
+<section id="resources" class="level2">
+<h2 data-anchor-id="resources">Paper and reproducible materials</h2>
+<p>All analyses are reproducible from the repository, which contains the manuscript source, the data, the analysis scripts and the cached model outputs. The supplements are executable Quarto documents that document each analysis step by step.</p>
+<div class="card-grid card-grid-three">
+<section id="manuscript" class="level3 paper-card resource-card">
+<h3 data-anchor-id="manuscript">Manuscript</h3>
+<p><a href="assets/paper/manuscript.pdf">Manuscript (PDF)</a></p>
+<p><a href="assets/paper/manuscript.html">Manuscript (HTML)</a></p>
+</section>
+<section id="supplements" class="level3 paper-card resource-card">
+<h3 data-anchor-id="supplements">Supplements</h3>
+<p><a href="assets/paper/supplements/s1_structural_phase_bias.html">S1 Structural phase bias</a></p>
+<p><a href="assets/paper/supplements/s2_reconstruction_method_comparison.html">S2 Comparison of reconstruction methods</a></p>
+<p><a href="assets/paper/supplements/s3_non_uniform_signal_sensitivity.html">S3 Non-uniform signals</a></p>
+<p><a href="assets/paper/supplements/s4_empirical_1_danish_neolithic.html">S4 Danish Neolithic settlements</a></p>
+<p><a href="assets/paper/supplements/s5_empirical_2_hallstatt.html">S5 Hallstatt-period burials</a></p>
+<p><a href="assets/paper/supplements/s6_assignment_model_sensitivity.html">S6 Sensitivity to the assignment model</a></p>
+</section>
+<section id="code-and-data" class="level3 paper-card resource-card">
+<h3 data-anchor-id="code-and-data">Code and data</h3>
+<p><a href="https://github.com/ISAAKiel/aoristic_overlap_bias_paper">Browse the repository</a></p>
+<p>The phase correction is implemented as <code>period_correction</code> in the R package <a href="https://github.com/ISAAKiel/aoristAAR">aoristAAR</a>.</p>
+</section>
+</div>
+</section>
+<section id="citation" class="level2">
+<h2 data-anchor-id="citation">Citation</h2>
+<section id="suggested-citation" class="level3 citation-box">
+<h3 data-anchor-id="suggested-citation">Suggested citation</h3>
+<p>Hinz, Martin, and Nils Müller-Scheeßel. <em>Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions</em>. Working manuscript, 2026.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@unpublished</span>{<span class="ot">hinz_mueller</span>-<span class="ot">scheessel_aoristic_bias</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span> = {Hinz, Martin and Müller-Scheeßel, Nils},</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>  = {Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions},</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>   = {2026},</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">note</span>   = {Working manuscript},</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">url</span>    = {https://isaakiel.github.io/aoristic_overlap_bias_paper/}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="authors-and-funding" class="level2">
+<h2 data-anchor-id="authors-and-funding">Authors and funding</h2>
+<p><strong>Martin Hinz</strong> and <strong>Nils Müller-Scheeßel</strong></p>
+<p>The contribution of Martin Hinz was funded by the European Research Council (ERC) through the project ESTER (ERC-2024-COG 101171036).</p>
+<section id="explore-the-complete-analysis" class="level3 footer-cta">
+<h3 data-anchor-id="explore-the-complete-analysis">Explore the complete analysis</h3>
+<p><a href="assets/paper/manuscript.pdf" class="btn btn-primary">Read the manuscript</a> <a href="https://github.com/ISAAKiel/aoristic_overlap_bias_paper" class="btn btn-outline-primary">Browse code and data</a></p>
+</section>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/isaakiel\.github\.io\/aoristic_overlap_bias_paper\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Companion website for the paper</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ISAAKiel/aoristic_overlap_bias_paper">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

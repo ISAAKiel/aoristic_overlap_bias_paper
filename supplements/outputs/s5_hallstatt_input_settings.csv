@@ -1,0 +1,8 @@
+setting,value
+input_file,../data/hallstatt.tab
+phase_range_file,../data/hallstatt_phase_ranges.csv
+time_min,-780
+time_max,-451
+bin_width,10
+max_interval_width,Inf
+n_mc,100

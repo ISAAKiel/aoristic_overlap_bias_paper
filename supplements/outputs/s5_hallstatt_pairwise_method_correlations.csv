@@ -1,0 +1,17 @@
+method_1,method_2,correlation
+Standard aoristic,Standard aoristic,1
+Standard aoristic,Monte Carlo mean,0.9978603611707375
+Standard aoristic,Phase-corrected,0.8942813322092128
+Standard aoristic,Baorista posterior median,0.7693773005451173
+Monte Carlo mean,Standard aoristic,0.9978603611707375
+Monte Carlo mean,Monte Carlo mean,1
+Monte Carlo mean,Phase-corrected,0.8920045719411045
+Monte Carlo mean,Baorista posterior median,0.7567064619181569
+Phase-corrected,Standard aoristic,0.8942813322092128
+Phase-corrected,Monte Carlo mean,0.8920045719411045
+Phase-corrected,Phase-corrected,1
+Phase-corrected,Baorista posterior median,0.6761879128147241
+Baorista posterior median,Standard aoristic,0.7693773005451173
+Baorista posterior median,Monte Carlo mean,0.7567064619181569
+Baorista posterior median,Phase-corrected,0.6761879128147241
+Baorista posterior median,Baorista posterior median,1

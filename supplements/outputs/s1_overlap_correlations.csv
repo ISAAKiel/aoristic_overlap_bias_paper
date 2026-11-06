@@ -1,0 +1,8 @@
+metric,value
+Correlation between overlap curve and standard aoristic curve,0.9869750145471441
+Correlation between overlap curve and signed error,0.9869750145471441
+Correlation between overlap curve and absolute error,0.4530938132816207
+Correlation between overlap curve and squared error,0.6530827623391042
+Overlap-attributable RMSD of standard aoristic curve,0.004043189304244864
+Share of RMSD attributable to overlap,0.986975014547144
+Overlap-aligned relative amplitude of standard aoristic curve,0.18598670799526373

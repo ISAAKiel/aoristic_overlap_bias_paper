@@ -1,0 +1,11 @@
+window,comparison,n_bins,correlation,p_surrogate
+Common Neolithic window,Standard aoristic,43,-0.04960321326759963,0.9022097790220978
+Common Neolithic window,Monte Carlo mean,43,-0.04568210756179169,0.9092090790920908
+Common Neolithic window,Phase-corrected,43,0.6446585653816455,0.1151884811518848
+Common Neolithic window,Baorista posterior median,43,-0.1321540859781264,0.4173582641735826
+Common Neolithic window,Difference: phase-corrected minus standard,43,0.6942617786492451,0.08389161083891611
+Analytical window,Standard aoristic,46,-0.23847973433128933,0.4794520547945205
+Analytical window,Monte Carlo mean,46,-0.2361901062883169,0.48425157484251574
+Analytical window,Phase-corrected,46,0.25590476067957746,0.146985301469853
+Analytical window,Baorista posterior median,46,-0.16784955073029179,0.39486051394860516
+Analytical window,Difference: phase-corrected minus standard,46,0.4943844950108668,0.026697330266973303

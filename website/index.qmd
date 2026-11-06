@@ -1,0 +1,322 @@
+---
+pagetitle: "When archaeological phase systems create artificial temporal signals"
+description: "Companion website to a reproducible study of a systematic bias in aoristic reconstructions from overlapping phase catalogues, and of a simple correction for it."
+page-layout: full
+title-block-style: none
+format:
+  html:
+    toc: false
+    anchor-sections: false
+    code-copy: true
+---
+
+::: {.paper-hero .column-screen aria-labelledby="hero-title"}
+
+::: {.paper-hero-copy}
+<p class="eyebrow">Paper companion website</p>
+
+<h1 id="hero-title">When chronological classifications create archaeological signals</h1>
+
+<p class="paper-hero-lead">Aoristic analysis spreads each phase-dated observation evenly over its interval. Where the intervals come from overlapping, hierarchical phase systems, the resulting curves take on the shape of the classification itself. We show why this happens, why more data and more elaborate methods do not remove it, and how it can be corrected.</p>
+
+<p class="authors">{{< var authors >}}</p>
+
+::: {.paper-hero-actions}
+[Read the manuscript](assets/paper/manuscript.pdf){.btn .btn-primary .btn-lg}
+[View the supplements](#resources){.btn .btn-outline-primary .btn-lg}
+[Browse code and data]({{< var repository-url >}}){.btn .btn-outline-secondary .btn-lg}
+:::
+:::
+
+::: {.paper-hero-figure}
+![Three equal phases with six events each. Under equal choice among the labels covering each date, the labels A, A–B and A–B–C are used 2, 5 and 11 times, and the standard aoristic sum turns a flat distribution into a declining one.](assets/figures/schematic_overlap_bias.png){fig-alt="Schematic showing how three overlapping labels produce a declining standard aoristic curve from a uniform distribution of events."}
+:::
+
+:::
+
+::: {.paper-status}
+**{{< var version-label >}}.** This page summarises the argument and the main results. The manuscript and the supplements are the authoritative sources for methods, numbers and diagnostics.
+:::
+
+## Overview {#overview}
+
+::: {.lead-block}
+A large part of the archaeological record is dated not by radiocarbon but by phases: sites, graves and finds are assigned to typological or cultural periods of very different length, and regional and national databases now make such data available in large quantities. Aoristic analysis is the standard way of turning them into a temporal frequency curve. It treats each interval as a neutral container of chronological uncertainty.
+:::
+
+That assumption fails when the phases overlap. Which label an observation receives depends on its date and on how many labels are available for that date, so the observations are **not coarsened at random**. The overlap structure of the catalogue then reappears in the reconstruction, and it does not go away with more data.
+
+::: {.card-grid .card-grid-four}
+::: {.paper-card}
+### The mechanism
+
+In simulations with a uniform event process, the standard aoristic curve reproduces the overlap structure of the phase catalogue almost exactly.
+:::
+
+::: {.paper-card}
+### Why it persists
+
+Monte Carlo aoristics and a Bayesian reconstruction treat the intervals in the same way and inherit the bias. Its size does not shrink with the sample.
+:::
+
+::: {.paper-card}
+### The correction
+
+A phase-corrected weighting, derived from a simple model of label assignment, needs nothing but the intervals and reduces the error by about an order of magnitude.
+:::
+
+::: {.paper-card}
+### The checks
+
+Simple diagnostics show whether a reconstruction is affected and whether the assumptions of the correction hold in a given dataset.
+:::
+:::
+
+## The problem {#the-problem}
+
+::: {.section-intro}
+### Chronological uncertainty is not always neutral
+
+Archaeological intervals are categories of a classification, not rounded measurements. Some are narrow phases, others broad periods, and many overlap. A broad label collects its observations mainly from those parts of its range that few other labels cover, but the standard method spreads them evenly over the whole range. Weight is thereby shifted towards the parts of the sequence where many labels overlap.
+:::
+
+::: {.figure-pair}
+::: {}
+![The minimal example from the paper: the standard aoristic sum yields 8.2, 6.2 and 3.7 for three phases that each contain six events.](assets/figures/schematic_overlap_bias.png){fig-alt="Standard aoristic contributions for the three-phase example."}
+:::
+
+::: {}
+![The phase correction weights each year by the inverse number of labels covering it and recovers the six events per phase.](assets/figures/schematic_phase_correction.png){fig-alt="Overlap counts, inverse-overlap weights and corrected contributions for the three-phase example."}
+:::
+:::
+
+::: {.mechanism}
+::: {.mechanism-step}
+<span class="mechanism-number">1</span>
+
+**Events**
+
+The past process may be uniform or follow any other trajectory.
+:::
+
+<div class="mechanism-arrow" aria-hidden="true">→</div>
+
+::: {.mechanism-step}
+<span class="mechanism-number">2</span>
+
+**Classification**
+
+Each event receives one of the narrow or broad labels that cover its date.
+:::
+
+<div class="mechanism-arrow" aria-hidden="true">→</div>
+
+::: {.mechanism-step}
+<span class="mechanism-number">3</span>
+
+**Reconstruction**
+
+Uniform weighting within each interval carries the overlap structure of the catalogue into the curve.
+:::
+:::
+
+::: {.key-statement}
+> **Representing uncertainty is not the same as correcting it: when the system used to express chronological uncertainty has a structure of its own, that structure ends up in the result.**
+:::
+
+## Evidence {#evidence}
+
+### A controlled demonstration
+
+The simulations use a synthetic catalogue of broad periods, phases, subphases and cross-cutting labels. Its overlap curve counts the labels covering each year and describes nothing but the geometry of the classification.
+
+::: {.figure-pair}
+::: {}
+![Synthetic phase catalogue used in the simulations.](assets/figures/synthetic_phase_catalogue.png){fig-alt="Horizontal bars showing the hierarchical synthetic phase catalogue."}
+:::
+
+::: {}
+![Overlap curve of the synthetic catalogue.](assets/figures/s1_overlap_structure.png){fig-alt="Number of overlapping labels through time."}
+:::
+:::
+
+Events are drawn from a uniform distribution and each is given one of the labels compatible with its date. The standard aoristic reconstruction of these events is clearly structured, and the structure follows the overlap curve.
+
+::: {.figure-pair}
+::: {}
+![Uniform simulated ground truth.](assets/figures/s1_uniform_ground_truth.png){fig-alt="Uniform simulated event intensity through time."}
+:::
+
+::: {}
+![Ground truth compared with the standard aoristic reconstruction.](assets/figures/s1_ground_truth_vs_standard_aoristic.png){fig-alt="Comparison showing artificial temporal structure in the standard aoristic reconstruction."}
+:::
+:::
+
+### Comparing reconstruction methods
+
+The paper compares standard proportional aoristics, Monte Carlo aoristics, the phase-corrected weighting and the Bayesian reconstruction implemented in baorista. The Monte Carlo mean converges on the standard sum, and the Bayesian posterior concentrates probability where many labels overlap. The phase correction comes close to the uniform truth, and its remaining error is sampling noise; the error of the standard method stays the same whether 1,000 or 10,000 events are simulated.
+
+::: {.figure-wide}
+![Reconstruction methods compared under a uniform ground truth.](assets/figures/s2_reconstruction_methods_with_uncertainty.png){fig-alt="Ground truth and several aoristic and Bayesian reconstruction methods with uncertainty."}
+:::
+
+::: {.card-grid .card-grid-four}
+::: {.paper-card}
+### Standard aoristics
+
+Transparent and deterministic, but it takes over the overlap structure of the intervals.
+:::
+
+::: {.paper-card}
+### Monte Carlo aoristics
+
+Shows the spread of possible curves, but its mean is the standard sum.
+:::
+
+::: {.paper-card}
+### Phase correction
+
+Weights each year within an interval by the inverse number of labels covering it.
+:::
+
+::: {.paper-card}
+### Bayesian reconstruction
+
+Models the curve explicitly, but its likelihood treats the intervals as neutral bounds and inherits the bias.
+:::
+:::
+
+### Beyond a uniform signal
+
+Ten non-uniform signals, from trends and single or multiple peaks to a plateau, test whether the correction preserves real structure. It performs better than or as well as the standard method for nine of the eleven signals. It dampens a single central peak and a plateau, where the real concentration of events coincides with the region of high overlap. Three further assignment models, with preferences for narrow labels, broad labels or particular levels of the hierarchy, change little about this pattern.
+
+::: {.figure-pair}
+::: {}
+![Ground-truth signal shapes used in the sensitivity analysis.](assets/figures/s3_ground_truth_signal_shapes.png){fig-alt="Simulated temporal signal shapes including trends, peaks, plateaus and multi-peak trajectories."}
+:::
+
+::: {}
+![Reconstruction error of the methods across the non-uniform signals.](assets/figures/s3_rmsd_boxplot.png){fig-alt="Distribution of reconstruction error for the methods across simulation scenarios."}
+:::
+:::
+
+## Empirical case studies {#case-studies}
+
+### Danish Neolithic settlement data
+
+About 3,500 Neolithic settlement records from the Danish national register Fund og Fortidsminder are reconstructed with all methods and compared with a summed probability distribution of radiocarbon dates from XRONOS. The correction largely removes the coupling of the curve to the interval structure and moves it towards the radiocarbon record, with which the standard reconstruction is uncorrelated.
+
+::: {.figure-wide}
+![Reconstruction methods applied to the Danish Neolithic settlement data, compared with the overlap structure of the observed intervals.](assets/figures/s4_danish_neolithic_methods_vs_overlap.png){fig-alt="Comparison of standard, Monte Carlo, phase-corrected and Bayesian reconstructions for Danish Neolithic settlement data."}
+:::
+
+::: {.case-note}
+The same data also show the limits of the approach. Label use in the Danish register is far more concentrated on a few broad periods than the correction assumes, and the support from the radiocarbon comparison is moderate rather than conclusive. The case therefore illustrates how the key assumption can be checked, and why independent evidence matters where it fails.
+:::
+
+### Hallstatt-period burials
+
+About 2,200 Early Iron Age graves from southwestern and southern Germany, dated with a fine-grained relative chronology of short phases, offer no independent radiocarbon record because of the Hallstatt plateau. Here the standard reconstruction follows the overlap structure of the catalogue almost step by step, and the correction more than halves the overlap-aligned amplitude.
+
+::: {.figure-wide}
+![Reconstruction methods applied to the Hallstatt-period burials and compared with the overlap structure of their intervals.](assets/figures/s5_hallstatt_methods_vs_overlap.png){fig-alt="Standard, Monte Carlo and phase-corrected reconstructions of Hallstatt-period burial data plotted against the empirical overlap curve."}
+:::
+
+::: {.case-note}
+One deviation survives the correction. In HaD2 all reconstructions fall below the overlap curve, and in HaD3 they rise above it. Since the catalogue cannot produce this pattern, it more likely reflects the absolute dates assigned to the phases, and would fit a HaD2 that was shorter than commonly assumed.
+:::
+
+## What to do in practice
+
+::: {.card-grid .card-grid-three}
+::: {.paper-card}
+### Look at the catalogue
+
+Harmonise the intervals, plot their overlap curve and check how evenly the labels are used before interpreting peaks and troughs.
+:::
+
+::: {.paper-card}
+### Compare both curves
+
+Read the standard and the corrected reconstruction together, along with their coupling to the overlap curve.
+:::
+
+::: {.paper-card}
+### Test and triangulate
+
+Test conspicuous features against what the catalogue alone would produce, and use independent evidence where the internal checks leave the question open.
+:::
+:::
+
+::: {.key-statement .final-statement}
+> **Where standard and corrected reconstructions agree, the interpretation rests on firmer ground. Where they diverge, the diagnostics show whether the difference is likely to come from the catalogue.**
+:::
+
+## Paper and reproducible materials {#resources}
+
+All analyses are reproducible from the repository, which contains the manuscript source, the data, the analysis scripts and the cached model outputs. The supplements are executable Quarto documents that document each analysis step by step.
+
+::: {.card-grid .card-grid-three}
+::: {.paper-card .resource-card}
+### Manuscript
+
+[Manuscript (PDF)](assets/paper/manuscript.pdf)
+
+[Manuscript (HTML)](assets/paper/manuscript.html)
+:::
+
+::: {.paper-card .resource-card}
+### Supplements
+
+[S1 Structural phase bias](assets/paper/supplements/s1_structural_phase_bias.html)
+
+[S2 Comparison of reconstruction methods](assets/paper/supplements/s2_reconstruction_method_comparison.html)
+
+[S3 Non-uniform signals](assets/paper/supplements/s3_non_uniform_signal_sensitivity.html)
+
+[S4 Danish Neolithic settlements](assets/paper/supplements/s4_empirical_1_danish_neolithic.html)
+
+[S5 Hallstatt-period burials](assets/paper/supplements/s5_empirical_2_hallstatt.html)
+
+[S6 Sensitivity to the assignment model](assets/paper/supplements/s6_assignment_model_sensitivity.html)
+:::
+
+::: {.paper-card .resource-card}
+### Code and data
+
+[Browse the repository]({{< var repository-url >}})
+
+The phase correction is implemented as `period_correction` in the R package [aoristAAR](https://github.com/ISAAKiel/aoristAAR).
+:::
+:::
+
+## Citation {#citation}
+
+::: {.citation-box}
+### Suggested citation
+
+Hinz, Martin, and Nils Müller-Scheeßel. *Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions*. Working manuscript, 2026.
+
+```bibtex
+@unpublished{hinz_mueller-scheessel_aoristic_bias,
+  author = {Hinz, Martin and Müller-Scheeßel, Nils},
+  title  = {Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions},
+  year   = {2026},
+  note   = {Working manuscript},
+  url    = {https://isaakiel.github.io/aoristic_overlap_bias_paper/}
+}
+```
+:::
+
+## Authors and funding
+
+**Martin Hinz** and **Nils Müller-Scheeßel**
+
+The contribution of Martin Hinz was funded by the European Research Council (ERC) through the project ESTER (ERC-2024-COG 101171036).
+
+::: {.footer-cta}
+### Explore the complete analysis
+
+[Read the manuscript](assets/paper/manuscript.pdf){.btn .btn-primary}
+[Browse code and data]({{< var repository-url >}}){.btn .btn-outline-primary}
+:::

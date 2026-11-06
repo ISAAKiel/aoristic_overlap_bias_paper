@@ -1,0 +1,447 @@
+---
+title: "Supplement 6: Sensitivity to the phase-assignment model"
+author:
+  - Martin Hinz
+  - Nils Müller-Scheeßel
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-tools: true
+  pdf:
+    toc: true
+    include-in-header:
+      text: |
+        \usepackage{fvextra}
+        \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,commandchars=\\\{\}}
+        \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines,breakanywhere}
+execute:
+  warning: false
+  message: false
+bibliography: ../bibliography/bibliography.bib
+csl: ../bibliography/journal-of-computer-applications-in-archaeology.csl
+lang: en-GB
+---
+
+# Aim
+
+Supplements 1–3 rely on a single observation model, in which each simulated event is assigned one phase label drawn uniformly at random from all labels compatible with its true date. This supplement addresses three questions:
+
+> 1. How much of the good performance of the phase-corrected reconstruction follows from that particular assignment model?
+> 2. How do the reconstruction methods behave when phase labels are assigned in a different way?
+> 3. What happens when label use is as strongly concentrated on a few periods as in the Danish data of Supplement 4, and how does this compare with the less concentrated Hallstatt data of Supplement 5?
+
+The first question matters because, as shown below, the phase correction is exactly the posterior distribution of the event date under the uniform assignment model with a flat prior. Its near-perfect recovery of the uniform ground truth in Supplements 2 and 3 is expected by construction. The alternative assignment models examined under the second question provide the independent test.
+
+## Computation
+
+The simulations are run with `scripts/run_s6_assignment_model_sensitivity.R` (`make s6`) and, for the Danish and Hallstatt catalogues, with `scripts/run_s6_danish_catalogue.R` (`make s6-danish`, after rendering Supplement 4) and `scripts/run_s6_hallstatt_catalogue.R` (`make s6-hallstatt`, after rendering Supplement 5). This document reads the results from `outputs/`. The full reproduction workflow is described in the README.
+
+# Packages and settings
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(purrr)
+library(tibble)
+library(readr)
+
+source("R/aoristic_helpers.R")
+
+method_labels <- c(standard = "Standard aoristic",
+                   phase_corrected = "Phase-corrected",
+                   oracle_flat_prior = "Oracle (true assignment model)",
+                   em_5 = "Iterated correction (5 steps)",
+                   em_20 = "Iterated correction (20 steps)")
+
+method_colours <- c("Standard aoristic" = "#D55E00",
+                    "Phase-corrected" = "#009E73",
+                    "Oracle (true assignment model)" = "grey45",
+                    "Iterated correction (5 steps)" = "#56B4E9",
+                    "Iterated correction (20 steps)" = "#0072B2")
+
+main_methods <- c("standard", "phase_corrected", "oracle_flat_prior")
+
+model_labels <- c(M0_uniform = "M0 uniform choice",
+                  M1_prefer_fine = "M1 prefer fine",
+                  M2_prefer_coarse = "M2 prefer coarse",
+                  M3_level_weights = "M3 level weights")
+
+pattern_labels <- c(uniform = "Uniform", linear_increase = "Linear increase",
+                    linear_decline = "Linear decline",
+                    exponential_increase = "Exponential increase",
+                    exponential_decline = "Exponential decline",
+                    early_peak = "Early peak",
+                    single_peak = "Single central peak",
+                    late_peak = "Late peak", two_peaks = "Two peaks",
+                    multi_peak = "Multi-peak", plateau = "Plateau")
+
+relabel <- function(data) {
+  data |>
+    filter(model %in% names(model_labels)) |>
+    mutate(
+      method_label = factor(method_labels[method], levels = method_labels),
+      model_label = factor(model_labels[model], levels = model_labels),
+      pattern_label = factor(pattern_labels[pattern], levels = pattern_labels)
+    )
+}
+```
+
+# Probabilistic interpretation of the phase correction
+
+Let $\lambda(t)$ be the number of phase labels covering time unit $t$, and let an event with true date $t$ be assigned to one of these labels at random with equal probability:
+
+$$
+P(J_j \mid t) = \frac{\mathbf{1}(t \in J_j)}{\lambda(t)}.
+$$
+
+With a prior $f(t)$ for the event date, Bayes' theorem gives the distribution of the date of an observation that carries label $J_j$:
+
+$$
+p(t \mid J_j) = \frac{f(t)\,\lambda(t)^{-1}}{\sum_{u \in J_j} f(u)\,\lambda(u)^{-1}}, \qquad t \in J_j.
+$$
+
+For a flat prior, $f(t) = \text{const}$, this is identical to the phase-corrected weight $p_i^{*}(t)$ of the main text. The phase correction is thus the posterior for an individual observation under the simplest assignment model, whereas the standard aoristic weight $1/|I_i|$ corresponds to the implicit assumption $P(J_j \mid t) = \text{const}$, i.e. to an assignment process that ignores how many alternative labels exist at $t$.
+
+Two consequences follow:
+
+1. In simulations that use exactly this assignment model (Supplements 1–3), the phase correction corresponds to the true observation model. Its advantage in the uniform scenario is therefore a consistency check, not an independent test.
+2. The flat prior explains why the correction can dampen genuine temporal structure (single peak and plateau in Supplement 3). Within each interval, probability mass is shifted towards the years covered by fewer labels, irrespective of the shape of the true distribution.
+
+# Alternative assignment models
+
+To assess how much depends on the uniform-assignment assumption, we generalise it by introducing label weights $w_j$:
+
+$$
+P(J_j \mid t) = \frac{w_j\,\mathbf{1}(t \in J_j)}{\sum_k w_k\,\mathbf{1}(t \in J_k)}.
+$$
+
+| Model | Label weights $w_j$ | Archaeological reading |
+|---|---|---|
+| M0 uniform choice | $1$ | Assumption of Supplements 1–3 |
+| M1 prefer fine | $1/\lvert J_j\rvert$ | Diagnostic material usually allows a narrow attribution |
+| M2 prefer coarse | $\lvert J_j\rvert$ | Poor preservation or recording; broad attributions dominate |
+| M3 level weights | fixed weight per hierarchy level | Recording conventions favour certain levels of the scheme |
+
+In all four models the propensity to use a particular label does not depend on time. The models change which labels are used, but the resulting bias remains a function of the catalogue geometry. For each model we also report an *oracle* reconstruction, the flat-prior posterior under the true assignment model. It shows what a correction could achieve if the assignment process were known. Under M0 the oracle and the phase correction coincide in expectation, and in any sample in which all catalogue labels occur. In finite samples they generally differ, because the phase correction counts overlap only over the intervals actually observed, whereas the oracle uses the full catalogue.
+
+```{r}
+required_files <- c("outputs/s6_run_metadata.csv",
+                    "outputs/s6_assignment_level_shares.csv",
+                    "outputs/s6_expected_metrics.csv", "outputs/s6_metrics.csv",
+                    "outputs/s6_summary.csv",
+                    "outputs/s6_best_method_by_run_rmsd.csv",
+                    "outputs/s6_example_curves_run_1.csv")
+
+if (!all(file.exists(required_files))) {
+  stop("Run scripts/run_s6_assignment_model_sensitivity.R first.")
+}
+
+s6_metadata <- read_csv("outputs/s6_run_metadata.csv", show_col_types = FALSE)
+level_shares <- read_csv("outputs/s6_assignment_level_shares.csv", show_col_types = FALSE) |>
+  filter(model %in% names(model_labels))
+expected_metrics <- read_csv("outputs/s6_expected_metrics.csv", show_col_types = FALSE) |> relabel()
+s6_summary <- read_csv("outputs/s6_summary.csv", show_col_types = FALSE) |> relabel()
+s6_best <- read_csv("outputs/s6_best_method_by_run_rmsd.csv", show_col_types = FALSE) |> relabel()
+s6_examples <- read_csv("outputs/s6_example_curves_run_1.csv", show_col_types = FALSE) |> relabel()
+
+meta <- setNames(s6_metadata$value, s6_metadata$setting)
+```
+
+The simulations use the synthetic phase catalogue of Supplement 1, the eleven signal shapes of Supplement 3, `r meta[["n_events"]]` events per run and `r meta[["n_runs"]]` runs for each combination of assignment model and signal shape. The Monte Carlo reconstruction is omitted because its mean has the same expectation as the standard reconstruction.
+
+```{r}
+#| label: fig-s6-level-shares
+#| fig-cap: "Share of observations assigned to each hierarchy level of the synthetic catalogue, by time and assignment model (uniform event process)."
+#| fig-width: 9
+#| fig-height: 3.4
+
+level_shares |>
+  mutate(model_label = factor(model_labels[model], levels = model_labels)) |>
+  ggplot(aes(year, share, fill = level)) +
+  geom_area(colour = "white", linewidth = 0.2) +
+  facet_wrap(~model_label, nrow = 1) +
+  scale_fill_manual(
+    values = c(
+      umbrella = "grey70", broad = "#E69F00", `cross-cutting` = "#CC79A7",
+      medium = "#56B4E9", subphase = "#0072B2"
+    )
+  ) +
+  labs(x = "Year (BCE, negative)", y = "Share of assignments") +
+  plot_theme() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+# Systematic bias: expected reconstructions
+
+We first eliminate sampling noise by computing the *expected* reconstruction for an infinitely large sample, using the expected label counts $E[n_j] = N\sum_t f(t) P(J_j\mid t)$. Differences from the true curve in @tbl-s6-expected are purely systematic.
+
+```{r}
+#| label: tbl-s6-expected
+#| tbl-cap: "RMSD (×1000) between the expected reconstruction and the true curve, given as standard / phase-corrected for each assignment model. No sampling noise is involved; the values reflect systematic bias only."
+
+expected_metrics |>
+  filter(method %in% c("standard", "phase_corrected")) |>
+  select(model_label, pattern_label, method, rmsd) |>
+  pivot_wider(names_from = method, values_from = rmsd) |>
+  mutate(
+    value = paste0(formatC(1000 * standard, format = "f", digits = 2), " / ",
+                   formatC(1000 * phase_corrected, format = "f", digits = 2))
+  ) |>
+  select(pattern_label, model_label, value) |>
+  pivot_wider(names_from = model_label, values_from = value, names_sort = TRUE) |>
+  arrange(pattern_label) |>
+  rename(`Signal pattern` = pattern_label) |>
+  kbl(align = "lrrrr")
+```
+
+```{r}
+uniform_expected <- expected_metrics |>
+  filter(pattern == "uniform", method %in% c("standard", "phase_corrected")) |>
+  select(model, method, rmsd) |>
+  pivot_wider(names_from = method, values_from = rmsd) |>
+  mutate(reduction = 1 - phase_corrected / standard)
+
+alt_reduction <- uniform_expected$reduction[uniform_expected$model != "M0_uniform"]
+```
+
+Under M0 the expected phase-corrected reconstruction of the uniform signal has an RMSD `r if (uniform_expected$phase_corrected[uniform_expected$model == "M0_uniform"] < 1e-15) "below 10^-15^" else paste("of", signif(uniform_expected$phase_corrected[uniform_expected$model == "M0_uniform"], 2))`, i.e. it is exact up to floating-point precision. For the uniform signal (first row of @tbl-s6-expected), under M1–M3 the correction still removes `r round(100 * min(alt_reduction))`–`r round(100 * max(alt_reduction))`% of the systematic error of the standard reconstruction, but no longer all of it.
+
+# Finite samples
+
+```{r}
+#| label: fig-s6-rmsd
+#| fig-cap: "RMSD against the true curve across repeated runs (median and interquartile range), by signal shape and assignment model. Lower is better."
+#| fig-width: 10
+#| fig-height: 9
+
+s6_summary |>
+  filter(method %in% main_methods) |>
+  ggplot(aes(x = model_label, y = rmsd_median, colour = method_label)) +
+  geom_pointrange(aes(ymin = rmsd_q25, ymax = rmsd_q75),
+                  position = position_dodge(width = 0.6), size = 0.25,
+                  linewidth = 0.5) +
+  facet_wrap(~pattern_label, ncol = 3, scales = "free_y") +
+  scale_colour_manual(values = method_colours) +
+  scale_x_discrete(labels = function(x) sub(" ", "\n", x)) +
+  expand_limits(y = 0) +
+  labs(x = NULL, y = "RMSD (median, IQR)") +
+  plot_theme(base_size = 8) +
+  theme(axis.text.x = element_text(size = 6))
+```
+
+Best-share values, as reported in Supplement 3, exaggerate small differences, because a method can win most runs by a negligible margin. @tbl-s6-relative reports the median RMSD relative to that of the standard reconstruction, and @tbl-s6-best gives the best-share values for comparison with Supplement 3.
+
+```{r}
+#| label: tbl-s6-relative
+#| tbl-cap: "Median RMSD relative to the standard aoristic reconstruction, given as phase-corrected / oracle for each assignment model. Values below 1 indicate an improvement."
+
+s6_summary |>
+  filter(method %in% main_methods) |>
+  select(model_label, pattern_label, method, rmsd_median) |>
+  group_by(model_label, pattern_label) |>
+  mutate(relative = rmsd_median / rmsd_median[method == "standard"]) |>
+  ungroup() |>
+  select(model_label, pattern_label, method, relative) |>
+  pivot_wider(names_from = method, values_from = relative) |>
+  mutate(
+    value = paste0(formatC(phase_corrected, format = "f", digits = 2), " / ",
+                   formatC(oracle_flat_prior, format = "f", digits = 2))
+  ) |>
+  select(pattern_label, model_label, value) |>
+  pivot_wider(names_from = model_label, values_from = value, names_sort = TRUE) |>
+  arrange(pattern_label) |>
+  rename(`Signal pattern` = pattern_label) |>
+  kbl(align = "lrrrr")
+```
+
+```{r}
+#| label: tbl-s6-overlap-rmsd
+#| tbl-cap: "Median overlap-attributable RMSD (×1000), the part of the error that varies linearly with the overlap curve (see Supplement 2), given as standard / phase-corrected for each assignment model."
+
+s6_summary |>
+  filter(method %in% c("standard", "phase_corrected")) |>
+  select(model_label, pattern_label, method, overlap_attributable_rmsd_median) |>
+  pivot_wider(names_from = method, values_from = overlap_attributable_rmsd_median) |>
+  mutate(
+    value = paste0(formatC(1000 * standard, format = "f", digits = 2), " / ",
+                   formatC(1000 * phase_corrected, format = "f", digits = 2))
+  ) |>
+  select(pattern_label, model_label, value) |>
+  pivot_wider(names_from = model_label, values_from = value, names_sort = TRUE) |>
+  arrange(pattern_label) |>
+  rename(`Signal pattern` = pattern_label) |>
+  kbl(align = "lrrrr")
+```
+
+```{r}
+#| label: tbl-s6-best
+#| tbl-cap: "Share of runs in which the phase-corrected reconstruction gives a lower RMSD than the standard reconstruction, for each assignment model."
+
+s6_best |>
+  select(model_label, pattern_label, method, best_share) |>
+  pivot_wider(names_from = method, values_from = best_share, values_fill = 0) |>
+  mutate(value = formatC(phase_corrected, format = "f", digits = 2)) |>
+  select(pattern_label, model_label, value) |>
+  pivot_wider(names_from = model_label, values_from = value, names_sort = TRUE) |>
+  arrange(pattern_label) |>
+  rename(`Signal pattern` = pattern_label) |>
+  kbl(align = "lrrrr")
+```
+
+# Interpretation
+
+Under uniform label assignment, the phase correction is the exact posterior distribution of the event dates. Its residual error in the uniform case of Supplement 2 is sampling noise.
+
+If narrow or broad labels are preferred, or if certain hierarchy levels are used more often (M1–M3), the correction still removes most of the overlap-induced bias. The pattern of where it helps and where it hurts is also the same as in Supplement 3. Flat, monotonic and two-peaked signals are reconstructed better, central peaks and plateaus are dampened. For the early, late and multiple peaks, the correction is approximately neutral, and in a few combinations slightly worse than the standard reconstruction, namely for the early and late peaks under a preference for broad labels (M2), and for the multi-peak signal under a preference for narrow labels (M1) and under fixed level weights (M3), with relative RMSDs of 1.04 and 1.06 (@tbl-s6-relative).
+
+Not knowing the assignment model therefore costs little. In most scenarios the oracle, which uses the true assignment probabilities, is only marginally better than the phase correction, and under M1 and M3 the phase correction is even slightly better than the oracle for the exponential signals. Larger gaps occur for the early and late peaks and the plateau, above all under a preference for broad labels. For such moderate deviations, the main limitation of the correction is thus not the assumption of uniform assignment but the flat prior within the intervals, which the iterated correction below addresses. Label use that is strongly concentrated on a few periods is a different matter, as the next section shows.
+
+# Label use as concentrated as in the Danish data
+
+```{r}
+dk_rel <- read_csv("outputs/s6_danish_relative_rmsd.csv", show_col_types = FALSE)
+dk_use <- read_csv("outputs/s6_danish_label_use.csv", show_col_types = FALSE)
+dk_meta <- read_csv("outputs/s6_danish_run_metadata.csv", show_col_types = FALSE)
+dk_setting <- function(x) dk_meta$value[dk_meta$setting == x]
+
+dk_obs_top2 <- as.numeric(dk_setting("observed_share_top2"))
+dk_d0_top2 <- dk_use$share_top2_median[dk_use$model == "D0_uniform"]
+dk_d1_top2 <- range(dk_use$share_top2_median[dk_use$model != "D0_uniform"])
+
+dk_model_labels <- c(D0_uniform = "D0 equal choice",
+                     D1_calib_standard = "D1 calibrated (standard curve)",
+                     D1_calib_corrected = "D1 calibrated (corrected curve)")
+
+dk_pc <- function(models, patterns) {
+  range(dk_rel$relative_rmsd_median[
+    dk_rel$method == "phase_corrected" & dk_rel$model %in% models &
+      dk_rel$pattern %in% patterns
+  ])
+}
+dk_d1 <- c("D1_calib_standard", "D1_calib_corrected")
+fmt_range <- function(x) paste0(formatC(x[1], format = "f", digits = 2), "–",
+                                formatC(x[2], format = "f", digits = 2))
+pct <- function(x) paste0(round(100 * x), "%")
+```
+
+The alternative models M1–M3 change the label propensities moderately. Real catalogues can be far more concentrated. In the harmonised Danish settlement data (Supplement 4), the two most frequent periods hold `r pct(dk_obs_top2)` of the records, whereas equal choice among the overlapping periods would give about `r pct(dk_d0_top2)` on the same catalogue. To see what such concentration means for the correction, we simulate on the Danish catalogue itself, with as many events per run as there are Danish records and 100 runs per signal shape. Events are assigned either with equal propensities (D0) or with propensities calibrated so that the expected label frequencies match the observed Danish ones (D1). The calibration requires an event distribution, for which we use either the standard or the phase-corrected Danish reconstruction, since neither is neutral. Both D1 variants reproduce the concentration of the data (`r pct(dk_d1_top2[1])`–`r pct(dk_d1_top2[2])` of the records on the two most frequent periods).
+
+```{r}
+#| label: tbl-s6-danish
+#| tbl-cap: "Simulations on the Danish catalogue: median RMSD relative to the standard aoristic reconstruction, given as phase-corrected / oracle for each assignment model (100 runs per signal). Values below 1 indicate an improvement."
+
+dk_rel |>
+  select(model, pattern, method, relative_rmsd_median) |>
+  pivot_wider(names_from = method, values_from = relative_rmsd_median) |>
+  mutate(
+    value = paste0(formatC(phase_corrected, format = "f", digits = 2), " / ",
+                   formatC(oracle_flat_prior, format = "f", digits = 2)),
+    model_label = factor(dk_model_labels[model], levels = dk_model_labels),
+    pattern_label = factor(pattern_labels[pattern], levels = pattern_labels)
+  ) |>
+  select(pattern_label, model_label, value) |>
+  pivot_wider(names_from = model_label, values_from = value, names_sort = TRUE) |>
+  arrange(pattern_label) |>
+  rename(`Signal pattern` = pattern_label) |>
+  kbl(align = "lrrr")
+```
+
+Under equal choice (D0), the correction behaves on the Danish catalogue as on the synthetic one. It improves the flat and monotonic signals and dampens peaks and plateaus. Under the concentrated assignment (D1), its gain shrinks and depends on the signal (@tbl-s6-danish). Declining trends are still reconstructed better (relative RMSD `r fmt_range(dk_pc(dk_d1, c("linear_decline", "exponential_decline")))`) and the uniform signal slightly better (`r fmt_range(dk_pc(dk_d1, "uniform"))`), but increasing trends (`r fmt_range(dk_pc(dk_d1, c("linear_increase", "exponential_increase")))`), peaks and plateaus (`r fmt_range(dk_pc(dk_d1, c("early_peak", "single_peak", "late_peak", "plateau")))`) are reproduced less well than by the standard reconstruction. The oracle, which knows the assignment propensities, remains better than or close to the standard reconstruction throughout. The loss is therefore due to the violated assumption of equal choice and could in principle be avoided if the propensities were known.
+
+In applications, the concentration of label use should therefore be checked before the corrected curve is preferred. Where a few periods dominate far beyond what equal choice would produce, both reconstructions should be reported side by side, and independent evidence, such as the radiocarbon record in Supplement 4, is needed to decide between them.
+
+# Label use in the Hallstatt data
+
+```{r}
+hs_rel <- read_csv("outputs/s6_hallstatt_relative_rmsd.csv", show_col_types = FALSE)
+hs_use <- read_csv("outputs/s6_hallstatt_label_use.csv", show_col_types = FALSE)
+hs_meta <- read_csv("outputs/s6_hallstatt_run_metadata.csv", show_col_types = FALSE)
+hs_setting <- function(x) hs_meta$value[hs_meta$setting == x]
+
+hs_obs_top2 <- as.numeric(hs_setting("observed_share_top2"))
+hs_d0_top2 <- hs_use$share_top2_median[hs_use$model == "D0_uniform"]
+
+hs_pc <- function(models, patterns) {
+  range(hs_rel$relative_rmsd_median[
+    hs_rel$method == "phase_corrected" & hs_rel$model %in% models &
+      hs_rel$pattern %in% patterns
+  ])
+}
+```
+
+The Hallstatt burials of Supplement 5 provide a contrasting case. Their catalogue has only `r hs_setting("n_labels")` labels on a span of 330 years, and label use is far less concentrated. The two most frequent labels hold `r pct(hs_obs_top2)` of the graves, compared with about `r pct(hs_d0_top2)` under equal choice. We repeat the simulations of the previous section on this catalogue, with as many events per run as there are Hallstatt records, 100 runs per signal shape and 10-year bins as in Supplement 5. The signal shapes of Supplement 3 are mapped linearly onto the Hallstatt window, so that each keeps its shape relative to the time span.
+
+```{r}
+#| label: tbl-s6-hallstatt
+#| tbl-cap: "Simulations on the Hallstatt catalogue: median RMSD relative to the standard aoristic reconstruction, given as phase-corrected / oracle for each assignment model (100 runs per signal). Values below 1 indicate an improvement."
+
+hs_rel |>
+  select(model, pattern, method, relative_rmsd_median) |>
+  pivot_wider(names_from = method, values_from = relative_rmsd_median) |>
+  mutate(
+    value = paste0(formatC(phase_corrected, format = "f", digits = 2), " / ",
+                   formatC(oracle_flat_prior, format = "f", digits = 2)),
+    model_label = factor(dk_model_labels[model], levels = dk_model_labels),
+    pattern_label = factor(pattern_labels[pattern], levels = pattern_labels)
+  ) |>
+  select(pattern_label, model_label, value) |>
+  pivot_wider(names_from = model_label, values_from = value, names_sort = TRUE) |>
+  arrange(pattern_label) |>
+  rename(`Signal pattern` = pattern_label) |>
+  kbl(align = "lrrr")
+```
+
+Under equal choice (D0), the results follow the familiar pattern. Under the calibrated assignment (D1), and unlike on the Danish catalogue, the correction keeps most of its advantage (@tbl-s6-hallstatt). The uniform signal (relative RMSD `r fmt_range(hs_pc(dk_d1, "uniform"))`) and the declining trends (`r fmt_range(hs_pc(dk_d1, c("linear_decline", "exponential_decline")))`) are still reconstructed markedly better, increasing trends about as well or better (`r fmt_range(hs_pc(dk_d1, c("linear_increase", "exponential_increase")))`), and the early, late, two and multiple peaks about as well as by the standard reconstruction (`r fmt_range(hs_pc(dk_d1, c("early_peak", "late_peak", "two_peaks", "multi_peak")))`). Only the single central peak and the plateau come out worse (`r fmt_range(hs_pc(dk_d1, c("single_peak", "plateau")))`), as they do under equal choice. Where label use deviates as moderately from equal choice as in these data, the corrected curve can therefore be preferred, whereas in the Danish data the internal checks leave the question open.
+
+# Outlook: iterated correction
+
+The flat prior is responsible for the dampening of central peaks and plateaus. An obvious generalisation replaces it with the current estimate of $f$ and iterates. This yields an expectation–maximisation (EM) estimator of the Richardson–Lucy type [@richardson_bayesian_1972; @lucy_iterative_1974]:
+
+$$
+\hat f^{(k+1)}(t) \propto \sum_{j} n_j \, \frac{\hat f^{(k)}(t)\,\lambda(t)^{-1}\,\mathbf{1}(t \in J_j)}{\sum_{u \in J_j} \hat f^{(k)}(u)\,\lambda(u)^{-1}},
+$$
+
+where $n_j$ is the number of observations with label $J_j$. Starting from a flat $\hat f^{(0)}$, the first iteration is exactly the phase-corrected reconstruction. We report this estimator only as an exploratory outlook. It is not part of the comparisons in the main text.
+
+```{r}
+#| label: tbl-s6-em
+#| tbl-cap: "Exploratory: median RMSD (×1000) of the iterated correction compared with the standard and the one-step phase-corrected reconstruction (uniform assignment, M0)."
+
+s6_summary |>
+  filter(model == "M0_uniform", method %in% c("standard", "phase_corrected", "em_5", "em_20")) |>
+  mutate(method_label = factor(method_labels[method], levels = method_labels),
+         rmsd = round(rmsd_median * 1000, 2)) |>
+  select(pattern_label, method_label, rmsd) |>
+  pivot_wider(names_from = method_label, values_from = rmsd, names_sort = TRUE) |>
+  arrange(pattern_label) |>
+  rename(`Signal pattern` = pattern_label) |>
+  kbl()
+```
+
+```{r}
+#| label: fig-s6-em-examples
+#| fig-cap: "Exploratory: example reconstructions (run 1, M0) of the uniform and the single central peak signals. The dashed line is the true curve. The iterated correction restores the central peak but amplifies sampling noise where the true signal is flat."
+#| fig-width: 9
+#| fig-height: 3.4
+
+s6_examples |>
+  filter(model == "M0_uniform", pattern %in% c("uniform", "single_peak"),
+         method %in% c("standard", "phase_corrected", "em_20")) |>
+  ggplot(aes(year, value, colour = method_label)) +
+  geom_line(aes(y = true), colour = "black", linetype = "dashed", linewidth = 0.4) +
+  geom_line(linewidth = 0.6) +
+  facet_wrap(~pattern_label, scales = "free_y") +
+  scale_colour_manual(values = method_colours) +
+  labs(x = "Year (BCE, negative)", y = "Normalised density") +
+  plot_theme()
+```
+
+A few iterations largely remove the dampening of central peaks and plateaus, whereas further iterations amplify sampling noise where the true signal is flat (@tbl-s6-em, all values below ×1000). For the uniform signal, five iterations already raise the median RMSD from 0.98 (one-step phase correction) to 2.37, and 20 iterations raise it further to 3.13. For the single central peak, by contrast, five iterations reduce the median RMSD from 14.99 to 7.37, and for all peak signals (single, early, late, two and multiple peaks) 20 iterations perform better than five. For the plateau and the monotonic signals, five iterations give lower errors than 20. The optimal number of iterations depends on the unknown signal. Before the iterated correction could be recommended, it would require regularisation (for example a smoothness penalty or early stopping by cross-validation) and testing on empirical data. We leave this to future work.
+
+# Session information
+
+```{r}
+sessionInfo()
+```

@@ -1,0 +1,22 @@
+name,level,from,to,width,to_label
+Whole period,umbrella,-4100,-1800,2300,-1801
+Early,medium,-4100,-3525,575,-3526
+Early-Mid,medium,-3525,-2950,575,-2951
+Late-Mid,medium,-2950,-2375,575,-2376
+Late,medium,-2375,-1800,575,-1801
+Early 1,subphase,-4100,-3812,288,-3813
+Early 2,subphase,-3812,-3525,287,-3526
+Early-Mid 1,subphase,-3525,-3237,288,-3238
+Early-Mid 2,subphase,-3237,-2950,287,-2951
+Late-Mid 1,subphase,-2950,-2662,288,-2663
+Late-Mid 2,subphase,-2662,-2375,287,-2376
+Late 1,subphase,-2375,-2087,288,-2088
+Late 2,subphase,-2087,-1800,287,-1801
+Long central horizon,cross-cutting,-3525,-2375,1150,-2376
+Early-to-central horizon,cross-cutting,-3812,-2662,1150,-2663
+Central-to-late horizon,cross-cutting,-3237,-2087,1150,-2088
+Narrow central horizon,cross-cutting,-3237,-2662,575,-2663
+Broad early diagnostic,broad,-4100,-2950,1150,-2951
+Broad late diagnostic,broad,-2950,-1800,1150,-1801
+Broad central diagnostic A,broad,-3525,-2662,863,-2663
+Broad central diagnostic B,broad,-3237,-2375,862,-2376

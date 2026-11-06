@@ -1,0 +1,3 @@
+metric,value
+RMSD standard aoristic vs uniform ground truth,0.004096546766282639
+MAE standard aoristic vs uniform ground truth,0.0034010768198939625

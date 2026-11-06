@@ -1,0 +1,997 @@
+id,labnr,bp,std,delta_c13,source_database,lab_name,site,country,lat,lng,periods,typochronological_units,ecochronological_units,reference,material,species,feature_type,site_type,feature,dedup_key,cal_id
+22081,AA-43837,6189,49,0,NA,NA,Smakkerup huse,DK,55.6846,11.2358,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:AA-43837,AA-43837
+59225,AAR-1003,3630,95,-26.2,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:AAR-1003,AAR-1003
+59226,AAR-1004,3515,90,-25,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:AAR-1004,AAR-1004
+113865,AAR-10084,3112,35,NA,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House K13,lab:AAR-10084,AAR-10084
+119115,AAR-10085,3096,32,NA,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House K9,lab:AAR-10085,AAR-10085
+113866,AAR-10086,3133,37,NA,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House K5,lab:AAR-10086,AAR-10086
+113867,AAR-10087,3011,35,NA,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House K21,lab:AAR-10087,AAR-10087
+119856,AAR-10088,3600,110,-22.48,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house K23,lab:AAR-10088,AAR-10088
+113868,AAR-10089,2969,38,NA,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House K10,lab:AAR-10089,AAR-10089
+114662,AAR-10090,3039,48,-26.33,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,charcoal,"Charcoal, wood, Betula",settlement (house),settlement (house),house K8,lab:AAR-10090,AAR-10090
+119857,AAR-10091,2977,35,-27.69,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,nutshell,Corylus,settlement (house),settlement (house),house K11,lab:AAR-10091,AAR-10091
+113869,AAR-10092,2970,38,NA,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House K20,lab:AAR-10092,AAR-10092
+119116,AAR-10093,3106,42,NA,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House K12,lab:AAR-10093,AAR-10093
+113870,AAR-10094,2977,35,NA,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House K11,lab:AAR-10094,AAR-10094
+113871,AAR-10095,3265,37,NA,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House K14,lab:AAR-10095,AAR-10095
+114663,AAR-10096,2504,40,-24.51,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,"Charcoal, cereal, Avena",settlement (house),settlement (house),house K6,lab:AAR-10096,AAR-10096
+114664,AAR-10097,3149,33,-22.02,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),house K7,lab:AAR-10097,AAR-10097
+119858,AAR-10098,3653,38,-23.26,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),house K25,lab:AAR-10098,AAR-10098
+118388,AAR-10183,2945,38,NA,NA,NA,Tietgenbyen,DK,55.366667,10.483333,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-10183,AAR-10183
+119855,AAR-10192,3092,47,-26.78,NA,NA,Skelhøj,DK,55.352388,10.180128,NA,NA,NA,NA,charcoal,"Charcoal, other; Calluna vulgaris",settlement (house),settlement (house),house I,lab:AAR-10192,AAR-10192
+114661,AAR-10268,3003,45,-27.36,NA,NA,Skelhøj,DK,55.352388,10.180128,NA,NA,NA,NA,charcoal,"Charcoal, wood, Alnus",settlement (house),settlement (house),house I,lab:AAR-10268,AAR-10268
+114659,AAR-10314,2356,44,-24.75,NA,NA,Drejens Boligby,DK,55.506022,9.550632,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house I,lab:AAR-10314,AAR-10314
+119850,AAR-10315,2445,41,-24.31,NA,NA,Drejens Boligby,DK,55.506022,9.550632,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house I,lab:AAR-10315,AAR-10315
+119851,AAR-10316,2413,41,-25.39,NA,NA,Drejens Boligby,DK,55.506022,9.550632,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house I,lab:AAR-10316,AAR-10316
+119903,AAR-10328,2988,41,-26.96,NA,NA,Dybbøl Vesten,DK,54.913609,9.72379,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house I,lab:AAR-10328,AAR-10328
+119904,AAR-10329,2943,40,-24.94,NA,NA,Dybbøl Vesten,DK,54.913609,9.72379,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house I,lab:AAR-10329,AAR-10329
+114708,AAR-10330,3078,40,-23.59,NA,NA,Dybbøl Vesten,DK,54.913609,9.72379,NA,NA,NA,NA,nutshell,Corylus,settlement (house),settlement (house),house I,lab:AAR-10330,AAR-10330
+114709,AAR-10331,3484,42,-25.88,NA,NA,Dybbøl Vesten,DK,54.913609,9.72379,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house II,lab:AAR-10331,AAR-10331
+119905,AAR-10332,3040,42,-25.49,NA,NA,Dybbøl Vesten,DK,54.913609,9.72379,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house II,lab:AAR-10332,AAR-10332
+114745,AAR-10362,3073,35,-22.05,NA,NA,Landlyst,DK,56.954447,8.664195,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House II,lab:AAR-10362,AAR-10362
+114746,AAR-10363,2904,35,-21.44,NA,NA,Landlyst,DK,56.954447,8.664195,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:AAR-10363,AAR-10363
+119950,AAR-10364,2932,40,-22.63,NA,NA,Landlyst,DK,56.954447,8.664195,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),House I,lab:AAR-10364,AAR-10364
+119952,AAR-10365,2901,38,-21.7,NA,NA,Landlyst,DK,56.954447,8.664195,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House IV,lab:AAR-10365,AAR-10365
+119951,AAR-10366,2988,30,-24.77,NA,NA,Landlyst,DK,56.954447,8.664195,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House IV,lab:AAR-10366,AAR-10366
+113872,AAR-10367,3123,38,NA,NA,NA,Landlyst,DK,56.954447,8.664195,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House V,lab:AAR-10367,AAR-10367
+119925,AAR-10368,2946,36,-19.43,NA,NA,Drengshøj,DK,56.962442,8.675943,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),House I,lab:AAR-10368,AAR-10368
+119926,AAR-10369,2907,46,-22.47,NA,NA,Drengshøj,DK,56.962442,8.675943,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),House I,lab:AAR-10369,AAR-10369
+119892,AAR-10420,3111,40,-23.98,NA,NA,Marskhallen,DK,54.966737,8.691029,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house I,lab:AAR-10420,AAR-10420
+119893,AAR-10421,3135,46,-28.39,NA,NA,Marskhallen,DK,54.966737,8.691029,NA,NA,NA,NA,charcoal,"Charcoal, wood, Betula",settlement (house),settlement (house),house I,lab:AAR-10421,AAR-10421
+114694,AAR-10422,3202,38,-22.73,NA,NA,Kesmajgård,DK,55.201362,9.295534,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),house I,lab:AAR-10422,AAR-10422
+114754,AAR-10608,2973,34,-23.72,NA,NA,Storodde,DK,56.950548,8.723355,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:AAR-10608,AAR-10608
+114755,AAR-10609,2907,41,-24.16,NA,NA,Storodde,DK,56.950548,8.723355,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:AAR-10609,AAR-10609
+118367,AAR-10763,2802,35,NA,NA,NA,Ahornvænget,DK,56.020101,12.201481,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-10763,AAR-10763
+118368,AAR-10764,2868,36,NA,NA,NA,Ahornvænget,DK,56.020101,12.201481,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-10764,AAR-10764
+113091,AAR-10765,2930,42,NA,NA,NA,Ahornvænget,DK,56.020101,12.201481,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-10765,AAR-10765
+113092,AAR-10766,2650,42,NA,NA,NA,Ahornvænget,DK,56.020101,12.201481,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-10766,AAR-10766
+113093,AAR-10767,2650,41,NA,NA,NA,Ahornvænget,DK,56.020101,12.201481,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-10767,AAR-10767
+118369,AAR-10768,2865,39,NA,NA,NA,Ahornvænget,DK,56.020101,12.201481,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-10768,AAR-10768
+113094,AAR-10769,2757,36,NA,NA,NA,Ahornvænget,DK,56.020101,12.201481,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-10769,AAR-10769
+118370,AAR-10770,2771,50,NA,NA,NA,Ahornvænget,DK,56.020101,12.201481,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-10770,AAR-10770
+113095,AAR-10771,2854,46,NA,NA,NA,Ahornvænget,DK,56.020101,12.201481,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-10771,AAR-10771
+114736,AAR-10848,2891,35,-24.06,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:AAR-10848,AAR-10848
+114752,AAR-10849,3079,48,-23.05,NA,NA,Sennels,DK,56.965646,8.794633,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House II,lab:AAR-10849,AAR-10849
+114753,AAR-10850,3086,39,-22.3,NA,NA,Sennels,DK,56.965646,8.794633,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House II,lab:AAR-10850,AAR-10850
+114644,AAR-11223,3008,27,-22.39,NA,NA,Sundby,DK,56.874894,8.672345,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:AAR-11223,AAR-11223
+114645,AAR-11224,2911,29,-22.85,NA,NA,Sundby,DK,56.874894,8.672345,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:AAR-11224,AAR-11224
+119889,AAR-11225,2910,120,-24,NA,NA,Flovt Strand,DK,55.234931,9.699252,NA,NA,NA,NA,miscellaneous,"Plant charred, Indeterminate",settlement (house),settlement (house),house I,lab:AAR-11225,AAR-11225
+119890,AAR-11226,2827,32,-27.14,NA,NA,Flovt Strand,DK,55.234931,9.699252,NA,NA,NA,NA,charcoal,"Charcoal, wood, Alnus",settlement (house),settlement (house),house I,lab:AAR-11226,AAR-11226
+119891,AAR-11227,2876,31,-23.91,NA,NA,Flovt Strand,DK,55.234931,9.699252,NA,NA,NA,NA,miscellaneous,"Plant charred, Indeterminate",settlement (house),settlement (house),house I,lab:AAR-11227,AAR-11227
+114651,AAR-11776,2955,36,-23.89,NA,NA,Ørum,DK,57.190129,10.102785,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:AAR-11776,AAR-11776
+114652,AAR-11777,2982,35,-22.14,NA,NA,Ørum,DK,57.190129,10.102785,NA,NA,NA,NA,grain,"Charcoal, cereal,Indeterminate",settlement (house),settlement (house),House I,lab:AAR-11777,AAR-11777
+113104,AAR-11822,2102,41,NA,NA,NA,Bregentved III,DK,55.3074,12.007,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-11822,AAR-11822
+118392,AAR-11823,2022,27,NA,NA,NA,Bregentved III,DK,55.3074,12.007,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-11823,AAR-11823
+100593,AAR-1220,3210,100,-29.5,NA,NA,Østerkær,DK,57.584246921749,10.232906341544,NA,NA,NA,NA,wood,Corylus avellana,settlement,settlement,Found in the oldest layer of an Ertebølle settlement.,lab:AAR-1220,AAR-1220
+90504,AAR-1221,4530,180,-26.1,NA,NA,Østerkær,DK,57.584246921749,10.232906341544,NA,NA,NA,NA,wood,Wooden (Alnus) shaft from a hatchet.,settlement,settlement,NA,lab:AAR-1221,AAR-1221
+47696,AAR-1222,6500,80,0,NA,NA,Yderhede,DK,57.4835,10.3169,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:AAR-1222,AAR-1222
+95589,AAR-1223,5380,100,-30.6,NA,NA,Østerkær,DK,57.584246921749,10.232906341544,NA,NA,NA,NA,wood,Sharpened wooden (abild) stick from oldest layer of an Ertebølle settlement.,settlement,settlement,NA,lab:AAR-1223,AAR-1223
+118376,AAR-12234,2840,44,NA,NA,NA,Svendsagervej,DK,55.414853,10.450522,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-12234,AAR-12234
+113099,AAR-12235,2816,42,NA,NA,NA,Svendsagervej,DK,55.414853,10.450522,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-12235,AAR-12235
+113096,AAR-12495,2905,29,NA,NA,NA,Seden Nord,DK,55.438776,10.449587,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-12495,AAR-12495
+118371,AAR-12496,2829,24,NA,NA,NA,Seden Nord,DK,55.438776,10.449587,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-12496,AAR-12496
+118372,AAR-12497,3027,38,NA,NA,NA,Seden Nord,DK,55.438776,10.449587,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-12497,AAR-12497
+118373,AAR-12498,2915,65,NA,NA,NA,Seden Nord,DK,55.438776,10.449587,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-12498,AAR-12498
+113097,AAR-12499,2853,42,NA,NA,NA,Seden Nord,DK,55.438776,10.449587,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-12499,AAR-12499
+118374,AAR-12500,3012,29,NA,NA,NA,Seden Nord,DK,55.438776,10.449587,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-12500,AAR-12500
+113098,AAR-12501,2956,33,NA,NA,NA,Seden Nord,DK,55.438776,10.449587,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-12501,AAR-12501
+118375,AAR-12502,2930,50,NA,NA,NA,Seden Nord,DK,55.438776,10.449587,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-12502,AAR-12502
+118383,AAR-12503,2088,50,NA,NA,NA,Tietgenbyen,DK,55.366667,10.483333,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-12503,AAR-12503
+118384,AAR-12504,2123,50,NA,NA,NA,Tietgenbyen,DK,55.366667,10.483333,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-12504,AAR-12504
+113102,AAR-12505,2228,43,NA,NA,NA,Tietgenbyen,DK,55.366667,10.483333,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-12505,AAR-12505
+118385,AAR-12506,2186,36,NA,NA,NA,Tietgenbyen,DK,55.366667,10.483333,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-12506,AAR-12506
+120246,AAR-13064,3698,48,-25.01,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Grain (indefinite),settlement (house),settlement (house),context:  A2424; sample X1001,lab:AAR-13064,AAR-13064
+120247,AAR-13065,3772,50,-24.65,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,miscellaneous,Corylus avellana,settlement (house),settlement (house),context:  A3459; sample X1002,lab:AAR-13065,AAR-13065
+120237,AAR-13066,3406,41,-25.5,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Grain (indefinite),settlement (house),settlement (house),context:  A2000; sample X1003,lab:AAR-13066,AAR-13066
+120238,AAR-13067,3592,40,-22.44,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Hordeum vulgare vulgare,settlement (house),settlement (house),context:  A2000; sample X1005,lab:AAR-13067,AAR-13067
+120239,AAR-13068,3565,41,-24.25,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Grain (indefinite),settlement (house),settlement (house),context:  A2000; sample X1006,lab:AAR-13068,AAR-13068
+115053,AAR-13073,3614,41,-25.6,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A2963; sample  X1027,lab:AAR-13073,AAR-13073
+120241,AAR-13074,3495,36,-24.6,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Grain (indefinite),settlement (house),settlement (house),context:  A3378; sample  X1030,lab:AAR-13074,AAR-13074
+120242,AAR-13075,3376,36,-24.56,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A2399; sample  X1031,lab:AAR-13075,AAR-13075
+120243,AAR-13076,3447,41,0.2256,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Hordeum vulgare vulgare,settlement (house),settlement (house),context:  A2400; sample  X1032,lab:AAR-13076,AAR-13076
+120244,AAR-13077,3394,37,-26.52,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Hordeum vulgare vulgare,settlement (house),settlement (house),context:  A2916; sample  X1046,lab:AAR-13077,AAR-13077
+115054,AAR-13078,3424,38,-24.61,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A2916; sample  X1048,lab:AAR-13078,AAR-13078
+120245,AAR-13079,3453,43,-25.72,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Hordeum vulgare vulgare,settlement (house),settlement (house),context:  A3423; sample  X1050,lab:AAR-13079,AAR-13079
+114683,AAR-13740,3024,36,-27.59,NA,NA,Over Jernhyt,DK,55.2278,9.320588,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house I,lab:AAR-13740,AAR-13740
+119873,AAR-13741,3106,26,-27.74,NA,NA,Over Jernhyt,DK,55.2278,9.320588,NA,NA,NA,NA,charcoal,"Charcoal, wood, Quercus",settlement (house),settlement (house),house I,lab:AAR-13741,AAR-13741
+119874,AAR-13742,3036,26,-23.93,NA,NA,Over Jernhyt,DK,55.2278,9.320588,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house I,lab:AAR-13742,AAR-13742
+114684,AAR-13743,3015,35,-25.46,NA,NA,Over Jernhyt,DK,55.2278,9.320588,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house I,lab:AAR-13743,AAR-13743
+119875,AAR-13744,2987,50,-22.45,NA,NA,Over Jernhyt,DK,55.2278,9.320588,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),house I,lab:AAR-13744,AAR-13744
+119876,AAR-13745,2474,33,-22.51,NA,NA,Over Jernhyt,DK,55.2278,9.320588,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),house II,lab:AAR-13745,AAR-13745
+119877,AAR-13746,2505,25,-23.75,NA,NA,Over Jernhyt,DK,55.2278,9.320588,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),house II,lab:AAR-13746,AAR-13746
+119878,AAR-13747,2608,35,-23.4,NA,NA,Over Jernhyt,DK,55.2278,9.320588,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),house II,lab:AAR-13747,AAR-13747
+114733,AAR-13825,2851,47,-22.58,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:AAR-13825,AAR-13825
+119934,AAR-13826,2860,38,-21.87,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:AAR-13826,AAR-13826
+119937,AAR-13827,2903,27,-22.86,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House II,lab:AAR-13827,AAR-13827
+114735,AAR-13828,2881,27,-26.19,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House II,lab:AAR-13828,AAR-13828
+119938,AAR-13829,2840,29,-26.59,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),House I,lab:AAR-13829,AAR-13829
+119927,AAR-13830,2811,27,-22.2,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House I,lab:AAR-13830,AAR-13830
+119928,AAR-13831,2800,47,-23.51,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:AAR-13831,AAR-13831
+114721,AAR-13832,2679,36,-21.2,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),House II,lab:AAR-13832,AAR-13832
+114722,AAR-13833,2782,44,-22.2,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House II,lab:AAR-13833,AAR-13833
+114723,AAR-13834,2876,27,-23.77,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House III,lab:AAR-13834,AAR-13834
+119929,AAR-13835,2827,26,-24.07,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),House III,lab:AAR-13835,AAR-13835
+114727,AAR-13838,2890,24,-23.03,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House II,lab:AAR-13838,AAR-13838
+114728,AAR-13839,2965,65,-22.82,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House II,lab:AAR-13839,AAR-13839
+114730,AAR-13840,2940,28,-20.69,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),House IA,lab:AAR-13840,AAR-13840
+119933,AAR-13841,2949,40,-22.08,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House IB,lab:AAR-13841,AAR-13841
+114731,AAR-13842,2938,38,-20.64,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House II,lab:AAR-13842,AAR-13842
+114732,AAR-13843,2980,28,-21.37,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House II,lab:AAR-13843,AAR-13843
+119939,AAR-13844,2922,48,-20.94,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House I,lab:AAR-13844,AAR-13844
+114756,AAR-13856,2950,26,-21.68,NA,NA,Storodde,DK,56.950548,8.723355,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House II,lab:AAR-13856,AAR-13856
+119957,AAR-13857,2986,33,-23.98,NA,NA,Storodde,DK,56.950548,8.723355,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House II,lab:AAR-13857,AAR-13857
+114608,AAR-13858,3101,28,-21.79,NA,NA,Vestermark,DK,57.00908,10.290043,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House XII,lab:AAR-13858,AAR-13858
+119943,AAR-13859,2940,27,-24.07,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:AAR-13859,AAR-13859
+119944,AAR-13860,2908,26,-22.66,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House I,lab:AAR-13860,AAR-13860
+119945,AAR-13861,2928,50,-21.68,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),House IV,lab:AAR-13861,AAR-13861
+114740,AAR-13862,2865,60,-21.4,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House IV,lab:AAR-13862,AAR-13862
+119906,AAR-14058,2586,41,-24.01,NA,NA,Bøgegård Vest,DK,54.942176,9.673638,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house K1,lab:AAR-14058,AAR-14058
+119907,AAR-14059,2510,28,-24.39,NA,NA,Bøgegård Vest,DK,54.942176,9.673638,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house K1,lab:AAR-14059,AAR-14059
+114710,AAR-14060,2538,29,-24.82,NA,NA,Bøgegård Vest,DK,54.942176,9.673638,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house K1,lab:AAR-14060,AAR-14060
+119908,AAR-14061,3489,30,-25.45,NA,NA,Bøgegård Vest,DK,54.942176,9.673638,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house K2,lab:AAR-14061,AAR-14061
+119909,AAR-14062,3410,33,-24.96,NA,NA,Bøgegård Vest,DK,54.942176,9.673638,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house K2,lab:AAR-14062,AAR-14062
+118382,AAR-14200,2452,41,NA,NA,NA,Tietgenbyen,DK,55.366667,10.483333,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-14200,AAR-14200
+118386,AAR-14201,3281,40,NA,NA,NA,Tietgenbyen,DK,55.366667,10.483333,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-14201,AAR-14201
+118387,AAR-14202,2915,39,NA,NA,NA,Tietgenbyen,DK,55.366667,10.483333,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-14202,AAR-14202
+113878,AAR-14514,2960,20,NA,NA,NA,Formyre SØ,DK,56.501597,9.592424,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House I,lab:AAR-14514,AAR-14514
+113879,AAR-14515,2961,23,NA,NA,NA,Formyre SØ,DK,56.501597,9.592424,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House I,lab:AAR-14515,AAR-14515
+113877,AAR-14516,2705,24,NA,NA,NA,Langemosegård,DK,56.626098,9.503194,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House VII,lab:AAR-14516,AAR-14516
+119118,AAR-14517,2124,24,NA,NA,NA,Langemosegård,DK,56.626098,9.503194,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House VII,lab:AAR-14517,AAR-14517
+113880,AAR-14520a,2466,22,NA,NA,NA,Duehøj Syd,DK,56.491986,9.484609,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House VI,lab:AAR-14520a,AAR-14520a
+119120,AAR-14520b,2496,25,NA,NA,NA,Duehøj Syd,DK,56.491986,9.484609,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House VI,lab:AAR-14520b,AAR-14520b
+114665,AAR-14745,3077,25,-24.52,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house K1,lab:AAR-14745,AAR-14745
+114666,AAR-14746,3100,22,-23.48,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),house K1,lab:AAR-14746,AAR-14746
+119859,AAR-14747,3050,22,-23.71,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),house K1,lab:AAR-14747,AAR-14747
+114667,AAR-14748,3038,22,-25.04,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house K1,lab:AAR-14748,AAR-14748
+119861,AAR-14749,3065,22,-23.59,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),house K3,lab:AAR-14749,AAR-14749
+114668,AAR-14750,3094,23,-24.28,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house K3,lab:AAR-14750,AAR-14750
+114669,AAR-14751,3060,23,-22.4,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),house K3,lab:AAR-14751,AAR-14751
+119862,AAR-14752,3071,23,-21,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),house K4,lab:AAR-14752,AAR-14752
+114670,AAR-14753,3123,24,-23.52,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house K4,lab:AAR-14753,AAR-14753
+119863,AAR-14754,3089,23,-22.49,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house K5,lab:AAR-14754,AAR-14754
+114671,AAR-14755,3072,24,-25.01,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house K5,lab:AAR-14755,AAR-14755
+119864,AAR-14756,3060,23,-25.59,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house K6,lab:AAR-14756,AAR-14756
+119865,AAR-14757,3101,23,-23.02,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house K6,lab:AAR-14757,AAR-14757
+114672,AAR-14758,3088,23,-24,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house K12,lab:AAR-14758,AAR-14758
+114673,AAR-14759,3110,81,-24.29,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house K12,lab:AAR-14759,AAR-14759
+114674,AAR-14760,3120,23,-23.22,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house K7,lab:AAR-14760,AAR-14760
+114675,AAR-14761,3639,28,-23.76,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house K8,lab:AAR-14761,AAR-14761
+114676,AAR-14762,3118,28,-22.74,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),house K5,lab:AAR-14762,AAR-14762
+113873,AAR-14820,3038,28,NA,NA,NA,Sønder Mose,DK,56.429299,9.406109,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House I,lab:AAR-14820,AAR-14820
+114724,AAR-15404,2869,23,-24.19,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House I,lab:AAR-15404,AAR-15404
+119930,AAR-15405,2813,25,-22.82,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,"Charcoal, cereal, Avena/Bromus",settlement (house),settlement (house),House II,lab:AAR-15405,AAR-15405
+119931,AAR-15406,2828,23,-22.19,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House II,lab:AAR-15406,AAR-15406
+119932,AAR-15407,2708,45,-23.69,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:AAR-15407,AAR-15407
+114729,AAR-15408,2842,23,-21.64,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House I,lab:AAR-15408,AAR-15408
+119935,AAR-15409,2907,25,-22.49,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House II,lab:AAR-15409,AAR-15409
+119936,AAR-15410,2875,24,-23.03,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),House II,lab:AAR-15410,AAR-15410
+114737,AAR-15450,2934,24,-22.89,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),House IB,lab:AAR-15450,AAR-15450
+114738,AAR-15451,2963,35,-23.51,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),House IV,lab:AAR-15451,AAR-15451
+119119,AAR-15457,2705,23,NA,NA,NA,Langemosegård,DK,56.626098,9.503194,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House VII,lab:AAR-15457,AAR-15457
+113875,AAR-15458,2834,35,NA,NA,NA,Kragsøgård,DK,56.400642,9.203036,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House III,lab:AAR-15458,AAR-15458
+113876,AAR-15459,2768,24,NA,NA,NA,Kragsøgård,DK,56.400642,9.203036,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House III,lab:AAR-15459,AAR-15459
+118377,AAR-15518,2425,30,NA,NA,NA,Odense Universitetshospital III,DK,55.384783,10.369667,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-15518,AAR-15518
+118378,AAR-15519,2960,23,NA,NA,NA,Odense Universitetshospital III,DK,55.384783,10.369667,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-15519,AAR-15519
+118379,AAR-15520,2944,23,NA,NA,NA,Odense Universitetshospital III,DK,55.384783,10.369667,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-15520,AAR-15520
+113100,AAR-15521,2818,30,NA,NA,NA,Odense Universitetshospital III,DK,55.384783,10.369667,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-15521,AAR-15521
+118380,AAR-15522,2889,23,NA,NA,NA,Odense Universitetshospital III,DK,55.384783,10.369667,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-15522,AAR-15522
+113101,AAR-15523,2943,26,NA,NA,NA,Odense Universitetshospital III,DK,55.384783,10.369667,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-15523,AAR-15523
+118381,AAR-15524,2970,30,NA,NA,NA,Odense Universitetshospital III,DK,55.384783,10.369667,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:AAR-15524,AAR-15524
+119879,AAR-16208,3302,27,-21.5,NA,NA,Over Jernhyt,DK,55.2278,9.320588,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house I,lab:AAR-16208,AAR-16208
+114685,AAR-16209,3066,26,-24.4,NA,NA,Over Jernhyt,DK,55.2278,9.320588,NA,NA,NA,NA,charcoal,"Charcoal, wood, Betula",settlement (house),settlement (house),house I,lab:AAR-16209,AAR-16209
+114686,AAR-16210,3102,26,-22.2,NA,NA,Over Jernhyt,DK,55.2278,9.320588,NA,NA,NA,NA,charcoal,"Charcoal, wood; Fagus",settlement (house),settlement (house),house I,lab:AAR-16210,AAR-16210
+114725,AAR-18836,2807,49,-21.82,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:AAR-18836,AAR-18836
+114726,AAR-18837,2944,44,-20.64,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),House I,lab:AAR-18837,AAR-18837
+115045,AAR-19276,3318,29,-20.6,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Grain (hvede [wheat]),settlement (house),settlement (house),context:  A172 ; sample  X35,lab:AAR-19276,AAR-19276
+115046,AAR-19277,3263,26,-23.46,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A217 ; sample  X40,lab:AAR-19277,AAR-19277
+120232,AAR-19278,3587,35,-19.21,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Grain (hvede [wheat]),settlement (house),settlement (house),context:  A214 ; sample  X41,lab:AAR-19278,AAR-19278
+115048,AAR-19279,3054,26,-20.18,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Grain (spelt/ emmer),settlement (house),settlement (house),context:  A263 ; sample  X45,lab:AAR-19279,AAR-19279
+120235,AAR-19281,3287,30,-23.82,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A267 ; sample  X52,lab:AAR-19281,AAR-19281
+120233,AAR-19282,3270,28,-23.58,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A327 ; sample  X97,lab:AAR-19282,AAR-19282
+120234,AAR-19283,3190,28,-22.15,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Grain (indefinite),settlement (house),settlement (house),context:  A322 ; sample  X98,lab:AAR-19283,AAR-19283
+115047,AAR-19284,3295,29,-22.53,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A323 ; sample  X108,lab:AAR-19284,AAR-19284
+115037,AAR-19285,3483,28,-25.68,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Grain (indefinite),settlement (house),settlement (house),context:  A47 ; sample X127,lab:AAR-19285,AAR-19285
+120221,AAR-19286,3600,26,-25.7,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,nutshell,Charcoal (el/hassel [alder/hazel]),settlement (house),settlement (house),context:  A47 ; sample  X128,lab:AAR-19286,AAR-19286
+120222,AAR-19287,3692,27,-26.37,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,charcoal,Acer,settlement (house),settlement (house),context:  A47 ; sample  X129,lab:AAR-19287,AAR-19287
+115039,AAR-19288,3301,29,-22.51,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Grain (indefinite),settlement (house),settlement (house),context:  A312 ; sample  X130,lab:AAR-19288,AAR-19288
+120224,AAR-19289,3562,27,-26.06,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A312; sample  X131,lab:AAR-19289,AAR-19289
+120225,AAR-19290,3319,26,-27.99,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A313; sample  X133,lab:AAR-19290,AAR-19290
+115043,AAR-19291,3346,27,-21.98,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A311 ; sample  X135,lab:AAR-19291,AAR-19291
+115044,AAR-19292,3383,45,-15.13,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A311 ; sample  X136,lab:AAR-19292,AAR-19292
+120231,AAR-19293,3362,26,-26.83,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,charcoal,Charcoal (eg [oak]),settlement (house),settlement (house),context:  A311 ; sample  X138,lab:AAR-19293,AAR-19293
+120230,AAR-19294,3482,26,-29.1,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A68; sample  X139,lab:AAR-19294,AAR-19294
+115042,AAR-19295,3733,29,-27.68,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,charcoal,Charcoal (eg [oak]),settlement (house),settlement (house),context:  A300 ; sample  X140,lab:AAR-19295,AAR-19295
+120223,AAR-19296,3450,25,-25.89,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A60; sample  X141,lab:AAR-19296,AAR-19296
+115038,AAR-19297,3340,31,-22.67,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Grain (indefinite),settlement (house),settlement (house),context:  A60 ; sample  X142,lab:AAR-19297,AAR-19297
+115049,AAR-19298,3385,27,-24.39,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Grain (indefinite),settlement (house),settlement (house),context:  A411 ; sample  X177,lab:AAR-19298,AAR-19298
+115050,AAR-19299,3418,27,-19.96,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Grain (spelt/ emmer),settlement (house),settlement (house),context:  A410 ; sample  X178,lab:AAR-19299,AAR-19299
+120236,AAR-19300,3420,29,-26.17,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Grain (indefinite),settlement (house),settlement (house),context:  A416 ; sample  X180,lab:AAR-19300,AAR-19300
+120226,AAR-19301,3547,28,-24.35,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A35 ; sample  X185,lab:AAR-19301,AAR-19301
+120229,AAR-19302,3333,30,-20.41,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Grain (spelt/ emmer),settlement (house),settlement (house),context:  A1 ; sample  X221,lab:AAR-19302,AAR-19302
+120227,AAR-19303,3564,27,-25.86,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Grain (indefinite),settlement (house),settlement (house),context:  A35 ; sample  X247,lab:AAR-19303,AAR-19303
+120228,AAR-19304,3501,30,-26.69,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Grain (indefinite),settlement (house),settlement (house),context:  A35 ; sample  X248,lab:AAR-19304,AAR-19304
+115040,AAR-19305,3582,32,-24.71,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Grain (hvede [wheat]),settlement (house),settlement (house),context:  A1 ; sample  X249,lab:AAR-19305,AAR-19305
+115041,AAR-19309,3592,29,-22.98,NA,NA,Kongehøj,DK,55.457614,9.116523,NA,NA,NA,NA,grain,Hordeum vulgare vulgare,settlement (house),settlement (house),context:  A1 ; sample  X287,lab:AAR-19309,AAR-19309
+120250,AAR-19546,3721,28,-28.48,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (el [alder]),settlement (house),settlement (house),context:  A5; sample  X45,lab:AAR-19546,AAR-19546
+120262,AAR-19547,3212,26,-23.77,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Grain (hvede [wheat]),settlement (house),settlement (house),context:  A1324 ; sample  X49,lab:AAR-19547,AAR-19547
+120263,AAR-19548,4729,30,-29.65,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Grain (korn [grain]),settlement (house),settlement (house),context:  A1343 ; sample  X53,lab:AAR-19548,AAR-19548
+120264,AAR-19549,3136,28,-23.9,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A1323 ; sample  X60,lab:AAR-19549,AAR-19549
+120258,AAR-19550,2965,26,-24.4,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Hordeum vulgare vulgare,settlement (house),settlement (house),context:  A1302 ; sample  X64,lab:AAR-19550,AAR-19550
+120259,AAR-19551,3045,29,-23.79,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (eg [oak]),settlement (house),settlement (house),context:  A1360 ; sample  X84,lab:AAR-19551,AAR-19551
+120260,AAR-19552,3053,27,-24.48,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Grain (emmer/spelt),settlement (house),settlement (house),context:  A1295 ; sample  X86,lab:AAR-19552,AAR-19552
+115055,AAR-19553,3227,27,-24.58,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (eg [oak]),settlement (house),settlement (house),context:  A1957 ; sample  X122,lab:AAR-19553,AAR-19553
+120248,AAR-19554,3630,29,-25.68,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (kalkved [Viburnum opulus]),settlement (house),settlement (house),context:  A1997 ; sample  X126,lab:AAR-19554,AAR-19554
+120249,AAR-19555,3639,28,-30.47,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (løvtræ [broadleaf tree]),settlement (house),settlement (house),context:  A1979 ; sample  X133,lab:AAR-19555,AAR-19555
+115069,AAR-19556,3096,27,-22.44,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A1637 ; sample  X148,lab:AAR-19556,AAR-19556
+120265,AAR-19557,3070,26,-22.12,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Grain (korn [grain]),settlement (house),settlement (house),context:  A1619 ; sample  X149,lab:AAR-19557,AAR-19557
+120266,AAR-19558,3638,35,-32.89,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A1640 ; sample  X161,lab:AAR-19558,AAR-19558
+115071,AAR-19559,3100,26,-24.87,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (eg [oak]),settlement (house),settlement (house),context:  A1431; sample  X178,lab:AAR-19559,AAR-19559
+120269,AAR-19560,3058,26,-25.23,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A1437; sample  X179,lab:AAR-19560,AAR-19560
+115056,AAR-19561,2957,26,-21.57,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Grain (korn [grain]),settlement (house),settlement (house),context:  A2174; sample  X183,lab:AAR-19561,AAR-19561
+120272,AAR-19564,2973,27,-25.45,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,nutshell,Corylus avellana,settlement (house),settlement (house),context:  A2147 ; sample  X187,lab:AAR-19564,AAR-19564
+120273,AAR-19565,3077,27,-24.31,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,nutshell,Corylus avellana,settlement (house),settlement (house),context:  A2145 ; sample  X189,lab:AAR-19565,AAR-19565
+120274,AAR-19566,3230,26,-26.79,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (el [alder]),settlement (house),settlement (house),context:  A2145 ; sample  X190,lab:AAR-19566,AAR-19566
+120261,AAR-19569,3034,27,-23.26,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Grain (korn [grain]),settlement (house),settlement (house),context:  A1194; sample  X203,lab:AAR-19569,AAR-19569
+115068,AAR-19571,3114,30,-27.5,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Grain (korn [grain]),settlement (house),settlement (house),context:  A1196; sample  X205,lab:AAR-19571,AAR-19571
+115070,AAR-19582,3096,27,-29.53,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,nutshell,Corylus avellana,settlement (house),settlement (house),context:  A1554 ; sample  X229,lab:AAR-19582,AAR-19582
+120267,AAR-19583,3070,26,-24.46,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Grain (korn [grain]),settlement (house),settlement (house),context:  A1926 ; sample  X230,lab:AAR-19583,AAR-19583
+120268,AAR-19584,3094,25,-26.04,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Grain (korn [grain]),settlement (house),settlement (house),context:  A1558 ; sample  X231,lab:AAR-19584,AAR-19584
+120275,AAR-19588,3577,26,-24.37,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A2657 ; sample  X335,lab:AAR-19588,AAR-19588
+115072,AAR-19589,3549,26,-24.21,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A2653 ; sample  X336,lab:AAR-19589,AAR-19589
+120276,AAR-19590,3046,26,-23.79,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A2645 ; sample  X337,lab:AAR-19590,AAR-19590
+115065,AAR-19593,4459,28,-29.09,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (eg [oak]),settlement (house),settlement (house),context:  A2744 ; sample  X349,lab:AAR-19593,AAR-19593
+115066,AAR-19594,3565,26,-26.38,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (eg [oak]),settlement (house),settlement (house),context:  A2699 ; sample  X350,lab:AAR-19594,AAR-19594
+115058,AAR-19597,3273,25,-28.47,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A2561 ; sample  X372,lab:AAR-19597,AAR-19597
+115059,AAR-19598,3222,27,-22.15,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A2508 ; sample  X396,lab:AAR-19598,AAR-19598
+120253,AAR-19599,3328,27,-26.5,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Hordeum vulgare vulgare,settlement (house),settlement (house),context:  A2611 ; sample  X433,lab:AAR-19599,AAR-19599
+115073,AAR-19604,3082,25,-28.21,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (el [alder]),settlement (house),settlement (house),context:  A2977 ; sample  X466,lab:AAR-19604,AAR-19604
+115074,AAR-19605,3053,25,-25.12,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Grain (korn [grain]),settlement (house),settlement (house),context:  A2900 ; sample  X467,lab:AAR-19605,AAR-19605
+115075,AAR-19606,4141,27,-22.58,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A2907 ; sample  X468,lab:AAR-19606,AAR-19606
+115060,AAR-19607,3315,26,-22.13,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (eg [oak]),settlement (house),settlement (house),context:  A2549; sample  X470,lab:AAR-19607,AAR-19607
+120254,AAR-19608,4973,29,-27.79,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (indefinite),settlement (house),settlement (house),context:  A2595; sample  X472,lab:AAR-19608,AAR-19608
+120256,AAR-19610,3623,25,-27.45,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,nutshell,Corylus avellana,settlement (house),settlement (house),context:  A3200; sample  X474,lab:AAR-19610,AAR-19610
+120257,AAR-19611,3609,40,-36.62,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (el [alder]),settlement (house),settlement (house),context:  A3200; sample  X475,lab:AAR-19611,AAR-19611
+115061,AAR-19618,3326,26,-27.11,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A3456 ; sample  X668,lab:AAR-19618,AAR-19618
+115062,AAR-19619,3074,25,-22.65,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Grain (emmer/spelt),settlement (house),settlement (house),context:  A3420 ; sample  X673,lab:AAR-19619,AAR-19619
+120255,AAR-19620,5159,29,-27.03,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (eg [oak]),settlement (house),settlement (house),context:  A3449 ; sample  X674,lab:AAR-19620,AAR-19620
+120251,AAR-19622,3424,26,-25.95,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (poppel [poplar]/pil [willow]),settlement (house),settlement (house),context:  A1840 ; sample  X753,lab:AAR-19622,AAR-19622
+115057,AAR-19623,4042,29,-26.33,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (løvtræ [broadleaf tree]),settlement (house),settlement (house),context:  A1841 ; sample  X754,lab:AAR-19623,AAR-19623
+115067,AAR-19624,3613,26,-28.37,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (el [alder]),settlement (house),settlement (house),context:  A2084 ; sample  X755,lab:AAR-19624,AAR-19624
+120252,AAR-19626,3689,27,-25.99,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (ask [ash]),settlement (house),settlement (house),context:  A1834 ; sample  X764,lab:AAR-19626,AAR-19626
+120270,AAR-19628,3031,34,NA,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,grain,Grain,settlement (house),settlement (house),context: A1400; sample x176a,lab:AAR-19628,AAR-19628
+120271,AAR-19629,2994,26,NA,NA,NA,Nørregård,DK,55.519311,8.899395,NA,NA,NA,NA,charcoal,Charcoal (poppel [poplar]/pil [willow]),settlement (house),settlement (house),context: A1400; sample x176b,lab:AAR-19629,AAR-19629
+22314,AAR-1999,6100,80,-22.5,NA,NA,Yderhede,DK,57.4835,10.3169,NA,NA,NA,NA,antler,NA,Settlement,Settlement,NA,lab:AAR-1999,AAR-1999
+21489,AAR-2395,4220,70,-24.8,NA,NA,Grødbygård,DK,55.0387,14.9427,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:AAR-2395,AAR-2395
+21490,AAR-2396,4230,90,-24.2,NA,NA,Grødbygård,DK,55.0387,14.9427,NA,NA,NA,NA,seed/fruit,NA,settlement,settlement,NA,lab:AAR-2396,AAR-2396
+21491,AAR-2397,4320,80,-28,NA,NA,Grødbygård,DK,55.0387,14.9427,NA,NA,NA,NA,food residue,NA,settlement,settlement,NA,lab:AAR-2397,AAR-2397
+21492,AAR-2398,4135,60,0,NA,NA,Grødbygård,DK,55.0387,14.9427,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:AAR-2398,AAR-2398
+21708,AAR-2399,3520,65,-24.8,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,food residue,NA,settlement,settlement,NA,lab:AAR-2399,AAR-2399
+21709,AAR-2400,3500,65,-27.4,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:AAR-2400,AAR-2400
+21710,AAR-2401,3435,55,-25.7,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:AAR-2401,AAR-2401
+21711,AAR-2402,2560,90,-28.3,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:AAR-2402,AAR-2402
+21712,AAR-2403,4080,80,-25.2,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,charcoal,Pomaceae,settlement,settlement,NA,lab:AAR-2403,AAR-2403
+21713,AAR-2404,4120,75,-25.1,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:AAR-2404,AAR-2404
+21714,AAR-2406,3840,90,-24.5,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:AAR-2406,AAR-2406
+21715,AAR-2407,3510,70,-25.5,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,charcoal,Fraxinus,settlement,settlement,NA,lab:AAR-2407,AAR-2407
+21716,AAR-2408,3670,70,-24.4,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,charcoal,"Alnus, Corylus",settlement,settlement,NA,lab:AAR-2408,AAR-2408
+22219,AAR-2437.1,3995,65,-21.3,NA,NA,Vasagård,DK,55.0556,14.8852,NA,NA,NA,NA,seed/fruit,Triticum turgidum dicoccum,Settlement,Settlement,NA,lab:AAR-2437.1,AAR-2437.1
+22220,AAR-2437.2,4170,70,-21.5,NA,NA,Vasagård,DK,55.0556,14.8852,NA,NA,NA,NA,seed/fruit,Triticum turgidum dicoccum,Settlement,Settlement,NA,lab:AAR-2437.2,AAR-2437.2
+22221,AAR-2438.1,4245,60,-22.6,NA,NA,Vasagård,DK,55.0556,14.8852,NA,NA,NA,NA,seed/fruit,Triticum turgidum dicoccum,Settlement,Settlement,NA,lab:AAR-2438.1,AAR-2438.1
+22222,AAR-2438.2,5250,90,-22.6,NA,NA,Vasagård,DK,55.0556,14.8852,NA,NA,NA,NA,seed/fruit,Triticum turgidum dicoccum,Settlement,Settlement,NA,lab:AAR-2438.2,AAR-2438.2
+22315,AAR-2460,10050,90,-29.5,NA,NA,Yderhede,DK,57.4835,10.3169,NA,NA,NA,NA,organic,NA,Settlement,Settlement,NA,lab:AAR-2460,AAR-2460
+22316,AAR-2461,6440,80,-27,NA,NA,Yderhede,DK,57.4835,10.3169,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:AAR-2461,AAR-2461
+22317,AAR-2462,6060,80,-21.8,NA,NA,Yderhede,DK,57.4835,10.3169,NA,NA,NA,NA,antler,NA,Settlement,Settlement,NA,lab:AAR-2462,AAR-2462
+22318,AAR-2463,6210,65,-25.7,NA,NA,Yderhede,DK,57.4835,10.3169,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:AAR-2463,AAR-2463
+22319,AAR-2464,6080,100,-27.9,NA,NA,Yderhede,DK,57.4835,10.3169,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:AAR-2464,AAR-2464
+22065,AAR-2489,4650,80,-24.3,NA,NA,Skaghorn,DK,55.168,9.981,NA,NA,NA,NA,seed/fruit,NA,settlement,settlement,NA,lab:AAR-2489,AAR-2489
+21147,AAR-2652,5640,80,0,NA,NA,Agernaes,DK,55.59,10.33,NA,NA,NA,NA,bone,Capreolus,Settlement,Settlement,NA,lab:AAR-2652,AAR-2652
+21148,AAR-2653,5430,70,0,NA,NA,Agernaes,DK,55.59,10.33,NA,NA,NA,NA,bone,Capreolus,Settlement,Settlement,NA,lab:AAR-2653,AAR-2653
+21149,AAR-2654,5265,60,0,NA,NA,Agernaes,DK,55.59,10.33,NA,NA,NA,NA,bone,Capreolus,Settlement,Settlement,NA,lab:AAR-2654,AAR-2654
+21150,AAR-2655,5350,60,0,NA,NA,Agernaes,DK,55.59,10.33,NA,NA,NA,NA,bone,Cervus elaphus,Settlement,Settlement,NA,lab:AAR-2655,AAR-2655
+21151,AAR-2656,5340,75,0,NA,NA,Agernaes,DK,55.59,10.33,NA,NA,NA,NA,bone,Cervus elaphus,Settlement,Settlement,NA,lab:AAR-2656,AAR-2656
+22226,AAR-2948,3505,40,-26.1,NA,NA,Vejen,DK,55.4833,9.15,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:AAR-2948,AAR-2948
+21988,AAR-3109,3480,65,-26,NA,NA,Revsing,DK,55.5093,9.178,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:AAR-3109,AAR-3109
+22082,AAR-3316,5059,68,-21.4,NA,NA,Smakkerup huse,DK,55.6846,11.2358,NA,NA,NA,NA,bone,bos domesticus,Settlement,Settlement,NA,lab:AAR-3316,AAR-3316
+22083,AAR-3317,5060,61,-21.6,NA,NA,Smakkerup huse,DK,55.6846,11.2358,NA,NA,NA,NA,bone,bos domesticus,Settlement,Settlement,NA,lab:AAR-3317,AAR-3317
+22084,AAR-3318,5319,65,-10.2,NA,NA,Smakkerup huse,DK,55.6846,11.2358,NA,NA,NA,NA,bone,Canis lupus familiaris,Settlement,Settlement,NA,lab:AAR-3318,AAR-3318
+21228,AAR-3470,5200,45,-26,NA,NA,"Åmosen, Holbæk Amt",DK,55.5719,11.4578,NA,NA,NA,NA,wood,Ulmus,settlement,settlement,NA,lab:AAR-3470,AAR-3470
+21746,AAR-3629,6390,60,-12.4,NA,NA,Lollikehuse,DK,55.8468,12.4236,NA,NA,NA,NA,bone,dog with dominant marine diet,Settlement,Settlement,NA,lab:AAR-3629,AAR-3629
+22085,AAR-3782,6140,60,-25.4,NA,NA,Smakkerup huse,DK,55.6846,11.2358,NA,NA,NA,NA,wood,Quercus,Settlement,Settlement,NA,lab:AAR-3782,AAR-3782
+22086,AAR-3783,6495,60,-28.3,NA,NA,Smakkerup huse,DK,55.6846,11.2358,NA,NA,NA,NA,wood,Quercus,Settlement,Settlement,NA,lab:AAR-3783,AAR-3783
+21747,AAR-4030,6255,45,0,NA,NA,Lollikehuse,DK,55.8468,12.4236,NA,NA,NA,NA,shell,Ostrea,Settlement,Settlement,NA,lab:AAR-4030,AAR-4030
+21748,AAR-4031,5120,55,-21.3,NA,NA,Lollikehuse,DK,55.8468,12.4236,NA,NA,NA,NA,bone,Bovidae,Settlement,Settlement,NA,lab:AAR-4031,AAR-4031
+21749,AAR-4032,5510,50,-1.1,NA,NA,Lollikehuse,DK,55.8468,12.4236,NA,NA,NA,NA,shell,Ostrea,Settlement,Settlement,NA,lab:AAR-4032,AAR-4032
+21750,AAR-4033,5195,40,-20.8,NA,NA,Lollikehuse,DK,55.8468,12.4236,NA,NA,NA,NA,bone,Sus scrofa,Settlement,Settlement,NA,lab:AAR-4033,AAR-4033
+22037,AAR-4104,2935,50,-25.7,NA,NA,Sarup gl skole XII,DK,55.209,10.087,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:AAR-4104,AAR-4104
+22036,AAR-4105,1535,40,-25.3,NA,NA,Sarup  gl skole XII,DK,55.209,10.087,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:AAR-4105,AAR-4105
+21764,AAR-4156,3795,55,-25.3,NA,NA,Lyngbygård,DK,56.1699,10.0279,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:AAR-4156,AAR-4156
+21927,AAR-4320,4900,50,-21.6,NA,NA,Øgårde SV,DK,55.5937,11.543,NA,NA,NA,NA,bone,Ovis aries,settlement,settlement,NA,lab:AAR-4320,AAR-4320
+21695,AAR-4321,4595,55,-22.3,NA,NA,Langenaes,DK,56.1425,10.1855,NA,NA,NA,NA,bone,Ovis aries,Settlement,Settlement,NA,lab:AAR-4321,AAR-4321
+114687,AAR-4371,3255,55,-22.2,NA,NA,Brødre Gram,DK,55.240258,9.524962,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house IV(1),lab:AAR-4371,AAR-4371
+119880,AAR-4372,3120,75,-23.3,NA,NA,Brødre Gram,DK,55.240258,9.524962,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house IV(1),lab:AAR-4372,AAR-4372
+119881,AAR-4373,3230,50,-24,NA,NA,Brødre Gram,DK,55.240258,9.524962,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house IV(1),lab:AAR-4373,AAR-4373
+119882,AAR-4374,3080,40,-24.7,NA,NA,Brødre Gram,DK,55.240258,9.524962,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house IV(2),lab:AAR-4374,AAR-4374
+114688,AAR-4375,3125,40,-23.4,NA,NA,Brødre Gram,DK,55.240258,9.524962,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house IV(1),lab:AAR-4375,AAR-4375
+21571,AAR-4382,8580,60,0,NA,NA,Holmegård V,DK,55.2749,11.8362,NA,NA,NA,NA,bone,Canis lupus familiaris,settlement,settlement,NA,lab:AAR-4382,AAR-4382
+21169,AAR-4395,5140,70,-27.6,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:AAR-4395,AAR-4395
+114711,AAR-4408,3095,45,-26.9,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,charcoal,"Charcoal, wood, Hippophae rhamnoides",settlement,settlement,N130,lab:AAR-4408,AAR-4408
+119910,AAR-4409,3140,50,-26.2,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,charcoal,"Charcoal, wood, Quercus",settlement,settlement,N91,lab:AAR-4409,AAR-4409
+21170,AAR-4451,4965,45,-21,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,bos domesticus,Settlement,Settlement,NA,lab:AAR-4451,AAR-4451
+21171,AAR-4452,5120,40,-21,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,bos domesticus,Settlement,Settlement,NA,lab:AAR-4452,AAR-4452
+21172,AAR-4453,5135,50,-22.1,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,bos domesticus,Settlement,Settlement,NA,lab:AAR-4453,AAR-4453
+21173,AAR-4573,5250,45,-21.2,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,fishbone from freshwater fish (pike),Settlement,Settlement,NA,lab:AAR-4573,AAR-4573
+21174,AAR-4573-1,5225,45,-21.5,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,fishbone from freshwater fish (pike),Settlement,Settlement,NA,lab:AAR-4573-1,AAR-4573-1
+21175,AAR-4574,5395,40,-25,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,fish-bone from tench (operculum).,Settlement,Settlement,NA,lab:AAR-4574,AAR-4574
+21176,AAR-4575,5245,40,-23.1,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,fishbone from freshwater fish (pike),Settlement,Settlement,NA,lab:AAR-4575,AAR-4575
+21177,AAR-4576,5565,40,-26.7,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,fish-bone from tench (operculum).,Settlement,Settlement,NA,lab:AAR-4576,AAR-4576
+21178,AAR-4577,5090,70,-24.6,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,fishbone from freshwater fish (pike),Settlement,Settlement,NA,lab:AAR-4577,AAR-4577
+21179,AAR-4579,5030,90,-22,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,fishbone from freshwater fish (pike),Settlement,Settlement,NA,lab:AAR-4579,AAR-4579
+21180,AAR-4579-1,5030,55,-22.1,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,fishbone from freshwater fish (pike),Settlement,Settlement,NA,lab:AAR-4579-1,AAR-4579-1
+21181,AAR-4580,5315,55,-20.9,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,fish-bone from tench (operculum).,Settlement,Settlement,NA,lab:AAR-4580,AAR-4580
+85640,AAR-4765,6275,50,NA,NA,NA,Bodal,DK,55.5699,11.5317,NA,NA,NA,NA,bone,NA,Settlement,Settlement,NA,lab:AAR-4765,AAR-4765
+95022,AAR-4766,5355,45,-14.9,NA,NA,"Bodal C ""Skolaestbo""",DK,55.586664673868,11.533198356629,NA,NA,NA,NA,"collagen, bone",Jaw-bone from dog (Canis fam.).,settlement,settlement,NA,lab:AAR-4766,AAR-4766
+21312,AAR-4767,5765,45,-13.3,NA,NA,Bodal AL,DK,55.5699,11.5317,NA,NA,NA,NA,bone,Canis lupus familiaris,settlement,settlement,NA,lab:AAR-4767,AAR-4767
+21313,AAR-4769,5380,50,-19.2,NA,NA,Bodal AL,DK,55.5699,11.5317,NA,NA,NA,NA,bone,Canis lupus familiaris,settlement,settlement,NA,lab:AAR-4769,AAR-4769
+21321,AAR-4770,5340,80,-20.1,NA,NA,Bodal E,DK,55.5699,11.5317,NA,NA,NA,NA,bone,Canis lupus familiaris,settlement,settlement,NA,lab:AAR-4770,AAR-4770
+21316,AAR-4771,5250,50,-23.6,NA,NA,Bodal AV,DK,55.5699,11.5317,NA,NA,NA,NA,bone,Canis lupus familiaris,settlement,settlement,NA,lab:AAR-4771,AAR-4771
+21305,AAR-4772,5240,45,-24.2,NA,NA,Bodal,DK,55.5699,11.5317,NA,NA,NA,NA,bone,Canis lupus familiaris,Settlement,Settlement,NA,lab:AAR-4772,AAR-4772
+22196,AAR-4773,5386,42,-19.5,NA,NA,Undløse bro,DK,55.6045,11.5883,NA,NA,NA,NA,bone,Canis lupus familiaris,settlement,settlement,NA,lab:AAR-4773,AAR-4773
+21182,AAR-4816,5195,40,-27,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,food residue,outer surface of cooking pot,Settlement,Settlement,NA,lab:AAR-4816,AAR-4816
+21183,AAR-4817,5155,40,-24.3,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,organic temper,charcoal fragment from the inner surface of cooking pot,Settlement,Settlement,NA,lab:AAR-4817,AAR-4817
+22104,AAR-4818,5180,40,-26.7,NA,NA,"Spangekonge, Store Åmose",DK,55.5939,11.559,NA,NA,NA,NA,food residue,NA,settlement,settlement,NA,lab:AAR-4818,AAR-4818
+22105,AAR-4819,5095,45,0,NA,NA,"Spangekonge, Store Åmose",DK,55.5939,11.559,NA,NA,NA,NA,food residue,NA,settlement,settlement,NA,lab:AAR-4819,AAR-4819
+21818,AAR-4993,5050,45,-22.4,NA,NA,Muldbjerg,DK,56.144,8.4696,NA,NA,NA,NA,bone,Bos,settlement,settlement,NA,lab:AAR-4993,AAR-4993
+21819,AAR-4994,5010,50,-22.4,NA,NA,Muldbjerg,DK,56.144,8.4696,NA,NA,NA,NA,bone,Bos,settlement,settlement,NA,lab:AAR-4994,AAR-4994
+22269,AAR-5004,4955,60,-21.7,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,bone,Bos,Settlement,Settlement,NA,lab:AAR-5004,AAR-5004
+22270,AAR-5005,4925,55,-21.7,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,bone,Bos,Settlement,Settlement,NA,lab:AAR-5005,AAR-5005
+22271,AAR-5006,4650,55,-21.2,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,bone,Bos,Settlement,Settlement,NA,lab:AAR-5006,AAR-5006
+21687,AAR-5097.1,6970,50,-26.1,NA,NA,Kysing Fjord,DK,56.0076,10.2443,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:AAR-5097.1,AAR-5097.1
+21688,AAR-5097.2,6915,50,-25.6,NA,NA,Kysing Fjord,DK,56.0076,10.2443,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:AAR-5097.2,AAR-5097.2
+21689,AAR-5099,6730,25,-11.1,NA,NA,Kysing Fjord,DK,56.0076,10.2443,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:AAR-5099,AAR-5099
+21184,AAR-5107,5115,40,-30.6,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,food residue,outer surface of cooking pot,Settlement,Settlement,NA,lab:AAR-5107,AAR-5107
+21185,AAR-5108,5385,40,-28.8,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,food residue,outer surface of cooking pot,Settlement,Settlement,NA,lab:AAR-5108,AAR-5108
+21186,AAR-5109,5195,45,-27.1,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,food residue,outer surface of cooking pot,Settlement,Settlement,NA,lab:AAR-5109,AAR-5109
+21187,AAR-5110,5150,100,0,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,food residue,outer surface of cooking pot,Settlement,Settlement,NA,lab:AAR-5110,AAR-5110
+21188,AAR-5111,5140,40,-26.8,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,food residue,outer surface of cooking pot,Settlement,Settlement,NA,lab:AAR-5111,AAR-5111
+21189,AAR-5112,5185,40,-28,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,food residue,outer surface of cooking pot,Settlement,Settlement,NA,lab:AAR-5112,AAR-5112
+21190,AAR-5113,5070,45,-26.5,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,food residue,outer surface of cooking pot,Settlement,Settlement,NA,lab:AAR-5113,AAR-5113
+22106,AAR-5114,4640,100,0,NA,NA,"Spangekonge, Store Åmose",DK,55.5939,11.559,NA,NA,NA,NA,food residue,NA,settlement,settlement,NA,lab:AAR-5114,AAR-5114
+22055,AAR-5334,3440,35,-24.9,NA,NA,Sigersted III,DK,55.4079,11.7082,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:AAR-5334,AAR-5334
+21191,AAR-5363,5095,45,-26.6,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,charcoal,lime tree?,Settlement,Settlement,NA,lab:AAR-5363,AAR-5363
+21659,AAR-5366,4370,50,-0.4,NA,NA,Knud strand,DK,56.6581,8.7775,NA,NA,NA,NA,shell,Ostrea,settlement,settlement,NA,lab:AAR-5366,AAR-5366
+22272,AAR-5386,4945,45,-26,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:AAR-5386,AAR-5386
+22009,AAR-5462,5230,60,-27.1,NA,NA,Ronæs Skov/Gamborg Fjord,DK,55.4443,9.8066,NA,NA,NA,NA,wood,NA,settlement,settlement,NA,lab:AAR-5462,AAR-5462
+21535,AAR-5518,3650,45,-22.4,NA,NA,Hemmed kirke,DK,56.4955,10.7428,NA,NA,NA,NA,seed/fruit,NA,settlement,settlement,NA,lab:AAR-5518,AAR-5518
+21801,AAR-5741,6505,55,-27,NA,NA,Mejlø,DK,55.59,10.6139,NA,NA,NA,NA,wood,Quercus,settlement,settlement,NA,lab:AAR-5741,AAR-5741
+21690,AAR-5782,6415,40,-22.7,NA,NA,Kysing Fjord,DK,56.0076,10.2443,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:AAR-5782,AAR-5782
+21152,AAR-5960,5555,45,-11.6,NA,NA,Agernæs,DK,55.6211,10.2914,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:AAR-5960,AAR-5960
+21153,AAR-5961,5270,80,-21.9,NA,NA,Agernæs,DK,55.6211,10.2914,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:AAR-5961,AAR-5961
+21154,AAR-5962,5620,65,-9.1,NA,NA,Agernæs,DK,55.6211,10.2914,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:AAR-5962,AAR-5962
+21155,AAR-5963,5565,50,-22.1,NA,NA,Agernæs,DK,55.6211,10.2914,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:AAR-5963,AAR-5963
+21156,AAR-5964,5650,60,-8.3,NA,NA,Agernæs,DK,55.6211,10.2914,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:AAR-5964,AAR-5964
+21157,AAR-5965,440,50,-20.6,NA,NA,Agernæs,DK,55.6211,10.2914,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:AAR-5965,AAR-5965
+21158,AAR-5966,5685,50,-8.4,NA,NA,Agernæs,DK,55.6211,10.2914,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:AAR-5966,AAR-5966
+21159,AAR-5967,6225,55,-11.1,NA,NA,Agernæs,DK,55.6211,10.2914,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:AAR-5967,AAR-5967
+21160,AAR-5968,5310,65,-23.5,NA,NA,Agernæs,DK,55.6211,10.2914,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:AAR-5968,AAR-5968
+21161,AAR-5969,5375,50,-17,NA,NA,Agernæs,DK,55.6211,10.2914,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:AAR-5969,AAR-5969
+21162,AAR-5970,5300,55,-18,NA,NA,Agernæs,DK,55.6211,10.2914,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:AAR-5970,AAR-5970
+21229,AAR-6069,7145,60,-21.9,NA,NA,"Åmosen, Holbæk Amt",DK,55.5719,11.4578,NA,NA,NA,NA,antler,red-deer,settlement,settlement,NA,lab:AAR-6069,AAR-6069
+21870,AAR-6265,6265,55,-22.3,NA,NA,Norslund,DK,56.0182,10.231,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:AAR-6265,AAR-6265
+21347,AAR-6471,3530,45,-24.52,NA,NA,Bremdal skole,DK,56.5108,8.5827,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:AAR-6471,AAR-6471
+21348,AAR-6472,3480,40,-24.86,NA,NA,Bremdal skole,DK,56.5108,8.5827,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:AAR-6472,AAR-6472
+114747,AAR-6552,3080,55,-27.4,NA,NA,Legård,DK,56.881722,8.458876,NA,NA,NA,NA,charcoal,"Charcoal, wood, Indeterminate",settlement (house),settlement (house),House IX,lab:AAR-6552,AAR-6552
+22099,AAR-6553,3520,45,-23.8,NA,NA,Sønderhå,DK,56.8688,8.4515,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:AAR-6553,AAR-6553
+114712,AAR-6554,2805,60,-26.6,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,legume,"Charcoal, other, Fabaceae cfr, Geni,",settlement,settlement,N71,lab:AAR-6554,AAR-6554
+119920,AAR-6557,2710,40,-25.4,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,charcoal,"Charcoal, wood, Hippophae rhamnoides",settlement,settlement,House I,lab:AAR-6557,AAR-6557
+114719,AAR-6558,2715,40,-22.8,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,grain,Triticum,settlement,settlement,House I,lab:AAR-6558,AAR-6558
+119922,AAR-6559,2540,35,-23.6,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,charcoal,"Charcoal, wood, Betula",settlement,settlement,"Prob, plough soil",lab:AAR-6559,AAR-6559
+119923,AAR-6560,3125,55,-25.5,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,charcoal,"Charcoal, other,Gramineae",settlement,settlement,Culture layer,lab:AAR-6560,AAR-6560
+119924,AAR-6561,3070,50,-23.6,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,grain,Hordeum vulgare,settlement,settlement,Culture layer,lab:AAR-6561,AAR-6561
+119911,AAR-6562,2735,45,-24.9,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,charcoal,"Charcoal, wood, Hippophae rhamnoides",settlement,settlement,Culture layer,lab:AAR-6562,AAR-6562
+21654,AAR-6563,3290,55,-25.4,NA,NA,Klostergårdsvej,DK,56.9721,8.5437,NA,NA,NA,NA,twig,Salix,settlement,settlement,NA,lab:AAR-6563,AAR-6563
+22100,AAR-6564,3065,50,-23.6,NA,NA,Sønderhå,DK,56.8688,8.4515,NA,NA,NA,NA,charcoal,Hordeum,settlement,settlement,NA,lab:AAR-6564,AAR-6564
+119954,AAR-6565,3195,50,-20.04,NA,NA,Legård,DK,56.881722,8.458876,NA,NA,NA,NA,charcoal,"Charcoal, wood, Alnus",settlement (house),settlement (house),House III,lab:AAR-6565,AAR-6565
+21974,AAR-6659.a,3480,30,-23.08,NA,NA,Resen,DK,56.3794,9.0888,NA,NA,NA,NA,seed/fruit,Triticum turgidum dicoccum,Settlement,Settlement,NA,lab:AAR-6659.a,AAR-6659.a
+21975,AAR-6659.b,3305,35,-20.62,NA,NA,Resen,DK,56.3794,9.0888,NA,NA,NA,NA,seed/fruit,Hordeum,Settlement,Settlement,NA,lab:AAR-6659.b,AAR-6659.b
+21976,AAR-6660.a,3145,30,-22.34,NA,NA,Resen,DK,56.3794,9.0888,NA,NA,NA,NA,seed/fruit,Hordeum,Settlement,Settlement,NA,lab:AAR-6660.a,AAR-6660.a
+21977,AAR-6660.b,3125,35,-22.54,NA,NA,Resen,DK,56.3794,9.0888,NA,NA,NA,NA,seed/fruit,Hordeum,Settlement,Settlement,NA,lab:AAR-6660.b,AAR-6660.b
+21978,AAR-6661.a,3440,35,-22.5,NA,NA,Resen,DK,56.3794,9.0888,NA,NA,NA,NA,seed/fruit,Hordeum,Settlement,Settlement,NA,lab:AAR-6661.a,AAR-6661.a
+21979,AAR-6661.b,3375,35,-23.45,NA,NA,Resen,DK,56.3794,9.0888,NA,NA,NA,NA,seed/fruit,Hordeum,Settlement,Settlement,NA,lab:AAR-6661.b,AAR-6661.b
+21980,AAR-6662.a,3495,35,-21.61,NA,NA,Resen,DK,56.3794,9.0888,NA,NA,NA,NA,bone,Triticum,Settlement,Settlement,NA,lab:AAR-6662.a,AAR-6662.a
+21981,AAR-6662.b,3490,35,-21.34,NA,NA,Resen,DK,56.3794,9.0888,NA,NA,NA,NA,seed/fruit,Triticum,Settlement,Settlement,NA,lab:AAR-6662.b,AAR-6662.b
+21982,AAR-6663.a,3330,30,-23.7,NA,NA,Resen,DK,56.3794,9.0888,NA,NA,NA,NA,twig,NA,Settlement,Settlement,NA,lab:AAR-6663.a,AAR-6663.a
+21983,AAR-6663.b,3355,35,-23.65,NA,NA,Resen,DK,56.3794,9.0888,NA,NA,NA,NA,twig,NA,Settlement,Settlement,NA,lab:AAR-6663.b,AAR-6663.b
+21984,AAR-6664,3485,40,-22.76,NA,NA,Resen,DK,56.3794,9.0888,NA,NA,NA,NA,seed/fruit,Hordeum,Settlement,Settlement,NA,lab:AAR-6664,AAR-6664
+21314,AAR-6703,5250,50,-26.3,NA,NA,Bodal AS,DK,55.5699,11.5317,NA,NA,NA,NA,seed/fruit,Corylus avellana,settlement,settlement,NA,lab:AAR-6703,AAR-6703
+21315,AAR-6704,5145,45,-20.8,NA,NA,Bodal AS,DK,55.5699,11.5317,NA,NA,NA,NA,bone,Animalia,settlement,settlement,NA,lab:AAR-6704,AAR-6704
+21673,AAR-6786,4995,40,0,NA,NA,Kongemosen F,DK,55.5824,11.5477,NA,NA,NA,NA,nutshell,Corylus,settlement,settlement,NA,lab:AAR-6786,AAR-6786
+21674,AAR-6787,4985,50,0,NA,NA,Kongemosen F,DK,55.5824,11.5477,NA,NA,NA,NA,nutshell,Corylus,settlement,settlement,NA,lab:AAR-6787,AAR-6787
+85942,AAR-6788,8060,65,NA,NA,NA,Kongemosen F,DK,55.5824,11.5477,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:AAR-6788,AAR-6788
+21306,AAR-6826,4970,60,-21.4,NA,NA,Bodal,DK,55.5699,11.5317,NA,NA,NA,NA,bone,Homo sapiens,Settlement,Settlement,NA,lab:AAR-6826,AAR-6826
+21307,AAR-6943,5115,50,-21.3,NA,NA,Bodal,DK,55.5699,11.5317,NA,NA,NA,NA,bone,Bos taurus,Settlement,Settlement,NA,lab:AAR-6943,AAR-6943
+21308,AAR-6944,5135,45,-20.95,NA,NA,Bodal,DK,55.5699,11.5317,NA,NA,NA,NA,bone,Bos taurus,Settlement,Settlement,NA,lab:AAR-6944,AAR-6944
+21309,AAR-6945,5110,40,-21.01,NA,NA,Bodal,DK,55.5699,11.5317,NA,NA,NA,NA,bone,Bos taurus,Settlement,Settlement,NA,lab:AAR-6945,AAR-6945
+21588,AAR-7026,2270,40,0,NA,NA,Hørkærgård V,DK,56.2381,10.0854,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:AAR-7026,AAR-7026
+21589,AAR-7027,5095,45,-28.22,NA,NA,Hørkærgård V,DK,56.2381,10.0854,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:AAR-7027,AAR-7027
+21497,AAR-7031,3340,40,-25.46,NA,NA,Gudenåvej,DK,56.0144,9.6757,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:AAR-7031,AAR-7031
+21310,AAR-7054,4920,40,-20.71,NA,NA,Bodal,DK,55.5699,11.5317,NA,NA,NA,NA,bone,Bos taurus,Settlement,Settlement,NA,lab:AAR-7054,AAR-7054
+21863,AAR-7058,6900,60,-16.23,NA,NA,"Nivå 10, Karlebo",DK,55.9309,12.5105,NA,NA,NA,NA,bone,Homo sapiens,settlement,settlement,NA,lab:AAR-7058,AAR-7058
+22128,AAR-7061,4500,45,-21.44,NA,NA,Store Lyng VI,DK,55.5937,11.543,NA,NA,NA,NA,bone,Capra,settlement,settlement,NA,lab:AAR-7061,AAR-7061
+22129,AAR-7062,4420,50,-21.03,NA,NA,Store Lyng VI,DK,55.5937,11.543,NA,NA,NA,NA,bone,Capra,settlement,settlement,NA,lab:AAR-7062,AAR-7062
+21311,AAR-7194,5209,41,-22.42,NA,NA,Bodal,DK,55.5699,11.5317,NA,NA,NA,NA,bone,Canis lupus familiaris,Settlement,Settlement,NA,lab:AAR-7194,AAR-7194
+21672,AAR-7195,4690,41,-20.25,NA,NA,Kongemosen B,DK,55.5824,11.5477,NA,NA,NA,NA,bone,Canis lupus familiaris,settlement,settlement,NA,lab:AAR-7195,AAR-7195
+22191,AAR-7196,4820,38,-20.11,NA,NA,Ulkestrup Lyng U,DK,55.5898,11.5289,NA,NA,NA,NA,bone,Homo sapiens,settlement,settlement,NA,lab:AAR-7196,AAR-7196
+95544,AAR-7199,5430,48,NA,NA,NA,"Bodal C ""Skolaestbo""",DK,55.586664673868,11.533198356629,NA,NA,NA,NA,"collagen, bone","Dog, Os temporale, adult",settlement,settlement,NA,lab:AAR-7199,AAR-7199
+119912,AAR-7202,2540,52,-23.53,NA,NA,Bjerre ; site: Plads 2,DK,57.082732,8.701498,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House II,lab:AAR-7202,AAR-7202
+114713,AAR-7203,2866,48,-23.96,NA,NA,Bjerre ; site: Plads 2,DK,57.082732,8.701498,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House II,lab:AAR-7203,AAR-7203
+119913,AAR-7204,2975,50,-27.33,NA,NA,Bjerre ; site: Plads 2,DK,57.082732,8.701498,NA,NA,NA,NA,charcoal,Corylus avellana,settlement (house),settlement (house),House II,lab:AAR-7204,AAR-7204
+119949,AAR-7206,372,31,-26.2,NA,NA,Klostergård,DK,56.974734,8.532584,NA,NA,NA,NA,charcoal,"Charcoal, other, Calluna vulgaris",settlement (house),settlement (house),House VIII,lab:AAR-7206,AAR-7206
+113864,AAR-7224,2942,50,NA,NA,NA,Klostergård,DK,56.974734,8.532584,NA,NA,NA,NA,charcoal,salix,settlement (house),settlement (house),House VIII,lab:AAR-7224,AAR-7224
+21751,AAR-7410-2,5890,55,0,NA,NA,Lollikehuse,DK,55.8468,12.4236,NA,NA,NA,NA,NA,NA,Settlement,Settlement,NA,lab:AAR-7410-2,AAR-7410-2
+90555,AAR-848,4490,140,-19,NA,NA,Krogsbølle,DK,55.572412,10.367975,NA,NA,NA,NA,"collagen, bone",Skeleton og 7 month old human embryo found at a neolithic settlement.,settlement,settlement,NA,lab:AAR-848,AAR-848
+21572,AAR-8558,8465,60,0,NA,NA,Holmegård V,DK,55.2749,11.8362,NA,NA,NA,NA,bone,Homo sapiens,settlement,settlement,NA,lab:AAR-8558,AAR-8558
+21573,AAR-8560,8315,45,0,NA,NA,Holmegård V,DK,55.2749,11.8362,NA,NA,NA,NA,bone,Homo sapiens,settlement,settlement,NA,lab:AAR-8560,AAR-8560
+21574,AAR-8561,8500,60,0,NA,NA,Holmegård V,DK,55.2749,11.8362,NA,NA,NA,NA,bone,Homo sapiens,settlement,settlement,NA,lab:AAR-8561,AAR-8561
+119866,AAR-8887,3462,41,-26.36,NA,NA,Nygårdstoft,DK,55.417666,8.396196,NA,NA,NA,NA,charcoal,"Charcoal, wood, Quercus",settlement (house),settlement (house),house I,lab:AAR-8887,AAR-8887
+119867,AAR-8888,3560,50,-26.29,NA,NA,Nygårdstoft,DK,55.417666,8.396196,NA,NA,NA,NA,charcoal,"Charcoal, wood, Betula",settlement (house),settlement (house),house I,lab:AAR-8888,AAR-8888
+119868,AAR-8889,3005,47,-26.5,NA,NA,Nygårdstoft,DK,55.417666,8.396196,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house II,lab:AAR-8889,AAR-8889
+119844,AAR-9473,3425,75,-26.43,NA,NA,Drejens Boligby,DK,55.506022,9.550632,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house I,lab:AAR-9473,AAR-9473
+119845,AAR-9474,3140,39,-26.13,NA,NA,Drejens Boligby,DK,55.506022,9.550632,NA,NA,NA,NA,charcoal,"Charcoal, wood, Alnus",settlement (house),settlement (house),house I,lab:AAR-9474,AAR-9474
+114653,AAR-9475,3257,49,-25.14,NA,NA,Drejens Boligby,DK,55.506022,9.550632,NA,NA,NA,NA,charcoal,"Charcoal, wood, Fraxinus",settlement (house),settlement (house),house I,lab:AAR-9475,AAR-9475
+119846,AAR-9476,3149,50,-23.89,NA,NA,Drejens Boligby,DK,55.506022,9.550632,NA,NA,NA,NA,charcoal,"Charcoal, wood, Fraxinus",settlement (house),settlement (house),house I,lab:AAR-9476,AAR-9476
+114654,AAR-9477,3060,48,-25.98,NA,NA,Drejens Boligby,DK,55.506022,9.550632,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house II,lab:AAR-9477,AAR-9477
+119847,AAR-9478,3141,43,-24.28,NA,NA,Drejens Boligby,DK,55.506022,9.550632,NA,NA,NA,NA,charcoal,"Charcoal, wood; Alnus or Corylus",settlement (house),settlement (house),house II,lab:AAR-9478,AAR-9478
+114655,AAR-9479,3131,46,-28.05,NA,NA,Drejens Boligby,DK,55.506022,9.550632,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house II,lab:AAR-9479,AAR-9479
+114656,AAR-9480,3181,43,-27.1,NA,NA,Drejens Boligby,DK,55.506022,9.550632,NA,NA,NA,NA,nutshell,Corylus,settlement (house),settlement (house),house II,lab:AAR-9480,AAR-9480
+114657,AAR-9481,3315,44,-25.82,NA,NA,Drejens Boligby,DK,55.506022,9.550632,NA,NA,NA,NA,charcoal,"Charcoal, wood, Alnus",settlement (house),settlement (house),house III,lab:AAR-9481,AAR-9481
+114658,AAR-9482,3250,42,-26.32,NA,NA,Drejens Boligby,DK,55.506022,9.550632,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house III,lab:AAR-9482,AAR-9482
+119848,AAR-9483,3185,70,-26.03,NA,NA,Drejens Boligby,DK,55.506022,9.550632,NA,NA,NA,NA,nutshell,Corylus,settlement (house),settlement (house),house III,lab:AAR-9483,AAR-9483
+119849,AAR-9484,3310,42,-23.71,NA,NA,Drejens Boligby,DK,55.506022,9.550632,NA,NA,NA,NA,charcoal,"Charcoal, wood; Amygdalaceae",settlement (house),settlement (house),house III,lab:AAR-9484,AAR-9484
+119853,AAR-9485,5690,50,-25.98,NA,NA,Bønstrup Industripark,DK,55.441185,9.32055,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house I,lab:AAR-9485,AAR-9485
+119854,AAR-9486,3115,40,-25.15,NA,NA,Bønstrup Industripark,DK,55.441185,9.32055,NA,NA,NA,NA,charcoal,"Charcoal, wood, Betula",settlement (house),settlement (house),house I,lab:AAR-9486,AAR-9486
+114660,AAR-9487,3007,43,-27.07,NA,NA,Bønstrup Industripark,DK,55.441185,9.32055,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house I,lab:AAR-9487,AAR-9487
+115958,AAR-9514,2805,43,-24.1,NA,NA,Sundby,DK,56.874894,8.672345,NA,NA,NA,NA,cremated bones,Leichenbrand,settlement (house),settlement (house),Grab,lab:AAR-9514,AAR-9514
+119917,AAR-9582,3905,55,-26.64,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,wood,"Wood, uncharred, Quercus",settlement,settlement,House IA,lab:AAR-9582,AAR-9582
+115051,AMM-13069,3536,43,-24.39,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Grain (emmer/ spely),settlement (house),settlement (house),context:  A2100; sample X1007,lab:AMM-13069,AMM-13069
+120240,AMM-13070,3554,40,-24.37,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),context:  A2100; sample X1011,lab:AMM-13070,AMM-13070
+115052,AMM-13071,3568,40,-24.12,NA,NA,Mannehøjgård,DK,55.460639,9.120933,NA,NA,NA,NA,grain,Grain (indefinite),settlement (house),settlement (house),context:  A2476; sample X1019,lab:AMM-13071,AMM-13071
+119840,Beta-237885,2890,40,-27.5,NA,NA,Ulsted,DK,57.076376,10.255768,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),House I,lab:Beta-237885,Beta-237885
+119940,Beta-237886,2870,40,-21.3,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House IA,lab:Beta-237886,Beta-237886
+119941,Beta-237887,3000,40,-21.3,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House II,lab:Beta-237887,Beta-237887
+114739,Beta-237888,3140,40,-24.8,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House III,lab:Beta-237888,Beta-237888
+119942,Beta-237889,2880,40,-22.7,NA,NA,"Fårtoft 1,1",DK,56.949788,8.740132,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House IV,lab:Beta-237889,Beta-237889
+114650,Beta-257030,3010,40,-23.3,NA,NA,Tinggård,DK,56.843632,8.565659,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House XXI,lab:Beta-257030,Beta-257030
+119839,Beta-257031,2970,40,-21.5,NA,NA,Tinggård,DK,56.843632,8.565659,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House XXI,lab:Beta-257031,Beta-257031
+114648,Beta-257032,3420,40,-22.9,NA,NA,Tinggård,DK,56.843632,8.565659,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House XX/XXV,lab:Beta-257032,Beta-257032
+114649,Beta-257033,3460,40,-24.3,NA,NA,Tinggård,DK,56.843632,8.565659,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House XX/XXV,lab:Beta-257033,Beta-257033
+119948,Beta-257034,3580,40,-22.1,NA,NA,Kallerup,DK,56.920149,8.571681,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House I,lab:Beta-257034,Beta-257034
+114743,Beta-257035,3480,40,-23.3,NA,NA,Kallerup,DK,56.920149,8.571681,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),House I,lab:Beta-257035,Beta-257035
+114741,Beta-257036,3330,40,NA,NA,NA,Ginnerup,DK,56.73576,8.46092,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:Beta-257036,Beta-257036
+119946,Beta-257037,3290,40,NA,NA,NA,Ginnerup,DK,56.73576,8.46092,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House I,lab:Beta-257037,Beta-257037
+119841,Beta-257038,2860,40,-21.2,NA,NA,Vestermark,DK,57.00908,10.290043,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),House XII,lab:Beta-257038,Beta-257038
+119842,Beta-257039,3080,40,-22.5,NA,NA,Vestermark,DK,57.00908,10.290043,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),House XII,lab:Beta-257039,Beta-257039
+21141,C-432,7583,380,0,NA,NA,Aamosen,DK,55.433,11.3,NA,NA,NA,NA,wood,NA,settlement,settlement,NA,lab:C-432,C-432
+21142,C-433,9929,350,0,NA,NA,Aamosen,DK,55.433,11.3,NA,NA,NA,NA,miscellaneous,Corylus,settlement,settlement,NA,lab:C-433,C-433
+232345,C-433(b),9927,830,NA,NA,NA,Aamosen,DK,55.433,11.3,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:C-433(b),C-433(b)
+21143,C-433[a],9935,440,0,NA,NA,Aamosen,DK,55.433,11.3,NA,NA,NA,NA,charcoal,Corylus,settlement,settlement,NA,lab:C-433[a],C-433[a]
+21144,C-433[b],9927,830,0,NA,NA,Aamosen,DK,55.433,11.3,NA,NA,NA,NA,charcoal,Corylus,settlement,settlement,NA,lab:C-433[b],C-433[b]
+21145,C-434,8631,540,0,NA,NA,Aamosen,DK,55.433,11.3,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:C-434,C-434
+21146,C-435,9425,470,0,NA,NA,Aamosen,DK,55.433,11.3,NA,NA,NA,NA,wood,Betula,settlement,settlement,NA,lab:C-435,C-435
+255438,GrN-20838,21870,780,NA,NA,NA,Aamosen,DK,55.433,11.3,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:GrN-20838,GrN-20838
+21338,Hv-,4355,80,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:Hv-,Hv-
+33676,Hv-5591,4305,110,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:Hv-5591,Hv-5591
+33677,Hv-5594,4385,120,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:Hv-5594,Hv-5594
+115368,K-1026,2160,100,NA,NA,NA,Grøntoft; site: B,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Charcoal (Alnus sp.),settlement (house),settlement (house),house III,lab:K-1026,K-1026
+115369,K-1027,2210,100,NA,NA,NA,Grøntoft; site: B,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),"post 23, house III",lab:K-1027,K-1027
+110051,K-1129,2140,100,NA,NA,NA,Grøntoft; site: A,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,"posthole 22, House I",lab:K-1129,K-1129
+115367,K-1130,2250,100,NA,NA,NA,Grøntoft; site: A,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,"posthole 1, House II",lab:K-1130,K-1130
+110050,K-1131,2060,100,NA,NA,NA,Grøntoft; site: A,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,"hearth, house III",lab:K-1131,K-1131
+110049,K-1132,2160,100,NA,NA,NA,Grøntoft; site: A,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,"hearth, house III",lab:K-1132,K-1132
+110048,K-1133,2050,100,NA,NA,NA,Grøntoft; site: A,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,pit B37,lab:K-1133,K-1133
+21480,K-1203,3440,120,0,NA,NA,Gjævhul Bakke,DK,56.8263,8.2517,NA,NA,NA,NA,charcoal,Alnus,settlement,settlement,NA,lab:K-1203,K-1203
+21481,K-1204,3560,120,0,NA,NA,Gjævhul Bakke,DK,56.8263,8.2517,NA,NA,NA,NA,charcoal,Alnus,settlement,settlement,NA,lab:K-1204,K-1204
+110241,K-1218,2780,100,NA,NA,NA,Kirkebakkegård,DK,55.28348,10.4717,NA,NA,NA,NA,charcoal,Charcoal (bøg),settlement,settlement,NA,lab:K-1218,K-1218
+21820,K-123a,4680,120,0,NA,NA,Muldbjerg,DK,56.144,8.4696,NA,NA,NA,NA,peat,NA,settlement,settlement,NA,lab:K-123a,K-123a
+21821,K-123b,4770,150,0,NA,NA,Muldbjerg,DK,56.144,8.4696,NA,NA,NA,NA,peat,NA,settlement,settlement,NA,lab:K-123b,K-123b
+21822,K-124,4600,170,0,NA,NA,Muldbjerg,DK,56.144,8.4696,NA,NA,NA,NA,wood,Betula,settlement,settlement,NA,lab:K-124,K-124
+21823,K-125,4840,170,0,NA,NA,Muldbjerg,DK,56.144,8.4696,NA,NA,NA,NA,wood,Betula,settlement,settlement,NA,lab:K-125,K-125
+21824,K-126,4880,170,0,NA,NA,Muldbjerg,DK,56.144,8.4696,NA,NA,NA,NA,wood,Betula,settlement,settlement,NA,lab:K-126,K-126
+21829,K-127,4850,120,0,NA,NA,Muldbjerg I,DK,56.15,8.483,NA,NA,NA,NA,peat,NA,Settlement,Settlement,NA,lab:K-127,K-127
+21825,K-128,4910,160,0,NA,NA,Muldbjerg,DK,56.144,8.4696,NA,NA,NA,NA,charcoal,Corylus,settlement,settlement,NA,lab:K-128,K-128
+21826,K-129,4940,160,0,NA,NA,Muldbjerg,DK,56.144,8.4696,NA,NA,NA,NA,charcoal,Corylus,settlement,settlement,NA,lab:K-129,K-129
+21827,K-131,4610,150,0,NA,NA,Muldbjerg,DK,56.144,8.4696,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-131,K-131
+21828,K-132,4660,150,0,NA,NA,Muldbjerg,DK,56.144,8.4696,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-132,K-132
+110655,K-1373,3170,100,NA,NA,NA,Stenmarken; site:  Sb 65,DK,57.249973,9.616841,NA,NA,NA,NA,charcoal,Charcoal (Alnus sp.),settlement (house),settlement (house),NA,lab:K-1373,K-1373
+115940,K-1374,3070,100,NA,NA,NA,Stenmarken; site:  Sb 65,DK,57.249973,9.616841,NA,NA,NA,NA,charcoal,Charcoal (Alnus sp.),settlement (house),settlement (house),NA,lab:K-1374,K-1374
+110656,K-1375,3080,100,NA,NA,NA,Stenmarken; site:  Sb 65,DK,57.249973,9.616841,NA,NA,NA,NA,charcoal,Charcoal (mixed species),settlement (house),settlement (house),NA,lab:K-1375,K-1375
+21958,K-1473,5010,100,0,NA,NA,Præstelyngen,DK,55.5833,11.5833,NA,NA,NA,NA,wood,Tilia,Settlement,Settlement,NA,lab:K-1473,K-1473
+115370,K-1590,2300,100,NA,NA,NA,Grøntoft; site: E,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Quercus,settlement (house),settlement (house),house E:VII,lab:K-1590,K-1590
+115371,K-1591,2470,100,NA,NA,NA,Grøntoft; site: E,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Charcoal (Alnus sp.),settlement (house),settlement (house),"posthole 75, houseE:XVIII",lab:K-1591,K-1591
+110054,K-1592,2450,100,NA,NA,NA,Grøntoft; site: E,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Quercus,settlement (house),settlement (house),pit 108+b,lab:K-1592,K-1592
+115372,K-1593,2480,100,NA,NA,NA,Grøntoft; site: E,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Quercus,settlement (house),settlement (house),"posthole 61b, house E:XVIII",lab:K-1593,K-1593
+110052,K-1594,2270,100,NA,NA,NA,Grøntoft; site: E,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Quercus,settlement (house),settlement (house),house E:XVI,lab:K-1594,K-1594
+136506,K-1609,8660,120,NA,NA,NA,Mullerup,DK,55.5,11.2167,NA,NA,NA,NA,"charcoal, nut",NA,settlement,settlement,habitat,lab:K-1609,K-1609
+136508,K-1610,8500,140,NA,NA,NA,Mullerup,DK,55.5,11.2167,NA,NA,NA,NA,wood,NA,settlement,settlement,habitat,lab:K-1610,K-1610
+136507,K-1611,8520,140,NA,NA,NA,Mullerup,DK,55.5,11.2167,NA,NA,NA,NA,wood,NA,settlement,settlement,habitat,lab:K-1611,K-1611
+136509,K-1612,8330,110,NA,NA,NA,Mullerup,DK,55.5,11.2167,NA,NA,NA,NA,"charcoal, nut",NA,settlement,settlement,habitat,lab:K-1612,K-1612
+110053,K-1625,2390,100,NA,NA,NA,Grøntoft; site: E,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Quercus,settlement (house),settlement (house),house E:VII,lab:K-1625,K-1625
+86141,K-1649,4420,110,NA,NA,NA,Præstelyngen,DK,55.5833,11.5833,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-1649,K-1649
+21959,K-1650,4960,110,0,NA,NA,Præstelyngen,DK,55.5833,11.5833,NA,NA,NA,NA,wood,Salix,Settlement,Settlement,NA,lab:K-1650,K-1650
+21960,K-1651,4890,110,0,NA,NA,Præstelyngen,DK,55.5833,11.5833,NA,NA,NA,NA,peat,NA,Settlement,Settlement,NA,lab:K-1651,K-1651
+21989,K-1652,5610,110,0,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,charcoal,Tilia,Settlement,Settlement,NA,lab:K-1652,K-1652
+21990,K-1653,5490,100,0,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,charcoal,Quercus,Settlement,Settlement,NA,lab:K-1653,K-1653
+21991,K-1653a,5430,110,0,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,NA,NA,Settlement,Settlement,NA,lab:K-1653a,K-1653a
+21992,K-1653b,5550,110,0,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-1653b,K-1653b
+21993,K-1654,5320,100,0,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,charcoal,Fraxinus,Settlement,Settlement,NA,lab:K-1654,K-1654
+21994,K-1654a,5250,110,0,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-1654a,K-1654a
+21995,K-1654b,5390,110,0,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-1654b,K-1654b
+21961,K-1656,4890,110,0,NA,NA,Præstelyngen,DK,55.5833,11.5833,NA,NA,NA,NA,NA,NA,Settlement,Settlement,NA,lab:K-1656,K-1656
+115507,K-1690,2790,100,NA,NA,NA,Jyderup Skov,DK,55.838431,11.529202,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,pit II,lab:K-1690,K-1690
+115506,K-1691,2800,100,NA,NA,NA,Jyderup Skov,DK,55.838431,11.529202,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,pit II,lab:K-1691,K-1691
+110203,K-1692,2750,100,NA,NA,NA,Jyderup Skov,DK,55.838431,11.529202,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,pit XXIX,lab:K-1692,K-1692
+115505,K-1693,2740,100,NA,NA,NA,Jyderup Skov,DK,55.838431,11.529202,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,pit XXXI,lab:K-1693,K-1693
+115467,K-1694,2990,100,NA,NA,NA,Jyderup Skov,DK,55.838431,11.529202,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,pit XXXI,lab:K-1694,K-1694
+22094,K-1723,5520,110,0,NA,NA,Sølager,DK,55.9333,11.9,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-1723,K-1723
+22095,K-1724,4650,100,0,NA,NA,Sølager,DK,55.9333,11.9,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-1724,K-1724
+22096,K-1725,4030,100,0,NA,NA,Sølager,DK,55.9333,11.9,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-1725,K-1725
+115277,K-1761,2870,100,NA,NA,NA,Egehøj,DK,56.4993,10.7358,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-1761,K-1761
+21996,K-1765,5500,110,0,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,charcoal,Quercus,Settlement,Settlement,NA,lab:K-1765,K-1765
+110759,K-1926,2460,100,NA,NA,NA,Vindebjerg; site:  Knudshoved Odde,DK,55.077539,11.639393,NA,NA,NA,NA,charcoal,Charcoal (Taxus sp.),settlement (pit),settlement (pit),NA,lab:K-1926,K-1926
+22248,K-1930,4290,100,0,NA,NA,Vester Årup,DK,56.7422,9.4261,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-1930,K-1930
+22249,K-1931,4350,100,0,NA,NA,Vester Årup,DK,56.7422,9.4261,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-1931,K-1931
+22250,K-1932,4100,100,0,NA,NA,Vester Årup,DK,56.7422,9.4261,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-1932,K-1932
+21962,K-1961,4980,110,0,NA,NA,Præstelyngen,DK,55.5833,11.5833,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-1961,K-1961
+21963,K-1962,4750,100,0,NA,NA,Præstelyngen,DK,55.5833,11.5833,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-1962,K-1962
+21964,K-1963,4760,100,0,NA,NA,Præstelyngen,DK,55.5833,11.5833,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-1963,K-1963
+22251,K-1982,4450,100,0,NA,NA,Vester Årup,DK,56.7422,9.4261,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-1982,K-1982
+22252,K-1983,4160,100,0,NA,NA,Vester Årup,DK,56.7422,9.4261,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-1983,K-1983
+21965,K-2056,4830,100,0,NA,NA,Præstelyngen,DK,55.5833,11.5833,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-2056,K-2056
+21966,K-2057,4950,100,0,NA,NA,Præstelyngen,DK,55.5833,11.5833,NA,NA,NA,NA,charcoal,Corylus,Settlement,Settlement,NA,lab:K-2057,K-2057
+21967,K-2058,4790,100,0,NA,NA,Præstelyngen,DK,55.5833,11.5833,NA,NA,NA,NA,charcoal,Alnus,Settlement,Settlement,NA,lab:K-2058,K-2058
+21832,K-2067,3860,100,0,NA,NA,Myrhøj,DK,56.7998,9.2111,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-2067,K-2067
+110729,K-2072,2970,100,NA,NA,NA,Vadgård,DK,56.9117,9.2977,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-2072,K-2072
+110732,K-2073,3070,100,NA,NA,NA,Vadgård,DK,56.9117,9.2977,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-2073,K-2073
+115187,K-2074,3110,100,NA,NA,NA,Vadgård,DK,56.9117,9.2977,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-2074,K-2074
+21676,K-2115,4090,100,0,NA,NA,Kornerup,DK,55.63,11.98,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-2115,K-2115
+118389,K-2201,2900,100,NA,NA,NA,Rønninge Søgård,DK,55.337778,10.630556,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:K-2201,K-2201
+118390,K-2202,2800,100,NA,NA,NA,Rønninge Søgård,DK,55.337778,10.630556,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:K-2202,K-2202
+118391,K-2203,2910,100,NA,NA,NA,Rønninge Søgård,DK,55.337778,10.630556,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:K-2203,K-2203
+113103,K-2204,2880,100,NA,NA,NA,Rønninge Søgård,DK,55.337778,10.630556,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),cooking pit,lab:K-2204,K-2204
+115278,K-2223,2400,100,NA,NA,NA,Egehøj,DK,56.4993,10.7358,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-2223,K-2223
+21396,K-2238,3160,100,0,NA,NA,Egehøj,DK,56.4993,10.7358,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-2238,K-2238
+21397,K-2239,3340,100,0,NA,NA,Egehøj,DK,56.4993,10.7358,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-2239,K-2239
+21398,K-2240,3240,100,0,NA,NA,Egehøj,DK,56.4993,10.7358,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-2240,K-2240
+115279,K-2241,2550,100,NA,NA,NA,Egehøj,DK,56.4993,10.7358,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-2241,K-2241
+21702,K-2269,4260,100,0,NA,NA,Lidsø,DK,54.683,11.3333,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-2269,K-2269
+21703,K-2270,4390,100,0,NA,NA,Lidsø,DK,54.683,11.3333,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-2270,K-2270
+21704,K-2271,4210,100,0,NA,NA,Lidsø,DK,54.683,11.3333,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-2271,K-2271
+21705,K-2272,4300,100,0,NA,NA,Lidsø,DK,54.683,11.3333,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-2272,K-2272
+21380,K-2273,4110,100,0,NA,NA,Dorthealund C,DK,55.2175,10.2135,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-2273,K-2273
+21381,K-2275,4200,100,0,NA,NA,Dorthealund C,DK,55.2175,10.2135,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-2275,K-2275
+87607,K-2279,4510,90,NA,NA,NA,Øgårde,DK,55.5937,11.543,NA,NA,NA,NA,NA,NA,settlement,settlement,NA,lab:K-2279,K-2279
+47663,K-2296,3730,100,0,NA,NA,Stendis,DK,56.417,8.833,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-2296,K-2296
+47664,K-2297,3460,100,0,NA,NA,Stendis,DK,56.417,8.833,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-2297,K-2297
+109914,K-2308,2860,100,NA,NA,NA,Geelskov,DK,55.802258,12.484471,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),pit (Sb. 128 A),lab:K-2308,K-2308
+110038,K-2309,2900,100,NA,NA,NA,Geelskov,DK,55.802258,12.484471,NA,NA,NA,NA,charcoal,NA,settlement (pit),settlement (pit),pit (Sb. 128 A),lab:K-2309,K-2309
+21382,K-2429,4220,100,0,NA,NA,Dorthealund E,DK,55.2175,10.2135,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-2429,K-2429
+21383,K-2430,4540,100,0,NA,NA,Dorthealund N,DK,55.2175,10.2135,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-2430,K-2430
+104640,K-2432,4550,100,NA,NA,NA,Dorthealund N,DK,55.2175,10.2135,NA,NA,NA,NA,charcoal,NA,settlement,settlement,Pit N.,lab:K-2432,K-2432
+85875,K-2507,3510,65,NA,NA,NA,Kalvo,DK,56.0181,10.2491,NA,NA,NA,NA,plant macrofossils,NA,Settlement,Settlement,NA,lab:K-2507,K-2507
+21635,K-2508,3850,65,0,NA,NA,Kalvø,DK,56.0181,10.2491,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-2508,K-2508
+110728,K-2601,3200,85,NA,NA,NA,Vadgård,DK,56.9117,9.2977,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-2601,K-2601
+114048,K-2602,3180,85,NA,NA,NA,Vadgård,DK,56.9117,9.2977,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-2602,K-2602
+110730,K-2603,3040,85,NA,NA,NA,Vadgård,DK,56.9117,9.2977,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-2603,K-2603
+22198,K-2709,3270,90,0,NA,NA,Vadgård,DK,56.9117,9.2977,NA,NA,NA,NA,charcoal,Tilia,Settlement,Settlement,NA,lab:K-2709,K-2709
+22299,K-2751,3760,60,0,NA,NA,Vorbasse,DK,55.633,9.083,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-2751,K-2751
+21915,K-2845,4560,60,0,NA,NA,Øgårde,DK,55.5937,11.543,NA,NA,NA,NA,wood,Corylus,settlement,settlement,NA,lab:K-2845,K-2845
+21916,K-2846,4590,60,0,NA,NA,Øgårde,DK,55.5937,11.543,NA,NA,NA,NA,peat,NA,settlement,settlement,NA,lab:K-2846,K-2846
+87854,K-2889,4980,70,NA,NA,NA,Muldbjerg I,DK,56.15,8.483,NA,NA,NA,NA,wood,Alnus,Settlement,Settlement,NA,lab:K-2889,K-2889
+21253,K-2924,3570,85,0,NA,NA,Birkenæs sb 141,DK,55.9868,9.701,NA,NA,NA,NA,seed/fruit,carbonized. Triticum,settlement,settlement,NA,lab:K-2924,K-2924
+21254,K-2925,3530,85,0,NA,NA,Birkenæs sb 141,DK,55.9868,9.701,NA,NA,NA,NA,seed/fruit,carbonized. Triticum,settlement,settlement,NA,lab:K-2925,K-2925
+21255,K-2926,3590,85,0,NA,NA,Birkenæs sb 141,DK,55.9868,9.701,NA,NA,NA,NA,seed/fruit,carbonized. Triticum,settlement,settlement,NA,lab:K-2926,K-2926
+21256,K-2927,3520,85,0,NA,NA,Birkenæs sb 141,DK,55.9868,9.701,NA,NA,NA,NA,seed/fruit,Hordeum,settlement,settlement,NA,lab:K-2927,K-2927
+21257,K-2928,3540,85,0,NA,NA,Birkenæs sb 141,DK,55.9868,9.701,NA,NA,NA,NA,seed/fruit,Hordeum,settlement,settlement,NA,lab:K-2928,K-2928
+21258,K-2929,3630,85,0,NA,NA,Birkenæs sb 141,DK,55.9868,9.701,NA,NA,NA,NA,seed/fruit,Hordeum,settlement,settlement,NA,lab:K-2929,K-2929
+115601,K-2998,4160,90,NA,NA,NA,Lustrup; site:  Skarrild Sb. 38,DK,55.99529,8.893085,NA,NA,NA,NA,charcoal,NA,settlement (house),settlement (house),posthole 52,lab:K-2998,K-2998
+115604,K-2999,4230,90,NA,NA,NA,Lustrup; site:  Skarrild Sb. 38,DK,55.99529,8.893085,NA,NA,NA,NA,charcoal,NA,settlement (house),settlement (house),posthole 52,lab:K-2999,K-2999
+110316,K-3000,4180,90,NA,NA,NA,Lustrup; site:  Skarrild Sb. 38,DK,55.99529,8.893085,NA,NA,NA,NA,charcoal,NA,settlement (house),settlement (house),posthole 52,lab:K-3000,K-3000
+115602,K-3001,4220,90,NA,NA,NA,Lustrup; site:  Skarrild Sb. 38,DK,55.99529,8.893085,NA,NA,NA,NA,charcoal,NA,settlement (house),settlement (house),posthole 62,lab:K-3001,K-3001
+115600,K-3002,4160,80,NA,NA,NA,Lustrup; site:  Skarrild Sb 38,DK,55.99529,8.893085,NA,NA,NA,NA,charcoal,NA,settlement (house),settlement (house),posthole 73,lab:K-3002,K-3002
+115603,K-3003,4180,85,NA,NA,NA,Lustrup; site:  Skarrild Sb. 38,DK,55.99529,8.893085,NA,NA,NA,NA,charcoal,NA,settlement (house),settlement (house),NA,lab:K-3003,K-3003
+21725,K-3273,3690,80,0,NA,NA,Lodbjerg,DK,56.8178,8.2957,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-3273,K-3273
+21726,K-3274,3620,95,0,NA,NA,Lodbjerg,DK,56.8178,8.2957,NA,NA,NA,NA,charcoal,Corylus,settlement,settlement,NA,lab:K-3274,K-3274
+110304,K-3275,3140,80,NA,NA,NA,Lodbjerg,DK,56.8178,8.2957,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-3275,K-3275
+85659,K-3278,4400,65,NA,NA,NA,Bundsø,DK,55.0228,9.76485,NA,NA,NA,NA,NA,NA,Settlement,Settlement,NA,lab:K-3278,K-3278
+85660,K-3279,4450,60,NA,NA,NA,Bundsø,DK,55.0228,9.76485,NA,NA,NA,NA,NA,NA,Settlement,Settlement,NA,lab:K-3279,K-3279
+110703,K-3475,3050,80,NA,NA,NA,Trappendal,DK,55.371238,9.607048,NA,NA,NA,NA,charcoal,NA,settlement (house),settlement (house),NA,lab:K-3475,K-3475
+115996,K-3476,3300,80,NA,NA,NA,Trappendal,DK,55.371238,9.607048,NA,NA,NA,NA,charcoal,NA,settlement (house),settlement (house),NA,lab:K-3476,K-3476
+115993,K-3477,3060,80,NA,NA,NA,Trappendal,DK,55.371238,9.607048,NA,NA,NA,NA,charcoal,NA,settlement (house),settlement (house),posthole 245,lab:K-3477,K-3477
+115995,K-3478,3130,80,NA,NA,NA,Trappendal,DK,55.371238,9.607048,NA,NA,NA,NA,charcoal,NA,settlement (house),settlement (house),posthole 245,lab:K-3478,K-3478
+115994,K-3479,2920,80,NA,NA,NA,Trappendal,DK,55.371238,9.607048,NA,NA,NA,NA,charcoal,NA,settlement (house),settlement (house),NA,lab:K-3479,K-3479
+22120,K-3533,3650,80,0,NA,NA,Stålgjæv Rende,DK,56.8369,8.2586,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-3533,K-3533
+22121,K-3534,3680,85,0,NA,NA,Stålgjæv Rende,DK,56.8369,8.2586,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-3534,K-3534
+21727,K-3536,3530,85,0,NA,NA,Lodbjerg,DK,56.8178,8.2957,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-3536,K-3536
+21728,K-3537,3720,85,0,NA,NA,Lodbjerg,DK,56.8178,8.2957,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-3537,K-3537
+110242,K-3549,2780,80,NA,NA,NA,Kirkebjerg,DK,55.512432,10.463668,NA,NA,NA,NA,charcoal,NA,settlement,settlement,pit S,lab:K-3549,K-3549
+115540,K-3550,2790,80,NA,NA,NA,Kirkebjerg,DK,55.512432,10.463668,NA,NA,NA,NA,charcoal,NA,settlement,settlement,pit V,lab:K-3550,K-3550
+115539,K-3551,2730,80,NA,NA,NA,Kirkebjerg,DK,55.512432,10.463668,NA,NA,NA,NA,charcoal,NA,settlement,settlement,pit P,lab:K-3551,K-3551
+115538,K-3552,2560,75,NA,NA,NA,Kirkebjerg,DK,55.512432,10.463668,NA,NA,NA,NA,grain,Charbonised cereals.,settlement,settlement,NA,lab:K-3552,K-3552
+85822,K-3559,6220,100,NA,NA,NA,Holmegård J,DK,55.2752,11.8358,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-3559,K-3559
+21518,K-3629,4580,140,0,NA,NA,Havnelev,DK,55.2681,12.3406,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-3629,K-3629
+21917,K-3675,4530,50,0,NA,NA,Øgårde,DK,55.5937,11.543,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-3675,K-3675
+21922,K-3677,4560,65,0,NA,NA,Øgårde 21,DK,55.5937,11.543,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-3677,K-3677
+21923,K-3678,4590,85,0,NA,NA,Øgårde 21,DK,55.5937,11.543,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-3678,K-3678
+21641,K-3683,4040,80,0,NA,NA,Kirial Bro,DK,56.4304,10.7962,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-3683,K-3683
+21642,K-3684,4020,80,0,NA,NA,Kirial Bro,DK,56.4304,10.7962,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-3684,K-3684
+21643,K-3685,4100,75,0,NA,NA,Kirial Bro,DK,56.4304,10.7962,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-3685,K-3685
+21618,K-3686,4180,85,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-3686,K-3686
+21619,K-3687,4150,80,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-3687,K-3687
+21620,K-3719,4140,85,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-3719,K-3719
+21644,K-3720,4100,55,0,NA,NA,Kirial Bro,DK,56.4304,10.7962,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-3720,K-3720
+85626,K-3723,4190,90,NA,NA,NA,Bodal,DK,55.5699,11.5317,NA,NA,NA,NA,bone,NA,Settlement,Settlement,NA,lab:K-3723,K-3723
+86414,K-3746,4570,60,NA,NA,NA,Øgårde,DK,55.5937,11.543,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-3746,K-3746
+21969,K-3773,5260,65,-21.6,NA,NA,Præstelyngen,DK,55.5833,11.5833,NA,NA,NA,NA,bone,Canis lupus familiaris,Settlement,Settlement,NA,lab:K-3773,K-3773
+110624,K-3795,2600,75,NA,NA,NA,Skovsgård; site:  Fragtrup,DK,57.086768,9.484821,NA,NA,NA,NA,charcoal,NA,settlement,settlement,layer 4,lab:K-3795,K-3795
+110623,K-3796,2540,70,NA,NA,NA,Skovsgård; site:  Fragtrup,DK,57.086768,9.484821,NA,NA,NA,NA,charcoal,NA,settlement,settlement,layer 3,lab:K-3796,K-3796
+115908,K-3797,2560,95,NA,NA,NA,Skovsgård; site:  Fragtrup,DK,57.086768,9.484821,NA,NA,NA,NA,charcoal,NA,settlement,settlement,layer 3,lab:K-3797,K-3797
+110622,K-3798,2650,80,NA,NA,NA,Skovsgård; site:  Fragtrup,DK,57.086768,9.484821,NA,NA,NA,NA,charcoal,Charcoal of slender branches,settlement,settlement,layer 2a,lab:K-3798,K-3798
+115909,K-3800,2450,75,NA,NA,NA,Skovsgård; site:  Fragtrup,DK,57.086768,9.484821,NA,NA,NA,NA,charcoal,NA,settlement,settlement,layer 3,lab:K-3800,K-3800
+115911,K-3801,2570,70,NA,NA,NA,Skovsgård; site:  Fragtrup,DK,57.086768,9.484821,NA,NA,NA,NA,charcoal,NA,settlement,settlement,pit A,lab:K-3801,K-3801
+115910,K-3802,2420,75,NA,NA,NA,Skovsgård; site:  Fragtrup,DK,57.086768,9.484821,NA,NA,NA,NA,charcoal,NA,settlement,settlement,"pit 3, house I",lab:K-3802,K-3802
+21621,K-3929,4050,85,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-3929,K-3929
+21622,K-3930,4070,85,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-3930,K-3930
+21623,K-3931,4070,85,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-3931,K-3931
+21624,K-3932,3970,85,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-3932,K-3932
+21625,K-3933,4030,85,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-3933,K-3933
+21626,K-3934,5240,95,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-3934,K-3934
+21627,K-3935,3950,90,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-3935,K-3935
+21628,K-3936,4040,75,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-3936,K-3936
+109981,K-4024,3420,80,NA,NA,NA,Engvang; site: IV,DK,56.515125,9.700616,NA,NA,NA,NA,charcoal,Charcoal (mixed species),settlement (house),settlement (house),NA,lab:K-4024,K-4024
+21812,K-4047,3660,80,0,NA,NA,Mortens Sande,DK,56.8527,8.2696,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-4047,K-4047
+21447,K-4049,4390,70,0,NA,NA,Fannerup I,DK,56.4014,10.7142,NA,NA,NA,NA,bone,Bos,settlement,settlement,NA,lab:K-4049,K-4049
+21448,K-4050,4420,95,0,NA,NA,Fannerup I,DK,56.4014,10.7142,NA,NA,NA,NA,bone,Bos,settlement,settlement,NA,lab:K-4050,K-4050
+21449,K-4051,4350,65,0,NA,NA,Fannerup II,DK,56.4014,10.7142,NA,NA,NA,NA,bone,Bos,settlement,settlement,NA,lab:K-4051,K-4051
+22114,K-4073,4370,70,0,NA,NA,Spodsbjerg,DK,54.933,10.833,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-4073,K-4073
+22115,K-4074,4240,60,0,NA,NA,Spodsbjerg,DK,54.933,10.833,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-4074,K-4074
+94607,K-4075,3660,80,NA,NA,NA,Tastum  sb 264,DK,56.50315,9.0574200000004,NA,NA,NA,NA,charcoal,NA,settlement,settlement,"""from floor of house"":",lab:K-4075,K-4075
+110132,K-4076,2490,75,NA,NA,NA,Højris ; site: Sb. 66,DK,56.139408,9.179288,NA,NA,NA,NA,charcoal,Charcoal (mixed species),settlement (pit),settlement (pit),pit 84,lab:K-4076,K-4076
+110131,K-4077,2420,75,NA,NA,NA,Højris ; site: Sb. 66,DK,56.139408,9.179288,NA,NA,NA,NA,charcoal,Charcoal (mixed species),settlement (pit),settlement (pit),pit 190,lab:K-4077,K-4077
+115446,K-4078,2490,75,NA,NA,NA,Højris ; site: Sb. 66,DK,56.139408,9.179288,NA,NA,NA,NA,charcoal,Charcoal (mixed species),settlement (pit),settlement (pit),pit 192,lab:K-4078,K-4078
+21997,K-4132,5230,70,-21.3,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,bone,Canis lupus familiaris,Settlement,Settlement,NA,lab:K-4132,K-4132
+21998,K-4133,5420,210,-18.8,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,bone,Canis lupus familiaris,Settlement,Settlement,NA,lab:K-4133,K-4133
+110649,K-4141,2800,75,NA,NA,NA,Spjald,DK,56.128056,8.507778,NA,NA,NA,NA,charcoal,Charcoal (Alnus sp.),settlement,settlement,"pit VII, 31",lab:K-4141,K-4141
+115933,K-4142,2820,75,NA,NA,NA,Spjald,DK,56.128056,8.507778,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,pit 229,lab:K-4142,K-4142
+110650,K-4143,2720,75,NA,NA,NA,Spjald,DK,56.128056,8.507778,NA,NA,NA,NA,charcoal,Charcoal (Alnus sp.),settlement,settlement,pit 315,lab:K-4143,K-4143
+115932,K-4144,2560,75,NA,NA,NA,Spjald,DK,56.128056,8.507778,NA,NA,NA,NA,charcoal,Charcoal (Betula sp.),settlement,settlement,pit 316,lab:K-4144,K-4144
+115935,K-4145,2520,75,NA,NA,NA,Spjald,DK,56.128056,8.507778,NA,NA,NA,NA,charcoal,Charcoal (Alnus sp.),settlement,settlement,"pit IX, 29",lab:K-4145,K-4145
+110651,K-4146,2620,75,NA,NA,NA,Spjald,DK,56.128056,8.507778,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,"pit X, 26",lab:K-4146,K-4146
+115930,K-4147,2720,75,NA,NA,NA,Spjald,DK,56.128056,8.507778,NA,NA,NA,NA,charcoal,Charcoal (Betula sp.),settlement,settlement,"pit XII, 22",lab:K-4147,K-4147
+21830,K-4151,8410,90,-16.5,NA,NA,Mullerup,DK,55.5,11.2167,NA,NA,NA,NA,bone,Homo sapiens,settlement,settlement,NA,lab:K-4151,K-4151
+21575,K-4152,8220,190,-18.2,NA,NA,Holmegård V,DK,55.2749,11.8362,NA,NA,NA,NA,bone,Homo sapiens,settlement,settlement,NA,lab:K-4152,K-4152
+21576,K-4153,8340,90,-19.7,NA,NA,Holmegård V,DK,55.2749,11.8362,NA,NA,NA,NA,bone,Homo sapiens,settlement,settlement,NA,lab:K-4153,K-4153
+110646,K-4158,2870,75,NA,NA,NA,Spjald,DK,56.128056,8.507778,NA,NA,NA,NA,charcoal,Charcoal (Alnus sp.),settlement,settlement,pit XVI,lab:K-4158,K-4158
+115934,K-4159,2750,75,NA,NA,NA,Spjald,DK,56.128056,8.507778,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,pit XVIII,lab:K-4159,K-4159
+115928,K-4160,2690,75,NA,NA,NA,Spjald,DK,56.128056,8.507778,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,pit XXIV,lab:K-4160,K-4160
+110648,K-4161,3960,85,NA,NA,NA,Spjald,DK,56.128056,8.507778,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,pit 770,lab:K-4161,K-4161
+110647,K-4162,2900,75,NA,NA,NA,Spjald,DK,56.128056,8.507778,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,pit 683,lab:K-4162,K-4162
+115931,K-4163,2410,75,NA,NA,NA,Spjald,DK,56.128056,8.507778,NA,NA,NA,NA,charcoal,Charcoal (Alnus sp.),settlement,settlement,pit 1,lab:K-4163,K-4163
+110645,K-4164,2480,75,NA,NA,NA,Spjald,DK,56.128056,8.507778,NA,NA,NA,NA,charcoal,Charcoal (Betula sp.),settlement,settlement,pit 13,lab:K-4164,K-4164
+115929,K-4165,2710,75,NA,NA,NA,Spjald,DK,56.128056,8.507778,NA,NA,NA,NA,charcoal,Charcoal (Alnus sp.),settlement,settlement,pit 32,lab:K-4165,K-4165
+21515,K-4214,4560,80,0,NA,NA,Hanstedgård,DK,55.87,9.88,NA,NA,NA,NA,charcoal,Corylus,settlement,settlement,NA,lab:K-4214,K-4214
+21516,K-4215,4670,80,0,NA,NA,Hanstedgård,DK,55.87,9.88,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-4215,K-4215
+21517,K-4216,4580,80,0,NA,NA,Hanstedgård,DK,55.87,9.88,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-4216,K-4216
+21833,K-4264,3820,80,0,NA,NA,Myrhøj,DK,56.7998,9.2111,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-4264,K-4264
+21834,K-4265,3810,80,0,NA,NA,Myrhøj,DK,56.7998,9.2111,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-4265,K-4265
+21835,K-4266,3810,80,0,NA,NA,Myrhøj,DK,56.7998,9.2111,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-4266,K-4266
+21836,K-4267,3910,80,0,NA,NA,Myrhøj,DK,56.7998,9.2111,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-4267,K-4267
+21837,K-4268,3800,80,0,NA,NA,Myrhøj,DK,56.7998,9.2111,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-4268,K-4268
+22199,K-4293,3260,80,0,NA,NA,Vadgård,DK,56.9117,9.2977,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-4293,K-4293
+22200,K-4294,3230,80,0,NA,NA,Vadgård,DK,56.9117,9.2977,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-4294,K-4294
+22201,K-4295,3270,85,0,NA,NA,Vadgård,DK,56.9117,9.2977,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-4295,K-4295
+110734,K-4296,2950,70,NA,NA,NA,Vadgård,DK,56.9117,9.2977,NA,NA,NA,NA,charcoal,Charcoal (mixed species),Settlement,Settlement,NA,lab:K-4296,K-4296
+21918,K-4333,5060,65,0,NA,NA,Øgårde,DK,55.5937,11.543,NA,NA,NA,NA,food residue,food crust,settlement,settlement,NA,lab:K-4333,K-4333
+21838,K-4334,3880,85,0,NA,NA,Myrhøj,DK,56.7998,9.2111,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-4334,K-4334
+21999,K-4367,5820,95,0,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-4367,K-4367
+22000,K-4368,5410,95,0,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-4368,K-4368
+22001,K-4369,5200,70,0,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-4369,K-4369
+22002,K-4370,5120,70,0,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-4370,K-4370
+22003,K-4371,5080,70,0,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-4371,K-4371
+22004,K-4372,4800,65,0,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-4372,K-4372
+116017,K-4413,3040,80,NA,NA,NA,Vadgård,DK,56.9117,9.2977,NA,NA,NA,NA,wood,Wood (mixed species),Settlement,Settlement,hearth,lab:K-4413,K-4413
+110055,K-4414,2850,75,NA,NA,NA,Grøntoft; site: L,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-4414,K-4414
+110056,K-4415,2860,75,NA,NA,NA,Grøntoft; site: L,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-4415,K-4415
+115364,K-4416,2610,75,NA,NA,NA,Grøntoft (Pøl); site: P,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-4416,K-4416
+110045,K-4417,2550,75,NA,NA,NA,Grøntoft (Pøl); site: P,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Charcoal (Alnus sp.),settlement,settlement,NA,lab:K-4417,K-4417
+110046,K-4418,2860,75,NA,NA,NA,Grøntoft (Pøl); site: R,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Charcoal (mixed species),settlement,settlement,NA,lab:K-4418,K-4418
+115365,K-4420,2320,75,NA,NA,NA,Grøntoft (Pøl); site: S,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,layer B,lab:K-4420,K-4420
+110047,K-4421,2490,75,NA,NA,NA,Grøntoft (Pøl); site: S,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Charcoal and bark (mixed species),settlement,settlement,layer 2,lab:K-4421,K-4421
+115366,K-4422,2570,75,NA,NA,NA,Grøntoft (Pøl); site: T,DK,56.178439,8.574149,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-4422,K-4422
+21629,K-4462,4070,85,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-4462,K-4462
+21630,K-4463,4150,70,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-4463,K-4463
+21631,K-4464,4310,80,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-4464,K-4464
+21632,K-4465,4190,80,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-4465,K-4465
+21633,K-4467,4180,85,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-4467,K-4467
+87851,K-4476,4830,65,NA,NA,NA,Muldbjerg I,DK,56.15,8.483,NA,NA,NA,NA,plant macrofossils,Corylus avellana,Settlement,Settlement,NA,lab:K-4476,K-4476
+87852,K-4477,4930,65,NA,NA,NA,Muldbjerg I,DK,56.15,8.483,NA,NA,NA,NA,plant macrofossils,Corylus avellana,Settlement,Settlement,NA,lab:K-4477,K-4477
+87853,K-4478,4940,65,NA,NA,NA,Muldbjerg I,DK,56.15,8.483,NA,NA,NA,NA,plant macrofossils,Corylus avellana,Settlement,Settlement,NA,lab:K-4478,K-4478
+115901,K-4546,2140,70,NA,NA,NA,Skårup,DK,57.042315,9.021122,NA,NA,NA,NA,grain,Carbonised cereals.,settlement (house),settlement (house),house N100,lab:K-4546,K-4546
+115902,K-4547,2090,70,NA,NA,NA,Skårup,DK,57.042315,9.021122,NA,NA,NA,NA,grain,Carbonised cereals.,settlement (house),settlement (house),house N 100,lab:K-4547,K-4547
+110617,K-4548,2190,70,NA,NA,NA,Skårup,DK,57.042315,9.021122,NA,NA,NA,NA,grain,Carbonised cereals.,settlement (house),settlement (house),house N 300,lab:K-4548,K-4548
+110618,K-4549,2160,70,NA,NA,NA,Skårup,DK,57.042315,9.021122,NA,NA,NA,NA,grain,Carbonised cereals.,settlement (house),settlement (house),house N 301,lab:K-4549,K-4549
+21634,K-4553,4320,85,0,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-4553,K-4553
+104661,K-4554,4270,60,-0.6,NA,NA,Kainsbakke,DK,56.4332,10.7886,NA,NA,NA,NA,shell,Shells (Mytilus ed.),settlement,settlement,"Anlage 47; abgerundete Grube 5,7 x 4,5 m; 1,1 m tief.",lab:K-4554,K-4554
+100542,K-4558,5240,95,-22.6,NA,NA,Neverkær,DK,55.393571,10.078525,NA,NA,NA,NA,"collagen, bone",Bone (Sus scorfa).,settlement,settlement,"Field P2f,",lab:K-4558,K-4558
+100619,K-4559,5230,70,-22.9,NA,NA,Neverkær,DK,55.393571,10.078525,NA,NA,NA,NA,"collagen, bone",Bone (Capreolus capreolus),settlement,settlement,Field P2f,lab:K-4559,K-4559
+90576,K-4588,4640,90,-28.4,NA,NA,Øgårde,DK,55.5937,11.543,NA,NA,NA,NA,wood,NA,settlement,settlement,"Found close to dug-out. Layer E8, near P-L and  boat II",lab:K-4588,K-4588
+47617,K-4589,5110,90,-28.8,NA,NA,Øgårde,DK,55.5937,11.543,NA,NA,NA,NA,wood,NA,settlement,settlement,NA,lab:K-4589,K-4589
+110130,K-4615,2850,70,NA,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,Quercus,settlement (house),settlement (house),pit 388,lab:K-4615,K-4615
+110098,K-4620,2050,65,NA,NA,NA,Heltborg,DK,56.753287,8.449799,NA,NA,NA,NA,charcoal,Quercus,settlement (house),settlement (house),house 14,lab:K-4620,K-4620
+115414,K-4621,2100,75,NA,NA,NA,Heltborg,DK,56.753287,8.449799,NA,NA,NA,NA,charcoal,Quercus,settlement (house),settlement (house),house 14,lab:K-4621,K-4621
+86074,K-4628,5010,65,NA,NA,NA,Nøddekonge,DK,55.5843,11.5548,NA,NA,NA,NA,NA,NA,settlement,settlement,NA,lab:K-4628,K-4628
+86075,K-4630,5010,70,NA,NA,NA,Nøddekonge,DK,55.5843,11.5548,NA,NA,NA,NA,wood,NA,settlement,settlement,NA,lab:K-4630,K-4630
+22139,K-4712,3820,60,-25.3,NA,NA,Tofteparken,DK,56.7873,9.4771,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-4712,K-4712
+22140,K-4713,3770,80,-24.6,NA,NA,Tofteparken,DK,56.7873,9.4771,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-4713,K-4713
+21376,K-4717,3630,80,0,NA,NA,Diverhøj,DK,56.3512,10.7973,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-4717,K-4717
+21377,K-4718,3870,80,0,NA,NA,Diverhøj,DK,56.3512,10.7973,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-4718,K-4718
+21378,K-4719,3560,80,0,NA,NA,Diverhøj,DK,56.3512,10.7973,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-4719,K-4719
+21379,K-4720,3690,75,0,NA,NA,Diverhøj,DK,56.3512,10.7973,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-4720,K-4720
+21813,K-4766,3830,85,0,NA,NA,Mortens Sande 2,DK,56.8527,8.2696,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-4766,K-4766
+21814,K-4767,3860,85,0,NA,NA,Mortens Sande 2,DK,56.8527,8.2696,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-4767,K-4767
+21815,K-4768,4060,85,0,NA,NA,Mortens Sande 2,DK,56.8527,8.2696,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-4768,K-4768
+21192,K-4881,5060,65,-20.8,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,Cervus elaphus,Settlement,Settlement,NA,lab:K-4881,K-4881
+21193,K-4882,5070,65,-20.9,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,Cervus elaphus,Settlement,Settlement,NA,lab:K-4882,K-4882
+21194,K-4883,5010,65,-21.4,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,Cervus elaphus,Settlement,Settlement,NA,lab:K-4883,K-4883
+21195,K-4884,4990,65,0,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,NA,Settlement,Settlement,NA,lab:K-4884,K-4884
+21196,K-4885,4950,60,-22.6,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,bone,NA,Settlement,Settlement,NA,lab:K-4885,K-4885
+21197,K-4886,4990,65,-21.9,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-4886,K-4886
+21198,K-4887,5250,70,-28.4,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-4887,K-4887
+21199,K-4888,5110,65,-27.5,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,wood,willow,Settlement,Settlement,NA,lab:K-4888,K-4888
+21200,K-4889,5020,55,-27.9,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-4889,K-4889
+21201,K-4890,6310,75,-24.3,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-4890,K-4890
+21202,K-4891,5240,65,-24.9,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-4891,K-4891
+115151,K-4935,2460,75,NA,NA,NA,Bjerg; site: A,DK,56.598101,8.213352,NA,NA,NA,NA,charcoal,Holzkohle (Acer sp.),settlement,settlement,Grube I/128,lab:K-4935,K-4935
+109829,K-4936,2700,75,NA,NA,NA,Bjerg; site: A,DK,56.598101,8.213352,NA,NA,NA,NA,charcoal,Holzkohle (Quercus sp.),settlement,settlement,Grube 202,lab:K-4936,K-4936
+115150,K-4937,2570,55,NA,NA,NA,Bjerg; site: A,DK,56.598101,8.213352,NA,NA,NA,NA,charcoal,Holzkohle (Alnus sp.),settlement,settlement,Grube 223,lab:K-4937,K-4937
+115152,K-4938,2500,75,NA,NA,NA,Bjerg; site: A,DK,56.598101,8.213352,NA,NA,NA,NA,charcoal,Holzkohle (Quercus sp.),settlement,settlement,Grube 236b,lab:K-4938,K-4938
+109830,K-4939,2440,75,NA,NA,NA,Bjerg; site: A,DK,56.598101,8.213352,NA,NA,NA,NA,charcoal,Corylus,settlement,settlement,Grube 304,lab:K-4939,K-4939
+109834,K-4940,2720,75,NA,NA,NA,Bjerg; site: B,DK,56.597043,8.209008,NA,NA,NA,NA,charcoal,Corylus,settlement,settlement,Grube 26,lab:K-4940,K-4940
+109835,K-4941,2530,70,NA,NA,NA,Bjerg; site: B,DK,56.597043,8.209008,NA,NA,NA,NA,charcoal,Corylus,settlement,settlement,Grube 27,lab:K-4941,K-4941
+109836,K-4942,2740,55,NA,NA,NA,Bjerg; site: B,DK,56.597043,8.209008,NA,NA,NA,NA,charcoal,Holzkohle (Quercus sp.),settlement,settlement,Grube 28,lab:K-4942,K-4942
+115154,K-4943,2520,70,NA,NA,NA,Bjerg; site: B,DK,56.597043,8.209008,NA,NA,NA,NA,charcoal,Holzkohle (Betula sp.),settlement,settlement,Grube 78,lab:K-4943,K-4943
+115155,K-4944,2470,75,NA,NA,NA,Bjerg; site: B,DK,56.597043,8.209008,NA,NA,NA,NA,charcoal,Corylus,settlement,settlement,Grube 603,lab:K-4944,K-4944
+110128,K-5018,2860,75,NA,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,Quercus,settlement (house),settlement (house),house XIX,lab:K-5018,K-5018
+110127,K-5019,3180,75,NA,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,Quercus,settlement (house),settlement (house),house XIV,lab:K-5019,K-5019
+115436,K-5020,3320,74,NA,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,Quercus,settlement (house),settlement (house),house XIV,lab:K-5020,K-5020
+115437,K-5021,3290,75,NA,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,Quercus,settlement (house),settlement (house),house XIV,lab:K-5021,K-5021
+110752,K-5033,2240,75,NA,NA,NA,Vestervig,DK,56.762482,8.317783,NA,NA,NA,NA,charcoal,Charcoal (Calluna sp.),settlement (house),settlement (house),pit D II,lab:K-5033,K-5033
+110754,K-5034,2100,70,NA,NA,NA,Vestervig,DK,56.762482,8.317783,NA,NA,NA,NA,charcoal,"Charcoal (mixed species, heather)",settlement (house),settlement (house),pit GX,lab:K-5034,K-5034
+116027,K-5035,2110,70,NA,NA,NA,Vestervig,DK,56.762482,8.317783,NA,NA,NA,NA,wood,Wood (Quercus sp.),settlement (house),settlement (house),house 3,lab:K-5035,K-5035
+110753,K-5036,2230,70,NA,NA,NA,Vestervig,DK,56.762482,8.317783,NA,NA,NA,NA,wood,Wood (Quercus sp.),settlement (house),settlement (house),house 3,lab:K-5036,K-5036
+86260,K-5041,5110,65,NA,NA,NA,"Spangekonge, Store Åmose",DK,55.5939,11.559,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-5041,K-5041
+86258,K-5042,5050,65,NA,NA,NA,"Spangekonge, Store Åmose",DK,55.5939,11.559,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-5042,K-5042
+86261,K-5043,5130,65,NA,NA,NA,"Spangekonge, Store Åmose",DK,55.5939,11.559,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-5043,K-5043
+86262,K-5044,5140,65,NA,NA,NA,"Spangekonge, Store Åmose",DK,55.5939,11.559,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-5044,K-5044
+21919,K-5057,5030,90,0,NA,NA,Øgårde,DK,55.5937,11.543,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-5057,K-5057
+21798,K-5107,4500,85,-25.7,NA,NA,Marievej 3,DK,55.8525,12.5672,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5107,K-5107
+109833,K-5146,2440,75,NA,NA,NA,Bjerg; site: A,DK,56.598101,8.213352,NA,NA,NA,NA,charcoal,Corylus,settlement,settlement,Grube 310,lab:K-5146,K-5146
+109832,K-5147,2490,75,NA,NA,NA,Bjerg; site: A,DK,56.598101,8.213352,NA,NA,NA,NA,charcoal,Holzkohle (Quercus sp.),settlement,settlement,Grube 2086,lab:K-5147,K-5147
+115153,K-5148,2800,60,NA,NA,NA,Bjerg; site: A,DK,56.598101,8.213352,NA,NA,NA,NA,charcoal,Holzkohle (Betula sp.),settlement,settlement,Grube 1018,lab:K-5148,K-5148
+109737,K-5149,2680,75,NA,NA,NA,Bjerg; site: A,DK,56.598101,8.213352,NA,NA,NA,NA,charcoal,Holzkohle (Quercus sp.),settlement,settlement,Grube 2004,lab:K-5149,K-5149
+109831,K-5150,2510,75,NA,NA,NA,Bjerg; site: A,DK,56.598101,8.213352,NA,NA,NA,NA,charcoal,Holzkohle (Alnus sp.),settlement,settlement,Grube 2001,lab:K-5150,K-5150
+115420,K-5168,3270,80,NA,NA,NA,Hemmed Kirke,DK,56.495549,10.742793,NA,NA,NA,NA,charcoal,Charcoal (mixed species),settlement (house),settlement (house),NA,lab:K-5168,K-5168
+115416,K-5169,2840,75,NA,NA,NA,Hemmed Kirke,DK,56.495549,10.742793,NA,NA,NA,NA,charcoal,Charcoal (mixed species),settlement (house),settlement (house),hearth A3,lab:K-5169,K-5169
+110099,K-5170,2810,75,NA,NA,NA,Hemmed Kirke,DK,56.495549,10.742793,NA,NA,NA,NA,charcoal,Charcoal (mixed species),settlement (house),settlement (house),pit A19,lab:K-5170,K-5170
+21505,K-5309,6320,100,-26.2,NA,NA,Halsskov,DK,55.333,11.15,NA,NA,NA,NA,wood,NA,settlement,settlement,NA,lab:K-5309,K-5309
+21506,K-5310,5850,100,-28.8,NA,NA,Halsskov,DK,55.333,11.15,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5310,K-5310
+21507,K-5311,6530,100,-27.4,NA,NA,Halsskov,DK,55.333,11.15,NA,NA,NA,NA,seed/fruit,Corylus,settlement,settlement,NA,lab:K-5311,K-5311
+21508,K-5312,5840,100,-25.9,NA,NA,Halsskov,DK,55.333,11.15,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5312,K-5312
+21953,K-5322,4470,105,-20.8,NA,NA,Penbjerg,DK,56.8398,8.262,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:K-5322,K-5322
+21509,K-5343,6830,105,-26.3,NA,NA,Halsskov,DK,55.333,11.15,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5343,K-5343
+21510,K-5344,6420,100,-25.5,NA,NA,Halsskov,DK,55.333,11.15,NA,NA,NA,NA,wood,Corylus,settlement,settlement,NA,lab:K-5344,K-5344
+21753,K-5358,4020,80,-27.6,NA,NA,Lundeborg,DK,55.1408,10.7812,NA,NA,NA,NA,wood,Quercus,settlement,settlement,NA,lab:K-5358,K-5358
+21694,K-5362,4270,85,0,NA,NA,Langagergård II,DK,57.5613,10.2626,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5362,K-5362
+21692,K-5362a,4250,85,0,NA,NA,Langagergård,DK,57.5613,10.2626,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5362a,K-5362a
+21693,K-5362b,4270,85,0,NA,NA,Langagergård,DK,57.5613,10.2626,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5362b,K-5362b
+21493,K-5375,3960,65,0,NA,NA,Grødbygård,DK,55.0387,14.9427,NA,NA,NA,NA,seed/fruit,NA,settlement,settlement,NA,lab:K-5375,K-5375
+21494,K-5388,4000,80,0,NA,NA,Grødbygård,DK,55.0387,14.9427,NA,NA,NA,NA,seed/fruit,NA,settlement,settlement,NA,lab:K-5388,K-5388
+21495,K-5389,4030,85,0,NA,NA,Grødbygård,DK,55.0387,14.9427,NA,NA,NA,NA,seed/fruit,NA,settlement,settlement,NA,lab:K-5389,K-5389
+115565,K-5463,2410,75,NA,NA,NA,Krogsbølle,DK,55.572412,10.367975,NA,NA,NA,NA,wood,Wood (Quercus sp.),settlement,settlement,NA,lab:K-5463,K-5463
+115564,K-5464,2420,75,NA,NA,NA,Krogsbølle,DK,55.572412,10.367975,NA,NA,NA,NA,wood,Wood,settlement,settlement,NA,lab:K-5464,K-5464
+110273,K-5465,2530,75,NA,NA,NA,Krogsbølle,DK,55.572412,10.367975,NA,NA,NA,NA,charcoal,Corylus,settlement,settlement,NA,lab:K-5465,K-5465
+115563,K-5466,2420,75,NA,NA,NA,Krogsbølle,DK,55.572412,10.367975,NA,NA,NA,NA,wood,Wood (Quercus sp.),settlement,settlement,NA,lab:K-5466,K-5466
+86270,K-5495,4240,90,NA,NA,NA,Stenby mølle,DK,55.2157,14.8827,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5495,K-5495
+86271,K-5496,4380,90,NA,NA,NA,Stenby mølle,DK,55.2157,14.8827,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5496,K-5496
+47592,K-5522,5500,100,0,NA,NA,Lundgård,DK,NA,NA,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-5522,K-5522
+85737,K-5547,5030,95,NA,NA,NA,Ågård,DK,57.2647,9.42379,NA,NA,NA,NA,wood,NA,settlement,settlement,NA,lab:K-5547,K-5547
+47533,K-5585,3970,95,0,NA,NA,Damgårdsvej,DK,NA,NA,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5585,K-5585
+47534,K-5586,4470,90,0,NA,NA,Damgårdsvej,DK,NA,NA,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5586,K-5586
+115698,K-5613,2210,55,NA,NA,NA,Stavns,DK,55.898355,10.599038,NA,NA,NA,NA,shell,Shells (Mytilus sp.),settlement,settlement,NA,lab:K-5613,K-5613
+109635,K-5614,2490,60,NA,NA,NA,Stavns,DK,55.898355,10.599038,NA,NA,NA,NA,NA,NA,settlement,settlement,NA,lab:K-5614,K-5614
+21511,K-5621,6130,75,-27.5,NA,NA,Halsskov,DK,55.333,11.15,NA,NA,NA,NA,wood,NA,settlement,settlement,NA,lab:K-5621,K-5621
+87646,K-5622,6370,75,NA,NA,NA,Halsskov,DK,55.333,11.15,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5622,K-5622
+87824,K-5640,5910,75,NA,NA,NA,Møllegabet II,DK,54.9011,10.42,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-5640,K-5640
+21985,K-5732,3400,80,0,NA,NA,Resengård,DK,NA,NA,NA,NA,NA,NA,seed/fruit,NA,settlement,settlement,NA,lab:K-5732,K-5732
+21986,K-5733,3220,80,-23,NA,NA,Resengård,DK,NA,NA,NA,NA,NA,NA,seed/fruit,NA,settlement,settlement,NA,lab:K-5733,K-5733
+21987,K-5734,3280,80,0,NA,NA,Resengård,DK,NA,NA,NA,NA,NA,NA,seed/fruit,NA,settlement,settlement,NA,lab:K-5734,K-5734
+115351,K-5735,3170,75,NA,NA,NA,Glattrup,DK,56.558542,9.038157,NA,NA,NA,NA,grain,Carbonised cereals,settlement (house),settlement (house),NA,lab:K-5735,K-5735
+115350,K-5736,3050,80,NA,NA,NA,Glattrup,DK,56.558542,9.038157,NA,NA,NA,NA,grain,Carbonised cereals,settlement (house),settlement (house),NA,lab:K-5736,K-5736
+109840,K-575,2580,100,NA,NA,NA,Bjergagergård; site: Havrum,DK,55.839498,9.653405,NA,NA,NA,NA,charcoal,Charcoal (mixed species),settlement (pit),settlement (pit),NA,lab:K-575,K-575
+21665,K-5754,3420,70,0,NA,NA,Kokkedalsmark,DK,57.0604,9.4591,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5754,K-5754
+21666,K-5755,3390,80,0,NA,NA,Kokkedalsmark,DK,57.0604,9.4591,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5755,K-5755
+21667,K-5756,3360,80,0,NA,NA,Kokkedalsmark,DK,57.0604,9.4591,NA,NA,NA,NA,shell,ostrea.,settlement,settlement,NA,lab:K-5756,K-5756
+21536,K-5781,3400,100,-26.9,NA,NA,Hemmed kirke,DK,56.4955,10.7428,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5781,K-5781
+21537,K-5782,3350,80,-25.4,NA,NA,Hemmed kirke,DK,56.4955,10.7428,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5782,K-5782
+21538,K-5783,3150,80,-24.6,NA,NA,Hemmed kirke,DK,56.4955,10.7428,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5783,K-5783
+21539,K-5784,3370,80,-24.6,NA,NA,Hemmed kirke,DK,56.4955,10.7428,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5784,K-5784
+21540,K-5785,3330,80,-25.6,NA,NA,Hemmed kirke,DK,56.4955,10.7428,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5785,K-5785
+21541,K-5786,3040,80,-26.4,NA,NA,Hemmed kirke,DK,56.4955,10.7428,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5786,K-5786
+21542,K-5787,3560,85,-26,NA,NA,Hemmed kirke,DK,56.4955,10.7428,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5787,K-5787
+21543,K-5797,3480,80,0,NA,NA,Hemmed Plantage,DK,56.4956,10.7427,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-5797,K-5797
+21544,K-5798,3390,85,0,NA,NA,Hemmed Plantage,DK,56.4956,10.7427,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-5798,K-5798
+21545,K-5799,3360,80,0,NA,NA,Hemmed Plantage,DK,56.4956,10.7427,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-5799,K-5799
+21546,K-5800,3470,70,0,NA,NA,Hemmed Plantage,DK,56.4956,10.7427,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-5800,K-5800
+21547,K-5801,3680,85,0,NA,NA,Hemmed Plantage,DK,56.4956,10.7427,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5801,K-5801
+86100,K-585,3870,100,NA,NA,NA,N Sandegård,DK,55.1948,14.9869,NA,NA,NA,NA,plant macrofossils,NA,settlement,settlement,NA,lab:K-585,K-585
+95594,K-5897,4870,75,-25.2,NA,NA,Holmegårde II,DK,55.6423,12.25,NA,NA,NA,NA,charcoal,Quercus,Settlement,Settlement,From layer 5 in large Neolithic pit.,lab:K-5897,K-5897
+119894,K-5923,2210,60,-26.6,NA,NA,Brunde,DK,55.071015,9.357578,NA,NA,NA,NA,charcoal,"Charcoal, wood, Fraxinus, Quercus et. al.",settlement (house),settlement (house),house I,lab:K-5923,K-5923
+119895,K-5924,2360,80,-26.3,NA,NA,Brunde,DK,55.071015,9.357578,NA,NA,NA,NA,charcoal,"Charcoal, wood, Alnus, Quercus et. al.",settlement (house),settlement (house),house I,lab:K-5924,K-5924
+105607,K-5939,3460,85,-22.3,NA,NA,Stuvehøj Mark,DK,55.718711266618,12.330492199995,NA,NA,NA,NA,grain,NA,settlement,settlement,From depot in house.,lab:K-5939,K-5939
+100599,K-5940,3580,85,-23,NA,NA,Sydvej,DK,55.634358010461,12.263260841367,NA,NA,NA,NA,grain,Triticum aestivum,settlement,settlement,From pit in Late Neolithic house.,lab:K-5940,K-5940
+21937,K-5948,3590,80,0,NA,NA,Oljetøndeplads,DK,56.8258,8.2513,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5948,K-5948
+21938,K-5949,3860,85,0,NA,NA,Oljetøndeplads,DK,56.8258,8.2513,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-5949,K-5949
+109844,K-6008,3090,80,NA,NA,NA,Bjerre ; site: Plads 2,DK,57.082732,8.701498,NA,NA,NA,NA,wood,Wood (Quercus sp.),settlement (house),settlement (house),House N1200.,lab:K-6008,K-6008
+115156,K-6009,3270,80,NA,NA,NA,Bjerre ; site: Plads 2,DK,57.082732,8.701498,NA,NA,NA,NA,wood,Wood (Pinus sp.),settlement (house),settlement (house),House N1200.,lab:K-6009,K-6009
+109842,K-6010,3220,80,NA,NA,NA,Bjerre ; site: Plads 2,DK,57.082732,8.701498,NA,NA,NA,NA,wood,Wood (Quercus sp.),settlement (house),settlement (house),House N1200.,lab:K-6010,K-6010
+109843,K-6011,3190,80,NA,NA,NA,Bjerre ; site: Plads 2,DK,57.082732,8.701498,NA,NA,NA,NA,wood,Wood (Salix sp.),settlement (house),settlement (house),House N1300.,lab:K-6011,K-6011
+86241,K-6028,4630,90,NA,NA,NA,Smakkerup huse,DK,55.6846,11.2358,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-6028,K-6028
+87825,K-6040,6170,85,NA,NA,NA,Møllegabet II,DK,54.9011,10.42,NA,NA,NA,NA,bone,NA,Settlement,Settlement,NA,lab:K-6040,K-6040
+21399,K-6051,5620,100,0,NA,NA,Egsminde,DK,56.8975,9.2636,NA,NA,NA,NA,shell,NA,settlement,settlement,NA,lab:K-6051,K-6051
+21951,K-6058,4450,90,-25.6,NA,NA,Østrup Mose 2,DK,NA,NA,NA,NA,NA,NA,charcoal,lime,settlement,settlement,NA,lab:K-6058,K-6058
+22005,K-6108,5180,100,0,NA,NA,Ringkloster,DK,56.0508,9.9794,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-6108,K-6108
+21581,K-6132,4210,105,-23.6,NA,NA,Holmegårde II,DK,55.6423,12.25,NA,NA,NA,NA,seed/fruit,Corylus,Settlement,Settlement,NA,lab:K-6132,K-6132
+21582,K-6133,4640,85,-24.7,NA,NA,Holmegårde II,DK,55.6423,12.25,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-6133,K-6133
+21583,K-6134,3890,70,-26.3,NA,NA,Holmegårde III,DK,55.6397,12.2491,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-6134,K-6134
+21584,K-6135,4220,100,-26.2,NA,NA,Holmegårde IV,DK,55.6372,12.2505,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:K-6135,K-6135
+22116,K-6197,4260,115,0,NA,NA,Spodsbjerg,DK,54.933,10.833,NA,NA,NA,NA,charcoal,Corylus,Settlement,Settlement,NA,lab:K-6197,K-6197
+21400,K-6376,5680,105,1.4,NA,NA,Egsminde,DK,56.8975,9.2636,NA,NA,NA,NA,shell,Ostrea,settlement,settlement,NA,lab:K-6376,K-6376
+21401,K-6377,5620,105,0.8,NA,NA,Egsminde,DK,56.8975,9.2636,NA,NA,NA,NA,shell,Ostrea,settlement,settlement,NA,lab:K-6377,K-6377
+21402,K-6378,5620,105,1.1,NA,NA,Egsminde,DK,56.8975,9.2636,NA,NA,NA,NA,shell,Ostrea,settlement,settlement,NA,lab:K-6378,K-6378
+22117,K-6411,4150,80,-27.3,NA,NA,Spodsbjerg,DK,54.933,10.833,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-6411,K-6411
+22118,K-6412,5410,165,-28.9,NA,NA,Spodsbjerg,DK,54.933,10.833,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-6412,K-6412
+22273,K-6417,5070,100,-3.3,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,shell,Ostrea,Settlement,Settlement,NA,lab:K-6417,K-6417
+22274,K-6418,5590,75,-2.9,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,shell,Ostrea,Settlement,Settlement,NA,lab:K-6418,K-6418
+22275,K-6419,5540,105,-3.6,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,shell,Ostrea,Settlement,Settlement,NA,lab:K-6419,K-6419
+119914,K-6501,3010,65,-24.6,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,charcoal,"Charcoal, wood, Quercus",settlement,settlement,House I,lab:K-6501,K-6501
+119915,K-6502,3120,65,-21.5,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,charcoal,"Charcoal, wood, Salix",settlement,settlement,House I,lab:K-6502,K-6502
+21403,K-6539,5230,70,-1.1,NA,NA,Egsminde,DK,56.8975,9.2636,NA,NA,NA,NA,shell,ostrea. littorina,settlement,settlement,NA,lab:K-6539,K-6539
+21404,K-6540,4960,70,-0.9,NA,NA,Egsminde,DK,56.8975,9.2636,NA,NA,NA,NA,shell,cardium. nassa reticulata,settlement,settlement,NA,lab:K-6540,K-6540
+21217,K-6541,4870,70,0.5,NA,NA,Åle nord,DK,56.8776,9.2218,NA,NA,NA,NA,shell,shells (ostrea. cardium a Nassa reticulata) from piTriticum,settlement,settlement,NA,lab:K-6541,K-6541
+22276,K-6552,5770,75,0.7,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,shell,Ostrea,Settlement,Settlement,NA,lab:K-6552,K-6552
+22277,K-6553,5100,70,0.1,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,shell,Ostrea,Settlement,Settlement,NA,lab:K-6553,K-6553
+114714,K-6554,2700,50,-26.3,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,miscellaneous,"Plant material, uncharred, Indeterminate",settlement,settlement,"House II, peat in posthole",lab:K-6554,K-6554
+114716,K-6555,2600,60,-26.8,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,miscellaneous,"Plant material, uncharred, Indeterminate",settlement,settlement,"House II, peat in posthole",lab:K-6555,K-6555
+21719,K-6615,5520,70,-29.4,NA,NA,Lindholm,DK,55.2973,10.8166,NA,NA,NA,NA,wood,Corylus,settlement,settlement,NA,lab:K-6615,K-6615
+21345,K-6623,3660,55,-24.9,NA,NA,"BRDR. Gram, Danmarksgade 16, 6500 Vojens.",DK,NA,NA,NA,NA,NA,NA,seed/fruit,NA,settlement,settlement,NA,lab:K-6623,K-6623
+21346,K-6624,3870,65,-23.7,NA,NA,"BRDR. Gram, Danmarksgade 16, 6500 Vojens.",DK,NA,NA,NA,NA,NA,NA,seed/fruit,NA,settlement,settlement,NA,lab:K-6624,K-6624
+21807,K-6681,6290,75,-24,NA,NA,Møllegabet II,DK,54.9011,10.42,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-6681,K-6681
+21808,K-6682,6270,80,-24.6,NA,NA,Møllegabet II,DK,54.9011,10.42,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:K-6682,K-6682
+114689,K-6732,3028,38,-24.5,NA,NA,Brødre Gram,DK,55.240258,9.524962,NA,NA,NA,NA,charcoal,"Charcoal, wood, Quercus + indeterminate",settlement (house),settlement (house),house IV(2),lab:K-6732,K-6732
+119884,K-6733,3072,50,-23.5,NA,NA,Brødre Gram,DK,55.240258,9.524962,NA,NA,NA,NA,charcoal,"Charcoal, wood, Quercus + indeterminate",settlement (house),settlement (house),house IV(2),lab:K-6733,K-6733
+119885,K-6734,3084,54,-25.8,NA,NA,Brødre Gram,DK,55.240258,9.524962,NA,NA,NA,NA,charcoal,"Charcoal, wood,Quercus",settlement (house),settlement (house),house IV(2),lab:K-6734,K-6734
+119886,K-6735,3045,51,-24.4,NA,NA,Brødre Gram,DK,55.240258,9.524962,NA,NA,NA,NA,charcoal,"Charcoal, wood,Quercus, Alnus + indeterminate",settlement (house),settlement (house),house IV(2),lab:K-6735,K-6735
+21166,K-6788,4200,55,0.4,NA,NA,Ajstrup krat,DK,56.7016,10.1618,NA,NA,NA,NA,shell,Ostrea,Settlement,Settlement,NA,lab:K-6788,K-6788
+21167,K-6789,4100,65,0,NA,NA,Ajstrup krat,DK,56.7016,10.1618,NA,NA,NA,NA,shell,Ostrea,Settlement,Settlement,NA,lab:K-6789,K-6789
+21168,K-6790,4090,55,0,NA,NA,Ajstrup krat,DK,56.7016,10.1618,NA,NA,NA,NA,shell,cardiumr.,Settlement,Settlement,NA,lab:K-6790,K-6790
+21341,K-6810,5620,75,-29.1,NA,NA,Brabrand,DK,56.1531,10.1057,NA,NA,NA,NA,wood,NA,settlement,settlement,NA,lab:K-6810,K-6810
+21342,K-6811,5590,70,-28,NA,NA,Brabrand,DK,56.1531,10.1057,NA,NA,NA,NA,wood,NA,settlement,settlement,NA,lab:K-6811,K-6811
+21343,K-6812,5610,80,-29.1,NA,NA,Brabrand,DK,56.1531,10.1057,NA,NA,NA,NA,wood,NA,settlement,settlement,NA,lab:K-6812,K-6812
+21344,K-6813,5410,75,-30.8,NA,NA,Brabrand,DK,56.1531,10.1057,NA,NA,NA,NA,wood,NA,settlement,settlement,NA,lab:K-6813,K-6813
+21218,K-6817,5850,75,0.3,NA,NA,Åle nord,DK,56.8776,9.2218,NA,NA,NA,NA,shell,Ostrea,settlement,settlement,NA,lab:K-6817,K-6817
+119888,K-6835,2990,60,-25.3,NA,NA,Kesmajgård,DK,55.201362,9.295534,NA,NA,NA,NA,charcoal,"Charcoal, wood, Quercus",settlement (house),settlement (house),house I,lab:K-6835,K-6835
+113862,K-6836,3140,60,NA,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House XXVII,lab:K-6836,K-6836
+114696,K-6838,3545,55,-25.1,NA,NA,Brunde,DK,55.071015,9.357578,NA,NA,NA,NA,charcoal,"Charcoal, wood, Alnus, Fraxinus et. al.",settlement (house),settlement (house),house III,lab:K-6838,K-6838
+114697,K-6839,2640,40,-25.1,NA,NA,Brunde,DK,55.071015,9.357578,NA,NA,NA,NA,charcoal,"Charcoal, wood, Quercus, Ulmus et. al.",settlement (house),settlement (house),house IV,lab:K-6839,K-6839
+113863,K-6845,2780,60,NA,NA,NA,Sortpot,DK,55.115447,9.360436,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),NA,lab:K-6845,K-6845
+114690,K-6846,3020,60,-26,NA,NA,Brødre Gram,DK,55.240258,9.524962,NA,NA,NA,NA,charcoal,"Charcoal, wood, Quercus, Tilia et. al.",settlement (house),settlement (house),house I,lab:K-6846,K-6846
+114691,K-6847,3070,60,-24.9,NA,NA,Brødre Gram,DK,55.240258,9.524962,NA,NA,NA,NA,charcoal,"Charcoal, wood,Quercus, Betula et. al.",settlement (house),settlement (house),house I,lab:K-6847,K-6847
+119887,K-6848,2970,55,-26.2,NA,NA,Brødre Gram,DK,55.240258,9.524962,NA,NA,NA,NA,charcoal,"Charcoal, wood,Quercus (50%) + indeterminate",settlement (house),settlement (house),house II,lab:K-6848,K-6848
+119114,K-6851,3190,60,NA,NA,NA,Brødre Gram,DK,55.240258,9.524962,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House III,lab:K-6851,K-6851
+90517,K-6861,4830,85,-22.8,NA,NA,Stallerup Sø,DK,55.52336200665,9.418735206128,NA,NA,NA,NA,charcoal,"Charcoal (Tilia, Quercus, Corylus)",settlement,settlement,From hunting type dwelling with flint and ceramics.,lab:K-6861,K-6861
+22278,K-6875,5400,60,1.3,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,shell,NA,Settlement,Settlement,NA,lab:K-6875,K-6875
+22279,K-6876,5040,70,1.5,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,shell,NA,Settlement,Settlement,NA,lab:K-6876,K-6876
+22280,K-6877,5030,55,1.3,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,shell,NA,Settlement,Settlement,NA,lab:K-6877,K-6877
+22281,K-6878,4870,75,-0.4,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,shell,NA,Settlement,Settlement,NA,lab:K-6878,K-6878
+119843,K-6905,2660,70,-26.7,NA,NA,Vilhøj,DK,56.907554,8.632452,NA,NA,NA,NA,charcoal,"Charcoal, wood, Quercus, Betula et al.",settlement (house),settlement (house),House IX,lab:K-6905,K-6905
+114748,K-6906,5380,80,-26.7,NA,NA,Legård,DK,56.881722,8.458876,NA,NA,NA,NA,charcoal,"Charcoal, wood, Quercus, Betula et al.",settlement (house),settlement (house),House III,lab:K-6906,K-6906
+114749,K-6907,3770,50,-27,NA,NA,Legård,DK,56.881722,8.458876,NA,NA,NA,NA,charcoal,"Charcoal, wood, Quercus, Betula et al.",settlement (house),settlement (house),House III,lab:K-6907,K-6907
+22282,K-7002,4950,70,0,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,shell,NA,Settlement,Settlement,NA,lab:K-7002,K-7002
+22283,K-7003,4820,65,1.6,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,shell,NA,Settlement,Settlement,NA,lab:K-7003,K-7003
+22284,K-7004,5090,45,2.1,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,shell,NA,Settlement,Settlement,NA,lab:K-7004,K-7004
+22285,K-7005,5510,70,1.1,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,shell,NA,Settlement,Settlement,NA,lab:K-7005,K-7005
+119869,K-7037,3240,38,-25.4,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,"Charcoal, wood, Quercus",settlement (house),settlement (house),house XXXI,lab:K-7037,K-7037
+119870,K-7038,3220,50,-24.9,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,"Charcoal, wood, Quercus",settlement (house),settlement (house),house XXXI,lab:K-7038,K-7038
+22056,K-7113,4490,45,-24,NA,NA,Sigersted III,DK,55.4079,11.7082,NA,NA,NA,NA,nutshell,Corylus,settlement,settlement,NA,lab:K-7113,K-7113
+22057,K-7114,3270,45,-24.8,NA,NA,Sigersted III,DK,55.4079,11.7082,NA,NA,NA,NA,charcoal,Quercus,settlement,settlement,NA,lab:K-7114,K-7114
+21864,K-7116,6000,50,-25.6,NA,NA,"Nivå 10, Karlebo",DK,55.9309,12.5105,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-7116,K-7116
+21865,K-7117,4680,80,-25.3,NA,NA,"Nivå 10, Karlebo",DK,55.9309,12.5105,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-7117,K-7117
+21866,K-7118,6350,55,-25.5,NA,NA,"Nivå 10, Karlebo",DK,55.9309,12.5105,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:K-7118,K-7118
+119918,K-7122,3000,40,-26.6,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,wood,"Wood, uncharred, Quercus",settlement,settlement,House IA,lab:K-7122,K-7122
+119919,K-7123,3140,45,-28,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,wood,"Wood, uncharred, Alnus",settlement,settlement,House IB,lab:K-7123,K-7123
+114717,K-7124,3730,45,-26.6,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,wood,"Wood, uncharred, Quercus",settlement,settlement,House IA,lab:K-7124,K-7124
+114718,K-7125,3120,32,-25.3,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,wood,"Wood, uncharred, Quercus",settlement,settlement,House IB,lab:K-7125,K-7125
+119921,K-7136,2730,40,-28.4,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,wood,"Wood, uncharred, Alnus",settlement,settlement,House I,lab:K-7136,K-7136
+114720,K-7137,2610,35,-24.9,NA,NA,Bjerre,DK,57.081567,8.702737,NA,NA,NA,NA,charcoal,"Charcoal, wood, Pinus",settlement,settlement,House I,lab:K-7137,K-7137
+21873,K-973,6420,130,0,NA,NA,Norslund,DK,56.0182,10.231,NA,NA,NA,NA,shell,Ostrea,settlement,settlement,NA,lab:K-973,K-973
+21871,K-990,5730,120,0,NA,NA,Norslund,DK,56.0182,10.231,NA,NA,NA,NA,charcoal,Corylus,settlement,settlement,NA,lab:K-990,K-990
+21872,K-991,5680,120,0,NA,NA,Norslund,DK,56.0182,10.231,NA,NA,NA,NA,charcoal,Corylus,settlement,settlement,NA,lab:K-991,K-991
+21203,KAERI-6611,5260,70,-32.5,NA,NA,Åkonge,DK,55.5824,11.5477,NA,NA,NA,NA,miscellaneous,lamp blubber,Settlement,Settlement,NA,lab:KAERI-6611,KAERI-6611
+90442,KI-775,3760,55,NA,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,wood,bottom edge of the upper archaeological layer.,Settlement,Settlement,Schnitt IV,lab:KI-775,KI-775
+104864,KI-776,4700,75,NA,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,wood,Trä (wood)(Holz),Settlement,Settlement,"snitt IV, uk av fyndlgr",lab:KI-776,KI-776
+100513,KI-777,2830,100,NA,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,wood,burnt wood (angebranntes Holz),Settlement,Settlement,Schnitt IV. Oberkannte Schiftorf über Fundschicht,lab:KI-777,KI-777
+114677,KIA-4326,3440,40,-28.08,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,"Charcoal, wood, Indeterminate",settlement (house),settlement (house),house VIII,lab:KIA-4326,KIA-4326
+114678,KIA-4327,3450,40,-24.68,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,"Charcoal, wood, Indeterminate",settlement (house),settlement (house),house IX,lab:KIA-4327,KIA-4327
+114679,KIA-4329,3020,30,-26.75,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,"Charcoal, wood, Indeterminate",settlement (house),settlement (house),house XIII,lab:KIA-4329,KIA-4329
+113861,KIA-4330,3040,40,NA,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,NA,NA,settlement (house),settlement (house),House XXVI,lab:KIA-4330,KIA-4330
+114680,KIA-4331,3210,40,-24.09,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,"Charcoal, wood, Indeterminate",settlement (house),settlement (house),house XXVIII,lab:KIA-4331,KIA-4331
+119896,KIA-4333,2980,30,-25.85,NA,NA,Brunde,DK,55.071015,9.357578,NA,NA,NA,NA,charcoal,"Charcoal, wood, Indeterminate",settlement (house),settlement (house),house II,lab:KIA-4333,KIA-4333
+114695,KIA-4334,3210,50,-27.52,NA,NA,Flovt Strand,DK,55.234931,9.699252,NA,NA,NA,NA,charcoal,"Charcoal, wood, Fraxinus",settlement (house),settlement (house),house I,lab:KIA-4334,KIA-4334
+119897,KIA-4335,2390,50,-27.68,NA,NA,Brunde,DK,55.071015,9.357578,NA,NA,NA,NA,charcoal,"Charcoal, wood, Indeterminate",settlement (house),settlement (house),house I,lab:KIA-4335,KIA-4335
+114692,KIA-4336,3030,70,-24.37,NA,NA,Brødre Gram,DK,55.240258,9.524962,NA,NA,NA,NA,grain,"Charcoal, cereal, Indeterminate",settlement (house),settlement (house),house I,lab:KIA-4336,KIA-4336
+114693,KIA-4337,3140,30,-22.54,NA,NA,Brødre Gram,DK,55.240258,9.524962,NA,NA,NA,NA,nutshell,Corylus,settlement (house),settlement (house),house I,lab:KIA-4337,KIA-4337
+21696,KIA-4338,4440,40,0,NA,NA,Lasbjerggȯrd,DK,55.3234,8.9295,NA,NA,NA,NA,seed/fruit,Triticum,Settlement,Settlement,NA,lab:KIA-4338,KIA-4338
+21697,KIA-4339,4460,40,0,NA,NA,Lasbjerggȯrd,DK,55.3234,8.9295,NA,NA,NA,NA,nutshell,Corylus,Settlement,Settlement,NA,lab:KIA-4339,KIA-4339
+21698,KIA-4340,4510,40,0,NA,NA,Lasbjerggȯrd,DK,55.3234,8.9295,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:KIA-4340,KIA-4340
+114681,KIA-7265,3020,25,-21.02,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),house XXXIII,lab:KIA-7265,KIA-7265
+114682,KIA-7266,3295,30,-23.75,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),house XXXIII,lab:KIA-7266,KIA-7266
+119871,KIA-7645,3140,41,-26.08,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,"Charcoal, wood, Betula",settlement (house),settlement (house),house XXXII,lab:KIA-7645,KIA-7645
+119872,KIA-7646,3140,27,-27.88,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,"Charcoal, wood, Alnus",settlement (house),settlement (house),house XXXII,lab:KIA-7646,KIA-7646
+33681,KN-1052,4350,40,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:KN-1052,KN-1052
+33682,KN-1112,4020,55,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:KN-1112,KN-1112
+33683,KN-1113,3340,100,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:KN-1113,KN-1113
+21340,KN-152,4350,40,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:KN-152,KN-152
+33684,KN-1859,4330,70,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:KN-1859,KN-1859
+33685,KN-1865,4130,70,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:KN-1865,KN-1865
+33686,KN-1866,4440,60,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:KN-1866,KN-1866
+33687,KN-1932,3520,55,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:KN-1932,KN-1932
+33688,KN-1933,4440,55,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:KN-1933,KN-1933
+33689,KN-2946,4620,55,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,peat,NA,Settlement,Settlement,NA,lab:KN-2946,KN-2946
+21868,Ka-6612,5320,80,-29,NA,NA,Nøddekonge,DK,55.5843,11.5548,NA,NA,NA,NA,miscellaneous,lamp blubber,settlement,settlement,NA,lab:Ka-6612,Ka-6612
+105582,Ka-6613,5385,65,-26.5,NA,NA,"Bodal C ""Skolaestbo""",DK,55.586664673868,11.533198356629,NA,NA,NA,NA,miscellaneous,Blubber from lamp.,settlement,settlement,Found in the upper layer of the plowed settlement,lab:Ka-6613,Ka-6613
+21577,Ka-6999,8580,60,-17.7,NA,NA,Holmegård V,DK,55.2749,11.8362,NA,NA,NA,NA,bone,Canis lupus familiaris,settlement,settlement,NA,lab:Ka-6999,Ka-6999
+33678,Ki-775,3760,55,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:Ki-775,Ki-775
+21339,Ki-776,4700,75,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:Ki-776,Ki-776
+33679,Ki-777,2830,100,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:Ki-777,Ki-777
+33680,Ki-I776,4700,75,0,NA,NA,Bostholm,DK,54.8182,9.6362,NA,NA,NA,NA,wood,NA,Settlement,Settlement,NA,lab:Ki-I776,Ki-I776
+114646,LuA-6106,4765,60,NA,NA,NA,Sønderhå,DK,56.8688,8.4515,NA,NA,NA,NA,charcoal,"Charcoal, wood, Betula",settlement,settlement,N25,lab:LuA-6106,LuA-6106
+114647,LuA-6107,2170,50,NA,NA,NA,Sønderhå,DK,56.8688,8.4515,NA,NA,NA,NA,charcoal,"Charcoal, wood, Alnus",settlement,settlement,N17,lab:LuA-6107,LuA-6107
+119838,LuA-6108,3010,50,NA,NA,NA,Sønderhå,DK,56.8688,8.4515,NA,NA,NA,NA,grain,Hordeum vulgare,settlement,settlement,House I,lab:LuA-6108,LuA-6108
+119955,LuA-6109,3015,50,NA,NA,NA,Legård,DK,56.881722,8.458876,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House III,lab:LuA-6109,LuA-6109
+114750,LuA-6110,2970,50,NA,NA,NA,Legård,DK,56.881722,8.458876,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House IX,lab:LuA-6110,LuA-6110
+119956,LuA-6111,3055,50,NA,NA,NA,Legård,DK,56.881722,8.458876,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House IX,lab:LuA-6111,LuA-6111
+114751,LuA-6112,2990,50,NA,NA,NA,Legård,DK,56.881722,8.458876,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:LuA-6112,LuA-6112
+85821,OxA-118,6200,130,NA,NA,NA,Holmegård J,DK,55.2752,11.8358,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:OxA-118,OxA-118
+47690,OxA-2887,4420,70,-23.4,NA,NA,Vasagård,DK,55.0556,14.8852,NA,NA,NA,NA,charcoal,NA,Settlement,Settlement,NA,lab:OxA-2887,OxA-2887
+21496,OxA-2888,4190,70,0,NA,NA,Grødbygård,DK,55.0387,14.9427,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:OxA-2888,OxA-2888
+59227,OxA-2889,4180,70,-25.7,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:OxA-2889,OxA-2889
+59228,OxA-2890,4200,70,-26.8,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,seed/fruit,NA,settlement,settlement,NA,lab:OxA-2890,OxA-2890
+59229,OxA-2891,4210,70,-24.1,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:OxA-2891,OxA-2891
+59230,OxA-2893,3710,70,-25.5,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:OxA-2893,OxA-2893
+85977,OxA-2894,2210,60,NA,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:OxA-2894,OxA-2894
+59231,OxA-2895,5000,70,-26.4,NA,NA,Limensgård,DK,55.0453,14.8937,NA,NA,NA,NA,charcoal,NA,settlement,settlement,NA,lab:OxA-2895,OxA-2895
+89124,OxA-533,6080,80,NA,NA,NA,Holmegård J,DK,55.2752,11.8358,NA,NA,NA,NA,"collagen, bone",Homo sapiens,settlement,settlement,NA,lab:OxA-533,OxA-533
+22286,Poz-22575,4700,35,0,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,bone,ovis /capra,Settlement,Settlement,NA,lab:Poz-22575,Poz-22575
+22287,Poz-22576,4775,35,0,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,NA,NA,Settlement,Settlement,NA,lab:Poz-22576,Poz-22576
+22288,Poz-22578,5020,60,0,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,bone,ovis /capra,Settlement,Settlement,NA,lab:Poz-22578,Poz-22578
+114742,TUa-3018,3840,75,-23.8,NA,NA,Ingersminde,DK,56.976518,10.109824,NA,NA,NA,NA,grain,Hordeum vulgare,settlement (house),settlement (house),House I,lab:TUa-3018,TUa-3018
+119947,TUa-3019,3600,70,-23.8,NA,NA,Ingersminde,DK,56.976518,10.109824,NA,NA,NA,NA,grain,Triticum,settlement (house),settlement (house),House I,lab:TUa-3019,TUa-3019
+47590,Ua-1500,5745,145,0,NA,NA,Lindholm,DK,55.2973,10.8166,NA,NA,NA,NA,wood,NA,settlement,settlement,NA,lab:Ua-1500,Ua-1500
+115438,Ua-705,3115,110,NA,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,food remains,Burnt food remains,settlement (house),settlement (house),house I,lab:Ua-705,Ua-705
+115441,Ua-706,3450,100,NA,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house II,lab:Ua-706,Ua-706
+115440,Ua-707,3475,95,NA,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,Alnus,settlement (house),settlement (house),house II,lab:Ua-707,Ua-707
+110129,Ua-708,3355,100,NA,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,Betula,settlement (house),settlement (house),house I,lab:Ua-708,Ua-708
+115439,Ua-709,2880,75,NA,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,Alnus,settlement (house),settlement (house),house II,lab:Ua-709,Ua-709
+115443,Ua-711,3180,95,NA,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,Corylus,settlement (house),settlement (house),house I,lab:Ua-711,Ua-711
+115442,Ua-712,3250,110,NA,NA,NA,Højgård,DK,55.348046,9.616844,NA,NA,NA,NA,charcoal,Quercus,settlement (house),settlement (house),house I,lab:Ua-712,Ua-712
+47618,nd-12,4880,160,0,NA,NA,Øgårde,DK,55.5937,11.543,NA,NA,NA,NA,wood,NA,settlement,settlement,NA,lab:nd-12,nd-12
+47619,nd-208,4770,80,0,NA,NA,Øgårde,DK,55.5937,11.543,NA,NA,NA,NA,bone,NA,settlement,settlement,NA,lab:nd-208,nd-208
+47694,nd-65,6510,85,0,NA,NA,Visborg,DK,56.7368,10.1489,NA,NA,NA,NA,bone,NA,Settlement,Settlement,NA,lab:nd-65,nd-65

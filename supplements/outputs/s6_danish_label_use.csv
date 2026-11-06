@@ -1,0 +1,4 @@
+model,n_labels_observed_median,n_labels_used_once_median,share_top2_median
+D0_uniform,63,0,0.11852275980532494
+D1_calib_corrected,55,8,0.5644145433724592
+D1_calib_standard,55,8,0.5828800458058975

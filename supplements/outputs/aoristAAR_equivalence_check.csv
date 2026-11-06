@@ -1,0 +1,7 @@
+dataset,n_intervals,method,max_abs_difference,max_relative_difference,aoristAAR_version,equivalent
+S1 synthetic (uniform),10000,Standard aoristic,0,0,0.1.1,TRUE
+S1 synthetic (uniform),10000,Phase-corrected,0,0,0.1.1,TRUE
+S4 Danish Neolithic,3493,Standard aoristic,0,0,0.1.1,TRUE
+S4 Danish Neolithic,3493,Phase-corrected,0,0,0.1.1,TRUE
+S5 Hallstatt,2242,Standard aoristic,0,0,0.1.1,TRUE
+S5 Hallstatt,2242,Phase-corrected,0,0,0.1.1,TRUE

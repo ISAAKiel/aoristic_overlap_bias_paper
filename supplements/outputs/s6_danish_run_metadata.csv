@@ -1,0 +1,18 @@
+setting,value
+time_min,-4100
+time_max,-1800
+bin_width,50
+n_events,3493
+n_runs,100
+base_seed,700000
+calibration_iterations,3000
+calibration_max_abs_share_error,1.44e-14
+n_labels,63
+observed_n_labels_used_once,13
+observed_share_top2,0.574
+assignment_models,"D0_uniform,D1_calib_standard,D1_calib_corrected"
+signal_patterns,"uniform,linear_increase,linear_decline,exponential_increase,exponential_decline,early_peak,single_peak,late_peak,two_peaks,multi_peak,plateau"
+interval_file,outputs/s4_danish_neolithic_interval_counts.csv
+helper_file,R/aoristic_helpers.R
+r_version,R version 4.5.3 (2026-03-11)
+run_date,2026-10-14 12:03:14 CEST

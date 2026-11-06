@@ -1,0 +1,11 @@
+metric,value
+Number of records in raw data,3493
+Number of records after filtering,3493
+Number of records with harmonised free entries,43
+Share of raw records retained,1
+Earliest retained start,-4100
+Latest retained end,-1800
+Median interval width,1150
+Minimum interval width,100
+Maximum interval width,2150
+Number of unique retained intervals,63

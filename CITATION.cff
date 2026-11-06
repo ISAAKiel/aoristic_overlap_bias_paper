@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this material, please cite it as below."
+title: "Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions: research compendium"
+authors:
+  - family-names: Hinz
+    given-names: Martin
+    affiliation: "Kiel University, Institute for Pre- and Protohistoric Archaeology"
+    orcid: "https://orcid.org/0000-0002-9904-6548"
+  - family-names: Müller-Scheeßel
+    given-names: Nils
+    affiliation: "Kiel University, Institute for Pre- and Protohistoric Archaeology"
+    orcid: "https://orcid.org/0000-0001-7992-8722"
+license:
+  - MIT
+  - CC-BY-4.0
+repository-code: "https://github.com/ISAAKiel/aoristic_overlap_bias_paper"
+keywords:
+  - aoristic analysis
+  - chronological uncertainty
+  - archaeological phases
+  - temporal frequency analysis
+# Add after archiving:
+# doi: 10.5281/zenodo.XXXXXXX
+# version: 1.0.0
+# date-released: YYYY-MM-DD

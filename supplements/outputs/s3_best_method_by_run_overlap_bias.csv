@@ -1,0 +1,14 @@
+pattern,method,best_n,best_share
+early_peak,Phase-corrected,100,1
+exponential_decline,Phase-corrected,100,1
+exponential_increase,Phase-corrected,100,1
+late_peak,Phase-corrected,100,1
+linear_decline,Phase-corrected,100,1
+linear_increase,Phase-corrected,100,1
+multi_peak,Phase-corrected,100,1
+plateau,Monte Carlo mean,46,0.46
+plateau,Standard aoristic,54,0.54
+single_peak,Monte Carlo mean,52,0.52
+single_peak,Standard aoristic,48,0.48
+two_peaks,Phase-corrected,100,1
+uniform,Phase-corrected,100,1

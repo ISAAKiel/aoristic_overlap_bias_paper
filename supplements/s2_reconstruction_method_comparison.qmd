@@ -1,0 +1,762 @@
+---
+title: "Supplement 2: Comparing reconstruction methods for overlapping phase catalogues"
+author:
+  - Martin Hinz
+  - Nils Müller-Scheeßel
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-tools: true
+  pdf:
+    toc: true
+    include-in-header:
+      text: |
+        \usepackage{fvextra}
+        \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,commandchars=\\\{\}}
+        \RecustomVerbatimEnvironment{verbatim}{Verbatim}{breaklines,breakanywhere}
+execute:
+  warning: false
+  message: false
+bibliography: ../bibliography/bibliography.bib
+csl: ../bibliography/journal-of-computer-applications-in-archaeology.csl
+lang: en-GB
+---
+
+# Aim
+
+Supplement 1 showed that a standard proportional aoristic reconstruction produces temporal structure that closely follows the overlap structure of the phase catalogue, although the underlying event process is uniform. Here we apply alternative reconstruction methods to the same observations.
+
+Specifically, we use:
+
+- the same synthetic overlapping phase catalogue;
+- the same uniformly distributed event data;
+- the same assigned archaeological phase labels;
+- the same overlap structure.
+
+We compare three central reconstruction approaches:
+
+1. standard proportional aoristic reconstruction;
+2. Monte Carlo aoristic reconstruction;
+3. phase-corrected aoristic reconstruction.
+
+We also show the performance of Baorista [@cremaBayesianAlternativeAoristic2025]. It serves as an external, model-based benchmark with a full representation of posterior uncertainty.
+
+The central question of this supplement is:
+
+> Which reconstruction method is closer to the uniform generating process, and which remains more coupled to the overlap structure of the phase catalogue?
+
+## Computation
+
+The Baorista fit is computed with `scripts/run_s2_baorista.R` (`make refresh-s2-baorista`), and this document reads its results from `outputs/`. All other results are computed here. The full reproduction workflow is described in the README.
+
+# Packages
+
+Some standard packages for data preprocessing.
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(purrr)
+library(tibble)
+library(readr)
+library(rlang)
+```
+
+# Settings
+
+The parameters set below are the number of Monte Carlo iterations, the temporal frame, the bin width and the temporal grid.
+
+```{r}
+set.seed(42)
+
+dir.create("outputs", showWarnings = FALSE, recursive = TRUE)
+dir.create("figures", showWarnings = FALSE, recursive = TRUE)
+
+source("R/aoristic_helpers.R")
+
+time_min <- -4100
+time_max <- -1800
+
+year_grid <- seq(time_min, time_max - 1, by = 1)
+
+bin_width <- 50
+
+n_mc <- 100L
+```
+
+# Input data from Supplement 1
+
+We use the phase catalogue, the assigned events, the ground truth and the overlap curve from Supplement 1.
+
+```{r}
+required_files <- c("outputs/s1_synthetic_phase_catalogue.csv",
+                    "outputs/s1_assigned_events.csv",
+                    "outputs/s1_ground_truth_binned.csv",
+                    "outputs/s1_overlap_curve_binned.csv")
+
+if (!all(file.exists(required_files))) stop("Render Supplement 1 first.")
+```
+
+```{r}
+phase_catalogue <- read_csv("outputs/s1_synthetic_phase_catalogue.csv",
+                            show_col_types = FALSE)
+
+assigned_events <- read_csv("outputs/s1_assigned_events.csv",
+                            show_col_types = FALSE)
+
+true_curve_binned <- read_csv("outputs/s1_ground_truth_binned.csv",
+                              show_col_types = FALSE)
+
+overlap_curve_binned <- read_csv("outputs/s1_overlap_curve_binned.csv",
+                                 show_col_types = FALSE)
+
+assigned_events <- assigned_events |>
+  mutate(start = as.integer(start), end = as.integer(end))
+```
+
+Differences between the curves thus result only from the reconstruction methods.
+
+# Ground truth and overlap structure
+
+As in Supplement 1, the true generating process is uniform (it is in fact identical). Any deviation from a flat reconstruction comes from the observation and reconstruction procedure.
+
+```{r}
+truth_overlap <- true_curve_binned |>
+  left_join(overlap_curve_binned, by = "year") |>
+  mutate(true = normalise_curve(true))
+```
+
+```{r}
+#| label: fig-s2-truth-overlap
+#| fig-cap: "Uniform ground truth and overlap structure of the phase catalogue."
+p_truth_overlap <- truth_overlap |>
+  mutate(overlap_scaled = normalise_curve(overlap)) |>
+  select(year, Ground_truth = true, Overlap_structure = overlap_scaled) |>
+  pivot_longer(cols = -year, names_to = "curve", values_to = "value") |>
+  mutate(
+    curve = recode(curve, Ground_truth = "Ground truth",
+                   Overlap_structure = "Overlap structure")
+  ) |>
+  ggplot(aes(x = year, y = value, linetype = curve)) +
+  geom_line(linewidth = 0.8) +
+  labs(title = "Ground truth and phase-catalogue overlap structure",
+       subtitle = "Both curves are normalised for visual comparison",
+       x = "Year BCE/CE", y = "Normalised value") +
+  plot_theme()
+
+p_truth_overlap
+```
+
+As in Supplement 1, the overlap curve reflects the catalogue, not the event process.
+
+From this, we derive two criteria for a good reconstruction:
+
+1. a successful reconstruction should produce a curve that is as close as possible to the uniform ground truth;
+2. it should be coupled as little as possible to the overlap structure of the phase catalogue.
+
+The two criteria can diverge, since a method can be close to the ground truth overall and still follow the phase structure in parts of the sequence. We therefore also measure the coupling between reconstruction error and overlap structure.
+
+# Standard proportional aoristic reconstruction
+
+The standard aoristic method distributes each observation uniformly over the full length of its assigned interval.
+
+```{r}
+standard_curve <- run_standard_aoristic(intervals = assigned_events,
+                                        year_grid = year_grid)
+
+standard_curve_binned <- standard_curve |>
+  make_reconstruction_binned(value_col = standard, output_col = "standard",
+                             bin_width = bin_width, bin_start = time_min)
+```
+
+The method used here is the classical proportional aoristic approach. It assumes a uniform probability of events within each observed interval. Locally, this assumption is plausible if no further information is available within an individual dating interval. A problem arises, however, if such intervals originate from an overlapping hierarchical phase catalogue. As shown in Supplement 1, the combination of proportional distribution and label assignment can lead the reconstructed curve to inherit structure from the phase catalogue.
+
+# Phase-corrected aoristic reconstruction
+
+The phase-corrected aoristic reconstruction modifies weights within the observed intervals based on the number of overlapping labels.
+
+Years that are covered by multiple phase labels receive reduced weight within the assigned interval. The contribution of each observation is then renormalised so that it retains a total weight of 1.
+
+```{r}
+phase_corrected_curve <- run_phase_corrected_aoristic(
+  intervals = assigned_events, year_grid = year_grid
+)
+
+phase_corrected_curve_binned <- phase_corrected_curve |>
+  make_reconstruction_binned(value_col = phase_corrected,
+                             output_col = "phase_corrected",
+                             bin_width = bin_width, bin_start = time_min)
+```
+
+If the standard curve rises where more labels overlap, the correction should dampen this effect.
+
+The weighting has a probabilistic basis. If an event dated to $t$ is attributed with equal probability to any of the $\lambda(t)$ labels covering $t$, the phase-corrected weights are the posterior distribution of the event date under a flat prior (main text, Section 2.3, and Supplement 6). The standard reconstruction, by contrast, implicitly assumes that the probability of a label does not depend on how many alternative labels exist at $t$, an assumption that is hard to justify for hierarchical catalogues. The correction requires no information beyond the observed intervals. It does not model preservation, recovery or research intensity, and its behaviour under non-uniform signals and other assignment models is examined in Supplements 3 and 6.
+
+# Monte Carlo aoristic reconstruction
+
+The Monte Carlo aoristic reconstruction repeatedly draws, for each observation, a possible year from the assigned time interval. After many repetitions, this yields a mean reconstruction curve and an uncertainty range.
+
+```{r}
+mc_curve_binned <- run_monte_carlo_aoristic(
+  intervals = assigned_events,
+  year_grid = year_grid,
+  bin_width = bin_width,
+  bin_start = time_min,
+  n_iter = n_mc,
+  seed = 42001
+)
+```
+
+In this simulation, each year within an interval is treated equally. The Monte Carlo reconstruction rests on the same within-interval uniformity assumption as the standard proportional aoristic approach.
+
+Its expected value is therefore that of the standard reconstruction, and what it adds is a picture of how strongly the curve varies if the true dates are random within the intervals.
+
+# Baorista reconstruction
+
+In addition to the three aoristic reconstruction approaches, we include the Baorista reconstruction as a model-based comparison.
+
+Baorista instead fits a model to the intervals. It estimates the probability of events per 50-year block under an intrinsic conditional autoregressive (ICAR) prior. As in the main text (Section 3.2), we use an exponential prior with rate 1 on the ICAR scale parameter. Its posterior uncertainty refers to this model, whereas the Monte Carlo range refers to random placement within the intervals.
+
+Both the central reconstruction curve and the posterior credible intervals of the binned Baorista result are included in the following comparison.
+
+```{r}
+baorista_curve_binned <- read_csv("outputs/s2_baorista_curve_binned.csv",
+                                  show_col_types = FALSE) |>
+  mutate(baorista = normalise_curve(baorista)) |>
+  arrange(year)
+
+# rescale the posterior summaries with the point estimate
+baorista_total <- sum(baorista_curve_binned$baorista, na.rm = TRUE)
+baorista_curve_binned <- baorista_curve_binned |>
+  mutate(across(starts_with("baorista"), ~ .x / baorista_total))
+```
+
+## Convergence of the Baorista fit
+
+The model is fitted by MCMC in NIMBLE [@devalpine_programming_2017] with four chains. Convergence is assessed with the Gelman–Rubin statistic $\hat R$ [@gelman_inference_1992] for all block probabilities. A fit is accepted if the largest $\hat R$ does not exceed the criterion given below. If it does, the model is refitted with twice the number of iterations (up to three attempts in total). The effective sample size (ESS) indicates how many independent draws the retained posterior sample corresponds to.
+
+```{r}
+#| label: tbl-s2-baorista-convergence
+#| tbl-cap: "Convergence diagnostics of the Supplement 2 Baorista fit."
+s2_baorista_diagnostics_file <- "outputs/s2_baorista_diagnostics.csv"
+
+s2_diagnostic_labels <- c(max_rhat = "Maximum R-hat",
+                          median_rhat = "Median R-hat", min_ess = "Minimum ESS",
+                          median_ess = "Median ESS",
+                          n_posterior_samples = "Posterior draws",
+                          niter = "Iterations", nburnin = "Burn-in",
+                          thin = "Thinning", nchains = "Chains",
+                          rhat_criterion = "R-hat criterion",
+                          n_attempts = "Attempts", converged = "Converged")
+
+read_csv(s2_baorista_diagnostics_file, show_col_types = FALSE) |>
+    filter(diagnostic %in% names(s2_diagnostic_labels)) |>
+    mutate(
+      value = if_else(
+        diagnostic == "converged",
+        if_else(as.numeric(value) == 1, "yes", "no"),
+        format(round(as.numeric(value), 3), scientific = FALSE, drop0trailing = TRUE, trim = TRUE)
+      ),
+      diagnostic = factor(unname(s2_diagnostic_labels[diagnostic]),
+                          levels = unname(s2_diagnostic_labels))
+    ) |>
+    arrange(diagnostic) |>
+    select(diagnostic, value) |>
+    kbl(
+      col.names = c("Diagnostic", "Value"))
+```
+
+# Combined reconstruction table
+
+The individual reconstruction curves are combined here into a common table. All curves are normalised so that they can be compared directly as relative temporal intensities.
+
+```{r}
+curves_binned <- truth_overlap |>
+  left_join(standard_curve_binned, by = "year") |>
+  left_join(phase_corrected_curve_binned, by = "year") |>
+  left_join(
+    mc_curve_binned |>
+      select(year, mc_mean, mc_median, mc_q05, mc_q95),
+    by = "year"
+  ) |>
+  mutate(standard = normalise_curve(replace_na(standard, 0)),
+         phase_corrected = normalise_curve(replace_na(phase_corrected, 0)),
+         mc_mean = normalise_curve(replace_na(mc_mean, 0)),
+         mc_median = normalise_curve(replace_na(mc_median, 0)))
+
+curves_binned <- curves_binned |>
+  left_join(baorista_curve_binned, by = "year")
+
+write_csv(curves_binned, "outputs/s2_reconstruction_curves_binned.csv")
+```
+
+Because of the normalisation, the individual curves do not represent estimates of absolute counts, and we compare only the shapes of the reconstructed temporal distributions.
+
+# Visual comparison of reconstruction methods
+
+```{r}
+#| label: fig-s2-methods
+#| fig-cap: "Comparison of the reconstruction methods."
+plot_methods <- curves_binned |>
+  select(year, Ground_truth = true, Standard_aoristic = standard,
+         Phase_corrected = phase_corrected, Monte_Carlo_mean = mc_mean,
+         any_of("baorista")) |>
+  pivot_longer(cols = -year, names_to = "method", values_to = "value") |>
+  mutate(
+    method = recode(method, Ground_truth = "Ground truth",
+                    Standard_aoristic = "Standard aoristic",
+                    Phase_corrected = "Phase-corrected",
+                    Monte_Carlo_mean = "Monte Carlo mean",
+                    baorista = "Baorista"),
+    method = factor(
+      method,
+      levels = c("Ground truth", "Standard aoristic", "Monte Carlo mean",
+                 "Phase-corrected", "Baorista")
+    )
+  )
+
+method_colours <- c("Ground truth" = "black", "Standard aoristic" = "#D55E00",
+                    "Monte Carlo mean" = "#0072B2",
+                    "Phase-corrected" = "#009E73", "Baorista" = "#CC79A7")
+
+method_linetypes <- c("Ground truth" = "solid", "Standard aoristic" = "solid",
+                      "Monte Carlo mean" = "longdash",
+                      "Phase-corrected" = "solid", "Baorista" = "dotdash")
+
+p_methods <- ggplot(
+  plot_methods,
+  aes(x = year, y = value, colour = method, linetype = method)
+) +
+  geom_line(linewidth = 0.85, na.rm = TRUE) +
+  scale_colour_manual(values = method_colours, drop = FALSE) +
+  scale_linetype_manual(values = method_linetypes, drop = FALSE) +
+  labs(
+    title = "Comparison of reconstruction methods",
+    subtitle = "All methods are applied to the same phase-assigned dataset from Supplement 1",
+    x = "Year BCE/CE",
+    y = "Normalised intensity"
+  ) +
+  plot_theme()
+
+p_methods
+```
+
+The standard and Monte Carlo mean curves are almost identical, as both assume uniformity within the intervals.
+
+The phase-corrected reconstruction (green) differs from both and gives less weight to sections covered by many labels.
+
+Since the truth is uniform, closeness to it can be read directly. The phase-corrected curve comes closest, the standard and Monte Carlo curves show the overlap pattern of Supplement 1, and Baorista deviates markedly in a different way. The uncertainty envelopes of the Monte Carlo and Baorista reconstructions are shown below.
+
+# Monte Carlo uncertainty envelope
+
+The Monte Carlo uncertainty envelope shows the variability that results if each event is randomly and repeatedly placed within its assigned interval.
+
+```{r}
+#| label: fig-s2-mc
+#| fig-cap: "Monte Carlo aoristic reconstruction with uncertainty envelope."
+p_mc <- ggplot(curves_binned, aes(x = year)) +
+  geom_ribbon(aes(ymin = mc_q05, ymax = mc_q95), alpha = 0.20, na.rm = TRUE) +
+  geom_line(aes(y = mc_mean), linewidth = 0.8, na.rm = TRUE) +
+  geom_line(aes(y = true), linewidth = 0.8, linetype = "dashed", na.rm = TRUE) +
+  labs(
+    title = "Monte Carlo aoristic reconstruction",
+    subtitle = paste0("Ribbon: 5th to 95th percentile interval across ", n_mc, " iterations"),
+    x = "Year BCE/CE",
+    y = "Normalised intensity"
+  ) +
+  plot_theme()
+
+p_mc
+```
+
+The envelope shows how strongly the curve varies with random placement within the intervals. Over large parts of the sequence it does not cover the true value.
+
+# Baorista posterior uncertainty
+
+For the Baorista reconstruction, we plot the posterior credible interval in addition to the central curve, in the same way as for the Monte Carlo aoristic reconstruction above. We use the 95% highest posterior density interval (HPDI). Quantile intervals of different widths could be used instead. Plotting the central tendency together with the credible interval is essential for Bayesian approaches, as their aim is less to produce correct point estimates than to provide a range of plausible values given the underlying assumptions and the data.
+
+```{r}
+baorista_band_type <- "95% HPDI"
+
+baorista_uncertainty <- curves_binned |>
+  transmute(year, true, baorista,
+            lower = pmax(0, pmin(baorista_hpdi95_lower, baorista_hpdi95_upper)),
+            upper = pmax(0, pmax(baorista_hpdi95_lower, baorista_hpdi95_upper))) |>
+  filter(is.finite(year), is.finite(baorista), is.finite(lower),
+         is.finite(upper)) |>
+  distinct(year, .keep_all = TRUE) |>
+  arrange(year)
+```
+
+```{r}
+#| label: fig-s2-baorista
+#| fig-cap: "Baorista reconstruction with posterior uncertainty."
+p_baorista_uncertainty <- ggplot(baorista_uncertainty, aes(x = year)) +
+  geom_ribbon(aes(ymin = lower, ymax = upper, group = 1), alpha = 0.20,
+              na.rm = TRUE) +
+  geom_line(aes(y = baorista), linewidth = 0.85, na.rm = TRUE) +
+  geom_line(aes(y = true), linewidth = 0.8, linetype = "dashed",
+            na.rm = TRUE) +
+  labs(
+    title = "Baorista reconstruction with posterior uncertainty",
+    subtitle = paste0("Ribbon: ", baorista_band_type, "; dashed line: uniform ground truth"),
+    x = "Year BCE/CE",
+    y = "Normalised intensity"
+  ) +
+  plot_theme()
+
+p_baorista_uncertainty
+```
+
+In the uniform scenario, the Baorista curve deviates substantially from the ground truth.
+
+# Method comparison with uncertainty envelopes
+
+The main curves together with the envelopes of the two simulation-based methods:
+
+The Monte Carlo ribbon reflects the variability of repeated random allocations within the assigned intervals. The Baorista ribbon reflects the posterior uncertainty of the fitted model.
+
+```{r}
+#| label: fig-s2-methods-uncertainty
+#| fig-width: 8.5
+#| fig-height: 5.2
+#| fig-cap: "Reconstruction methods with uncertainty envelopes."
+p_methods_uncertainty <- ggplot(curves_binned, aes(x = year)) +
+  geom_ribbon(aes(ymin = mc_q05, ymax = mc_q95), alpha = 0.14, na.rm = TRUE) +
+  geom_line(aes(y = true, colour = "Ground truth", linetype = "Ground truth"),
+            linewidth = 0.9, na.rm = TRUE) +
+  geom_line(
+    aes(y = standard, colour = "Standard aoristic", linetype = "Standard aoristic"),
+    linewidth = 0.75,
+    na.rm = TRUE
+  ) +
+  geom_line(
+    aes(y = mc_mean, colour = "Monte Carlo mean", linetype = "Monte Carlo mean"),
+    linewidth = 0.75,
+    na.rm = TRUE
+  ) +
+  geom_line(
+    aes(y = phase_corrected, colour = "Phase-corrected", linetype = "Phase-corrected"),
+    linewidth = 0.75,
+    na.rm = TRUE
+  )
+
+p_methods_uncertainty <- p_methods_uncertainty +
+  geom_ribbon(data = baorista_uncertainty,
+              aes(x = year, ymin = lower, ymax = upper, group = 1),
+              inherit.aes = FALSE, alpha = 0.14, na.rm = TRUE)
+
+p_methods_uncertainty <- p_methods_uncertainty +
+  geom_line(aes(y = baorista, colour = "Baorista", linetype = "Baorista"),
+            linewidth = 0.75, na.rm = TRUE)
+
+p_methods_uncertainty <- p_methods_uncertainty +
+  scale_colour_manual(name = NULL, values = method_colours,
+                      breaks = names(method_colours)) +
+  scale_linetype_manual(name = NULL, values = method_linetypes,
+                        breaks = names(method_colours)) +
+  labs(
+    title = "Reconstruction methods with uncertainty envelopes",
+    subtitle = "Ribbons show Monte Carlo uncertainty and, where available, Baorista posterior uncertainty",
+    x = "Year BCE/CE",
+    y = "Normalised intensity"
+  ) +
+  plot_theme()
+
+p_methods_uncertainty
+```
+
+```{r}
+ggsave("figures/s2_reconstruction_methods_with_uncertainty.png",
+       p_methods_uncertainty, width = 8.5, height = 5.2, dpi = 600)
+```
+
+# Relationship to phase overlap structure
+
+As in Supplement 1, we compare the reconstructions with the overlap curve.
+
+```{r}
+#| label: fig-s2-methods-overlap
+#| fig-cap: "Reconstruction methods and phase-overlap structure."
+plot_overlap_methods <- curves_binned |>
+  mutate(overlap_scaled = normalise_curve(overlap)) |>
+  select(year, Overlap_structure = overlap_scaled, Standard_aoristic = standard,
+         Phase_corrected = phase_corrected, Monte_Carlo_mean = mc_mean,
+         any_of("baorista")) |>
+  pivot_longer(cols = -year, names_to = "method", values_to = "value") |>
+  mutate(
+    method = recode(method, Overlap_structure = "Overlap structure",
+                    Standard_aoristic = "Standard aoristic",
+                    Phase_corrected = "Phase-corrected",
+                    Monte_Carlo_mean = "Monte Carlo mean",
+                    baorista = "Baorista"),
+    method = factor(
+      method,
+      levels = c("Overlap structure", "Standard aoristic", "Monte Carlo mean",
+                 "Phase-corrected", "Baorista")
+    )
+  )
+
+overlap_colours <- c("Overlap structure" = "black",
+                     "Standard aoristic" = "#D55E00",
+                     "Monte Carlo mean" = "#0072B2",
+                     "Phase-corrected" = "#009E73", "Baorista" = "#CC79A7")
+
+overlap_linetypes <- c("Overlap structure" = "dashed",
+                       "Standard aoristic" = "solid",
+                       "Monte Carlo mean" = "longdash",
+                       "Phase-corrected" = "solid", "Baorista" = "dotdash")
+
+p_overlap_methods <- ggplot(
+  plot_overlap_methods,
+  aes(x = year, y = value, colour = method, linetype = method)
+) +
+  geom_line(linewidth = 0.8, na.rm = TRUE) +
+  scale_colour_manual(values = overlap_colours, drop = FALSE) +
+  scale_linetype_manual(values = overlap_linetypes, drop = FALSE) +
+  labs(title = "Reconstruction methods and phase overlap structure",
+       subtitle = "All curves are normalised for visual comparison",
+       x = "Year BCE/CE", y = "Normalised value") +
+  plot_theme()
+
+p_overlap_methods
+```
+
+The standard aoristic and Monte Carlo mean curves remain strongly coupled to the overlap pattern. as expected from their shared proportional allocation.
+
+The phase-corrected reconstruction reduces this coupling substantially. Baorista follows the overlap curve less closely than the standard reconstruction, but still visibly. Its overlap-aligned component is nevertheless larger (see below).
+
+```{r}
+ggsave("figures/s2_methods_vs_overlap_structure.png", p_overlap_methods,
+       width = 8.5, height = 5.2, dpi = 600)
+```
+
+# Fit metrics against the known ground truth
+
+Because this is a simulation, the true generating curve is known. Each method can be compared quantitatively with the uniform ground truth.
+
+```{r}
+#| label: tbl-s2-fit
+#| tbl-cap: "Fit of the reconstruction methods to the uniform ground truth."
+metric_input <- curves_binned |>
+  select(year, true, overlap, standard, phase_corrected, mc_mean,
+         any_of("baorista"))
+
+fit_metrics <- compute_curve_metrics(curves = metric_input,
+                                     truth_col = "true") |>
+  mutate(
+    method = recode(method, standard = "Standard aoristic",
+                    phase_corrected = "Phase-corrected",
+                    mc_mean = "Monte Carlo mean", baorista = "Baorista")
+  ) |>
+  arrange(rmsd)
+
+write_csv(fit_metrics, "outputs/s2_fit_metrics.csv")
+
+format_sig3 <- function(x) {
+  vapply(
+    x,
+    function(v) {
+      if (is.na(v)) {
+        NA_character_
+      } else {
+        format(signif(v, 3), scientific = FALSE, drop0trailing = TRUE, trim = TRUE)
+      }
+    },
+    character(1)
+  )
+}
+
+fit_metrics |>
+  select(method, rmsd, mae) |>
+  mutate(across(c(rmsd, mae), format_sig3)) |>
+  kbl(col.names = c("Method", "RMSD", "MAE"), align = c("l", "r", "r"))
+```
+
+RMSD and MAE are given as absolute densities of curves normalised to sum to one over the 46 bins of 50 years. Multiplied by 46 (and by 100), they correspond to the percentage of the mean bin density used in the manuscript. The phase-corrected reconstruction fits best by a wide margin, while the Monte Carlo mean and the standard reconstruction are close together, and Baorista deviates most.
+
+This is expected. Under the assignment rule used in the simulation, the phase correction is in expectation the exact flat-prior posterior, so that its remaining error reflects sampling noise. Non-uniform signals and other assignment models are examined in Supplements 3 and 6.
+
+```{r}
+#| label: fig-s2-fit
+#| fig-cap: "Fit of the reconstruction methods to the known uniform ground truth."
+p_fit <- fit_metrics |>
+  pivot_longer(cols = c(rmsd, mae), names_to = "metric", values_to = "value") |>
+  mutate(metric = recode(metric, rmsd = "RMSD", mae = "MAE"),
+         method = reorder(method, value)) |>
+  ggplot(aes(x = value, y = method)) +
+  geom_col() +
+  facet_wrap(~ metric, scales = "free_x") +
+  labs(
+    title = "Fit to the known uniform ground truth",
+    subtitle = "Lower values indicate closer agreement with the generating process",
+    x = NULL,
+    y = NULL
+  ) +
+  plot_theme()
+
+p_fit
+```
+
+```{r}
+ggsave("figures/s2_fit_metrics.png", p_fit, width = 8.5, height = 4.8,
+       dpi = 600)
+```
+
+# Overlap-coupling diagnostics
+
+We also measure how strongly the reconstruction error is still connected to the overlap structure.
+
+```{r}
+#| label: tbl-s2-overlap-correlations
+#| tbl-cap: "Correlation of the reconstructions and their errors with the overlap structure."
+overlap_diagnostics <- compute_overlap_diagnostics(
+  curves = metric_input, truth_col = "true", overlap_col = "overlap"
+) |>
+  mutate(
+    method = recode(method, standard = "Standard aoristic",
+                    phase_corrected = "Phase-corrected",
+                    mc_mean = "Monte Carlo mean", baorista = "Baorista")
+  ) |>
+  arrange(overlap_attributable_rmsd)
+
+write_csv(overlap_diagnostics, "outputs/s2_overlap_diagnostics.csv")
+
+overlap_diagnostics |>
+  select(method, overlap_curve_correlation, overlap_abs_error_correlation,
+         overlap_squared_error_correlation) |>
+  kbl(
+    digits = 3,
+    col.names = c("Method", "Correlation with overlap",
+                  "Overlap vs. absolute error", "Overlap vs. squared error")
+  )
+```
+
+```{r}
+#| label: fig-s2-overlap-error
+#| fig-cap: "Coupling between reconstruction error and phase overlap."
+p_overlap_bias <- overlap_diagnostics |>
+  mutate(method = reorder(method, overlap_attributable_rmsd)) |>
+  ggplot(aes(x = overlap_attributable_rmsd, y = method)) +
+  geom_col() +
+  labs(
+    title = "Coupling between reconstruction error and phase overlap",
+    subtitle = "Lower values indicate less structural dependence on the phase catalogue",
+    x = "Overlap-attributable RMSD",
+    y = NULL
+  ) +
+  plot_theme()
+
+p_overlap_bias
+```
+
+## Strength of the overlap coupling
+
+Correlations measure whether a reconstruction or its error has the *shape* of the overlap curve, not *how strongly* it follows it. A nearly flat curve with a small ripple shaped like the overlap curve can still correlate highly with it. We therefore add two magnitude-based measures:
+
+- the **overlap-attributable RMSD**, $|\mathrm{cor}(E, \lambda)| \cdot \mathrm{sd}(E)$, i.e. the root-mean-square size of the part of the error $E(t) = R(t) - G(t)$ that varies linearly with the overlap curve. It is on the same scale as the RMSD, and its ratio to the RMSD gives the share of the error attributable to the overlap structure;
+- the **overlap-aligned relative amplitude**, $|\beta| \cdot \mathrm{sd}(\lambda) / \bar R$, with $\beta$ the slope of $R$ on $\lambda$: the change in reconstructed density, as a fraction of the mean density, when the overlap increases by one standard deviation.
+
+Under the uniform ground truth, $G$ is constant, so the correlation of the error with the overlap curve is identical to the correlation of the reconstruction with it, so only one of the two is shown in the table above. Because all curves are normalised to the same total, the mean error is zero and $\mathrm{sd}(E)$ equals the RMSD, and the share of the RMSD attributable to the overlap structure equals the absolute correlation $|\mathrm{cor}(E, \lambda)|$ in the table below.
+
+```{r}
+#| label: tbl-s2-overlap-strength
+#| tbl-cap: "Correlation-based and magnitude-based overlap diagnostics for the uniform simulation. Ovl. RMSD = overlap-attributable RMSD, Ampl. = overlap-aligned relative amplitude."
+overlap_strength <- overlap_diagnostics |>
+  select(method, overlap_curve_correlation, overlap_attributable_rmsd,
+         overlap_attributable_share, overlap_relative_amplitude) |>
+  left_join(fit_metrics |> select(method, rmsd), by = "method") |>
+  relocate(rmsd, .after = method) |>
+  arrange(overlap_attributable_rmsd)
+
+kbl(
+  overlap_strength |>
+    mutate(across(where(is.numeric), format_sig3)),
+  align = c("l", rep("r", 5)),
+  col.names = c("Method", "RMSD", "Cor. with overlap", "Ovl. RMSD",
+                "Ovl. share of RMSD", "Ampl."))
+
+os_val <- function(m, col) overlap_strength[[col]][overlap_strength$method == m]
+```
+
+The magnitude-based measures change the picture given by the correlations. The correlation of the phase-corrected reconstruction with the overlap curve is still `r round(os_val("Phase-corrected", "overlap_curve_correlation"), 3)`, but the part of its error that follows the overlap structure amounts to only `r format(signif(os_val("Phase-corrected", "overlap_attributable_rmsd"), 2), scientific = FALSE)`, compared with `r format(signif(os_val("Standard aoristic", "overlap_attributable_rmsd"), 2), scientific = FALSE)` for the standard reconstruction, roughly `r round(os_val("Standard aoristic", "overlap_attributable_rmsd") / os_val("Phase-corrected", "overlap_attributable_rmsd"))` times less. The correction leaves a trace of the overlap shape but removes almost all of its magnitude.
+
+`r paste0("Baorista shows the reverse case. Its correlation with the overlap curve (", round(os_val("Baorista", "overlap_curve_correlation"), 3), ") is lower than that of the standard reconstruction, yet its overlap-aligned relative amplitude (", round(os_val("Baorista", "overlap_relative_amplitude"), 3), ") is ", if (os_val("Baorista", "overlap_relative_amplitude") > os_val("Standard aoristic", "overlap_relative_amplitude")) "higher" else "lower", " than that of the standard reconstruction (", round(os_val("Standard aoristic", "overlap_relative_amplitude"), 3), "): a lower correlation does not mean that a curve follows the overlap structure less strongly.")`
+
+```{r}
+#| label: fig-s2-overlap-scatter
+#| fig-cap: "Reconstructed density against phase overlap, by method."
+#| fig-width: 9
+#| fig-height: 3.4
+scatter_methods <- intersect(c("standard", "mc_mean", "phase_corrected", "baorista"), names(metric_input))
+scatter_labels <- c(standard = "Standard aoristic",
+                    mc_mean = "Monte Carlo mean",
+                    phase_corrected = "Phase-corrected",
+                    baorista = "Baorista")[scatter_methods]
+
+p_overlap_scatter <- plot_overlap_scatter(
+  curves = metric_input,
+  method_cols = scatter_methods,
+  method_labels = scatter_labels,
+  colours = method_colours
+) +
+  labs(title = "Reconstructed density against phase overlap (uniform ground truth)")
+
+p_overlap_scatter
+```
+
+# Error curves
+
+```{r}
+#| label: fig-s2-errors
+#| fig-cap: "Reconstruction error by method."
+error_curves <- metric_input |>
+  mutate(standard_error = standard - true,
+         phase_corrected_error = phase_corrected - true,
+         mc_mean_error = mc_mean - true)
+
+if ("baorista" %in% names(metric_input)) {
+  error_curves <- error_curves |>
+    mutate(baorista_error = baorista - true)
+}
+
+plot_errors <- error_curves |>
+  select(year, Standard_aoristic = standard_error,
+         Phase_corrected = phase_corrected_error,
+         Monte_Carlo_mean = mc_mean_error, any_of("baorista_error")) |>
+  pivot_longer(cols = -year, names_to = "method", values_to = "error") |>
+  mutate(
+    method = recode(method, Standard_aoristic = "Standard aoristic",
+                    Phase_corrected = "Phase-corrected",
+                    Monte_Carlo_mean = "Monte Carlo mean",
+                    baorista_error = "Baorista")
+  )
+
+p_errors <- ggplot(plot_errors, aes(x = year, y = error, linetype = method)) +
+  geom_hline(yintercept = 0, linewidth = 0.4) +
+  geom_line(linewidth = 0.8, na.rm = TRUE) +
+  labs(title = "Reconstruction error by method",
+       subtitle = "Error = reconstructed intensity minus uniform ground truth",
+       x = "Year BCE/CE", y = "Signed error") +
+  plot_theme()
+
+p_errors
+```
+
+# Interpretation
+
+The comparison confirms Supplement 1. The standard reconstruction inherits the overlap structure of the catalogue, and the Monte Carlo reconstruction shows the uncertainty around the same expectation without changing it.
+
+In the controlled uniform scenario, the correction reduces the reconstruction error by about an order of magnitude. The phase-corrected curve is closest to the known ground truth and, by the magnitude-based measures, shows the weakest structural coupling to the phase catalogue. A faint trace of the overlap shape remains, but almost all of its magnitude is removed.
+
+Baorista deviates more strongly from the uniform truth than the phase-corrected reconstruction. Its correlation with the overlap curve is lower than that of the standard and Monte Carlo reconstructions, but its overlap-attributable RMSD and overlap-aligned amplitude are larger than those of the standard reconstruction.
+
+Supplement 3 extends the comparison to non-uniform signals.
+
+# Session information
+
+```{r}
+sessionInfo()
+```
