@@ -962,7 +962,7 @@ All analyses were run in R 4.5.3 [@r_core_team_2026]. The standard proportional 
 
 # Acknowledgements
 
-We thank Caroline Bach for reading the manuscript and for her comments on its clarity.
+We thank Enrico R. Crema, Roberto Ragno and Caroline Bach for their comments on the manuscript.
 
 # Funding information
 
