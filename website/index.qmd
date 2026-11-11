@@ -35,7 +35,7 @@ format:
 :::
 
 ::: {.paper-status}
-**{{< var version-label >}}.** The paper will be submitted to the *Journal of Computer Applications in Archaeology*. This page summarises the argument and the main results. The manuscript and the supplements are the authoritative sources for methods, numbers and diagnostics.
+**{{< var version-label >}}.** The paper will be submitted to the *Journal of Archaeological Science*. This page summarises the argument and the main results. The manuscript and the supplements are the authoritative sources for methods, numbers and diagnostics.
 :::
 
 ## Overview {#overview}
@@ -295,14 +295,14 @@ The phase correction is implemented as `period_correction` in the R package [aor
 ::: {.citation-box}
 ### Suggested citation
 
-Hinz, Martin, and Nils Müller-Scheeßel. *Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions*. Manuscript submitted to the *Journal of Computer Applications in Archaeology*, 2026. Code, data and supplements: Zenodo, doi:… (TODO).
+Hinz, Martin, and Nils Müller-Scheeßel. *Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions*. Manuscript to be submitted to the *Journal of Archaeological Science*, 2026. Code, data and supplements: Zenodo, doi:… (TODO).
 
 ```bibtex
 @unpublished{hinz_mueller-scheessel_aoristic_bias,
   author = {Hinz, Martin and Müller-Scheeßel, Nils},
   title  = {Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions},
   year   = {2026},
-  note   = {Manuscript submitted to the Journal of Computer Applications in Archaeology},
+  note   = {Manuscript to be submitted to the Journal of Archaeological Science},
   url    = {https://isaakiel.github.io/aoristic_overlap_bias_paper/}
 }
 ```
