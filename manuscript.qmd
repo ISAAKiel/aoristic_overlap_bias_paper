@@ -29,7 +29,7 @@ execute:
   warning: false
   message: false
 bibliography: bibliography/bibliography.bib
-csl: bibliography/journal-of-computer-applications-in-archaeology.csl
+csl: bibliography/elsevier-harvard.csl
 lang: en-GB
 ---
 ```{r setup}
