@@ -68,7 +68,6 @@ s4_top <- s4_out("interval_concentration") |>
 s4_overlap <- s4_out("overlap_diagnostics")
 s4_overlap_cor <- function(m) s4_overlap$overlap_curve_correlation[s4_overlap$method == m]
 
-s4_xronos <- s4_out("xronos_diagnostics")
 # Correlations with the SPD within the common Neolithic window (see Supplement 4).
 s4_xronos_cor <- function(m) {
   r <- s4_out("xronos_robustness")
@@ -90,24 +89,16 @@ s4_baorista_peak <- paste0(
 
 s4_amp <- function(m) s4_overlap$overlap_relative_amplitude[s4_overlap$method == m]
 
-# Baorista fits for the Danish data that missed the convergence criterion
-s4_rhat <- purrr::map_dbl(c(1, 10), function(rate) {
-  d <- s4_out(paste0("baorista_rate_", rate, "_diagnostics"))
-  as.numeric(d$value[d$diagnostic == "max_rhat"])
-})
-
 s4_rob <- s4_out("xronos_robustness")
 s4_rob_val <- function(window, comparison, col) {
   s4_rob[[col]][s4_rob$window == window & s4_rob$comparison == comparison]
 }
 fmt_p <- function(p) if (p < 0.001) "< 0.001" else formatC(p, format = "f", digits = 3)
-s4_W <- "Common Neolithic window"
 s4_diff <- "Difference: phase-corrected minus standard"
 s4_windows <- c("Common Neolithic window", "Analytical window")
 s4_diff_p <- sapply(s4_windows, function(w) s4_rob_val(w, s4_diff, "p_surrogate"))
 
 s4_dedup <- readr::read_csv("data/xronos_denmark_dedup_report.csv", show_col_types = FALSE)
-s4_c14_raw <- s4_dedup$raw_records
 s4_c14_final <- s4_dedup$after_determination_deduplication
 
 # Supplement 1 (uniform simulation, standard reconstruction)
@@ -117,7 +108,7 @@ s1_c <- function(pattern) s1_cor$value[grepl(pattern, s1_cor$metric)][1]
 s1_f <- function(pattern) s1_fit$value[grepl(pattern, s1_fit$metric)][1]
 
 # Supplement 6 (assignment models): share of the systematic error of the
-
+# standard reconstruction that the correction removes
 s6_exp <- readr::read_csv("supplements/outputs/s6_expected_metrics.csv", show_col_types = FALSE)
 s6_u <- s6_exp[s6_exp$pattern == "uniform" & s6_exp$model != "M0_uniform", ]
 s6_red <- sapply(split(s6_u, s6_u$model), function(d) {
@@ -125,9 +116,7 @@ s6_red <- sapply(split(s6_u, s6_u$model), function(d) {
 })
 
 # Supplement 6, Danish catalogue: concentration of label use.
-s6_dk_meta <- readr::read_csv("supplements/outputs/s6_danish_run_metadata.csv", show_col_types = FALSE)
 s6_dk_use <- readr::read_csv("supplements/outputs/s6_danish_label_use.csv", show_col_types = FALSE)
-s6_dk_obs_top2 <- as.numeric(s6_dk_meta$value[s6_dk_meta$setting == "observed_share_top2"])
 s6_dk_d0_top2 <- s6_dk_use$share_top2_median[s6_dk_use$model == "D0_uniform"]
 ```
 
@@ -186,13 +175,6 @@ s2_val <- function(method, col) {
 # Errors in per cent of the mean bin density (fmt_rel); A_lambda via fmt_pct
 n_bins <- nrow(readr::read_csv("supplements/outputs/s2_reconstruction_curves_binned.csv", show_col_types = FALSE))
 fmt_rel <- function(x) paste0(formatC(100 * x * n_bins, format = "f", digits = 1), "%")
-
-# Error of the uniform signal by sample size: 1,000 events (S3, median of the
-# repeated runs), 10,000 events (S2) and the infinite-sample limit (S6, M0).
-s3_unif <- readr::read_csv("supplements/outputs/s3_sensitivity_summary.csv", show_col_types = FALSE)
-s3_unif <- s3_unif[s3_unif$pattern == "uniform", ]
-s3_unif_rmsd <- function(m) s3_unif$median_rmsd[s3_unif$method == m]
-s6_inf_rmsd <- function(m) s6_exp$rmsd[s6_exp$model == "M0_uniform" & s6_exp$pattern == "uniform" & s6_exp$method == m]
 ```
 
 # Abstract
@@ -970,7 +952,7 @@ Aoristic reconstruction inherits the structure of the chronological classificati
 
 The phase-corrected weighting follows from a simple model of label assignment and requires only the intervals already recorded. In the simulations it brought the reconstruction close to the ground truth for most signals and assignment models, but it can dampen real structure that coincides with the overlap geometry. In both empirical datasets it reduced the coupling to the interval structure. It moved the Danish reconstruction towards an independent radiocarbon record, and in the Hallstatt data a deviation that persisted after the correction pointed to the absolute length of one phase. Aoristic studies based on phase-dated data should therefore report the overlap structure of their intervals and the phase-corrected reconstruction alongside the standard one.
 
-# Data and code availability
+# Data availability
 
 All data, code and supplementary analyses are available at https://github.com/ISAAKiel/aoristic_overlap_bias_paper and archived at Zenodo (DOI: …). The Danish settlement data derive from the national register Fund og Fortidsminder [@slks_fund_og_fortidsminder, data downloaded 5 April 2018], the radiocarbon dates from XRONOS [@roeXRONOSOpenData2025]. The supplementary materials are executable Quarto documents from which every number and figure can be regenerated, as described in the repository README.
 
@@ -986,19 +968,19 @@ We thank Caroline Bach for reading the manuscript and for her comments on its cl
 
 The contribution of Martin Hinz to this research was funded by the European Research Council (ERC) through the project ESTER (ERC-2024-COG 101171036). The contribution of Nils Müller-Scheeßel took place within the scope of the Cluster of Excellence ROOTS, funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) under Germany's Excellence Strategy – EXC 2150 – 390870439.
 
-# Competing interests
+# Declaration of competing interest
 
 The authors are the developers of the open-source R package aoristAAR, which implements the phase-corrected weighting evaluated in this article. They have no other competing interests to declare.
 
-# Authors' contributions
+# CRediT authorship contribution statement
 
-Martin Hinz: conceptualisation, methodology, software, formal analysis of the simulations and the Danish case study, writing (original draft). Nils Müller-Scheeßel: conceptualisation, data curation and analysis of the Hallstatt case study, writing (review and editing). Both authors approved the final manuscript.
+**Martin Hinz:** Conceptualization, Methodology, Software, Formal analysis (simulations, Danish case study), Writing – original draft. **Nils Müller-Scheeßel:** Conceptualization, Data curation, Formal analysis (Hallstatt case study), Writing – review & editing. Both authors approved the final manuscript.
+
+# Declaration of generative AI and AI-assisted technologies in the writing process
+
+During the preparation of this work the authors used Claude (Anthropic) in order to edit the language of the manuscript and the supplements, to optimise the R code of the supplementary analyses and as a simulated peer reviewer, reading the manuscript critically for internal consistency, clarity and likely objections. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the publication.
 
 # References
 
 ::: {#refs}
 :::
-
-# Declaration of AI use
-
-During the preparation of this work, the authors used Claude (Anthropic) to edit the language of the manuscript and the supplements, to optimise the R code of the supplementary analyses, and as a simulated peer reviewer, i.e. to read the manuscript critically for internal consistency, clarity and likely objections. All suggestions were checked and, where necessary, revised by the authors, who take full responsibility for the content of the publication.
