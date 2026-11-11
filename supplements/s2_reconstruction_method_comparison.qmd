@@ -48,7 +48,7 @@ The central question of this supplement is:
 
 ## Computation
 
-The Baorista fit is computed with `scripts/run_s2_baorista.R` (`make refresh-s2-baorista`), and this document reads its results from `outputs/`. All other results are computed here. The full reproduction workflow is described in the README.
+The Baorista fit is computed with `scripts/run_s2_baorista.R` (`make refresh-s2-baorista`), its prior sensitivity with `scripts/run_s2_baorista_sensitivity.sh` (`make refresh-s2-baorista-sensitivity`), and this document reads their results from `outputs/`. All other results are computed here. The full reproduction workflow is described in the README.
 
 # Packages
 
@@ -659,7 +659,7 @@ Correlations measure whether a reconstruction or its error has the *shape* of th
 - the **overlap-attributable RMSD**, $|\mathrm{cor}(E, \lambda)| \cdot \mathrm{sd}(E)$, i.e. the root-mean-square size of the part of the error $E(t) = R(t) - G(t)$ that varies linearly with the overlap curve. It is on the same scale as the RMSD, and its ratio to the RMSD gives the share of the error attributable to the overlap structure;
 - the **overlap-aligned relative amplitude**, $|\beta| \cdot \mathrm{sd}(\lambda) / \bar R$, with $\beta$ the slope of $R$ on $\lambda$: the change in reconstructed density, as a fraction of the mean density, when the overlap increases by one standard deviation.
 
-Under the uniform ground truth, $G$ is constant, so the correlation of the error with the overlap curve is identical to the correlation of the reconstruction with it, so only one of the two is shown in the table above. Because all curves are normalised to the same total, the mean error is zero and $\mathrm{sd}(E)$ equals the RMSD, and the share of the RMSD attributable to the overlap structure equals the absolute correlation $|\mathrm{cor}(E, \lambda)|$ in the table below.
+Under the uniform ground truth, $G$ is constant, so the correlation of the error with the overlap curve is identical to the correlation of the reconstruction with it. Only one of the two is therefore shown in the table above. Because all curves are normalised to the same total, the mean error is zero and $\mathrm{sd}(E)$ equals the RMSD, and the share of the RMSD attributable to the overlap structure equals the absolute correlation $|\mathrm{cor}(E, \lambda)|$ in the table below.
 
 ```{r}
 #| label: tbl-s2-overlap-strength
@@ -745,13 +745,73 @@ p_errors <- ggplot(plot_errors, aes(x = year, y = error, linetype = method)) +
 p_errors
 ```
 
+# Sensitivity of Baorista to the smoothing prior
+
+The prior on the ICAR scale parameter $\sigma$ sets the precision $\tau = 1/\sigma^2$ of the smoothing prior, and there is no general default for it. Supplements 4 and 5 test its influence on the empirical data. Here the true curve is known, so the same test shows whether the peak in the region of high overlap depends on this choice. The model is refitted with the same rates as there (10, 50 and 100) and additionally with a rate of 1000, which enforces a very smooth curve. All other settings are unchanged.
+
+```{r}
+#| label: tbl-s2-baorista-prior
+#| tbl-cap: "Baorista under different exponential priors on the ICAR scale parameter (uniform simulation). Measures as in the tables above, RMSD ×1000. The standard and phase-corrected reconstructions are given for comparison."
+s2_prior_rates <- c(1, 10, 50, 100, 1000)
+s2_prior_tag <- function(rate) if (rate == 1) "" else paste0("_rate_", rate)
+
+s2_prior_curves <- purrr::map_dfr(s2_prior_rates, function(rate) {
+  read_csv(paste0("outputs/s2_baorista", s2_prior_tag(rate), "_curve_binned.csv"),
+           show_col_types = FALSE) |>
+    transmute(year, rate = rate, value = normalise_curve(baorista))
+}) |>
+  left_join(curves_binned |> select(year, true, overlap), by = "year")
+
+s2_prior_rhat <- purrr::map_dbl(s2_prior_rates, function(rate) {
+  read_csv(paste0("outputs/s2_baorista", s2_prior_tag(rate), "_diagnostics.csv"),
+           show_col_types = FALSE) |>
+    filter(diagnostic == "max_rhat") |>
+    pull(value) |>
+    as.numeric()
+})
+
+prior_summary <- function(d) {
+  d |>
+    summarise(rmsd = 1000 * rmsd(value, true),
+              cor_overlap = safe_cor(value, overlap),
+              amplitude = overlap_relative_amplitude(value, overlap),
+              peak = max(value))
+}
+
+s2_prior_table <- s2_prior_curves |>
+  group_by(rate) |>
+  group_modify(~ prior_summary(.x)) |>
+  ungroup() |>
+  mutate(label = paste0("Baorista, rate ", rate), max_rhat = s2_prior_rhat)
+
+s2_prior_reference <- bind_rows(
+  curves_binned |> transmute(label = "Standard aoristic", value = normalise_curve(standard), true, overlap),
+  curves_binned |> transmute(label = "Phase-corrected", value = normalise_curve(phase_corrected), true, overlap)
+) |>
+  group_by(label) |>
+  group_modify(~ prior_summary(.x)) |>
+  ungroup() |>
+  mutate(max_rhat = NA_real_)
+
+bind_rows(s2_prior_table |> select(label, rmsd, cor_overlap, amplitude, peak, max_rhat),
+          s2_prior_reference |> select(label, rmsd, cor_overlap, amplitude, peak, max_rhat)) |>
+  mutate(max_rhat = if_else(is.na(max_rhat), "", format(round(max_rhat, 3), nsmall = 3))) |>
+  kbl(digits = 3,
+      col.names = c("Reconstruction", "RMSD", "Cor. with overlap", "Ampl.",
+                    "Highest bin", "Max. R-hat"))
+
+s2_pr <- function(rate, col) s2_prior_table[[col]][s2_prior_table$rate == rate]
+```
+
+Up to a rate of 100, the prior hardly matters. The highest bin falls only from `r round(s2_pr(1, "peak"), 3)` to `r round(s2_pr(100, "peak"), 3)`, as with 10,000 events the likelihood determines the shape of the curve. Only the strongest smoothing (rate 1000) lowers the peak noticeably. The curve then moves towards the standard reconstruction, with a correlation with the overlap curve of `r round(s2_pr(1000, "cor_overlap"), 3)`, and its overlap-aligned amplitude and error remain larger than those of the standard reconstruction.
+
 # Interpretation
 
 The comparison confirms Supplement 1. The standard reconstruction inherits the overlap structure of the catalogue, and the Monte Carlo reconstruction shows the uncertainty around the same expectation without changing it.
 
 In the controlled uniform scenario, the correction reduces the reconstruction error by about an order of magnitude. The phase-corrected curve is closest to the known ground truth and, by the magnitude-based measures, shows the weakest structural coupling to the phase catalogue. A faint trace of the overlap shape remains, but almost all of its magnitude is removed.
 
-Baorista deviates more strongly from the uniform truth than the phase-corrected reconstruction. Its correlation with the overlap curve is lower than that of the standard and Monte Carlo reconstructions, but its overlap-attributable RMSD and overlap-aligned amplitude are larger than those of the standard reconstruction.
+Baorista deviates more strongly from the uniform truth than the phase-corrected reconstruction. Its correlation with the overlap curve is lower than that of the standard and Monte Carlo reconstructions, but its overlap-attributable RMSD and overlap-aligned amplitude are larger than those of the standard reconstruction. This does not depend on the prior. Stronger smoothing lowers the peak but brings the curve closer to the standard reconstruction.
 
 Supplement 3 extends the comparison to non-uniform signals.
 

@@ -14,7 +14,7 @@ SUPPLEMENTS := \
 
 .PHONY: help site site-assets preview-site manuscript supplements paper all \
         clean-site clean-rendered clean data analysis \
-        sensitivity s6 s6-danish s6-hallstatt check-aoristaar refresh-s2-baorista refresh-s3-baorista \
+        sensitivity s6 s6-danish s6-hallstatt check-aoristaar refresh-s2-baorista refresh-s2-baorista-sensitivity refresh-s3-baorista \
         refresh-s4-baorista refresh-s5-baorista refresh-expensive check-tools
 
 # All analysis scripts expect to be run from supplements/.
@@ -35,6 +35,7 @@ help:
 	  '  make s6                Rerun the S6 assignment-model simulation only' \
 	  '  make s6-danish         Rerun the S6 simulation on the Danish catalogue (needs S4)' \
 	  '  make s6-hallstatt      Rerun the S6 simulation on the Hallstatt catalogue (needs S5)' \
+	  '  make refresh-s2-baorista-sensitivity  S2 Baorista with prior rates 10, 50, 100, 1000' \
 	  '  make refresh-expensive Rerun all Baorista fits (S2–S5; hours)' \
 	  '  make all               Render paper and website' \
 	  '  make clean-site        Remove docs/ and staged website assets' \
@@ -92,6 +93,10 @@ analysis: sensitivity s6
 refresh-s2-baorista:
 	$(SUPP) REFRESH_BAORISTA=true $(RSCRIPT) scripts/run_s2_baorista.R
 
+# Prior sensitivity of the S2 fit (rates 10, 50, 100, 1000)
+refresh-s2-baorista-sensitivity:
+	$(SUPP) bash scripts/run_s2_baorista_sensitivity.sh
+
 refresh-s3-baorista:
 	$(SUPP) REFRESH_BAORISTA=true $(RSCRIPT) scripts/run_s3_baorista_examples.R
 
@@ -103,7 +108,7 @@ refresh-s4-baorista:
 refresh-s5-baorista:
 	$(SUPP) bash scripts/run_s5_baorista_sensitivity.sh
 
-refresh-expensive: refresh-s2-baorista refresh-s3-baorista refresh-s4-baorista refresh-s5-baorista
+refresh-expensive: refresh-s2-baorista refresh-s2-baorista-sensitivity refresh-s3-baorista refresh-s4-baorista refresh-s5-baorista
 
 all: paper site
 
