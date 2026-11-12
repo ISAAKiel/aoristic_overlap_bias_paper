@@ -1,0 +1,32 @@
+{
+  "title": "Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions: research compendium",
+  "upload_type": "software",
+  "description": "<p>Research compendium for the paper “Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions” by Martin Hinz and Nils Müller-Scheeßel, prepared for submission to the Journal of Archaeological Science. It contains the manuscript, six executable Quarto supplements, the data and all code needed to reproduce the analyses.</p><p>Code is released under the MIT licence, text, figures and derived data under CC BY 4.0. Third-party data keep the licences of their providers (see README).</p>",
+  "creators": [
+    {
+      "name": "Hinz, Martin",
+      "affiliation": "Kiel University, Institute for Pre- and Protohistoric Archaeology",
+      "orcid": "0000-0002-9904-6548"
+    },
+    {
+      "name": "Müller-Scheeßel, Nils",
+      "affiliation": "Kiel University, Institute for Pre- and Protohistoric Archaeology",
+      "orcid": "0000-0001-7992-8722"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "keywords": [
+    "aoristic analysis",
+    "chronological uncertainty",
+    "archaeological phases",
+    "temporal frequency analysis",
+    "research compendium"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.15012694",
+      "relation": "references",
+      "scheme": "doi"
+    }
+  ]
+}
