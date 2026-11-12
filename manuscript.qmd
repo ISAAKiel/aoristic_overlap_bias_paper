@@ -24,6 +24,14 @@ format:
     toc: false
     fig-format: png
     fig-dpi: 300
+    include-in-header:
+      text: |
+        \usepackage{lineno}
+        \linenumbers
+  docx:
+    toc: false
+    fig-dpi: 300
+    reference-doc: templates/reference.docx
 execute:
   echo: false
   warning: false
@@ -177,6 +185,12 @@ n_bins <- nrow(readr::read_csv("supplements/outputs/s2_reconstruction_curves_bin
 fmt_rel <- function(x) paste0(formatC(100 * x * n_bins, format = "f", digits = 1), "%")
 ```
 
+::: {.content-visible unless-format="html"}
+Kiel University, Institute for Pre- and Protohistoric Archaeology, Johanna-Mestorf-Straße 2–6, 24118 Kiel, Germany (both authors)
+
+Corresponding author: Martin Hinz, martin.hinz@ufg.uni-kiel.de
+:::
+
 # Abstract
 
 Aoristic analysis is widely used in archaeology to aggregate observations dated to typological phases instead of calendar years. The standard approach and its Monte Carlo variants spread each observation uniformly over its time interval, treating intervals as neutral containers of chronological uncertainty. We show that this assumption fails when observations are assigned to overlapping, hierarchical phase catalogues. In simulations with a uniform event process, the standard aoristic sum reproduces the overlap structure of the catalogue almost exactly, whatever the sample size, and neither Monte Carlo aoristics nor a Bayesian reconstruction removes this bias. The reason is that archaeological dates are not coarsened at random, since the label an observation receives depends on its date. From a simple model in which an event is equally likely to receive any label covering its date, we derive a phase-corrected weighting that needs no further data. It reduces the reconstruction error by about an order of magnitude and performs at least as well as the standard approach for most non-uniform signals and assignment models, although it dampens real peaks that coincide with the overlap geometry. Applied to Danish Neolithic settlement records and to Early Iron Age burials from southern Germany, it largely removes the coupling to the interval structure. It moves the Danish reconstruction towards an independent radiocarbon record and suggests that one Iron Age phase was shorter than conventionally assumed. As site databases are increasingly used for demographic inference, chronological classification has to be treated as part of the data.
@@ -187,7 +201,7 @@ aoristic analysis; chronological uncertainty; archaeological phases; temporal fr
 
 # 1. Introduction
 
-Large datasets are increasingly used to study population dynamics, settlement intensity and long-term socio-ecological change [@kristiansen_towards_2014; @kintigh_grand_2014]. Summed probability distributions of radiocarbon dates [e.g. @birdP3k14cSyntheticGlobal2022; @hinz_radon_2012; @roeXRONOSOpenData2025] serve as proxies for past activity and population size [e.g. @hinz_demography_2012; @riede_climate_2009; @timpson_reconstructing_2014], and their sensitivity to calibration, sample selection and research history [@williams_use_2012; @contreras_summed_2014; @torfing_neolithic_2015] has led to simulation-based workflows [@martin_oxcaar:_2018; @bevan_rcarbon:_2018].
+Large datasets are increasingly used to study population dynamics, settlement intensity and long-term socio-ecological change [@kristiansen_towards_2014; @kintigh_grand_2014]. Summed probability distributions of radiocarbon dates [e.g. @birdP3k14cSyntheticGlobal2022; @hinz_radon_2012; @roeXRONOSOpenData2025] serve as proxies for past activity and population size [e.g. @hinz_demography_2012; @riede_climate_2009; @timpson_reconstructing_2014], and their sensitivity to calibration, sample selection and research history [@williams_use_2012; @contreras_summed_2014; @torfing_neolithic_2015] has led to simulation-based workflows [@bevan_rcarbon:_2018; @hinz_sensitivity_2020].
 
 A large part of the archaeological record, however, is not directly dated. Sites, finds, graves and features are assigned to typological, cultural or chronological phases, and because radiocarbon and other absolute dates are unevenly available, such phase-dated evidence is often the only basis for large-scale temporal frequency analysis [@contreras_summed_2014; @kolar_spatio-temporal_2016]. Regional and national site databases make it available in large quantities [@palmisano_comparing_2017; @lawrence_collapse_2021; @cooper_embracing_2016]. It is usually aggregated by aoristic analysis [@ratcliffe_aoristic_1998; @ratcliffe_aoristic_2000; @mischka_aoristische_2004; @johnson_aoristic_2004], which distributes each observation uniformly over its interval and sums these probabilities, or by Monte Carlo variants that draw possible dates from the same intervals [@crema_probabilistic_2010; @crema_modelling_2012; @kolar_spatio-temporal_2016].
 
@@ -960,13 +974,9 @@ All data, code and supplementary analyses are available at https://github.com/IS
 
 All analyses were run in R 4.5.3 [@r_core_team_2026]. The standard proportional and the phase-corrected aoristic reconstructions were computed with the R package aoristAAR [version 0.1.1, @hinz_aoristaar_2026], functions `aorist(method = "weight")` and `aorist(method = "period_correction")`. The Bayesian benchmark uses the R package baorista [@cremaBayesianAlternativeAoristic2025], fitted with NIMBLE [@devalpine_programming_2017]. Radiocarbon dates were retrieved with the R package xronos [@roeXRONOSOpenData2025] and calibrated and summed with rcarbon [@crema_inference_2021] using IntCal20 [@reimer_intcal20_2020]. All other analyses use the R code in the supplementary materials.
 
-# Acknowledgements
+# Funding
 
-We thank Enrico R. Crema, Roberto Ragno and Caroline Bach for their comments on the manuscript.
-
-# Funding information
-
-The contribution of Martin Hinz to this research was funded by the European Research Council (ERC) through the project ESTER (ERC-2024-COG 101171036). The contribution of Nils Müller-Scheeßel took place within the scope of the Cluster of Excellence ROOTS, funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) under Germany's Excellence Strategy – EXC 2150 – 390870439.
+This work was supported by the European Research Council [grant number 101171036, project ESTER] and the Deutsche Forschungsgemeinschaft under Germany's Excellence Strategy [EXC 2150 – 390870439, Cluster of Excellence ROOTS]. The funders had no role in study design, analysis, interpretation or the decision to publish.
 
 # Declaration of competing interest
 
@@ -976,9 +986,13 @@ The authors are the developers of the open-source R package aoristAAR, which imp
 
 **Martin Hinz:** Conceptualization, Methodology, Software, Formal analysis (simulations, Danish case study), Writing – original draft. **Nils Müller-Scheeßel:** Conceptualization, Data curation, Formal analysis (Hallstatt case study), Writing – review & editing. Both authors approved the final manuscript.
 
-# Declaration of generative AI and AI-assisted technologies in the writing process
+# Declaration of generative AI and AI-assisted technologies in the manuscript preparation process
 
-During the preparation of this work the authors used Claude (Anthropic) in order to edit the language of the manuscript and the supplements, to optimise the R code of the supplementary analyses and as a simulated peer reviewer, reading the manuscript critically for internal consistency, clarity and likely objections. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the publication.
+During the preparation of this work the authors used Claude (Anthropic) in order to edit the language of the manuscript and the supplements, to optimise the R code of the supplementary analyses and as a simulated peer reviewer, reading the manuscript critically for internal consistency, clarity and likely objections. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the published article.
+
+# Acknowledgements
+
+We thank Enrico R. Crema, Roberto Ragno and Caroline Bach for their comments on the manuscript.
 
 # References
 
