@@ -60,6 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -1211,7 +1212,7 @@ Table&nbsp;6: Simulations on the Hallstatt catalogue: median RMSD relative to th
 </section>
 <section id="outlook-iterated-correction" class="level1">
 <h1>Outlook: iterated correction</h1>
-<p>The flat prior is responsible for the dampening of central peaks and plateaus. An obvious generalisation replaces it with the current estimate of <span class="math inline">\(f\)</span> and iterates. This yields an expectation–maximisation (EM) estimator of the Richardson–Lucy type <span class="citation" data-cites="richardson_bayesian_1972 lucy_iterative_1974">(<a href="#ref-lucy_iterative_1974" role="doc-biblioref">Lucy 1974</a>; <a href="#ref-richardson_bayesian_1972" role="doc-biblioref">Richardson 1972</a>)</span>:</p>
+<p>The flat prior is responsible for the dampening of central peaks and plateaus. An obvious generalisation replaces it with the current estimate of <span class="math inline">\(f\)</span> and iterates. This yields an expectation–maximisation (EM) estimator of the Richardson–Lucy type <span class="citation" data-cites="richardson_bayesian_1972 lucy_iterative_1974">(<a href="#ref-lucy_iterative_1974" role="doc-biblioref">Lucy, 1974</a>; <a href="#ref-richardson_bayesian_1972" role="doc-biblioref">Richardson, 1972</a>)</span>:</p>
 <p><span class="math display">\[
 \hat f^{(k+1)}(t) \propto \sum_{j} n_j \, \frac{\hat f^{(k)}(t)\,\lambda(t)^{-1}\,\mathbf{1}(t \in J_j)}{\sum_{u \in J_j} \hat f^{(k)}(u)\,\lambda(u)^{-1}},
 \]</span></p>
@@ -1414,12 +1415,12 @@ loaded via a namespace (and not attached):
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-lucy_iterative_1974" class="csl-entry" role="listitem">
-Lucy, LB. 1974 An iterative technique for the rectification of observed distributions. <em>The Astronomical Journal</em> 79: 745–754. DOI: https://doi.org/<a href="https://doi.org/10.1086/111605">10.1086/111605</a>.
+Lucy, L.B., 1974. An iterative technique for the rectification of observed distributions. The Astronomical Journal 79, 745–754. <a href="https://doi.org/10.1086/111605">https://doi.org/10.1086/111605</a>
 </div>
 <div id="ref-richardson_bayesian_1972" class="csl-entry" role="listitem">
-Richardson, WH. 1972 Bayesian-based iterative method of image restoration. <em>Journal of the Optical Society of America</em> 62(1): 55–59. DOI: https://doi.org/<a href="https://doi.org/10.1364/JOSA.62.000055">10.1364/JOSA.62.000055</a>.
+Richardson, W.H., 1972. Bayesian-based iterative method of image restoration. Journal of the Optical Society of America 62, 55–59. <a href="https://doi.org/10.1364/JOSA.62.000055">https://doi.org/10.1364/JOSA.62.000055</a>
 </div>
 </div></section></div></main>
 <!-- /main column -->
@@ -1915,7 +1916,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
 <span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
 <span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../bibliography/bibliography.bib</span></span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> ../bibliography/journal-of-computer-applications-in-archaeology.csl</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> ../bibliography/elsevier-harvard.csl</span></span>
 <span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> en-GB</span></span>
 <span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a></span>

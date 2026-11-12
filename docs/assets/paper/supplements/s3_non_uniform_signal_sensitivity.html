@@ -60,6 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -322,7 +323,7 @@ window.Quarto = {
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"metric"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>As in Supplement 2, Baorista <span class="citation" data-cites="cremaBayesianAlternativeAoristic2025">(<a href="#ref-cremaBayesianAlternativeAoristic2025" role="doc-biblioref">Crema 2025</a>)</span> is included as a model-based benchmark. It estimates the probability of events per time block under an intrinsic conditional autoregressive (ICAR) prior. As in the main text, we use an exponential prior with rate 1 on the ICAR scale parameter. Baorista was fitted to one example run per signal pattern, so these results should be interpreted as example-run benchmarks and are not part of the full repeated-simulation summary.</p>
+<p>As in Supplement 2, Baorista <span class="citation" data-cites="cremaBayesianAlternativeAoristic2025">(<a href="#ref-cremaBayesianAlternativeAoristic2025" role="doc-biblioref">Crema, 2025</a>)</span> is included as a model-based benchmark. It estimates the probability of events per time block under an intrinsic conditional autoregressive (ICAR) prior. As in the main text, we use an exponential prior with rate 1 on the ICAR scale parameter. Baorista was fitted to one example run per signal pattern, so these results should be interpreted as example-run benchmarks and are not part of the full repeated-simulation summary.</p>
 </section>
 <section id="ground-truth-signal-shapes" class="level1">
 <h1>Ground-truth signal shapes</h1>
@@ -548,7 +549,7 @@ Figure&nbsp;4: Baorista posterior median and 95% credible interval for the examp
 </div>
 <section id="convergence-of-the-baorista-fits" class="level2">
 <h2 class="anchored" data-anchor-id="convergence-of-the-baorista-fits">Convergence of the Baorista fits</h2>
-<p>Each example-run fit uses four MCMC chains. A fit is accepted if the largest Gelman–Rubin statistic <span class="math inline">\(\hat R\)</span> <span class="citation" data-cites="gelman_inference_1992">(<a href="#ref-gelman_inference_1992" role="doc-biblioref">Gelman and Rubin 1992</a>)</span> does not exceed the criterion given in the table. Otherwise, the model is refitted with twice the number of iterations (up to three attempts in total).</p>
+<p>Each example-run fit uses four MCMC chains. A fit is accepted if the largest Gelman–Rubin statistic <span class="math inline">\(\hat R\)</span> <span class="citation" data-cites="gelman_inference_1992">(<a href="#ref-gelman_inference_1992" role="doc-biblioref">Gelman and Rubin, 1992</a>)</span> does not exceed the criterion given in the table. Otherwise, the model is refitted with twice the number of iterations (up to three attempts in total).</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1771,12 +1772,12 @@ loaded via a namespace (and not attached):
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-cremaBayesianAlternativeAoristic2025" class="csl-entry" role="listitem">
-Crema, ER. 2025 A <span>Bayesian</span> alternative for aoristic analyses in archaeology. <em>Archaeometry</em> 67(S1): 7–30. DOI: https://doi.org/<a href="https://doi.org/10.1111/arcm.12984">10.1111/arcm.12984</a>.
+Crema, E.R., 2025. A <span>Bayesian</span> alternative for aoristic analyses in archaeology. Archaeometry 67, 7–30. <a href="https://doi.org/10.1111/arcm.12984">https://doi.org/10.1111/arcm.12984</a>
 </div>
 <div id="ref-gelman_inference_1992" class="csl-entry" role="listitem">
-Gelman, A and Rubin, DB. 1992 Inference from iterative simulation using multiple sequences. <em>Statistical Science</em> 7(4): 457–472. DOI: https://doi.org/<a href="https://doi.org/10.1214/ss/1177011136">10.1214/ss/1177011136</a>.
+Gelman, A., Rubin, D.B., 1992. Inference from iterative simulation using multiple sequences. Statistical Science 7, 457–472. <a href="https://doi.org/10.1214/ss/1177011136">https://doi.org/10.1214/ss/1177011136</a>
 </div>
 </div></section></div></main>
 <!-- /main column -->
@@ -2272,7 +2273,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
 <span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
 <span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../bibliography/bibliography.bib</span></span>
-<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> ../bibliography/journal-of-computer-applications-in-archaeology.csl</span></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> ../bibliography/elsevier-harvard.csl</span></span>
 <span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> en-GB</span></span>
 <span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a></span>

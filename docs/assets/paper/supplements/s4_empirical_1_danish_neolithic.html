@@ -60,6 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -204,8 +205,8 @@ window.Quarto = {
 <li>the standard proportional aoristic reconstruction;</li>
 <li>the Monte Carlo aoristic reconstruction;</li>
 <li>the phase-corrected aoristic reconstruction;</li>
-<li>a Bayesian reconstruction with Baorista <span class="citation" data-cites="cremaBayesianAlternativeAoristic2025">(<a href="#ref-cremaBayesianAlternativeAoristic2025" role="doc-biblioref">Crema 2025</a>)</span>, the model-based benchmark already used in Supplements 2 and 3, based on the same chronological intervals;</li>
-<li>an external summed calibration of Danish radiocarbon dates for settlements from the XRONOS database <span class="citation" data-cites="roeXRONOSOpenData2025">(<a href="#ref-roeXRONOSOpenData2025" role="doc-biblioref">Roe et al. 2025</a>)</span>.</li>
+<li>a Bayesian reconstruction with Baorista <span class="citation" data-cites="cremaBayesianAlternativeAoristic2025">(<a href="#ref-cremaBayesianAlternativeAoristic2025" role="doc-biblioref">Crema, 2025</a>)</span>, the model-based benchmark already used in Supplements 2 and 3, based on the same chronological intervals;</li>
+<li>an external summed calibration of Danish radiocarbon dates for settlements from the XRONOS database <span class="citation" data-cites="roeXRONOSOpenData2025">(<a href="#ref-roeXRONOSOpenData2025" role="doc-biblioref">Roe et al., 2025</a>)</span>.</li>
 </ol>
 <p>In particular, we ask whether peaks, troughs and trends of the reconstruction follow the structure of the chronological classification.</p>
 <p>The radiocarbon dates are no ground truth. They cover only part of the sites, have their own taphonomic, research-historical and sampling biases, and summed probability distributions (SPDs) are a problematic summary of them. Their biases, however, differ from those of the phase system, so agreement with an SPD is informative about the mechanism examined here.</p>
@@ -328,7 +329,7 @@ window.Quarto = {
 </section>
 <section id="input-data" class="level1">
 <h1>Input data</h1>
-<p>This supplement uses an empirical dataset of Danish Neolithic settlements. The data derive from the Danish national register of sites and monuments, <em>Fund og Fortidsminder</em> <span class="citation" data-cites="slks_fund_og_fortidsminder">(<a href="#ref-slks_fund_og_fortidsminder" role="doc-biblioref">Slots- og Kulturstyrelsen 2018</a>, data downloaded 5 April 2018)</span>. The full export (<code>data/anlaeg_all.csv</code>) is reduced to Neolithic settlement records by <code>scripts/prepare_s4_danish_settlements.R</code>, which writes <code>data/anlaeg_settlements.csv</code>, the input of this supplement. For each observation, a beginning and an end date are given. Dates before the common era are represented by negative values.</p>
+<p>This supplement uses an empirical dataset of Danish Neolithic settlements. The data derive from the Danish national register of sites and monuments, <em>Fund og Fortidsminder</em> <span class="citation" data-cites="slks_fund_og_fortidsminder">(<a href="#ref-slks_fund_og_fortidsminder" role="doc-biblioref">Slots- og Kulturstyrelsen, 2018</a>, data downloaded 5 April 2018)</span>. The full export (<code>data/anlaeg_all.csv</code>) is reduced to Neolithic settlement records by <code>scripts/prepare_s4_danish_settlements.R</code>, which writes <code>data/anlaeg_settlements.csv</code>, the input of this supplement. For each observation, a beginning and an end date are given. Dates before the common era are represented by negative values.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1096,7 +1097,7 @@ Figure&nbsp;7: Baorista reconstructions under four priors for the ICAR scale par
 </div>
 </div>
 </div>
-<p>The fits with prior rates 1 and 10 did not reach the convergence criterion after 3 attempts (maximum R-hat 1.08 and 1.05) and are reported but flagged. The peak discussed below appears in all four fits, including the converged ones. The prior affects amplitude and smoothness but leaves the qualitative shape unchanged. As the exponential rate rises, the dominant peak flattens, secondary variation shrinks, and the posterior intervals narrow. Depending on the prior, the maximum of the posterior median falls in the 50-year blocks 2900–2851 BCE and 2850–2801 BCE, i.e.&nbsp;in the century immediately before 2800 BCE. A secondary concentration sits immediately before 3300 BCE, another boundary where frequently repeated ranges end. This is the behaviour expected for interval-censored data. Likelihood-based estimates concentrate probability mass on the intersections of the observed intervals <span class="citation" data-cites="turnbull_empirical_1976">(the Turnbull intervals, <a href="#ref-turnbull_empirical_1976" role="doc-biblioref">Turnbull 1976</a>)</span>, and where many intervals share an end point these intersections sit immediately before it.</p>
+<p>The fits with prior rates 1 and 10 did not reach the convergence criterion after 3 attempts (maximum R-hat 1.08 and 1.05) and are reported but flagged. The peak discussed below appears in all four fits, including the converged ones. The prior affects amplitude and smoothness but leaves the qualitative shape unchanged. As the exponential rate rises, the dominant peak flattens, secondary variation shrinks, and the posterior intervals narrow. Depending on the prior, the maximum of the posterior median falls in the 50-year blocks 2900–2851 BCE and 2850–2801 BCE, i.e.&nbsp;in the century immediately before 2800 BCE. A secondary concentration sits immediately before 3300 BCE, another boundary where frequently repeated ranges end. This is the behaviour expected for interval-censored data. Likelihood-based estimates concentrate probability mass on the intersections of the observed intervals <span class="citation" data-cites="turnbull_empirical_1976">(the Turnbull intervals, <a href="#ref-turnbull_empirical_1976" role="doc-biblioref">Turnbull, 1976</a>)</span>, and where many intervals share an end point these intersections sit immediately before it.</p>
 <p>Because the peak persists across very different priors, it is not caused by the smoothing prior. This does not mean, however, that it reflects past activity. Robustness to the prior and robustness to the chronological observations are two different properties, and only the first has been tested here. All four models condition on the same empirical interval catalogue, and the peak lies immediately before a major shared boundary at 2800 BCE, where many frequently repeated ranges terminate.</p>
 <p>The rate-1 model retains the original Baorista prior and serves as the reference reconstruction in the method comparisons below. It is used only to keep the figures readable.</p>
 </section>
@@ -1606,7 +1607,7 @@ Table&nbsp;5: Danish Neolithic settlement data: pairwise comparison of the recon
 </section>
 <section id="additional-comparison-radiocarbon-evidence" class="level1">
 <h1>Additional comparison: radiocarbon evidence</h1>
-<p>As an external comparison, we use settlement-related radiocarbon dates from Denmark available through XRONOS <span class="citation" data-cites="roeXRONOSOpenData2025">(<a href="#ref-roeXRONOSOpenData2025" role="doc-biblioref">Roe et al. 2025</a>)</span>, retrieved with the <code>xronos</code> R package on 19 June 2026 and included in the repository. Since the empirical aoristic dataset covers Denmark as a whole, the XRONOS comparison is also extracted at the country level.</p>
+<p>As an external comparison, we use settlement-related radiocarbon dates from Denmark available through XRONOS <span class="citation" data-cites="roeXRONOSOpenData2025">(<a href="#ref-roeXRONOSOpenData2025" role="doc-biblioref">Roe et al., 2025</a>)</span>, retrieved with the <code>xronos</code> R package on 19 June 2026 and included in the repository. Since the empirical aoristic dataset covers Denmark as a whole, the XRONOS comparison is also extracted at the country level.</p>
 <p>To reduce the influence of sites with many radiocarbon determinations, the summed calibration is binned by site name, so that each site contributes as one bin.</p>
 <section id="xronos-data-and-deduplication" class="level2">
 <h2 class="anchored" data-anchor-id="xronos-data-and-deduplication">XRONOS data and deduplication</h2>
@@ -1763,7 +1764,7 @@ Table&nbsp;6: Selection and deduplication of the Danish XRONOS radiocarbon dates
 </section>
 <section id="calibration-and-summed-probability-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="calibration-and-summed-probability-distribution">Calibration and summed probability distribution</h2>
-<p>The deduplicated radiocarbon data are calibrated using <code>rcarbon</code> <span class="citation" data-cites="crema_inference_2021">(<a href="#ref-crema_inference_2021" role="doc-biblioref">Crema and Bevan 2021</a>)</span> and IntCal20 <span class="citation" data-cites="reimer_intcal20_2020">(<a href="#ref-reimer_intcal20_2020" role="doc-biblioref">Reimer et al. 2020</a>)</span>. Again using <code>rcarbon</code>, we sum the resulting probability distribution, while binning by site name. The summed calibration is generated over a wider window than the aoristic reconstruction to avoid edge effects.</p>
+<p>The deduplicated radiocarbon data are calibrated using <code>rcarbon</code> <span class="citation" data-cites="crema_inference_2021">(<a href="#ref-crema_inference_2021" role="doc-biblioref">Crema and Bevan, 2021</a>)</span> and IntCal20 <span class="citation" data-cites="reimer_intcal20_2020">(<a href="#ref-reimer_intcal20_2020" role="doc-biblioref">Reimer et al., 2020</a>)</span>. Again using <code>rcarbon</code>, we sum the resulting probability distribution, while binning by site name. The summed calibration is generated over a wider window than the aoristic reconstruction to avoid edge effects.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -2020,7 +2021,7 @@ Table&nbsp;7: Correlation of the reconstructions with the XRONOS SPD in the comm
 </section>
 <section id="robustness-of-the-radiocarbon-comparison" class="level2">
 <h2 class="anchored" data-anchor-id="robustness-of-the-radiocarbon-comparison">Robustness of the radiocarbon comparison</h2>
-<p>The correlations above are computed over 43 bins of 50 years. Neighbouring bins are strongly autocorrelated, above all in the SPD, so a conventional significance test would be far too optimistic. We therefore compare the observed correlations with those obtained for surrogate SPDs that keep the power spectrum, and thus the autocorrelation, of the observed SPD but have randomised Fourier phases <span class="citation" data-cites="theiler_testing_1992">(<a href="#ref-theiler_testing_1992" role="doc-biblioref">Theiler et al. 1992</a>)</span>. Since the same surrogates are used for all methods, the test can also be applied to the difference between the correlations of the phase-corrected and the standard reconstruction, which is the actual question of the comparison.</p>
+<p>The correlations above are computed over 43 bins of 50 years. Neighbouring bins are strongly autocorrelated, above all in the SPD, so a conventional significance test would be far too optimistic. We therefore compare the observed correlations with those obtained for surrogate SPDs that keep the power spectrum, and thus the autocorrelation, of the observed SPD but have randomised Fourier phases <span class="citation" data-cites="theiler_testing_1992">(<a href="#ref-theiler_testing_1992" role="doc-biblioref">Theiler et al., 1992</a>)</span>. Since the same surrogates are used for all methods, the test can also be applied to the difference between the correlations of the phase-corrected and the standard reconstruction, which is the actual question of the comparison.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -2225,27 +2226,27 @@ loaded via a namespace (and not attached):
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-cremaBayesianAlternativeAoristic2025" class="csl-entry" role="listitem">
-Crema, ER. 2025 A <span>Bayesian</span> alternative for aoristic analyses in archaeology. <em>Archaeometry</em> 67(S1): 7–30. DOI: https://doi.org/<a href="https://doi.org/10.1111/arcm.12984">10.1111/arcm.12984</a>.
+Crema, E.R., 2025. A <span>Bayesian</span> alternative for aoristic analyses in archaeology. Archaeometry 67, 7–30. <a href="https://doi.org/10.1111/arcm.12984">https://doi.org/10.1111/arcm.12984</a>
 </div>
 <div id="ref-crema_inference_2021" class="csl-entry" role="listitem">
-Crema, ER and Bevan, A. 2021 Inference from large sets of radiocarbon dates: Software and methods. <em>Radiocarbon</em> 63(1): 23–39. DOI: https://doi.org/<a href="https://doi.org/10.1017/RDC.2020.95">10.1017/RDC.2020.95</a>.
+Crema, E.R., Bevan, A., 2021. Inference from large sets of radiocarbon dates: Software and methods. Radiocarbon 63, 23–39. <a href="https://doi.org/10.1017/RDC.2020.95">https://doi.org/10.1017/RDC.2020.95</a>
 </div>
 <div id="ref-reimer_intcal20_2020" class="csl-entry" role="listitem">
-Reimer, PJ, Austin, WEN, Bard, E, Bayliss, A, Blackwell, PG, Bronk Ramsey, C, Butzin, M, Cheng, H, Edwards, RL, Friedrich, M, Grootes, PM, Guilderson, TP, Hajdas, I, Heaton, TJ, Hogg, AG, Hughen, KA, Kromer, B, Manning, SW, Muscheler, R, Palmer, JG, Pearson, C, van der Plicht, J, Reimer, RW, Richards, DA, Scott, EM, Southon, JR, Turney, CSM, Wacker, L, Adolphi, F, Büntgen, U, Capano, M, Fahrni, SM, Fogtmann-Schulz, A, Friedrich, R, Köhler, P, Kudsk, S, Miyake, F, Olsen, J, Reinig, F, Sakamoto, M, Sookdeo, A and Talamo, S. 2020 The <span>IntCal20</span> <span>Northern</span> <span>Hemisphere</span> radiocarbon age calibration curve (0–55 cal <span class="nocase">kBP</span>). <em>Radiocarbon</em> 62(4): 725–757. DOI: https://doi.org/<a href="https://doi.org/10.1017/RDC.2020.41">10.1017/RDC.2020.41</a>.
+Reimer, P.J., Austin, W.E.N., Bard, E., Bayliss, A., Blackwell, P.G., Bronk Ramsey, C., Butzin, M., Cheng, H., Edwards, R.L., Friedrich, M., Grootes, P.M., Guilderson, T.P., Hajdas, I., Heaton, T.J., Hogg, A.G., Hughen, K.A., Kromer, B., Manning, S.W., Muscheler, R., Palmer, J.G., Pearson, C., van der Plicht, J., Reimer, R.W., Richards, D.A., Scott, E.M., Southon, J.R., Turney, C.S.M., Wacker, L., Adolphi, F., Büntgen, U., Capano, M., Fahrni, S.M., Fogtmann-Schulz, A., Friedrich, R., Köhler, P., Kudsk, S., Miyake, F., Olsen, J., Reinig, F., Sakamoto, M., Sookdeo, A., Talamo, S., 2020. The <span>IntCal20</span> <span>Northern</span> <span>Hemisphere</span> radiocarbon age calibration curve (0–55 cal <span class="nocase">kBP</span>). Radiocarbon 62, 725–757. <a href="https://doi.org/10.1017/RDC.2020.41">https://doi.org/10.1017/RDC.2020.41</a>
 </div>
 <div id="ref-roeXRONOSOpenData2025" class="csl-entry" role="listitem">
-Roe, J, Schmid, C, Ebrahimiabareghi, S, Heitz, C and Hinz, M. 2025 <span>XRONOS</span>: An open data infrastructure for archaeological chronology. <em>Journal of Computer Applications in Archaeology</em> 8(1): 242–263. DOI: https://doi.org/<a href="https://doi.org/10.5334/jcaa.191">10.5334/jcaa.191</a>.
+Roe, J., Schmid, C., Ebrahimiabareghi, S., Heitz, C., Hinz, M., 2025. <span>XRONOS</span>: An open data infrastructure for archaeological chronology. Journal of Computer Applications in Archaeology 8, 242–263. <a href="https://doi.org/10.5334/jcaa.191">https://doi.org/10.5334/jcaa.191</a>
 </div>
 <div id="ref-slks_fund_og_fortidsminder" class="csl-entry" role="listitem">
-Slots- og Kulturstyrelsen. 2018. <em>Fund og fortidsminder</em>. 2018. Available at <a href="https://www.kulturarv.dk/fundogfortidsminder/">https://www.kulturarv.dk/fundogfortidsminder/</a>.
+Slots- og Kulturstyrelsen, 2018. Fund og fortidsminder [WWW Document]. URL <a href="https://www.kulturarv.dk/fundogfortidsminder/">https://www.kulturarv.dk/fundogfortidsminder/</a>
 </div>
 <div id="ref-theiler_testing_1992" class="csl-entry" role="listitem">
-Theiler, J, Eubank, S, Longtin, A, Galdrikian, B and Farmer, JD. 1992 Testing for nonlinearity in time series: The method of surrogate data. <em>Physica D: Nonlinear Phenomena</em> 58(1–4): 77–94. DOI: https://doi.org/<a href="https://doi.org/10.1016/0167-2789(92)90102-S">10.1016/0167-2789(92)90102-S</a>.
+Theiler, J., Eubank, S., Longtin, A., Galdrikian, B., Farmer, J.D., 1992. Testing for nonlinearity in time series: The method of surrogate data. Physica D: Nonlinear Phenomena 58, 77–94. <a href="https://doi.org/10.1016/0167-2789(92)90102-S">https://doi.org/10.1016/0167-2789(92)90102-S</a>
 </div>
 <div id="ref-turnbull_empirical_1976" class="csl-entry" role="listitem">
-Turnbull, BW. 1976 The empirical distribution function with arbitrarily grouped, censored and truncated data. <em>Journal of the Royal Statistical Society. Series B (Methodological)</em> 38(3): 290–295. DOI: https://doi.org/<a href="https://doi.org/10.1111/j.2517-6161.1976.tb01597.x">10.1111/j.2517-6161.1976.tb01597.x</a>.
+Turnbull, B.W., 1976. The empirical distribution function with arbitrarily grouped, censored and truncated data. Journal of the Royal Statistical Society. Series B (Methodological) 38, 290–295. <a href="https://doi.org/10.1111/j.2517-6161.1976.tb01597.x">https://doi.org/10.1111/j.2517-6161.1976.tb01597.x</a>
 </div>
 </div></section></div></main>
 <!-- /main column -->
@@ -2741,7 +2742,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
 <span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
 <span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../bibliography/bibliography.bib</span></span>
-<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> ../bibliography/journal-of-computer-applications-in-archaeology.csl</span></span>
+<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> ../bibliography/elsevier-harvard.csl</span></span>
 <span id="cb49-23"><a href="#cb49-23" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> en-GB</span></span>
 <span id="cb49-24"><a href="#cb49-24" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb49-25"><a href="#cb49-25" aria-hidden="true" tabindex="-1"></a></span>

@@ -60,6 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -206,7 +207,7 @@ window.Quarto = {
 <li>Monte Carlo aoristic reconstruction;</li>
 <li>phase-corrected aoristic reconstruction.</li>
 </ol>
-<p>We also show the performance of Baorista <span class="citation" data-cites="cremaBayesianAlternativeAoristic2025">(<a href="#ref-cremaBayesianAlternativeAoristic2025" role="doc-biblioref">Crema 2025</a>)</span>. It serves as an external, model-based benchmark with a full representation of posterior uncertainty.</p>
+<p>We also show the performance of Baorista <span class="citation" data-cites="cremaBayesianAlternativeAoristic2025">(<a href="#ref-cremaBayesianAlternativeAoristic2025" role="doc-biblioref">Crema, 2025</a>)</span>. It serves as an external, model-based benchmark with a full representation of posterior uncertainty.</p>
 <p>The central question of this supplement is:</p>
 <blockquote class="blockquote">
 <p>Which reconstruction method is closer to the uniform generating process, and which remains more coupled to the overlap structure of the phase catalogue?</p>
@@ -419,7 +420,7 @@ Figure&nbsp;1: Uniform ground truth and overlap structure of the phase catalogue
 </div>
 <section id="convergence-of-the-baorista-fit" class="level2">
 <h2 class="anchored" data-anchor-id="convergence-of-the-baorista-fit">Convergence of the Baorista fit</h2>
-<p>The model is fitted by MCMC in NIMBLE <span class="citation" data-cites="devalpine_programming_2017">(<a href="#ref-devalpine_programming_2017" role="doc-biblioref">de Valpine et al. 2017</a>)</span> with four chains. Convergence is assessed with the Gelman–Rubin statistic <span class="math inline">\(\hat R\)</span> <span class="citation" data-cites="gelman_inference_1992">(<a href="#ref-gelman_inference_1992" role="doc-biblioref">Gelman and Rubin 1992</a>)</span> for all block probabilities. A fit is accepted if the largest <span class="math inline">\(\hat R\)</span> does not exceed the criterion given below. If it does, the model is refitted with twice the number of iterations (up to three attempts in total). The effective sample size (ESS) indicates how many independent draws the retained posterior sample corresponds to.</p>
+<p>The model is fitted by MCMC in NIMBLE <span class="citation" data-cites="devalpine_programming_2017">(<a href="#ref-devalpine_programming_2017" role="doc-biblioref">de Valpine et al., 2017</a>)</span> with four chains. Convergence is assessed with the Gelman–Rubin statistic <span class="math inline">\(\hat R\)</span> <span class="citation" data-cites="gelman_inference_1992">(<a href="#ref-gelman_inference_1992" role="doc-biblioref">Gelman and Rubin, 1992</a>)</span> for all block probabilities. A fit is accepted if the largest <span class="math inline">\(\hat R\)</span> does not exceed the criterion given below. If it does, the model is refitted with twice the number of iterations (up to three attempts in total). The effective sample size (ESS) indicates how many independent draws the retained posterior sample corresponds to.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1464,15 +1465,15 @@ loaded via a namespace (and not attached):
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-cremaBayesianAlternativeAoristic2025" class="csl-entry" role="listitem">
-Crema, ER. 2025 A <span>Bayesian</span> alternative for aoristic analyses in archaeology. <em>Archaeometry</em> 67(S1): 7–30. DOI: https://doi.org/<a href="https://doi.org/10.1111/arcm.12984">10.1111/arcm.12984</a>.
+Crema, E.R., 2025. A <span>Bayesian</span> alternative for aoristic analyses in archaeology. Archaeometry 67, 7–30. <a href="https://doi.org/10.1111/arcm.12984">https://doi.org/10.1111/arcm.12984</a>
 </div>
 <div id="ref-devalpine_programming_2017" class="csl-entry" role="listitem">
-de Valpine, P, Turek, D, Paciorek, CJ, Anderson-Bergman, C, Temple Lang, D and Bodik, R. 2017 Programming with models: Writing statistical algorithms for general model structures with <span>NIMBLE</span>. <em>Journal of Computational and Graphical Statistics</em> 26(2): 403–413. DOI: https://doi.org/<a href="https://doi.org/10.1080/10618600.2016.1172487">10.1080/10618600.2016.1172487</a>.
+de Valpine, P., Turek, D., Paciorek, C.J., Anderson-Bergman, C., Temple Lang, D., Bodik, R., 2017. Programming with models: Writing statistical algorithms for general model structures with <span>NIMBLE</span>. Journal of Computational and Graphical Statistics 26, 403–413. <a href="https://doi.org/10.1080/10618600.2016.1172487">https://doi.org/10.1080/10618600.2016.1172487</a>
 </div>
 <div id="ref-gelman_inference_1992" class="csl-entry" role="listitem">
-Gelman, A and Rubin, DB. 1992 Inference from iterative simulation using multiple sequences. <em>Statistical Science</em> 7(4): 457–472. DOI: https://doi.org/<a href="https://doi.org/10.1214/ss/1177011136">10.1214/ss/1177011136</a>.
+Gelman, A., Rubin, D.B., 1992. Inference from iterative simulation using multiple sequences. Statistical Science 7, 457–472. <a href="https://doi.org/10.1214/ss/1177011136">https://doi.org/10.1214/ss/1177011136</a>
 </div>
 </div></section></div></main>
 <!-- /main column -->
@@ -1968,7 +1969,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
 <span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
 <span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../bibliography/bibliography.bib</span></span>
-<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> ../bibliography/journal-of-computer-applications-in-archaeology.csl</span></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> ../bibliography/elsevier-harvard.csl</span></span>
 <span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> en-GB</span></span>
 <span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a></span>
