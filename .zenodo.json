@@ -26,7 +26,15 @@
     {
       "identifier": "10.5281/zenodo.15012694",
       "relation": "references",
-      "scheme": "doi"
+      "scheme": "doi",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "urn:nbn:de:bsz:21-opus-70996",
+      "relation": "references",
+      "scheme": "urn",
+      "resource_type": "dataset"
     }
-  ]
+  ],
+  "language": "eng"
 }
