@@ -295,7 +295,7 @@ The phase correction is implemented as `period_correction` in the R package [aor
 ::: {.citation-box}
 ### Suggested citation
 
-Hinz, Martin, and Nils Müller-Scheeßel. *Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions*. Manuscript to be submitted to the *Journal of Archaeological Science*, 2026. Code, data and supplements: Zenodo, doi:… (TODO).
+Hinz, Martin, and Nils Müller-Scheeßel. *Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions*. Manuscript to be submitted to the *Journal of Archaeological Science*, 2026. Code, data and supplements: Zenodo, [doi:10.5281/zenodo.24154578](https://doi.org/10.5281/zenodo.24154578).
 
 ```bibtex
 @unpublished{hinz_mueller-scheessel_aoristic_bias,

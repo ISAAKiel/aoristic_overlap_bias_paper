@@ -19,7 +19,6 @@ keywords:
   - chronological uncertainty
   - archaeological phases
   - temporal frequency analysis
-# Add after archiving:
-# doi: 10.5281/zenodo.XXXXXXX
-# version: 1.0.0
-# date-released: YYYY-MM-DD
+doi: 10.5281/zenodo.24154578
+version: 1.0.1
+date-released: 2026-11-12

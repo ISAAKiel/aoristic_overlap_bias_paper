@@ -954,7 +954,7 @@ The phase-corrected weighting follows from a simple model of label assignment an
 
 # Data availability
 
-All data, code and supplementary analyses are available at https://github.com/ISAAKiel/aoristic_overlap_bias_paper and archived at Zenodo (DOI: …). The Danish settlement data derive from the national register Fund og Fortidsminder [@slks_fund_og_fortidsminder, data downloaded 5 April 2018], the radiocarbon dates from XRONOS [@roeXRONOSOpenData2025]. The supplementary materials are executable Quarto documents from which every number and figure can be regenerated, as described in the repository README.
+All data, code and supplementary analyses are available at https://github.com/ISAAKiel/aoristic_overlap_bias_paper and archived at Zenodo (https://doi.org/10.5281/zenodo.24154578). The Danish settlement data derive from the national register Fund og Fortidsminder [@slks_fund_og_fortidsminder, data downloaded 5 April 2018], the radiocarbon dates from XRONOS [@roeXRONOSOpenData2025]. The supplementary materials are executable Quarto documents from which every number and figure can be regenerated, as described in the repository README.
 
 # Software availability
 

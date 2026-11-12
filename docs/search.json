@@ -53,7 +53,7 @@
     "href": "index.html#citation",
     "title": "\nWhen chronological classifications create archaeological signals\n",
     "section": "Citation",
-    "text": "Citation\n\nSuggested citation\nHinz, Martin, and Nils Müller-Scheeßel. Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions. Manuscript to be submitted to the Journal of Archaeological Science, 2026. Code, data and supplements: Zenodo, doi:… (TODO).\n@unpublished{hinz_mueller-scheessel_aoristic_bias,\n  author = {Hinz, Martin and Müller-Scheeßel, Nils},\n  title  = {Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions},\n  year   = {2026},\n  note   = {Manuscript to be submitted to the Journal of Archaeological Science},\n  url    = {https://isaakiel.github.io/aoristic_overlap_bias_paper/}\n}"
+    "text": "Citation\n\nSuggested citation\nHinz, Martin, and Nils Müller-Scheeßel. Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions. Manuscript to be submitted to the Journal of Archaeological Science, 2026. Code, data and supplements: Zenodo, doi:10.5281/zenodo.24154578.\n@unpublished{hinz_mueller-scheessel_aoristic_bias,\n  author = {Hinz, Martin and Müller-Scheeßel, Nils},\n  title  = {Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions},\n  year   = {2026},\n  note   = {Manuscript to be submitted to the Journal of Archaeological Science},\n  url    = {https://isaakiel.github.io/aoristic_overlap_bias_paper/}\n}"
   },
   {
     "objectID": "index.html#authors-and-funding",
