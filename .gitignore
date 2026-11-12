@@ -12,3 +12,6 @@ website/assets/
 /manuscript_files/
 supplements/*.html
 supplements/*_files/
+
+# temporary files from the file bridge
+.fuse_hidden*
