@@ -1,7 +1,7 @@
 {
   "title": "Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions: research compendium",
   "upload_type": "software",
-  "description": "<p>Research compendium for the paper “Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions” by Martin Hinz and Nils Müller-Scheeßel, prepared for submission to the Journal of Archaeological Science. It contains the manuscript, six executable Quarto supplements, the data and all code needed to reproduce the analyses.</p><p>Code is released under the MIT licence, text, figures and derived data under CC BY 4.0. Third-party data keep the licences of their providers (see README).</p>",
+  "description": "<p>Research compendium for the paper “Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions” by Martin Hinz and Nils Müller-Scheeßel, submitted to the Journal of Archaeological Science. It contains the manuscript, six executable Quarto supplements, the data and all code needed to reproduce the analyses.</p><p>Code is released under the MIT licence, text, figures and derived data under CC BY 4.0. Third-party data keep the licences of their providers (see README).</p>",
   "creators": [
     {
       "name": "Hinz, Martin",
