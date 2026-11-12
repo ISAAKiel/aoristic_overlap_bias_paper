@@ -29,7 +29,7 @@ execute:
   warning: false
   message: false
 bibliography: bibliography/bibliography.bib
-csl: bibliography/journal-of-computer-applications-in-archaeology.csl
+csl: bibliography/elsevier-harvard.csl
 lang: en-GB
 ---
 ```{r setup}
@@ -68,7 +68,6 @@ s4_top <- s4_out("interval_concentration") |>
 s4_overlap <- s4_out("overlap_diagnostics")
 s4_overlap_cor <- function(m) s4_overlap$overlap_curve_correlation[s4_overlap$method == m]
 
-s4_xronos <- s4_out("xronos_diagnostics")
 # Correlations with the SPD within the common Neolithic window (see Supplement 4).
 s4_xronos_cor <- function(m) {
   r <- s4_out("xronos_robustness")
@@ -90,24 +89,16 @@ s4_baorista_peak <- paste0(
 
 s4_amp <- function(m) s4_overlap$overlap_relative_amplitude[s4_overlap$method == m]
 
-# Baorista fits for the Danish data that missed the convergence criterion
-s4_rhat <- purrr::map_dbl(c(1, 10), function(rate) {
-  d <- s4_out(paste0("baorista_rate_", rate, "_diagnostics"))
-  as.numeric(d$value[d$diagnostic == "max_rhat"])
-})
-
 s4_rob <- s4_out("xronos_robustness")
 s4_rob_val <- function(window, comparison, col) {
   s4_rob[[col]][s4_rob$window == window & s4_rob$comparison == comparison]
 }
 fmt_p <- function(p) if (p < 0.001) "< 0.001" else formatC(p, format = "f", digits = 3)
-s4_W <- "Common Neolithic window"
 s4_diff <- "Difference: phase-corrected minus standard"
 s4_windows <- c("Common Neolithic window", "Analytical window")
 s4_diff_p <- sapply(s4_windows, function(w) s4_rob_val(w, s4_diff, "p_surrogate"))
 
 s4_dedup <- readr::read_csv("data/xronos_denmark_dedup_report.csv", show_col_types = FALSE)
-s4_c14_raw <- s4_dedup$raw_records
 s4_c14_final <- s4_dedup$after_determination_deduplication
 
 # Supplement 1 (uniform simulation, standard reconstruction)
@@ -117,7 +108,7 @@ s1_c <- function(pattern) s1_cor$value[grepl(pattern, s1_cor$metric)][1]
 s1_f <- function(pattern) s1_fit$value[grepl(pattern, s1_fit$metric)][1]
 
 # Supplement 6 (assignment models): share of the systematic error of the
-
+# standard reconstruction that the correction removes
 s6_exp <- readr::read_csv("supplements/outputs/s6_expected_metrics.csv", show_col_types = FALSE)
 s6_u <- s6_exp[s6_exp$pattern == "uniform" & s6_exp$model != "M0_uniform", ]
 s6_red <- sapply(split(s6_u, s6_u$model), function(d) {
@@ -125,9 +116,7 @@ s6_red <- sapply(split(s6_u, s6_u$model), function(d) {
 })
 
 # Supplement 6, Danish catalogue: concentration of label use.
-s6_dk_meta <- readr::read_csv("supplements/outputs/s6_danish_run_metadata.csv", show_col_types = FALSE)
 s6_dk_use <- readr::read_csv("supplements/outputs/s6_danish_label_use.csv", show_col_types = FALSE)
-s6_dk_obs_top2 <- as.numeric(s6_dk_meta$value[s6_dk_meta$setting == "observed_share_top2"])
 s6_dk_d0_top2 <- s6_dk_use$share_top2_median[s6_dk_use$model == "D0_uniform"]
 ```
 
@@ -186,18 +175,11 @@ s2_val <- function(method, col) {
 # Errors in per cent of the mean bin density (fmt_rel); A_lambda via fmt_pct
 n_bins <- nrow(readr::read_csv("supplements/outputs/s2_reconstruction_curves_binned.csv", show_col_types = FALSE))
 fmt_rel <- function(x) paste0(formatC(100 * x * n_bins, format = "f", digits = 1), "%")
-
-# Error of the uniform signal by sample size: 1,000 events (S3, median of the
-# repeated runs), 10,000 events (S2) and the infinite-sample limit (S6, M0).
-s3_unif <- readr::read_csv("supplements/outputs/s3_sensitivity_summary.csv", show_col_types = FALSE)
-s3_unif <- s3_unif[s3_unif$pattern == "uniform", ]
-s3_unif_rmsd <- function(m) s3_unif$median_rmsd[s3_unif$method == m]
-s6_inf_rmsd <- function(m) s6_exp$rmsd[s6_exp$model == "M0_uniform" & s6_exp$pattern == "uniform" & s6_exp$method == m]
 ```
 
 # Abstract
 
-Aoristic analysis is widely used in archaeology to aggregate observations dated to typological phases instead of calendar years. The standard approach and its Monte Carlo variants spread each observation uniformly over its time interval and thus treat time intervals as neutral containers of chronological uncertainty. We show that this assumption fails when observations are assigned to overlapping, hierarchical phase catalogues. In simulations with a uniform event process, the standard aoristic sum reproduces the overlap structure of the catalogue almost exactly, whatever the sample size, and neither Monte Carlo aoristics nor a Bayesian reconstruction removes this bias. The reason is that archaeological dates are not coarsened at random, since the label an observation receives depends on its date. From a simple model in which an event is equally likely to receive any label covering its date, we derive a phase-corrected weighting that needs no further data. It reduces the reconstruction error by about an order of magnitude, remains effective under other assignment models and performs at least as well as the standard approach for most non-uniform signals, although it dampens real peaks where these coincide with the overlap geometry. Applied to Danish Neolithic settlement records and to Early Iron Age burials from southern Germany, it largely removes the coupling to the interval structure. In the Danish data it tends to move the reconstruction towards an independent radiocarbon record, and in the Iron Age data it suggests that one phase was shorter than its conventional dating assumes. As site databases are increasingly used for large-scale demographic inference, the chronological classification has to be treated as part of the data.
+Aoristic analysis is widely used in archaeology to aggregate observations dated to typological phases instead of calendar years. The standard approach and its Monte Carlo variants spread each observation uniformly over its time interval, treating intervals as neutral containers of chronological uncertainty. We show that this assumption fails when observations are assigned to overlapping, hierarchical phase catalogues. In simulations with a uniform event process, the standard aoristic sum reproduces the overlap structure of the catalogue almost exactly, whatever the sample size, and neither Monte Carlo aoristics nor a Bayesian reconstruction removes this bias. The reason is that archaeological dates are not coarsened at random, since the label an observation receives depends on its date. From a simple model in which an event is equally likely to receive any label covering its date, we derive a phase-corrected weighting that needs no further data. It reduces the reconstruction error by about an order of magnitude and performs at least as well as the standard approach for most non-uniform signals and assignment models, although it dampens real peaks that coincide with the overlap geometry. Applied to Danish Neolithic settlement records and to Early Iron Age burials from southern Germany, it largely removes the coupling to the interval structure. It moves the Danish reconstruction towards an independent radiocarbon record and suggests that one Iron Age phase was shorter than conventionally assumed. As site databases are increasingly used for demographic inference, chronological classification has to be treated as part of the data.
 
 # Keywords
 
@@ -205,13 +187,13 @@ aoristic analysis; chronological uncertainty; archaeological phases; temporal fr
 
 # 1. Introduction
 
-Archaeological research increasingly relies on large datasets to address population dynamics, settlement intensity and long-term socio-ecological change [@kristiansen_towards_2014; @kintigh_grand_2014]. Summed probability distributions of radiocarbon dates [e.g. @birdP3k14cSyntheticGlobal2022; @hinz_radon_2012; @roeXRONOSOpenData2025] are widely used as proxies for past activity and population size [e.g. @hinz_demography_2012; @riede_climate_2009; @timpson_reconstructing_2014], and their sensitivity to calibration effects, sample selection and research history [@williams_use_2012; @contreras_summed_2014; @torfing_neolithic_2015] has led to simulation-based workflows [@martin_oxcaar:_2018; @bevan_rcarbon:_2018].
+Large datasets are increasingly used to study population dynamics, settlement intensity and long-term socio-ecological change [@kristiansen_towards_2014; @kintigh_grand_2014]. Summed probability distributions of radiocarbon dates [e.g. @birdP3k14cSyntheticGlobal2022; @hinz_radon_2012; @roeXRONOSOpenData2025] serve as proxies for past activity and population size [e.g. @hinz_demography_2012; @riede_climate_2009; @timpson_reconstructing_2014], and their sensitivity to calibration, sample selection and research history [@williams_use_2012; @contreras_summed_2014; @torfing_neolithic_2015] has led to simulation-based workflows [@martin_oxcaar:_2018; @bevan_rcarbon:_2018].
 
 A large part of the archaeological record, however, is not directly dated. Sites, finds, graves and features are assigned to typological, cultural or chronological phases, and because radiocarbon and other absolute dates are unevenly available, such phase-dated evidence is often the only basis for large-scale temporal frequency analysis [@contreras_summed_2014; @kolar_spatio-temporal_2016]. Regional and national site databases make it available in large quantities [@palmisano_comparing_2017; @lawrence_collapse_2021; @cooper_embracing_2016]. It is usually aggregated by aoristic analysis [@ratcliffe_aoristic_1998; @ratcliffe_aoristic_2000; @mischka_aoristische_2004; @johnson_aoristic_2004], which distributes each observation uniformly over its interval and sums these probabilities, or by Monte Carlo variants that draw possible dates from the same intervals [@crema_probabilistic_2010; @crema_modelling_2012; @kolar_spatio-temporal_2016].
 
-Aoristic analysis can be understood as implicit temporal imputation, which distributes unknown event dates over the years compatible with the chronological information. The same imputation, under other names, has long been used to quantify pottery and other artefacts dated by type [@fentress_counting_1988; @baxter_reinventing_2016]. Such imputations are sensitive to assumptions about the process that produced the coarsening [@heitjanInferenceCoarseData1990]. In archaeology this process is a classification. Phase intervals are not rounded measurements but categories of hierarchical and overlapping schemes, and whether an observation receives a narrow or a broad label depends on diagnostic artefacts, preservation, research history and the state of chronological knowledge. Standard aoristic reconstruction can therefore inherit structure from the classification system, and structurally induced peaks may be mistaken for demographic or settlement processes. Effects of periodisation on such time series have been noted before [@bevan_modifiable_2021]. Here we isolate one mechanism, the overlap of phase labels, and derive a correction for it.
+Aoristic analysis can be understood as implicit temporal imputation, which distributes unknown event dates over the years compatible with the chronological information. The same imputation, under other names, has long been used to quantify pottery and other artefacts dated by type [@fentress_counting_1988; @baxter_reinventing_2016]. Such imputations are sensitive to assumptions about the process that produced the coarsening [@heitjanInferenceCoarseData1990]. In archaeology this process is a classification. Phase intervals are not rounded measurements but categories of hierarchical and overlapping schemes, and whether an observation receives a narrow or a broad label depends on diagnostic artefacts, preservation, research history and the state of chronological knowledge. Standard aoristic reconstruction can therefore inherit structure from the classification system, and structurally induced peaks may be mistaken for demographic or settlement processes. Effects of periodisation on such time series have been noted before [@bevan_modifiable_2021; @glowacki_methods_2026]. Here we isolate one mechanism, the overlap of phase labels, and derive a correction for it.
 
-The paper makes three contributions. First, we show that overlapping phase catalogues produce systematic and predictable distortions in aoristic reconstructions, because the label an observation receives depends on its true date. The coarsening is thus not random in the statistical sense, which explains why the distortions persist in Monte Carlo and Bayesian variants that treat the intervals as neutral bounds. Second, we derive the phase-corrected weighting implemented in our R package aoristAAR from an explicit model of how overlapping labels are assigned. It gives the posterior distribution of each event date under this model and needs no information beyond the observed intervals. Third, we test the correction under uniform and non-uniform signals, under alternative assignment models and on two empirical datasets, Danish Neolithic settlements and Early Iron Age burials from southern Germany, and we provide diagnostics that show whether a reconstruction is affected and whether the assumptions of the correction hold.
+The paper makes three contributions. First, we show that overlapping phase catalogues distort aoristic reconstructions systematically, because the label an observation receives depends on its true date, and that the distortion persists in Monte Carlo and Bayesian variants. Second, we derive the phase-corrected weighting implemented in our R package aoristAAR from an explicit model of label assignment. It needs no information beyond the observed intervals. Third, we test the correction in simulations and on two empirical datasets, Danish Neolithic settlements and Early Iron Age burials from southern Germany, and provide diagnostics that show whether a reconstruction is affected and whether the assumptions of the correction hold.
 
 # 2. Conceptual background
 
@@ -235,11 +217,11 @@ $$
 
 An observation with a long interval contributes a little to many time units, one with a short interval much to few. The underlying assumption, that every time unit within the assigned interval is equally likely, follows the "principle of insufficient reason" and provides a simple and explicit expectation [@cremaBayesianAlternativeAoristic2025]. Non-uniform alternatives have been proposed [@baxter_reinventing_2016] but are rarely used, and the bias discussed below does not depend on this choice.
 
-Monte Carlo aoristics repeatedly draws event dates uniformly from the assigned intervals and summarises the resulting curves. The mean of these curves converges on the standard aoristic sum, so the simulation represents uncertainty around that expectation but does not correct it where it is biased. A Bayesian alternative that models the latent temporal distribution explicitly has recently been proposed [@cremaBayesianAlternativeAoristic2025], and we use it as a model-based benchmark (Section 3.2).
+Monte Carlo aoristics draws event dates uniformly from the assigned intervals, so that the mean of its curves converges on the standard aoristic sum. A Bayesian alternative that models the latent temporal distribution has recently been proposed [@cremaBayesianAlternativeAoristic2025] and serves here as a benchmark (Section 3.2).
 
 ## 2.2 Overlapping phase catalogues
 
-Archaeological phase systems are often hierarchical and overlapping. A single scheme may contain broad periods, narrower phases, local subphases and cross-cutting typological categories, so that some observations are dated to a narrow interval and others to a broader one that overlaps several more specific phases. In empirical datasets, a few broad intervals often account for a large share of the observations and overlap unevenly across the study period (Section 4.4). In what follows, a *label* is a category of such a scheme, its *interval* is the time span it covers, and the *catalogue* is the set of labels in use.
+Archaeological phase systems are often hierarchical and overlapping. A single scheme may contain broad periods, narrower phases, local subphases and cross-cutting typological categories, so that an observation may be dated to a narrow interval or to a broader one that overlaps several more specific phases. In what follows, a *label* is a category of such a scheme, its *interval* is the time span it covers, and the *catalogue* is the set of labels in use.
 
 ```{r}
 #| label: toy-schematic-setup
@@ -371,7 +353,7 @@ make_toy_phase_background <- function(panels) {
 #| label: fig-schematic-overlap-bias
 #| fig-alt: "Schematic bars of nested intervals and their standard aoristic weights"
 #| echo: false
-#| fig-cap: "Schematic illustration of how overlapping chronological intervals can generate artificial temporal structure in a standard proportional aoristic reconstruction. Grey bars show observed chronological assignments. Orange bars show the resulting standard aoristic contribution. The three labels A, A--B and A--B--C are used 2, 5 and 11 times, as expected when six events fall into each phase and every event receives one of the labels covering its date with equal probability. Standard proportional allocation produces a decreasing contribution from A to C, although each phase contains six events."
+#| fig-cap: "Minimal example. Grey bars show the observed assignments, orange bars the standard aoristic contribution. With six events per phase and equal choice among the labels covering each date, the labels A, A--B and A--B--C are used 2, 5 and 11 times, and the standard allocation decreases from A to C."
 #| fig-width: 7.5
 #| fig-height: 4.5
 
@@ -522,7 +504,7 @@ The weighting has a simple probabilistic interpretation. Suppose that an event d
 #| label: fig-schematic-phase-correction
 #| fig-alt: "Schematic bars of overlap counts and phase-corrected weights"
 #| echo: false
-#| fig-cap: "Schematic illustration of the phase-corrected weighting procedure for the same three-observation example. Orange bars show the overlap count $\\lambda(t)$, which is the structural source of bias. Green bars show the inverse-overlap weights $\\lambda(t)^{-1}$ and the resulting renormalised corrected contribution after each observation has been redistributed within its assigned interval. The corrected contribution recovers the six events per phase."
+#| fig-cap: "Phase-corrected weighting for the same example. Orange bars show the overlap count $\\lambda(t)$, green bars the inverse-overlap weights and the corrected contribution, which recovers the six events per phase."
 #| fig-width: 7.5
 #| fig-height: 5.2
 
@@ -650,7 +632,7 @@ The correction is not a full model of the archaeological dating process, but it 
 
 ## 3.1 Simulation design
 
-The simulations use a synthetic phase catalogue in which broad periods, intermediate phases, short subphases and cross-cutting diagnostic labels refer to partly overlapping sections of the same chronology (@fig-synthetic-overlap-structure). Its time window, 4100 to 1800 BCE, matches the Danish case study, and curves are evaluated in 50-year bins. The catalogue was constructed so that its overlap structure is easy to see, but the overlap-aligned amplitude it produces (Section 3.3) is of the same order as in the Danish data (`r fmt_pct(s2_val("Standard aoristic", "overlap_relative_amplitude"))` and `r fmt_pct(s4_amp("Standard aoristic"))` of the mean density, Section 4.4). Counting the labels that cover each year yields the overlap curve, which describes the geometry of the catalogue and contains no information on event intensity.
+The simulations use a synthetic phase catalogue in which broad periods, intermediate phases, short subphases and cross-cutting diagnostic labels refer to partly overlapping sections of the same chronology (@fig-synthetic-overlap-structure). Its time window, 4100 to 1800 BCE, matches the Danish case study, and curves are evaluated in 50-year bins. Its overlap structure is easy to see, but its overlap-aligned amplitude (Section 3.3) is of the same order as in the Danish data (`r fmt_pct(s2_val("Standard aoristic", "overlap_relative_amplitude"))` and `r fmt_pct(s4_amp("Standard aoristic"))`, Section 4.4). Counting the labels that cover each year yields the overlap curve.
 
 ```{r}
 #| label: make-synthetic-phase-catalogue-panel
@@ -772,7 +754,7 @@ ggplot2::ggsave(
 
 ![Overlap structure of the catalogue.](supplements/figures/s1_overlap_structure.png){#fig-synthetic-overlap-curve width=100% fig-alt="Curve of the number of overlapping phases over time"}
 
-Synthetic phase catalogue (a) and resulting overlap curve (b), the mean number of labels covering the years of each 50-year bin. The overlap curve depends only on the geometry of the classification system.
+Synthetic phase catalogue (a) and its overlap curve (b), the mean number of labels covering the years of each 50-year bin.
 :::
 
 In each simulation, true event dates are drawn first and each event is then assigned to one randomly selected label compatible with its date. The reconstruction methods see only these intervals. This is the simplest observation model and the one under which the phase correction is exact in expectation (Section 2.3). It contains no preservation, recovery or research bias, so any structure in a reconstruction of a uniform process must arise from the interaction of assignment and reconstruction.
@@ -785,7 +767,7 @@ The first scenario uses a uniform event process with 10,000 events (Supplements 
 
 We compare three aoristic reconstructions, all applied to the same intervals and calculated on the same grid: the standard proportional reconstruction (Section 2.1), the Monte Carlo reconstruction, which samples one date per observation from its interval in each of 100 iterations and is summarised by its mean and envelope, and the phase-corrected reconstruction (Section 2.3). All curves are normalised to the same total, so that differences reflect their shape and not their mass.
 
-As a model-based benchmark we use the Bayesian reconstruction introduced in Section 2.1, as implemented in the R package baorista [@cremaBayesianAlternativeAoristic2025]. It estimates the probability of events per 50-year block under an intrinsic conditional autoregressive (ICAR) prior, and we use the posterior median per block as its point estimate. Models were fitted with NIMBLE [@devalpine_programming_2017], using four chains and an exponential prior with rate 1 on the ICAR scale parameter. Its influence was tested with rates of 10, 50 and 100 for the uniform simulation and both empirical datasets (Supplements 2, 4 and 5), and additionally with a rate of 1000 for the uniform simulation. Fits with a Gelman–Rubin $\hat R$ above 1.05 [@gelman_inference_1992] were refitted with more iterations. All fits met this criterion except two example-run fits in Supplement 3 (early and late peak, $\hat R \approx 1.12$) and the Danish fits with prior rates 1 and 10 ($\hat R$ = `r formatC(s4_rhat[1], format = "f", digits = 2)` and `r formatC(s4_rhat[2], format = "f", digits = 2)`), which are reported but flagged. The peak discussed in Section 5.1 also appears in the converged fits. All settings and convergence diagnostics are given in the supplements.
+As a model-based benchmark we use the Bayesian reconstruction introduced in Section 2.1, as implemented in the R package baorista [@cremaBayesianAlternativeAoristic2025]. It estimates the probability of events per 50-year block under an intrinsic conditional autoregressive (ICAR) prior, and we use the posterior median per block as its point estimate. Models were fitted with NIMBLE [@devalpine_programming_2017], using four chains and an exponential prior with rate 1 on the ICAR scale parameter. Its influence was tested with rates of 10, 50 and 100 for the uniform simulation and both empirical datasets (Supplements 2, 4 and 5), and additionally with a rate of 1000 for the uniform simulation. Fits with a Gelman–Rubin $\hat R$ above 1.05 [@gelman_inference_1992] were refitted with more iterations. The few fits that still missed this criterion, among them the Danish fits with rates 1 and 10, are reported but flagged in the supplements, and the peak discussed in Section 5.1 also appears in the converged fits.
 
 ## 3.3 Evaluation criteria
 
@@ -793,7 +775,7 @@ Where the ground truth is known, accuracy is measured by the root-mean-square de
 
 In addition to accuracy, we calculate diagnostics of phase-overlap coupling. As in Section 2.3, $\lambda(t)$ denotes the overlap structure of the phase catalogue, the number of intervals covering time unit $t$, counted over the labels of the synthetic catalogue in the simulations and over the unique observed intervals in the empirical applications. A high correlation between the reconstructed curve and the overlap structure, $\text{cor}(R, \lambda)$, indicates that the reconstructed temporal pattern may be shaped by the classification system.
 
-Correlation measures whether a reconstruction has the shape of the overlap curve, but not how strongly it follows it. A nearly flat curve with a small ripple shaped like $\lambda(t)$ can correlate highly with it. We therefore complement the correlation with two magnitude-based measures. Where ground truth is known, the overlap-attributable RMSD,
+Since a nearly flat curve with a small ripple shaped like $\lambda(t)$ can correlate highly with it, we add two magnitude-based measures. Where ground truth is known, the overlap-attributable RMSD,
 
 $$
 \text{RMSD}_\lambda = |\text{cor}(E, \lambda)| \cdot \text{sd}(E), \qquad E(t) = R(t) - G(t),
@@ -805,15 +787,13 @@ $$
 A_\lambda = \frac{|\beta| \cdot \text{sd}(\lambda(t))}{\bar R},
 $$
 
-with $\beta$ the slope of $R(t)$ on $\lambda(t)$, gives the change in reconstructed density, as a percentage of the mean density, per standard deviation of overlap. With all curves normalised to the same total over $T$ = `r n_bins` bins, the mean bin density is $1/T$, and we report RMSD and $\text{RMSD}_\lambda$ relative to it as well, i.e. as $100\,T \cdot \text{RMSD}$ in per cent. Under a uniform ground truth, $\text{RMSD}_\lambda$ and $A_\lambda$ take the same value, and $A_\lambda$ is therefore used mainly for the empirical data.
-
-Without ground truth, the evaluation of the empirical case studies focuses on the coupling between each reconstruction and the empirical overlap structure and, for the Danish data, on the agreement with an independent summed radiocarbon distribution, which serves as an external proxy and not as a target curve.
+with $\beta$ the slope of $R(t)$ on $\lambda(t)$, gives the change in reconstructed density, as a percentage of the mean density, per standard deviation of overlap. RMSD and $\text{RMSD}_\lambda$ are likewise given as percentages of the mean bin density (Supplement 2).
 
 ## 3.4 Danish Neolithic settlement data
 
-The Danish case study is not meant as a demographic history of Neolithic Denmark but as a test of how strongly an empirical reconstruction depends on the structure of its chronological catalogue. It uses `r fmt_n(s4_n_records)` Neolithic settlement records from the Danish national register Fund og Fortidsminder [@slks_fund_og_fortidsminder], with dating intervals clipped to the window from 4100 to 1800 BCE. The `r s4_metric("Number of records with harmonised free entries")` records dated freely, for example by a radiocarbon range, were assigned to the best-matching period of the register's list, so that the catalogue comprises `r s4_n_unique` unique intervals (Supplement 4). For the Bayesian benchmark, Baorista is fitted to the same records under four exponential priors for the ICAR scale parameter, with rates of 1, 10, 50 and 100 (Supplement 4).
+The Danish case study is not meant as a demographic history of Neolithic Denmark but as a test of how strongly an empirical reconstruction depends on the structure of its chronological catalogue. It uses `r fmt_n(s4_n_records)` Neolithic settlement records from the Danish national register Fund og Fortidsminder [@slks_fund_og_fortidsminder], with dating intervals clipped to the window from 4100 to 1800 BCE. After a few freely entered dates were harmonised with the register's period list, the catalogue comprises `r s4_n_unique` unique intervals (Supplement 4).
 
-As an independent comparison, we use a summed probability distribution (SPD) of radiocarbon dates from XRONOS [@roeXRONOSOpenData2025]. The Danish extraction contains `r fmt_n(s4_c14_raw)` records, reduced to `r fmt_n(s4_c14_final)` settlement-related determinations after filtering and deduplication, which were calibrated with IntCal20 [@reimer_intcal20_2020] and summed with rcarbon [@crema_inference_2021], binned by site. The SPD has its own biases, from sampling intensity and research history to calibration effects, and its value as a population proxy for the Danish Neolithic is itself debated [@torfing_neolithic_2015; @torfing_demographic_2016]. Its biases are, however, not those of the phase system, so it serves for triangulation and not as ground truth.
+As an independent comparison, we use a summed probability distribution (SPD) of radiocarbon dates from XRONOS [@roeXRONOSOpenData2025]. Its `r fmt_n(s4_c14_final)` settlement-related Danish determinations were calibrated with IntCal20 [@reimer_intcal20_2020] and summed with rcarbon [@crema_inference_2021], binned by site (Supplement 4). The SPD has its own biases, from sampling intensity and research history to calibration effects, and its value as a population proxy for the Danish Neolithic is itself debated [@torfing_neolithic_2015; @torfing_demographic_2016]. Its biases are, however, not those of the phase system, so it serves for triangulation and not as ground truth.
 
 ## 3.5 Early Iron Age burials in southwestern and southern Germany
 
@@ -835,13 +815,13 @@ Under a uniform ground truth, any systematic temporal structure in the reconstru
 
 ![Standard reconstruction and overlap structure.](supplements/figures/s1_overlap_vs_standard_aoristic.png){#fig-s1-uniform-overlap width=100% fig-alt="Standard aoristic curve closely following the overlap curve"}
 
-Standard proportional aoristics under uniform ground truth, compared with the uniform truth (a) and with the overlap structure of the synthetic catalogue (b). Although the event process is uniform, the reconstruction closely follows the overlap structure.
+Standard proportional aoristics under uniform ground truth, compared with the uniform truth (a) and with the overlap structure of the synthetic catalogue (b).
 
 :::
 
 ## 4.2 Phase correction in the uniform case
 
-The Monte Carlo mean behaves almost identically to the standard reconstruction (@fig-s2-method-comparison, @tbl-s2-method-metrics), as expected from their shared within-interval uniformity assumption. The phase-corrected reconstruction, by contrast, is much closer to the uniform truth (Supplement 2), with an RMSD of `r fmt_rel(s2_val("Phase-corrected", "rmsd"))` of the mean density, compared with `r fmt_rel(s2_val("Standard aoristic", "rmsd"))` for the standard reconstruction. With 10,000 events, the correction reduces the error by about an order of magnitude. Under the assignment rule used here, the correction is in expectation the exact flat-prior posterior (Section 2.3), so the remaining error is sampling noise. The error of the standard reconstruction, by contrast, does not diminish with sample size (`r fmt_rel(s3_unif_rmsd("Standard aoristic"))`, `r fmt_rel(s2_val("Standard aoristic", "rmsd"))` and `r fmt_rel(s6_inf_rmsd("standard"))` with 1,000 and 10,000 events and in the infinite-sample limit, Supplements 3 and 6), whereas that of the correction falls from `r fmt_rel(s3_unif_rmsd("Phase-corrected"))` to `r fmt_rel(s2_val("Phase-corrected", "rmsd"))` and vanishes in the limit. The bias is systematic and can only be removed by an explicit correction, whatever the inferential framework. Whether the correction remains accurate under other assignment rules is examined in Section 4.3.
+The Monte Carlo mean behaves almost identically to the standard reconstruction (@fig-s2-method-comparison, @tbl-s2-method-metrics), as expected from their shared within-interval uniformity assumption. The phase-corrected reconstruction, by contrast, is much closer to the uniform truth (Supplement 2), with an RMSD of `r fmt_rel(s2_val("Phase-corrected", "rmsd"))` of the mean density, compared with `r fmt_rel(s2_val("Standard aoristic", "rmsd"))` for the standard reconstruction. With 10,000 events, the correction reduces the error by about an order of magnitude. Under the assignment rule used here, the correction is in expectation the exact flat-prior posterior (Section 2.3), so the remaining error is sampling noise. The error of the standard reconstruction, by contrast, does not diminish with sample size, whereas that of the correction vanishes in the infinite-sample limit (Supplements 3 and 6).
 
 ::: {#fig-s2-method-comparison layout-ncol=2}
 
@@ -860,17 +840,17 @@ Standard, Monte Carlo, phase-corrected and Baorista reconstructions under unifor
 | Phase-corrected aoristic | `r fmt_rel(s2_val("Phase-corrected", "rmsd"))` | `r fmt3(s2_val("Phase-corrected", "overlap_curve_correlation"))` | `r fmt_rel(s2_val("Phase-corrected", "overlap_attributable_rmsd"))` |
 | Baorista | `r fmt_rel(s2_val("Baorista", "rmsd"))` | `r fmt3(s2_val("Baorista", "overlap_curve_correlation"))` | `r fmt_rel(s2_val("Baorista", "overlap_attributable_rmsd"))` |
 
-: Fit and overlap-coupling diagnostics for the uniform simulation. All methods were applied to the same simulated dataset of 10,000 events, and Baorista is represented by its posterior median. Measures as defined in Section 3.3. {#tbl-s2-method-metrics}
+: Fit and overlap-coupling diagnostics for the uniform simulation (10,000 events, Baorista posterior median). Measures as defined in Section 3.3. {#tbl-s2-method-metrics}
 
 The overlap diagnostics show why magnitude matters. The correlation with the overlap curve falls only from `r fmt3(s2_val("Standard aoristic", "overlap_curve_correlation"))` to `r fmt3(s2_val("Phase-corrected", "overlap_curve_correlation"))`, because the shared sampling noise of each interval leaves a faint trace of the overlap shape, but the overlap-attributable RMSD shrinks from `r fmt_rel(s2_val("Standard aoristic", "overlap_attributable_rmsd"))` to `r fmt_rel(s2_val("Phase-corrected", "overlap_attributable_rmsd"))` of the mean density. Baorista shows the opposite case. Its correlation with the overlap curve is lower (`r fmt3(s2_val("Baorista", "overlap_curve_correlation"))`), but its overlap-attributable RMSD is larger (`r fmt_rel(s2_val("Baorista", "overlap_attributable_rmsd"))`) and its RMSD is `r formatC(s2_val("Baorista", "rmsd") / s2_val("Standard aoristic", "rmsd"), format = "f", digits = 1)` times that of the standard reconstruction. Its posterior concentrates probability in the centre of the window, where most labels overlap, as expected for likelihood-based inference on interval data (Section 5.1).
 
 ## 4.3 Phase correction under non-uniform signals
 
-In the non-uniform simulations (Supplement 3), each of the eleven signals was simulated in 100 runs, and in each run the three aoristic reconstructions were compared by their RMSD against the true curve (@tbl-s3-best-method-rmsd). The phase correction comes closest to the truth in every run for the uniform, monotonic, exponential and two-peaked signals, with clear reductions of the median RMSD. For the early, late and multiple peaks it is best in most runs, but only by a few per cent. For the single central peak and the plateau it is best in none, and the standard and Monte Carlo reconstructions share the runs between them. Here the true concentration of events coincides with the region of high overlap, and the correction removes part of the real signal together with the bias. In these two cases, the correction also increases the overlap-attributable RMSD, whereas in all others it reduces it, often by more than the RMSD as a whole.
+In the non-uniform simulations (Supplement 3, @tbl-s3-best-method-rmsd), the phase correction comes closest to the truth in every run for the uniform, monotonic, exponential and two-peaked signals, and in most runs, though only by a few per cent, for the early, late and multiple peaks. For the single central peak and the plateau it is best in none. Here the true concentration of events coincides with the region of high overlap, and the correction removes part of the real signal together with the bias, which also increases its overlap-attributable RMSD.
 
 ```{r}
 #| label: tbl-s3-best-method-rmsd
-#| tbl-cap: "Best-performing methods by RMSD across 100 runs of 1,000 events per signal pattern. The share of runs is the proportion of runs in which a method gave the lowest RMSD of the three aoristic reconstructions. Where two methods are listed, they share the runs, since the standard and Monte Carlo reconstructions differ only by sampling noise. The RMSD ratio is the median RMSD of the phase-corrected divided by that of the standard reconstruction (values below one favour the correction). Because of its run time, Baorista was fitted to one example run per pattern only (Supplement 3)."
+#| tbl-cap: "Best method by RMSD in 100 runs of 1,000 events per signal pattern. The share of runs is the proportion of runs in which a method gave the lowest RMSD of the three aoristic reconstructions. Where two methods are listed, they share the runs, since the standard and Monte Carlo reconstructions differ only by sampling noise. The RMSD ratio is the median RMSD of the phase-corrected divided by that of the standard reconstruction. Baorista was fitted to one example run per pattern only (Supplement 3)."
 s3_best <- readr::read_csv("supplements/outputs/s3_best_method_by_run_rmsd.csv", show_col_types = FALSE)
 s3_sum <- readr::read_csv("supplements/outputs/s3_sensitivity_summary.csv", show_col_types = FALSE)
 s3_patterns <- c(
@@ -904,7 +884,7 @@ The `r fmt_n(s4_n_records)` Danish settlement records are distributed across `r 
 
 The standard and Monte Carlo reconstructions are almost identical (correlation `r fmt3(s4_pair_cor("Standard aoristic", "Monte Carlo mean"))`), whereas the phase-corrected reconstruction differs markedly from both (`r fmt3(s4_pair_cor("Standard aoristic", "Phase-corrected"))` with the standard curve, @fig-s4-danish-methods). The standard and Monte Carlo reconstructions remain coupled to the empirical overlap structure, with correlations of `r fmt3(s4_overlap_cor("Standard aoristic"))` and `r fmt3(s4_overlap_cor("Monte Carlo mean"))` (@tbl-s4-danish-correlations). The correction reduces this coupling to `r fmt3(s4_overlap_cor("Phase-corrected"))`, and the overlap-aligned amplitude falls from `r fmt_pct(s4_amp("Standard aoristic"))` to `r fmt_pct(s4_amp("Phase-corrected"))` of the mean density.
 
-![Reconstruction methods applied to the Danish Neolithic settlement data, compared with the overlap structure of the observed intervals. The shaded band is the 95% credible interval of the Baorista reconstruction. The vertical axis is cut at 0.045. The peak of the Baorista reconstruction in `r s4_baorista_peak` lies above it, and its value is given in the plot.](supplements/figures/s4_danish_neolithic_methods_vs_overlap.png){#fig-s4-danish-methods width=100% fig-alt="Danish Neolithic reconstructions plotted against the empirical overlap curve"}
+![Reconstruction methods for the Danish Neolithic settlement data and overlap structure of the observed intervals. The shaded band is the 95% credible interval of the Baorista reconstruction. The vertical axis is cut at 0.045, and the value of the Baorista peak in `r s4_baorista_peak` is given in the plot.](supplements/figures/s4_danish_neolithic_methods_vs_overlap.png){#fig-s4-danish-methods width=100% fig-alt="Danish Neolithic reconstructions plotted against the empirical overlap curve"}
 
 | Method | $\text{cor}(R, \lambda)$ | $A_\lambda$ (% of mean density) | Correlation with XRONOS SPD |
 |---|---:|---:|---:|
@@ -915,21 +895,21 @@ The standard and Monte Carlo reconstructions are almost identical (correlation `
 
 : Empirical overlap coupling and comparison with the XRONOS summed radiocarbon curve for the Danish Neolithic settlement data. Measures as defined in Section 3.3. Correlations with the SPD refer to the common Neolithic window (3950–1800 BCE). {#tbl-s4-danish-correlations}
 
-Within the common Neolithic window, which excludes the late Mesolithic part of the SPD, the standard and Monte Carlo reconstructions are essentially uncorrelated with the SPD of the `r fmt_n(s4_c14_final)` XRONOS settlement dates (Section 3.4, *r* = `r fmt3(s4_xronos_cor("Standard aoristic"))` and `r fmt3(s4_xronos_cor("Monte Carlo mean"))`), whereas the phase-corrected reconstruction correlates positively (*r* = `r fmt3(s4_xronos_cor("Phase-corrected"))`, @fig-s4-danish-xronos). Tested against surrogate SPDs with the same autocorrelation as the observed one (Supplement 4), no reconstruction agrees with the SPD beyond chance, but the difference between the corrected and the standard reconstruction is less easily explained by chance (*p* = `r fmt_p(s4_diff_p[1])` in the common window and `r fmt_p(s4_diff_p[2])` over the full analytical window). The correction thus moves the reconstruction towards the radiocarbon evidence, but the support for this is moderate rather than conclusive. The comparison also shows local offsets between the curves, which point to the absolute length and placement of individual phases as a separate source of error that the overlap diagnostic does not capture.
+Within the common Neolithic window, which excludes the late Mesolithic part of the SPD, the standard and Monte Carlo reconstructions are essentially uncorrelated with the SPD of the `r fmt_n(s4_c14_final)` XRONOS settlement dates (Section 3.4, *r* = `r fmt3(s4_xronos_cor("Standard aoristic"))` and `r fmt3(s4_xronos_cor("Monte Carlo mean"))`), whereas the phase-corrected reconstruction correlates positively (*r* = `r fmt3(s4_xronos_cor("Phase-corrected"))`, @fig-s4-danish-xronos). Tested against surrogate SPDs (Supplement 4), no reconstruction agrees with the SPD beyond chance, but the difference between the corrected and the standard reconstruction is less easily explained by chance (*p* = `r fmt_p(s4_diff_p[1])`). The correction thus moves the reconstruction towards the radiocarbon evidence, but the support for this is moderate rather than conclusive.
 
-![Danish Neolithic reconstructions compared with the XRONOS summed radiocarbon curve, used as an external proxy rather than as ground truth. The vertical axis is cut at 0.045. The peak of the Baorista reconstruction in `r s4_baorista_peak` lies above it, and its value is given in the plot.](supplements/figures/s4_danish_neolithic_methods_vs_xronos_sumcal.png){#fig-s4-danish-xronos width=100% fig-alt="Danish Neolithic reconstructions compared with the radiocarbon SPD"}
+![Danish Neolithic reconstructions and the XRONOS summed radiocarbon curve, an external proxy rather than ground truth. Axis and Baorista peak as in @fig-s4-danish-methods.](supplements/figures/s4_danish_neolithic_methods_vs_xronos_sumcal.png){#fig-s4-danish-xronos width=100% fig-alt="Danish Neolithic reconstructions compared with the radiocarbon SPD"}
 
 ## 4.5 Early Iron Age burials
 
 Without an independent record (Section 3.5), the Hallstatt data show how strongly the phase structure of a compact chronology with short phases shapes the reconstruction.
 
-The `r fmt_n(s5_n_records)` graves (Supplement 5) are distributed across `r s5_n_unique` unique intervals with a median width of `r s5_median_width` years. Their widths range from `r s5_min_width` to `r s5_max_width` years, so that dating precision varies only by a factor of about eight. Label use also deviates far less from the key assumption of the correction than in the Danish data. The most frequent label is the phase `r s5_top$phase[1]` (`r interval_label(s5_top$start[1], s5_top$end[1])`) with `r fmt_pct(s5_top$share[1])` of all graves, followed by the Hallstatt period as a whole with `r fmt_pct(s5_top$share[2])`. Together they account for `r fmt_pct(s5_top$cumulative_share[2])`, and the three most frequent labels for `r fmt_pct(s5_top$cumulative_share[3])`. Equal choice among the labels covering each date would give the two most frequent labels about `r fmt_pct(s6_hs_d0_top2)` (Supplement 6).
+The `r fmt_n(s5_n_records)` graves (Supplement 5) are distributed across `r s5_n_unique` unique intervals with a median width of `r s5_median_width` years. Their widths range from `r s5_min_width` to `r s5_max_width` years, so that dating precision varies only by a factor of about eight. Label use also deviates far less from the key assumption of the correction than in the Danish data. The two most frequent labels, the phase `r s5_top$phase[1]` and the Hallstatt period as a whole, account for `r fmt_pct(s5_top$cumulative_share[2])` of all graves, compared with about `r fmt_pct(s6_hs_d0_top2)` under equal choice among the labels covering each date (Supplement 6).
 
 The standard and Monte Carlo reconstructions are again almost identical (correlation `r fmt3(s5_pair_cor("Standard aoristic", "Monte Carlo mean"))`), and the phase-corrected reconstruction differs from both (`r fmt3(s5_pair_cor("Standard aoristic", "Phase-corrected"))` with the standard curve, @fig-s5-hallstatt-methods). Over most of the sequence the standard reconstruction follows the overlap curve almost step by step, with a correlation of `r fmt3(s5_overlap_cor("Standard aoristic"))` (Monte Carlo mean `r fmt3(s5_overlap_cor("Monte Carlo mean"))`, @tbl-s5-hallstatt-correlations). The correction reduces this coupling to `r fmt3(s5_overlap_cor("Phase-corrected"))` and the overlap-aligned amplitude from `r fmt_pct(s5_amp("Standard aoristic"))` to `r fmt_pct(s5_amp("Phase-corrected"))` of the mean density, mainly by levelling the differences between the earlier Hallstatt phases. Fitted to the Hallstatt data with the same settings as in Section 4.4, Baorista correlates less closely with the overlap curve than the standard reconstruction (`r fmt3(s5_overlap_cor("Baorista posterior median"))`) but has the largest overlap-aligned amplitude (`r fmt_pct(s5_amp("Baorista posterior median"))`), with a maximum at the beginning of HaD1, where most labels overlap (Supplement 5).
 
-The exception is the late Hallstatt period. Between 540 and 501 BCE, the span of HaD2, all three reconstructions lie well below the overlap curve, and between 500 and 451 BCE, the span of HaD3, above it. Since this deviation is not produced by the overlap structure and persists after the correction, it reflects the number of graves assigned to these phases. HaD2 receives fewer graves than the catalogue alone would lead one to expect, and HaD3 more (Section 5.2).
+The exception is the late Hallstatt period. In HaD2 (540–501 BCE) all three reconstructions lie well below the overlap curve and in HaD3 (500–451 BCE) above it, a deviation that persists after the correction (Section 5.2).
 
-![Reconstruction methods applied to the Hallstatt burial data, compared with the overlap structure of the observed intervals. The shaded band is the 95% credible interval of the Baorista reconstruction. Outside HaD2 and HaD3, the standard proportional and Monte Carlo reconstructions follow the overlap structure closely, while the phase-corrected reconstruction levels the differences between phases.](supplements/figures/s5_hallstatt_methods_vs_overlap.png){#fig-s5-hallstatt-methods width=100% fig-alt="Hallstatt reconstructions plotted against the empirical overlap curve"}
+![Reconstruction methods for the Hallstatt burial data and overlap structure of the observed intervals. The shaded band is the 95% credible interval of the Baorista reconstruction.](supplements/figures/s5_hallstatt_methods_vs_overlap.png){#fig-s5-hallstatt-methods width=100% fig-alt="Hallstatt reconstructions plotted against the empirical overlap curve"}
 
 | Method | $\text{cor}(R, \lambda)$ | $A_\lambda$ (% of mean density) |
 |---|---:|---:|
@@ -946,37 +926,33 @@ The exception is the late Hallstatt period. Between 540 and 501 BCE, the span of
 
 The curve produced by aoristic reconstruction depends on the structure of the assigned intervals as much as on the observations. Where intervals derive from overlapping hierarchical phase catalogues, observations are assigned to different levels of the classification depending on diagnostic visibility, preservation, research history or recording practice, and the geometry of this classification propagates into the reconstructed curve.
 
-Monte Carlo aoristics does not change this. It shows how much the curve can vary when event dates are sampled under the within-interval uniformity assumption, which is useful for visualising uncertainty, but its mean retains the expectation of the standard reconstruction, as the simulations and both empirical datasets show.
+Monte Carlo aoristics does not change this. It visualises how much the curve can vary under the within-interval uniformity assumption, but its mean retains the expectation of the standard reconstruction.
 
-A model-based reconstruction such as Baorista poses temporal reconstruction explicitly as a probabilistic problem. In the uniform simulation, however, its posterior concentrates probability where many labels overlap, and its overlap-aligned component is larger than that of the standard reconstruction. The prior-sensitivity analysis of the Danish data shows that this is more than a less accurate estimator. Across exponential priors with rates from 1 to 100, the posterior retains a pronounced peak in the century before 2800 BCE (`r s4_baorista_peak`), immediately before the end point of many of the most frequently repeated intervals (Supplement 4). In the Hallstatt data, where all fits converged, it likewise concentrates probability where most labels overlap (Section 4.5). This is the behaviour expected for interval-censored data, in which likelihood-based estimates concentrate probability mass on the intersections of the observed intervals [@turnbull_empirical_1976], and a smoothing prior attenuates this tendency but does not remove it. In the uniform simulation, a stronger prior lowers the peak only at a very high precision, and the curve then approaches the standard reconstruction (Supplement 2). Robustness to the prior and robustness to the chronological observations are therefore two different properties, and a sensitivity analysis over priors tests only the first. We do not regard this as a limitation of Bayesian inference as such, but as an indication that the overlap mechanism arises in the chronological observations, before any statistical reconstruction. The most direct remedy would be to replace the implicit coarsening-at-random likelihood with the assignment model of Section 2.3. With $\theta_t$ the event probability in block $t$, the likelihood of a label $J$ then becomes $\sum_{t \in J} \theta_t \lambda(t)^{-1}$ instead of $\sum_{t \in J} \theta_t$, which would combine the phase correction with the smoothing prior and the posterior uncertainty of the Bayesian approach.
+A model-based reconstruction such as Baorista does not escape the mechanism either. In the uniform simulation its posterior concentrates probability where many labels overlap, with a larger overlap-aligned component than the standard reconstruction. In the Danish data it retains, across priors with rates from 1 to 100, a pronounced peak in the century before 2800 BCE (`r s4_baorista_peak`), immediately before the end point of many of the most frequently repeated intervals (Supplement 4). In the Hallstatt data, where all fits converged, it likewise concentrates probability where most labels overlap (Section 4.5). This is the behaviour expected for interval-censored data, in which likelihood-based estimates concentrate probability mass on the intersections of the observed intervals [@turnbull_empirical_1976], and a smoothing prior attenuates this tendency but does not remove it. In the uniform simulation, a stronger prior lowers the peak only at a very high precision, and the curve then approaches the standard reconstruction (Supplement 2). A sensitivity analysis over priors therefore tests robustness to the prior, not to the chronological observations. The mechanism arises in these observations, before any statistical reconstruction, and is not a limitation of Bayesian inference as such. The most direct remedy would be to replace the implicit coarsening-at-random likelihood with the assignment model of Section 2.3. With $\theta_t$ the event probability in block $t$, the likelihood of a label $J$ then becomes $\sum_{t \in J} \theta_t \lambda(t)^{-1}$ instead of $\sum_{t \in J} \theta_t$, which would combine the phase correction with the smoothing prior and the posterior uncertainty of the Bayesian approach.
 
 ## 5.2 Using the phase correction in practice
 
 The phase correction targets the overlap mechanism itself, but two limitations cannot be removed by careful use. Where the true signal itself resembles the overlap structure, as in the single-peak and plateau scenarios, the flat prior within each interval pulls genuine concentrations towards the parts covered by fewer labels (Section 2.3). And the correction cannot detect bias from an observation process that changes through time, for instance if chronological resolution differs systematically between periods. Since median phase lengths shorten markedly only from the Iron Age onwards [@siegmund_schnelle_2012, 260], this should matter mainly in analyses spanning several epochs. The other assumptions can be checked in the data, and the correction is best used together with such checks rather than as a mechanical replacement of the standard method.
 
-The first check concerns the catalogue. Because $\lambda(t)$ counts distinct intervals and not how often they are used, splitting a phase into subphases, adding a rarely used label or keeping technical duplicates changes the weights of all observations covering the affected years. Labels with identical extent should therefore be merged, and ad hoc intervals such as radiocarbon ranges assigned to the best-matching period (Supplement 4).
+The first check concerns the catalogue. Because $\lambda(t)$ counts distinct intervals and not how often they are used, every additional label changes the weights in the years it covers. Labels with identical extent should therefore be merged, and ad hoc intervals such as radiocarbon ranges assigned to the best-matching period (Supplement 4).
 
 The second concerns label use. Comparing the observed frequency of each label with that expected under equal choice shows whether the key assumption holds. If it does and the standard reconstruction is clearly coupled to the overlap curve, the corrected curve is the better founded estimate. This is largely the case in the Hallstatt data, where the correction kept most of its advantage in simulations on the observed catalogue (Supplement 6). If label use is strongly concentrated, as in the Danish data (Section 4.4), the effect of the correction depends on the signal. Declining trends still improved, but increasing trends, peaks and plateaus came out worse than with the standard method. Where the two reconstructions differ in a part of the sequence in which the true signal may plausibly be concentrated, neither can then be preferred on internal grounds.
 
 Conspicuous features can also be tested against an envelope of what the catalogue alone would produce, obtained by assigning uniformly simulated events to the observed intervals. This follows the logic of null-model tests for summed radiocarbon distributions [@timpson_reconstructing_2014; @crema_inference_2021], and @fentress_counting_1988 [207, n. 12] already used such a check for their pottery curves. Like the correction, however, it presupposes equal choice among labels.
 
-Where the internal checks leave the question open, independent evidence has to decide. For the Danish data, the corrected curve moves towards the radiocarbon record, although no reconstruction agrees with it beyond chance. Local offsets between the curves call for a check of the absolute anchoring of individual phases, to which chronological schemes for the Danish Neolithic assign noticeably different lengths [@torfing_demographic_2016]. The Hallstatt data point to the same problem. Between 540 and 501 BCE all reconstructions fall below the overlap curve, and in the following decades they rise above it (Section 4.5). Since this deviation persists after the correction, it is not produced by the overlap of the labels but would be expected if the absolute dates of the phases were wrong. The boundaries of the Hallstatt phases are informed estimates at best, and the pattern would fit a HaD2 that was considerably shorter, and a HaD3 correspondingly longer, than commonly assumed.
+Where the internal checks leave the question open, independent evidence has to decide. For the Danish data, the corrected curve moves towards the radiocarbon record, although no reconstruction agrees with it beyond chance. Local offsets between the curves call for a check of the absolute anchoring of individual phases, to which chronological schemes for the Danish Neolithic assign noticeably different lengths [@torfing_demographic_2016]. The Hallstatt data point to the same problem. The deviation in HaD2 and HaD3 (Section 4.5) persists after the correction and is therefore not produced by the overlap of the labels, but it would be expected if the absolute dates of the phases were wrong. The boundaries of the Hallstatt phases are informed estimates at best, and the pattern would fit a HaD2 that was considerably shorter, and a HaD3 correspondingly longer, than commonly assumed.
 
 Studies using aoristic reconstructions from phase-dated data should report these checks, at least the distribution of interval widths and of label use, the overlap curve, both reconstructions and their coupling to the overlap structure. The same checks can be applied to published reconstructions. Wherever site databases combine broad and narrow overlapping labels, standard aoristic curves can rise where many labels overlap and change level at frequently used period boundaries, so that some published peaks and transitions may partly reflect the catalogue. Such re-examinations need nothing but the intervals already in use, and we regard them as the most immediate application of our approach.
 
-## 5.3 Outlook
-
-The phase correction addresses one identifiable source of structural bias with a minimum of assumptions. A fuller probabilistic model would represent the latent event distribution together with the observation process, including the probability of coarse or fine assignment, preservation, recovery and research intensity, as well as hierarchical phase relationships and shared boundaries. Replacing the flat prior by the current estimate of the temporal distribution and iterating the weighting turns the procedure into an expectation–maximisation estimator of the Richardson–Lucy type [@richardson_bayesian_1972; @lucy_iterative_1974], of which the phase correction is the first step. In an exploratory test (Supplement 6), such iterations largely remove the dampening of central peaks and plateaus but amplify sampling noise for flat signals, so that a regularised version remains to be developed. Estimating the label propensities from the data, together with the temporal distribution, is another natural next step, since the simulations on the Danish catalogue show how much could be gained if they were known (Supplement 6). Until such models are available, the phase correction offers a simple and well-founded way to remove the most obvious structural component from aoristic reconstructions.
+The phase correction is the first step of an expectation–maximisation estimator of the Richardson–Lucy type [@richardson_bayesian_1972; @lucy_iterative_1974]. Iterating it largely removes the dampening of central peaks and plateaus but amplifies sampling noise for flat signals (Supplement 6), so that a regularised version, ideally with label propensities estimated from the data, remains to be developed.
 
 # 6. Conclusion
 
-Aoristic reconstruction inherits the structure of the chronological classification, because archaeological dates are not coarsened at random. Which label an observation receives depends on its date and on the labels available for that date. Under a uniform ground truth, the standard aoristic sum closely followed the overlap structure of a synthetic phase catalogue, and neither Monte Carlo aoristics nor a Bayesian reconstruction removed this bias, which does not diminish with more data.
+Aoristic reconstruction inherits the structure of the chronological classification, because archaeological dates are not coarsened at random. Under a uniform ground truth, the standard aoristic sum followed the overlap structure of a synthetic phase catalogue, and neither Monte Carlo aoristics nor a Bayesian reconstruction removed this bias, which does not diminish with more data.
 
-The phase-corrected weighting follows from a simple model of label assignment. In the simulations it brought the reconstruction close to the uniform ground truth and held up under other assignment models and for most non-uniform signals. Where real structure coincides with the overlap geometry, however, it can dampen it. In both empirical datasets it reduced the coupling to the interval structure. In the Danish data it tended to move the reconstruction towards an independent radiocarbon record, and in the Hallstatt data a deviation that persisted after the correction pointed to the absolute length of one phase.
+The phase-corrected weighting follows from a simple model of label assignment and requires only the intervals already recorded. In the simulations it brought the reconstruction close to the ground truth for most signals and assignment models, but it can dampen real structure that coincides with the overlap geometry. In both empirical datasets it reduced the coupling to the interval structure. It moved the Danish reconstruction towards an independent radiocarbon record, and in the Hallstatt data a deviation that persisted after the correction pointed to the absolute length of one phase. Aoristic studies based on phase-dated data should therefore report the overlap structure of their intervals and the phase-corrected reconstruction alongside the standard one.
 
-Aoristic studies based on phase-dated data should therefore report the overlap structure of their intervals and the phase-corrected reconstruction alongside the standard one. Because the correction requires only the intervals that are already recorded, it can be added to any such analysis at no extra cost.
-
-# Data and code availability
+# Data availability
 
 All data, code and supplementary analyses are available at https://github.com/ISAAKiel/aoristic_overlap_bias_paper and archived at Zenodo (DOI: …). The Danish settlement data derive from the national register Fund og Fortidsminder [@slks_fund_og_fortidsminder, data downloaded 5 April 2018], the radiocarbon dates from XRONOS [@roeXRONOSOpenData2025]. The supplementary materials are executable Quarto documents from which every number and figure can be regenerated, as described in the repository README.
 
@@ -986,25 +962,25 @@ All analyses were run in R 4.5.3 [@r_core_team_2026]. The standard proportional 
 
 # Acknowledgements
 
-We thank Caroline Bach for reading the manuscript and for her comments on its clarity.
+We thank Enrico R. Crema, Roberto Ragno and Caroline Bach for their comments on the manuscript.
 
 # Funding information
 
 The contribution of Martin Hinz to this research was funded by the European Research Council (ERC) through the project ESTER (ERC-2024-COG 101171036). The contribution of Nils Müller-Scheeßel took place within the scope of the Cluster of Excellence ROOTS, funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) under Germany's Excellence Strategy – EXC 2150 – 390870439.
 
-# Competing interests
+# Declaration of competing interest
 
 The authors are the developers of the open-source R package aoristAAR, which implements the phase-corrected weighting evaluated in this article. They have no other competing interests to declare.
 
-# Authors' contributions
+# CRediT authorship contribution statement
 
-Martin Hinz: conceptualisation, methodology, software, formal analysis of the simulations and the Danish case study, writing (original draft). Nils Müller-Scheeßel: conceptualisation, data curation and analysis of the Hallstatt case study, writing (review and editing). Both authors approved the final manuscript.
+**Martin Hinz:** Conceptualization, Methodology, Software, Formal analysis (simulations, Danish case study), Writing – original draft. **Nils Müller-Scheeßel:** Conceptualization, Data curation, Formal analysis (Hallstatt case study), Writing – review & editing. Both authors approved the final manuscript.
+
+# Declaration of generative AI and AI-assisted technologies in the writing process
+
+During the preparation of this work the authors used Claude (Anthropic) in order to edit the language of the manuscript and the supplements, to optimise the R code of the supplementary analyses and as a simulated peer reviewer, reading the manuscript critically for internal consistency, clarity and likely objections. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the publication.
 
 # References
 
 ::: {#refs}
 :::
-
-# Declaration of AI use
-
-During the preparation of this work, the authors used Claude (Anthropic) to edit the language of the manuscript and the supplements, to optimise the R code of the supplementary analyses, and as a simulated peer reviewer, i.e. to read the manuscript critically for internal consistency, clarity and likely objections. All suggestions were checked and, where necessary, revised by the authors, who take full responsibility for the content of the publication.

@@ -2,7 +2,7 @@
 
 Code, data and supplements for
 
-> Hinz, M. & Müller-Scheeßel, N. Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions. Submitted to *Journal of Computer Applications in Archaeology*.
+> Hinz, M. & Müller-Scheeßel, N. Systematic bias from overlapping temporal classifications requires correction in aoristic reconstructions. To be submitted to the *Journal of Archaeological Science*.
 
 Archived at Zenodo: doi:… (TODO)
 
